@@ -1,0 +1,17 @@
+.easy-checkout {
+  border-top: $border-default;
+
+  .checkout-actions {
+    padding: 10px;
+    text-align: center;
+
+    .input-btn {
+      margin-right: 10px;
+
+      @include media-breakpoint-down(xs) {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

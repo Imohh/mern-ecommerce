@@ -1,0 +1,95 @@
+// mini menu
+.mini-menu {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  background: $white;
+  height: 100%;
+  width: 370px;
+  z-index: 1000;
+  // -webkit-box-shadow: $box-shadow;
+  // box-shadow: $box-shadow;
+  @include transition($layout-transition-higher-speed);
+
+  @include media-breakpoint-down(xs) {
+    width: 88%;
+    top: 0;
+  }
+}
+
+// show hidden menu popup
+.mini-menu-open {
+  .mini-menu {
+    visibility: visible;
+    left: 0;
+    @include transition($layout-transition-higher-speed);
+  }
+
+  .dark-overflow {
+    @include dark-overflow();
+    @include media-breakpoint-down(xs) {
+      width: 100%;
+      top: 0;
+    }
+  }
+}
+
+.navigation-menu {
+  height: 100%;
+  background-color: $theme-white;
+
+  .menu-header {
+    border-bottom: $border-default;
+    text-align: right;
+    padding-right: 5px;
+    align-items: center;
+    justify-content: flex-end;
+    height: 50px;
+    @include flex();
+  }
+
+  .menu-title {
+    padding: 10px 0px 10px 30px;
+  }
+
+  .menu-body {
+    margin-top: 20px;
+
+    .menu-list {
+      .menu-item {
+        a {
+          color: $font-custom-color !important;
+          font-weight: $font-weight-normal;
+          text-transform: capitalize;
+          display: block;
+          padding: 10px 30px 10px 30px;
+          border-left: 3px solid transparent;
+          @include transition();
+
+          &:hover {
+            background-color: $white;
+            border-left: 3px solid $primary-color;
+            color: $primary-color !important;
+            @include transition();
+          }
+
+          &:focus {
+            outline: none;
+            box-shadow: none;
+            background-color: $white;
+            border-left: 3px solid $primary-color;
+          }
+
+          &.active-line {
+            font-weight: $font-weight-medium;
+            background-color: $white;
+            color: $primary-color !important;
+            border-color: $primary-color;
+            @include transition();
+          }
+        }
+      }
+    }
+  }
+}

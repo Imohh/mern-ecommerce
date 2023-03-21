@@ -1,0 +1,148 @@
+// transition mixin
+@mixin transition($speed: $layout-transition-speed) {
+  -webkit-transition: all $speed ease;
+  -moz-transition: all $speed ease;
+  -o-transition: all $speed ease;
+  transition: all $speed ease;
+}
+
+// transform mixin
+@mixin transform($deg) {
+  -webkit-transform: scale($deg, $deg);
+  -ms-transform: scale($deg, $deg);
+  transform: scale($deg, $deg);
+}
+
+// flexbox
+@mixin flex() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+// flex wrap
+@mixin flex-wrap($value) {
+  -webkit-flex-wrap: $value;
+  -ms-flex-wrap: $value;
+  flex-wrap: $value;
+}
+
+@mixin center() {
+  @include flex();
+  justify-content: center;
+  align-items: center;
+}
+
+// width fit
+@mixin width-fit() {
+  width: intrinsic; /* Safari/WebKit uses a non-standard name */
+  width: -moz-max-content; /* Firefox/Gecko */
+  width: -webkit-max-content; /* Chrome */
+}
+
+// icon styles
+@mixin icon($icon, $width: null, $height: null) {
+  background-image: $icon;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  height: $width;
+  width: $height;
+}
+
+// badge styles
+@mixin badge() {
+  border-radius: 100%;
+  font-size: 0.6rem;
+  font-weight: 600;
+  height: 16px;
+  position: absolute;
+  right: -10px;
+  text-align: center;
+  top: -7px;
+  width: 16px;
+  background-color: $primary-bg;
+  color: $white;
+  @include flex();
+  justify-content: center;
+  align-items: center;
+}
+
+// text ellipsis ...
+@mixin text-ellipsis($numLines: 1, $lineHeight: 1.412) {
+  overflow: hidden;
+  text-overflow: -o-ellipsis-lastline;
+  text-overflow: ellipsis;
+  display: block;
+  /* autoprefixer: off */
+  display: -webkit-box;
+  -webkit-line-clamp: $numLines;
+  -webkit-box-orient: vertical;
+  max-height: $numLines * $lineHeight + unquote('em');
+}
+
+@mixin text-truncate() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// dark overflow
+@mixin dark-overflow {
+  background-color: $dark-overflow-bg;
+  cursor: pointer;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+@mixin appearance($value: none) {
+  -webkit-appearance: $value;
+  -moz-appearance: $value;
+  -ms-appearance: $value;
+  -o-appearance: $value;
+  appearance: $value;
+}
+
+@mixin sr-only() {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {
+    @content;
+  }
+
+  ::-moz-placeholder {
+    @content;
+  }
+
+  :-moz-placeholder {
+    @content;
+  }
+
+  :-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+  }
+}

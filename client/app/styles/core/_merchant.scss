@@ -1,0 +1,23 @@
+.sell {
+  .agreement-banner-text {
+    background-color: $theme-white;
+    padding: 30px 16px 30px;
+    border-radius: $border-radius-primary;
+  }
+
+  .agreement-banner {
+    margin: 0 auto;
+    width: 250px;
+
+    @include media-breakpoint-up(md) {
+      width: 300px;
+    }
+  }
+}
+
+.merchant-dashboard {
+  .merchant-box {
+    border-radius: $border-radius-default;
+    box-shadow: $box-shadow-secondary;
+  }
+}

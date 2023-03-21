@@ -1,0 +1,142 @@
+// mini cart
+.mini-cart {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  background-color: $white;
+  height: 100%;
+  width: 470px;
+  z-index: 1000;
+  // -webkit-box-shadow: $box-shadow;
+  // box-shadow: $box-shadow;
+  @include transition($layout-transition-higher-speed);
+
+  @include media-breakpoint-down(xs) {
+    width: 88%;
+    top: 0;
+  }
+}
+
+// show hidden cart popup
+.mini-cart-open {
+  .mini-cart {
+    visibility: visible;
+    right: 0;
+    @include transition($layout-transition-higher-speed);
+  }
+
+  .dark-overflow {
+    @include dark-overflow();
+    @include media-breakpoint-down(xs) {
+      width: 100%;
+      top: 0;
+    }
+  }
+}
+
+.cart {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .cart-body {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 100%;
+    background-color: $white;
+  }
+
+  .item-box {
+    padding: 10px;
+    margin-bottom: 5px;
+    border-bottom: $border-default;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .value {
+      color: $font-custom-color;
+      font-weight: $font-weight-normal;
+      font-size: $font-size-xx-large;
+    }
+
+    .item-details {
+      .item-image {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: $border-radius-default;
+      }
+
+      .icon-trash {
+        color: $font-custom-color;
+        font-size: $font-size-xx-large;
+        cursor: pointer;
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .cart-header {
+    border-bottom: $border-default;
+    text-align: right;
+    padding-right: 5px;
+    align-items: center;
+    justify-content: flex-end;
+    height: 50px;
+    @include flex();
+  }
+
+  .empty-cart {
+    height: 100%;
+    @include flex();
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .bag-icon {
+      width: 50px;
+      height: 50px;
+    }
+
+    p {
+      font-weight: $font-weight-normal;
+      margin-top: 12px;
+    }
+  }
+
+  .cart-checkout {
+    background-color: $white;
+    border-top: $border-default;
+
+    .cart-summary {
+      padding: 10px;
+      background-color: $theme-white;
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+/* start cart common styles */
+.summary-item {
+  .summary-label {
+    color: $font-custom-color;
+    font-weight: $font-weight-normal;
+    text-transform: capitalize;
+  }
+
+  .summary-value {
+    color: $font-custom-color;
+    font-weight: $font-weight-medium;
+  }
+}
+/* end cart common styles */

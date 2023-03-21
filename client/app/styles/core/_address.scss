@@ -1,0 +1,29 @@
+.address-dashboard {
+  .a-list {
+    .address-box {
+      height: 100%;
+      border-radius: $border-radius-default;
+      box-shadow: $box-shadow-secondary;
+      @include transition();
+
+      &:hover {
+        background-color: $secondary-bg;
+        @include transition();
+      }
+
+      .address-icon {
+        width: 35px;
+        height: 35px;
+
+        @include media-breakpoint-up(lg) {
+          width: 50px;
+          height: 50px;
+        }
+      }
+
+      .address-desc {
+        @include text-ellipsis(2);
+      }
+    }
+  }
+}

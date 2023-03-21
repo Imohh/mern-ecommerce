@@ -1,0 +1,43 @@
+.brand-dashboard {
+  .b-list {
+    .brand-box {
+      height: 100%;
+      border-radius: $border-radius-default;
+      box-shadow: $box-shadow-secondary;
+      @include transition();
+
+      &:hover {
+        background-color: $secondary-bg;
+        @include transition();
+      }
+
+      .brand-desc {
+        @include text-ellipsis(2);
+      }
+    }
+  }
+}
+
+.brand-list {
+  .brand-box {
+    height: 100%;
+    padding: 10px;
+    border: $border-default;
+    border-radius: $border-radius-default;
+    @include transition();
+
+    .brand-link {
+      display: block;
+    }
+
+    &:hover {
+      background-color: $secondary-bg;
+      border-color: $border-hover-color;
+      @include transition();
+    }
+
+    .brand-desc {
+      @include text-ellipsis(2);
+    }
+  }
+}

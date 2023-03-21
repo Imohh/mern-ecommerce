@@ -1,0 +1,370 @@
+// start input button styles
+input[type='button'],
+input[type='submit'],
+input[type='reset'],
+button[type='button'],
+button[type='submit'],
+button[type='reset'],
+button {
+  border: none;
+  background: transparent;
+  color: $font-custom-color !important;
+  font-size: $font-size-small;
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  text-transform: capitalize;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  :active {
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: $disabled-bg;
+    border-color: transparent !important;
+    pointer-events: none;
+  }
+}
+// end input button styles
+
+// basic styles
+.input-btn {
+  padding: 0;
+
+  .btn-text {
+    font-weight: $font-weight-medium;
+    font-size: $font-size-small;
+  }
+}
+
+// size
+.input-btn {
+  &.icon-only {
+    padding: 0 !important;
+    min-width: auto !important;
+
+    &.sm {
+      width: 22px;
+      height: 22px;
+    }
+
+    &.md {
+      width: 30px;
+      height: 30px;
+    }
+
+    &.lg {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &.sm {
+    padding: 6px 10px;
+    min-width: 100px;
+
+    .btn-text {
+      font-size: $font-size-x-small;
+    }
+  }
+
+  &.md {
+    padding: 10px 16px;
+    min-width: 135px;
+  }
+}
+
+// primary button
+.input-btn {
+  &.custom-btn-primary {
+    position: relative;
+    border: $border-default;
+    background-color: $btn-bg;
+    -webkit-transition: $layout-transition-speed;
+    transition: $layout-transition-speed;
+
+    .btn-text {
+      -webkit-transition: $layout-transition-speed;
+      transition: $layout-transition-speed;
+    }
+
+    &:hover {
+      background-color: $primary-bg;
+
+      .btn-text {
+        color: $white !important;
+        -webkit-transition: $layout-transition-speed;
+        transition: $layout-transition-speed;
+      }
+    }
+  }
+}
+
+// secondary button
+.input-btn {
+  &.custom-btn-secondary {
+    position: relative;
+    border: $border-default;
+    background-color: $btn-bg;
+    -webkit-transition: $layout-transition-speed;
+    transition: $layout-transition-speed;
+
+    .btn-text {
+      -webkit-transition: $layout-transition-speed;
+      transition: $layout-transition-speed;
+    }
+
+    &:hover {
+      background-color: $secondary-bg;
+      color: $font-custom-color !important;
+
+      .btn-text {
+        -webkit-transition: $layout-transition-speed;
+        transition: $layout-transition-speed;
+      }
+    }
+  }
+}
+
+body.user-is-tabbing button:focus {
+  box-shadow: none;
+  outline: 1px dotted;
+}
+
+// danger button
+.input-btn {
+  &.custom-btn-danger {
+    position: relative;
+    border: $border-default;
+    background-color: $danger-bg;
+    -webkit-transition: $layout-transition-speed;
+    transition: $layout-transition-speed;
+
+    .btn-text {
+      color: $white !important;
+      -webkit-transition: $layout-transition-speed;
+      transition: $layout-transition-speed;
+    }
+
+    &:hover {
+      background-color: $danger-hover-bg;
+
+      .btn-text {
+        -webkit-transition: $layout-transition-speed;
+        transition: $layout-transition-speed;
+        color: $white !important;
+      }
+    }
+  }
+}
+
+// none button
+.input-btn {
+  &.custom-btn-none {
+    position: relative;
+    min-width: auto;
+    border: $border-default;
+
+    &:hover {
+      color: $font-custom-color !important;
+    }
+  }
+}
+
+// link button
+.input-btn {
+  &.custom-btn-link {
+    position: relative;
+    -webkit-transition: $layout-transition-speed;
+    transition: $layout-transition-speed;
+
+    .btn-text {
+      font-weight: $font-weight-normal;
+      -webkit-transition: $layout-transition-speed;
+      transition: $layout-transition-speed;
+    }
+
+    &:hover {
+      .btn-text {
+        opacity: 0.9;
+        -webkit-transition: $layout-transition-speed;
+        transition: $layout-transition-speed;
+      }
+    }
+  }
+}
+
+// dark button
+.input-btn {
+  &.custom-btn-dark {
+    position: relative;
+    border: $border-default;
+    background-color: $dark-bg;
+    -webkit-transition: $layout-transition-speed;
+    transition: $layout-transition-speed;
+
+    .btn-text {
+      color: $white !important;
+      -webkit-transition: $layout-transition-speed;
+      transition: $layout-transition-speed;
+    }
+
+    &:hover {
+      background-color: $dark-hover-bg;
+
+      .btn-text {
+        -webkit-transition: $layout-transition-speed;
+        transition: $layout-transition-speed;
+        color: $white !important;
+      }
+    }
+  }
+}
+
+// button link
+.btn-link {
+  padding: 10px;
+  border: $border-default;
+  display: inline-block;
+  min-width: 150px;
+  font-weight: $font-weight-normal;
+  color: $font-custom-color !important;
+  background-color: $btn-bg;
+  -webkit-transition: $layout-transition-speed;
+  transition: $layout-transition-speed;
+
+  &:hover {
+    color: $white !important;
+    background-color: $btn-bg-hover;
+    -webkit-transition: $layout-transition-speed;
+    transition: $layout-transition-speed;
+  }
+}
+
+// button icon styles
+.input-btn {
+  .btn-icon {
+    display: inline-flex;
+    vertical-align: bottom;
+    line-height: 100%;
+  }
+
+  // text only styles
+  &.text-only {
+    .btn-text {
+      letter-spacing: 0.9px;
+    }
+  }
+
+  &.custom-btn-primary {
+    &.with-icon {
+      &:hover {
+        border-color: transparent;
+        -webkit-transition: $layout-transition-speed;
+        transition: $layout-transition-speed;
+
+        svg {
+          fill: $white;
+          stroke: $white !important;
+          -webkit-transition: $layout-transition-speed;
+          transition: $layout-transition-speed;
+        }
+      }
+    }
+  }
+
+  &.custom-btn-danger {
+    &.with-icon {
+      &:hover {
+        border-color: transparent;
+        -webkit-transition: $layout-transition-speed;
+        transition: $layout-transition-speed;
+
+        svg {
+          fill: $white;
+          stroke: $white !important;
+          -webkit-transition: $layout-transition-speed;
+          transition: $layout-transition-speed;
+        }
+      }
+    }
+  }
+
+  // with icon styles
+  &.with-icon {
+    &.icon-left {
+      .btn-icon {
+        margin-right: 6px;
+      }
+      .btn-text {
+        margin-right: 5px;
+      }
+    }
+    &.icon-right {
+      .btn-icon {
+        margin-left: 6px;
+      }
+      .btn-text {
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+// bag button
+.input-btn {
+  &.bag-btn {
+    box-shadow: $box-shadow-custom;
+    min-width: 185px;
+    @include media-breakpoint-down(sm) {
+      width: 100% !important;
+    }
+
+    &:focus {
+      &.with-icon {
+        background-color: $primary-bg;
+        border-color: transparent;
+        -webkit-transition: $layout-transition-speed;
+        transition: $layout-transition-speed;
+
+        .btn-text {
+          color: $white;
+          -webkit-transition: $layout-transition-speed;
+          transition: $layout-transition-speed;
+        }
+
+        svg {
+          fill: $white;
+          stroke: $white !important;
+          -webkit-transition: $layout-transition-speed;
+          transition: $layout-transition-speed;
+        }
+      }
+    }
+  }
+}
+
+.bag-icon {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  stroke-width: 20px;
+  stroke: $black;
+  -webkit-transition: $layout-transition-speed;
+  transition: $layout-transition-speed;
+}
+
+.close-icon {
+  cursor: pointer;
+  position: relative;
+  background-size: 16px;
+  @include icon($close, 25px, 25px);
+
+  &:hover {
+    opacity: 0.5;
+  }
+}

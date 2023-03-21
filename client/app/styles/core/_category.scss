@@ -1,0 +1,41 @@
+/* start category dashboard styles */
+.category-dashboard {
+  .c-list {
+    .category-box {
+      height: 100%;
+      z-index: -1;
+      border-radius: $border-radius-default;
+      box-shadow: $box-shadow-secondary;
+      @include transition();
+
+      &:hover {
+        background-color: $secondary-bg;
+        @include transition();
+      }
+
+      .toggle-box {
+        z-index: 1000;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 25px;
+        overflow: hidden;
+        // text-indent: 100%;
+        white-space: nowrap;
+
+        &::before {
+          content: '';
+          position: absolute;
+          z-index: 1000;
+          width: 40px;
+          height: 30px;
+        }
+      }
+
+      .category-desc {
+        @include text-ellipsis(2);
+      }
+    }
+  }
+}
+/* end category dashboard styles */

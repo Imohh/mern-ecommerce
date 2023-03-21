@@ -1,0 +1,130 @@
+// start input text styles
+input[type='text'],
+input[type='number'],
+input[type='password'],
+input[type='file'],
+textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: $border-default;
+  font-size: $font-size-medium;
+  color: $font-custom-color;
+  border-radius: $border-radius-default;
+  -webkit-transition: $layout-transition-speed;
+  transition: $layout-transition-speed;
+  cursor: text;
+  @include appearance();
+
+  &:focus {
+    outline: none;
+    color: $font-focus-color;
+    border-color: $border-focus-color !important;
+    box-shadow: none;
+    -webkit-transition: $layout-transition-speed;
+    transition: $layout-transition-speed;
+  }
+
+  &:disabled {
+    background-color: $disabled-bg;
+    border: none !important;
+    cursor: not-allowed;
+  }
+}
+
+body.user-is-tabbing textarea {
+  box-shadow: none !important;
+}
+// end input text styles
+
+.input-box,
+.select-box {
+  .invalid-message {
+    visibility: hidden;
+    opacity: 0;
+    color: $validation-color;
+    height: 0;
+    @include flex();
+    -webkit-transition: $layout-transition-speed;
+    transition: $layout-transition-speed;
+  }
+
+  &.invalid {
+    .input-text,
+    textarea {
+      border-color: $validation-color;
+      -webkit-transition: $layout-transition-speed;
+      transition: $layout-transition-speed;
+
+      &:focus {
+        border-color: $validation-color !important;
+      }
+    }
+
+    .invalid-message {
+      visibility: visible;
+      opacity: 1;
+      height: 100%;
+      margin-top: 5px;
+      -webkit-transition: $layout-transition-speed;
+      transition: $layout-transition-speed;
+    }
+  }
+}
+
+.input-box {
+  margin: 10px 0px;
+
+  input[type='text'],
+  input[type='number'],
+  input[type='password'],
+  input[type='file'] {
+    height: 45px;
+  }
+
+  label {
+    margin-bottom: 5px;
+    color: $font-custom-color;
+    font-size: $font-size-medium;
+  }
+}
+
+.inline-btn-box {
+  .input-text-block {
+    @include flex();
+    flex-direction: row;
+  }
+
+  .input-text {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .input-btn {
+    border-left: none !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+}
+
+.select-box {
+  margin: 10px 0px;
+
+  label {
+    margin-bottom: 5px;
+    color: $font-custom-color;
+    font-size: $font-size-medium;
+  }
+
+  .select-container {
+    .select-option__multi-value__label {
+      font-weight: $font-weight-normal;
+      font-size: $font-size-small;
+    }
+  }
+}
+
+@include placeholder {
+  font-size: $font-size-small;
+  line-height: $line-height;
+  text-transform: capitalize;
+}

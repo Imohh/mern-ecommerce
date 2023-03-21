@@ -1,0 +1,130 @@
+// overrides styles
+
+// start bootstrap overrides
+.form-control {
+  height: auto;
+
+  &:focus {
+    box-shadow: $box-shadow;
+  }
+}
+
+.dropdown-item {
+  font-weight: $font-weight-normal !important;
+  padding: 12px;
+  border-radius: $border-radius-default;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    background-color: $secondary-bg;
+  }
+
+  &.active {
+    background-color: $secondary-bg;
+    font-weight: $font-weight-normal !important;
+  }
+
+  a {
+    display: block;
+    padding: 5px 15px;
+  }
+}
+
+.dropdown-menu {
+  position: absolute !important;
+  z-index: 1001;
+  border: none;
+  box-shadow: $box-shadow;
+  padding: 10px;
+}
+
+.dropdown,
+.btn-group {
+  &.show {
+    .nav-link {
+      .dropdown-caret {
+        transform: rotate(180deg);
+        -webkit-transition: $layout-transition-speed;
+        transition: $layout-transition-speed;
+      }
+    }
+  }
+
+  .nav-link {
+    .dropdown-caret {
+      font-size: $font-size-x-small !important;
+      color: $theme-dark-gray;
+      margin-left: 5px;
+      -webkit-transition: $layout-transition-speed;
+      transition: $layout-transition-speed;
+    }
+  }
+}
+
+.btn {
+  &:hover {
+    color: $white !important;
+  }
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+hr {
+  border-color: $border-color-primary;
+}
+
+.lead {
+  font-size: $font-size-medium;
+}
+// end bootstrap overrides
+
+// start react-notification-system-redux overrides
+.notification {
+  .notification-title {
+    font-weight: $font-weight-normal !important;
+  }
+}
+// end react-notification-system-redux overrides
+
+// start carousel styles
+.carousel-container {
+  .react-multiple-carousel__arrow {
+    z-index: 900;
+  }
+
+  .carousel-dot-list-style {
+    .react-multi-carousel-dot {
+      button {
+        border-color: $border-color-primary;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .react-multi-carousel-dot--active {
+      button {
+        background-color: $secondary-bg;
+      }
+    }
+  }
+}
+
+// end carousel styles
+
+// start popover styles
+.popover {
+  border-color: $border-color-default;
+  font-family: $font-family;
+}
+
+.popover-header {
+  font-size: $font-size-medium !important;
+  background-color: $secondary-bg;
+}
+// end popover styles

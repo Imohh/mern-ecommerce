@@ -1,0 +1,26 @@
+.table-section {
+  .search {
+    margin: 15px 0px;
+
+    .search-label {
+      width: 100%;
+    }
+  }
+
+  .react-bootstrap-table {
+    .table {
+      overflow-x: scroll;
+      display: block;
+      margin: 20px 0px;
+      color: $font-custom-color;
+
+      td,
+      th {
+        white-space: nowrap;
+        text-overflow: unset;
+        overflow-wrap: break-word;
+        width: 100%;
+      }
+    }
+  }
+}

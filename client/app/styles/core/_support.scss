@@ -1,0 +1,103 @@
+.support {
+  .u-list {
+    li {
+      position: relative;
+      border: 1px solid $border-color-default;
+      border-bottom: none;
+
+      &:last-child {
+        border-bottom: 1px solid $border-color-default;
+      }
+
+      .circle {
+        width: 8px;
+        height: 8px;
+        border-radius: $border-radius-circle;
+
+        &.online {
+          background-color: $green;
+        }
+        &.offline {
+          background-color: $red;
+        }
+      }
+
+      .input-btn {
+        width: 100%;
+
+        .btn-icon {
+          vertical-align: inherit;
+        }
+
+        &:disabled {
+          background-color: $disabled-bg;
+          border: none !important;
+          cursor: not-allowed;
+        }
+      }
+
+      &.selected {
+        .input-btn {
+          &:not([disabled]) {
+            background-color: $secondary-bg;
+          }
+        }
+      }
+    }
+  }
+
+  .m-list {
+    min-height: 30vh;
+    max-height: 70vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 40px 20px 20px 0px;
+    position: relative;
+    // background-color: $theme-gray;
+
+    &::-webkit-scrollbar-thumb {
+      background: $theme-light-white;
+    }
+    &::-webkit-scrollbar-track {
+      background: $white;
+    }
+
+    &.empty {
+      justify-content: center;
+      align-items: center;
+      @include flex();
+    }
+
+    .avatar {
+      width: 32px;
+      height: 32px;
+    }
+
+    .avatar-box {
+      width: 40px;
+    }
+
+    .m-box {
+      background-color: $secondary-bg;
+      border-radius: $border-radius-primary;
+      box-shadow: $box-shadow-secondary;
+      color: $black;
+      width: fit-content;
+      padding: 0.5rem 0.875rem;
+      position: relative;
+      word-wrap: break-word;
+      line-height: 1.25;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      @include flex();
+
+      &.me {
+        background-color: $primary-bg;
+        color: $white;
+        align-self: flex-end;
+        margin-left: auto;
+      }
+    }
+  }
+}
