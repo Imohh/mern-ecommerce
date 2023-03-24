@@ -46,7 +46,7 @@ router.get('/item/:slug', async (req, res) => {
     });
   } catch (error) {
     res.status(400).json({
-      error: 'Your request could not be processed. Please try again.'
+      error: 'Your request could not be processed. Please try again. 001'
     });
   }
 });
@@ -72,7 +72,7 @@ router.get('/list/search/:name', async (req, res) => {
     });
   } catch (error) {
     res.status(400).json({
-      error: 'Your request could not be processed. Please try again.'
+      error: 'Your request could not be processed. Please try again. 002'
     });
   }
 });
@@ -142,7 +142,7 @@ router.get('/list', async (req, res) => {
   } catch (error) {
     console.log('error', error);
     res.status(400).json({
-      error: 'Your request could not be processed. Please try again.'
+      error: 'Your request could not be processed. Please try again. 003'
     });
   }
 });
@@ -234,7 +234,7 @@ router.get('/list/brand/:slug', async (req, res) => {
     }
   } catch (error) {
     res.status(400).json({
-      error: 'Your request could not be processed. Please try again.'
+      error: 'Your request could not be processed. Please try again. 004'
     });
   }
 });
@@ -248,7 +248,7 @@ router.get('/list/select', auth, async (req, res) => {
     });
   } catch (error) {
     res.status(400).json({
-      error: 'Your request could not be processed. Please try again.'
+      error: 'Your request could not be processed. Please try again. 005'
     });
   }
 });
@@ -319,7 +319,7 @@ router.post(
       });
     } catch (error) {
       return res.status(400).json({
-        error: 'Your request could not be processed. Please try again.'
+        error: 'Your request could not be processed. Please try again. 006'
       });
     }
   }
@@ -365,7 +365,7 @@ router.get(
       });
     } catch (error) {
       res.status(400).json({
-        error: 'Your request could not be processed. Please try again.'
+        error: 'Your request could not be processed. Please try again. 007'
       });
     }
   }
@@ -413,7 +413,7 @@ router.get(
       });
     } catch (error) {
       res.status(400).json({
-        error: 'Your request could not be processed. Please try again.'
+        error: 'Your request could not be processed. Please try again. 008'
       });
     }
   }
@@ -450,7 +450,7 @@ router.put(
       });
     } catch (error) {
       res.status(400).json({
-        error: 'Your request could not be processed. Please try again.'
+        error: 'Your request could not be processed. Please try again. 009'
       });
     }
   }
@@ -476,7 +476,7 @@ router.put(
       });
     } catch (error) {
       res.status(400).json({
-        error: 'Your request could not be processed. Please try again.'
+        error: 'Your request could not be processed. Please try again. 010'
       });
     }
   }
@@ -497,7 +497,7 @@ router.delete(
       });
     } catch (error) {
       res.status(400).json({
-        error: 'Your request could not be processed. Please try again.'
+        error: 'Your request could not be processed. Please try again. 011'
       });
     }
   }
