@@ -205,13 +205,48 @@ const getCartItems = cartItems => {
   return newCartItems;
 };
 
+// const calculatePurchaseQuantity = inventory => {
+//   if (inventory <= 25) {
+//     return 1;
+//   } else if (inventory > 25 && inventory <= 100) {
+//     return 5;
+//   } else if (inventory > 100 && inventory < 500) {
+//     return 25;
+//   } else {
+//     return 50;
+//   }
+// };
+
+
 const calculatePurchaseQuantity = inventory => {
-  if (inventory <= 25) {
+  if (inventory === 1) {
     return 1;
-  } else if (inventory > 25 && inventory <= 100) {
+  } else if (inventory === 2) {
+    return 2;
+  } else if (inventory === 3) {
+    return 3;
+  } else if (inventory === 4) {
+    return 4;
+  } else if (inventory === 5) {
     return 5;
-  } else if (inventory > 100 && inventory < 500) {
-    return 25;
+  } else if (inventory === 6) {
+    return 6;
+  } else if (inventory === 7) {
+    return 7;
+  } else if (inventory === 8) {
+    return 8;
+  } else if (inventory === 9) {
+    return 9;
+  } else if (inventory === 10) {
+    return 10;
+  } else if (inventory === 11) {
+    return 11;
+  } else if (inventory === 12) {
+    return 12;
+  } else if (inventory === 13) {
+    return 13;
+  } else if (inventory === 14) {
+    return 14;
   } else {
     return 50;
   }

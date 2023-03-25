@@ -269,16 +269,14 @@ router.post(
       const taxable = req.body.taxable;
       const isActive = req.body.isActive;
       const brand = req.body.brand;
-      const image = req.file;
+      // const image = req.file;
 
       if (!sku) {
         return res.status(400).json({ error: 'You must enter sku.' });
       }
 
       if (!description || !name) {
-        return res
-          .status(400)
-          .json({ error: 'You must enter description & name.' });
+        return res.status(400).json({ error: 'You must enter description & name.' });
       }
 
       if (!quantity) {
@@ -295,7 +293,7 @@ router.post(
         return res.status(400).json({ error: 'This sku is already in use.' });
       }
 
-      const { imageUrl, imageKey } = await s3Upload(image);
+      // const { imageUrl, imageKey } = await s3Upload(image);
 
       const product = new Product({
         sku,
@@ -305,9 +303,9 @@ router.post(
         price,
         taxable,
         isActive,
-        brand,
-        imageUrl,
-        imageKey
+        brand
+        // imageUrl,
+        // imageKey
       });
 
       const savedProduct = await product.save();

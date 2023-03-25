@@ -27,7 +27,7 @@ const AddProduct = props => {
     productChange,
     addProduct,
     brands,
-    image
+    // image
   } = props;
 
   const handleSubmit = event => {
@@ -133,7 +133,7 @@ const AddProduct = props => {
               }}
             />
           </Col>
-          <Col xs='12' md='12'>
+          {/*<Col xs='12' md='12'>
             <Input
               type={'file'}
               error={formErrors['file']}
@@ -145,7 +145,7 @@ const AddProduct = props => {
                 productChange(name, value);
               }}
             />
-          </Col>
+          </Col>*/}
           <Col xs='12' md='12' className='my-2'>
             <Switch
               id={'active-product'}
