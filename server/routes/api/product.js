@@ -46,7 +46,7 @@ router.get('/item/:slug', async (req, res) => {
     });
   } catch (error) {
     res.status(400).json({
-      error: 'Your request could not be processed. Please try again. 001'
+      error: 'Your request could not be processed. Please try again.'
     });
   }
 });
@@ -72,7 +72,7 @@ router.get('/list/search/:name', async (req, res) => {
     });
   } catch (error) {
     res.status(400).json({
-      error: 'Your request could not be processed. Please try again. 002'
+      error: 'Your request could not be processed. Please try again.'
     });
   }
 });
@@ -142,7 +142,7 @@ router.get('/list', async (req, res) => {
   } catch (error) {
     console.log('error', error);
     res.status(400).json({
-      error: 'Your request could not be processed. Please try again. 003'
+      error: 'Your request could not be processed. Please try again.'
     });
   }
 });
@@ -234,7 +234,7 @@ router.get('/list/brand/:slug', async (req, res) => {
     }
   } catch (error) {
     res.status(400).json({
-      error: 'Your request could not be processed. Please try again. 004'
+      error: 'Your request could not be processed. Please try again.'
     });
   }
 });
@@ -248,7 +248,7 @@ router.get('/list/select', auth, async (req, res) => {
     });
   } catch (error) {
     res.status(400).json({
-      error: 'Your request could not be processed. Please try again. 005'
+      error: 'Your request could not be processed. Please try again.'
     });
   }
 });
@@ -269,14 +269,16 @@ router.post(
       const taxable = req.body.taxable;
       const isActive = req.body.isActive;
       const brand = req.body.brand;
-      // const image = req.file;
+      const image = req.file;
 
       if (!sku) {
         return res.status(400).json({ error: 'You must enter sku.' });
       }
 
       if (!description || !name) {
-        return res.status(400).json({ error: 'You must enter description & name.' });
+        return res
+          .status(400)
+          .json({ error: 'You must enter description & name.' });
       }
 
       if (!quantity) {
@@ -293,7 +295,7 @@ router.post(
         return res.status(400).json({ error: 'This sku is already in use.' });
       }
 
-      // const { imageUrl, imageKey } = await s3Upload(image);
+      const { imageUrl, imageKey } = await Product.findOne({image});
 
       const product = new Product({
         sku,
@@ -303,9 +305,9 @@ router.post(
         price,
         taxable,
         isActive,
-        brand
-        // imageUrl,
-        // imageKey
+        brand,
+        imageUrl,
+        imageKey
       });
 
       const savedProduct = await product.save();
@@ -317,7 +319,7 @@ router.post(
       });
     } catch (error) {
       return res.status(400).json({
-        error: 'Your request could not be processed. Please try again. 006'
+        error: 'Your request could not be processed. Please try again.'
       });
     }
   }
@@ -363,7 +365,7 @@ router.get(
       });
     } catch (error) {
       res.status(400).json({
-        error: 'Your request could not be processed. Please try again. 007'
+        error: 'Your request could not be processed. Please try again.'
       });
     }
   }
@@ -411,7 +413,7 @@ router.get(
       });
     } catch (error) {
       res.status(400).json({
-        error: 'Your request could not be processed. Please try again. 008'
+        error: 'Your request could not be processed. Please try again.'
       });
     }
   }
@@ -448,7 +450,7 @@ router.put(
       });
     } catch (error) {
       res.status(400).json({
-        error: 'Your request could not be processed. Please try again. 009'
+        error: 'Your request could not be processed. Please try again.'
       });
     }
   }
@@ -474,7 +476,7 @@ router.put(
       });
     } catch (error) {
       res.status(400).json({
-        error: 'Your request could not be processed. Please try again. 010'
+        error: 'Your request could not be processed. Please try again.'
       });
     }
   }
@@ -495,7 +497,7 @@ router.delete(
       });
     } catch (error) {
       res.status(400).json({
-        error: 'Your request could not be processed. Please try again. 011'
+        error: 'Your request could not be processed. Please try again.'
       });
     }
   }
