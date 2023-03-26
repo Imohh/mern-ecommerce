@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const Mongoose = require('mongoose');
+const cloudinary = require('cloudinary').v2;
+
+
 
 // Bring in Models & Utils
 const Product = require('../../models/product');
@@ -17,8 +20,20 @@ const {
 } = require('../../utils/queries');
 const { ROLES } = require('../../constants');
 
-const storage = multer.memoryStorage();
-const upload = multer({ storage });
+// const storage = multer.memoryStorage();
+const upload = multer({ dest: '../../upload/' });
+
+
+
+
+cloudinary.config({
+  cloud_name: "dfs540rt8",
+  api_key: "393498944556749",
+  api_secret: "-mnTD9Y96yxJLY_SESRwp34Gb38"
+});
+
+
+
 
 // fetch product slug api
 router.get('/item/:slug', async (req, res) => {
@@ -46,7 +61,7 @@ router.get('/item/:slug', async (req, res) => {
     });
   } catch (error) {
     res.status(400).json({
-      error: 'Your request could not be processed. Please try again.'
+      error: 'Your request could not be processed. Please try again. 001'
     });
   }
 });
@@ -72,7 +87,7 @@ router.get('/list/search/:name', async (req, res) => {
     });
   } catch (error) {
     res.status(400).json({
-      error: 'Your request could not be processed. Please try again.'
+      error: 'Your request could not be processed. Please try again. 002'
     });
   }
 });
@@ -142,7 +157,7 @@ router.get('/list', async (req, res) => {
   } catch (error) {
     console.log('error', error);
     res.status(400).json({
-      error: 'Your request could not be processed. Please try again.'
+      error: 'Your request could not be processed. Please try again. 003'
     });
   }
 });
@@ -234,7 +249,7 @@ router.get('/list/brand/:slug', async (req, res) => {
     }
   } catch (error) {
     res.status(400).json({
-      error: 'Your request could not be processed. Please try again.'
+      error: 'Your request could not be processed. Please try again. 004'
     });
   }
 });
@@ -248,7 +263,7 @@ router.get('/list/select', auth, async (req, res) => {
     });
   } catch (error) {
     res.status(400).json({
-      error: 'Your request could not be processed. Please try again.'
+      error: 'Your request could not be processed. Please try again. 005'
     });
   }
 });
@@ -260,6 +275,7 @@ router.post(
   role.check(ROLES.Admin, ROLES.Merchant),
   upload.single('image'),
   async (req, res) => {
+    console.log(req.file)
     try {
       const sku = req.body.sku;
       const name = req.body.name;
@@ -269,7 +285,8 @@ router.post(
       const taxable = req.body.taxable;
       const isActive = req.body.isActive;
       const brand = req.body.brand;
-      const image = req.file;
+      const fileStr = req.body.data;
+      
 
       if (!sku) {
         return res.status(400).json({ error: 'You must enter sku.' });
@@ -295,7 +312,18 @@ router.post(
         return res.status(400).json({ error: 'This sku is already in use.' });
       }
 
-      const { imageUrl, imageKey } = await Product.findOne({image});
+      // const { imageUrl, imageKey } = await s3Upload(image);
+      const uploadedResponse = await cloudinary.uploader.upload(fileStr, {
+        folder: "products",
+        // width:300,
+        // crop: "scale",
+        upload_preset: 'dev_setups'
+      });
+      console.log(uploadedResponse)
+
+      
+      
+
 
       const product = new Product({
         sku,
@@ -306,8 +334,12 @@ router.post(
         taxable,
         isActive,
         brand,
-        imageUrl,
-        imageKey
+        // imageUrl,
+        // imageKey
+        fileStr: {
+          public_id: uploadedResponse.public_id,
+          url: uploadedResponse.secure_url
+        }
       });
 
       const savedProduct = await product.save();
@@ -319,7 +351,7 @@ router.post(
       });
     } catch (error) {
       return res.status(400).json({
-        error: 'Your request could not be processed. Please try again.'
+        error: 'Your request could not be processed. Please try again. 006'
       });
     }
   }
@@ -365,7 +397,7 @@ router.get(
       });
     } catch (error) {
       res.status(400).json({
-        error: 'Your request could not be processed. Please try again.'
+        error: 'Your request could not be processed. Please try again. 007'
       });
     }
   }
@@ -413,7 +445,7 @@ router.get(
       });
     } catch (error) {
       res.status(400).json({
-        error: 'Your request could not be processed. Please try again.'
+        error: 'Your request could not be processed. Please try again. 008'
       });
     }
   }
@@ -450,7 +482,7 @@ router.put(
       });
     } catch (error) {
       res.status(400).json({
-        error: 'Your request could not be processed. Please try again.'
+        error: 'Your request could not be processed. Please try again. 009'
       });
     }
   }
@@ -476,7 +508,7 @@ router.put(
       });
     } catch (error) {
       res.status(400).json({
-        error: 'Your request could not be processed. Please try again.'
+        error: 'Your request could not be processed. Please try again. 010'
       });
     }
   }
@@ -497,7 +529,7 @@ router.delete(
       });
     } catch (error) {
       res.status(400).json({
-        error: 'Your request could not be processed. Please try again.'
+        error: 'Your request could not be processed. Please try again. 011'
       });
     }
   }

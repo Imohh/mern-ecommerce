@@ -24,11 +24,22 @@ const ProductSchema = new Schema({
     slug: 'name',
     unique: true
   },
-  imageUrl: {
-    type: String
-  },
-  imageKey: {
-    type: String
+  // imageUrl: {
+  //   type: String
+  // },
+  // imageKey: {
+  //   type: String
+  // },
+  fileStr: {
+    public_id: {
+      type: String,
+      required: true
+    },
+    url: {
+      type: String,
+      required: true
+    }
+    
   },
   description: {
     type: String,
