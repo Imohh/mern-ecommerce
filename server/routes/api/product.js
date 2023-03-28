@@ -37,9 +37,9 @@ const upload = multer({ storage });
 
 
 cloudinary.config({
-  cloud_name: "dfs540rt8",
-  api_key: "393498944556749",
-  api_secret: "-mnTD9Y96yxJLY_SESRwp34Gb38"
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
 
@@ -344,9 +344,8 @@ router.post(
       // });
       // console.log(uploadedResponse)
 
+      const result = await cloudinary.uploader.upload(img);
       
-      
-
       const product = new Product({
         sku,
         name,
@@ -356,7 +355,7 @@ router.post(
         taxable,
         isActive,
         brand,
-        img,
+        img: result.url,
         contentType
         // imageUrl: uploadedResponse.url
       });
