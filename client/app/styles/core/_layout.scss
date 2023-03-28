@@ -22,11 +22,7 @@ body {
   // -webkit-font-smoothing: antialiased;
 }
 
-.application {
-  @include flex();
-  flex-direction: column;
-  min-height: 100vh;
-}
+
 
 main {
   flex: 1 0 auto;
@@ -42,13 +38,7 @@ body {
   margin: 0;
 }
 
-.wrapper {
-  padding: 260px 0px 25px;
 
-  @include media-breakpoint-up(md) {
-    padding: 25px 0px;
-  }
-}
 
 img {
   border-style: none;

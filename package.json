@@ -89,6 +89,7 @@
     "simple-line-icons": "^2.4.1",
     "socket.io": "^4.2.0",
     "socket.io-client": "^4.2.0",
+    "swiper": "^9.1.1",
     "validatorjs": "^3.18.1"
   },
   "devDependencies": {

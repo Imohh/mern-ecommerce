@@ -65,14 +65,57 @@ class ProductPage extends React.PureComponent {
             <Row className='flex-row'>
               <Col xs='12' md='5' lg='5' className='mb-3 px-3 px-md-2'>
                 <div className='position-relative'>
-                  <img
+                  {/*<img
                     className='item-image'
                     src={`${
                       product.imageUrl
                         ? product.imageUrl
                         : '/images/placeholder-image.png'
                     }`}
-                  />
+                  />*/}
+
+                  <div className="slider">
+                    <input type="radio" name="slide_switch" id="id1" checked="checked"/>
+                    <label for="id1">
+                      <img src={`${
+                      product.imageUrl
+                        ? product.imageUrl
+                        : '/images/placeholder-image.png'
+                    }`} width="100"/>
+                    </label>
+                    <img src={`${
+                      product.imageUrl
+                        ? product.imageUrl
+                        : '/images/placeholder-image.png'
+                    }`}/>
+                    
+                    {/*<!--Lets show the second image by default on page load-->*/}
+                    <input type="radio" name="slide_switch" id="id2"/>
+                    <label for="id2">
+                      <img src="http://thecodeplayer.com/uploads/media/40Ly3VB.jpg" width="100"/>
+                    </label>
+                    <img src="http://thecodeplayer.com/uploads/media/40Ly3VB.jpg"/>
+                    
+                    <input type="radio" name="slide_switch" id="id3"/>
+                    <label for="id3">
+                      <img src="http://thecodeplayer.com/uploads/media/00kih8g.jpg" width="100"/>
+                    </label>
+                    <img src="http://thecodeplayer.com/uploads/media/00kih8g.jpg"/>
+                    
+                    <input type="radio" name="slide_switch" id="id4"/>
+                    <label for="id4">
+                      <img src="http://thecodeplayer.com/uploads/media/2rT2vdx.jpg" width="100"/>
+                    </label>
+                    <img src="http://thecodeplayer.com/uploads/media/2rT2vdx.jpg"/>
+                    
+                    <input type="radio" name="slide_switch" id="id5"/>
+                    <label for="id5">
+                      <img src="http://thecodeplayer.com/uploads/media/8k3N3EL.jpg" width="100"/>
+                    </label>
+                    <img src="http://thecodeplayer.com/uploads/media/8k3N3EL.jpg"/>
+                  </div>
+
+
                   {product.inventory <= 0 && !shopFormErrors['quantity'] ? (
                     <p className='stock out-of-stock'>Out of stock</p>
                   ) : (

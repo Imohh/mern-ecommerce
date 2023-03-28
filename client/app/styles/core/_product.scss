@@ -30,7 +30,7 @@
 /* end product dashboard styles */
 
 /* start product list styles */
-.product-list {
+/*.product-list {
   @include media-breakpoint-up(md) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -129,7 +129,118 @@
       }
     }
   }
+} */
+
+
+
+
+
+
+
+ @media screen and (max-width: 720px) {
+   .container {
+     grid-template-columns: 1fr;
+     margin: 50px 30px;
+  }
 }
+ .cards {
+   position: relative;
+   padding: 10px;
+   background: white;
+   display: grid;
+   box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.057);
+   transition: 0.2s ease-in;
+   width: 32.3%;
+   float: left;
+   margin:1%
+}
+ .cards .card-content {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+}
+.cards .card-content .top-bar {
+  width: calc(100% - 40px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+}
+.cards .card-content .price-text {
+  font-weight: 900
+}
+
+ .cards .card-content .top-bar .float-right {
+   float: right;
+}
+ .cards .card-content .img {
+   width: 100%;
+   justify-content: bottom;
+   align-content: bottom;
+   text-align: center;
+}
+ .cards .card-content .img img {
+   max-width: 100%;
+   max-height: 220px;
+}
+ .cards .card-description {
+   padding: 10px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   font-weight: 400;
+   font-size: 14px;
+   letter-spacing: 0.1em;
+   width: calc(100% - 20px);
+}
+ .cards .card-description .title {
+   text-transform: uppercase;
+   text-align: left;
+}
+ .cards .card-description .cart {
+   float: right;
+   cursor: pointer;
+}
+ .cards .card-footer {
+   text-transform: uppercase;
+   padding: 0.3em;
+   border-top: 0.5px solid #ececec;
+   letter-spacing: 0.1em;
+   font-size: 11px;
+   color: white;
+   justify-items: left;
+   align-items: center;
+   display: flex;
+   background: transparent
+}
+ .cards .card-footer .span {
+   margin: 5px;
+   width: auto;
+   background: #dedede;
+   padding: 4px 7px;
+   border-radius: 2px;
+   font-weight: 100;
+   cursor: pointer;
+}
+ .cards .card-footer .span:hover {
+   background: #aaa;
+}
+ .cards:hover {
+   transition: 0.2s ease-in;
+   transform: translateY(-10px);
+   box-shadow: 0px 45px 60px 0px rgba(0, 0, 0, 0.087);
+}
+ 
+
+
+
+
+
+
+
+
+
 /* end product list styles */
 
 /* start product page styles */
@@ -246,3 +357,67 @@
   color: $theme-bright-red;
 }
 /* end product common styles */
+
+
+
+/* slider */
+.slider{
+  width: 600px; /*Same as width of the large image*/
+  /*Instead of height we will use padding*/
+  padding-top: 520px; /*That helps bring the labels down*/
+  
+  /*margin: 50px auto;*/
+  
+  /*Lets add a shadow*/
+}
+
+
+/*Last thing remaining is to add transitions*/
+.slider>img{
+  position: absolute;
+  left: 0; top: 0;
+  transition: all 0.5s;
+  height:100.5%;
+  width:100.5%
+}
+
+.slider input[name='slide_switch'] {
+  display: none;
+  background-color: yellow  
+}
+
+.slider label {
+  /*Lets add some spacing for the thumbnails*/
+  margin: 18px 15px 0 0;
+  border: 3px solid #999;
+  float: left;
+  cursor: pointer;
+  transition: all 0.5s;
+  
+  /*Default style = low opacity*/
+  opacity: 0.6;
+  background-color: green
+}
+
+.slider label img{
+  display: block;
+}
+
+/*Time to add the click effects*/
+.slider input[name='slide_switch']:checked+label {
+  border-color: #666;
+  opacity: 1;
+}
+/*Clicking any thumbnail now should change its opacity(style)*/
+/*Time to work on the main images*/
+.slider input[name='slide_switch'] ~ img {
+  opacity: 0;
+  transform: scale(1.1);
+}
+/*That hides all main images at a 110% size
+On click the images will be displayed at normal size to complete the effect
+*/
+.slider input[name='slide_switch']:checked+label+img {
+  opacity: 1;
+  transform: scale(1);
+}

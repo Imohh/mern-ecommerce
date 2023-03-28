@@ -20,8 +20,18 @@ const {
 } = require('../../utils/queries');
 const { ROLES } = require('../../constants');
 
-// const storage = multer.memoryStorage();
-const upload = multer({ dest: '../../upload/' });
+
+
+const storage = multer.diskStorage({
+  destination(req, file, cb) {
+    cb(null, 'uploads/');
+  },
+  filename(req, file, cb) {
+    cb(null, `${Date.now()}.jpg`);
+  },
+});
+
+const upload = multer({ storage });
 
 
 
@@ -275,7 +285,7 @@ router.post(
   role.check(ROLES.Admin, ROLES.Merchant),
   upload.single('image'),
   async (req, res) => {
-    console.log(req.file)
+    // console.log(req.file)
     try {
       const sku = req.body.sku;
       const name = req.body.name;
@@ -285,8 +295,23 @@ router.post(
       const taxable = req.body.taxable;
       const isActive = req.body.isActive;
       const brand = req.body.brand;
-      const fileStr = req.body.data;
+      const image = req.file.path;
+      const img = req.file.path;
+      const contentType = req.file.mimetype
+
+      console.log(img)
+
       
+
+
+
+
+
+
+
+
+
+
 
       if (!sku) {
         return res.status(400).json({ error: 'You must enter sku.' });
@@ -313,17 +338,14 @@ router.post(
       }
 
       // const { imageUrl, imageKey } = await s3Upload(image);
-      const uploadedResponse = await cloudinary.uploader.upload(fileStr, {
-        folder: "products",
-        // width:300,
-        // crop: "scale",
-        upload_preset: 'dev_setups'
-      });
-      console.log(uploadedResponse)
+      // const uploadedResponse = await cloudinary.uploader.upload(image, {
+      //   folder: "products",
+      //   upload_preset: 'dev_setups'
+      // });
+      // console.log(uploadedResponse)
 
       
       
-
 
       const product = new Product({
         sku,
@@ -334,13 +356,11 @@ router.post(
         taxable,
         isActive,
         brand,
-        // imageUrl,
-        // imageKey
-        fileStr: {
-          public_id: uploadedResponse.public_id,
-          url: uploadedResponse.secure_url
-        }
+        img,
+        contentType
+        // imageUrl: uploadedResponse.url
       });
+
 
       const savedProduct = await product.save();
 

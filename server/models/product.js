@@ -30,17 +30,28 @@ const ProductSchema = new Schema({
   // imageKey: {
   //   type: String
   // },
-  fileStr: {
-    public_id: {
-      type: String,
-      required: true
-    },
-    url: {
-      type: String,
-      required: true
-    }
-    
+  // fileStr: {
+  //   public_id: {
+  //     type: String,
+  //     required: true
+  //   },
+  //   url: {
+  //     type: String,
+  //     required: true
+  //   }    
+  // },
+  
+  img: {
+    type: String,
+    required: true
   },
+  contentType: {
+    type: String,
+    required: true
+  },
+
+
+
   description: {
     type: String,
     trim: true

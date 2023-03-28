@@ -48,6 +48,35 @@ class Homepage extends React.PureComponent {
             </div>
           </Col>
         </Row>
+
+
+        <section className="brands-homepage">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12">
+                <h1>brands homepage</h1>
+              </div>
+            </div>
+          </div>
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-4">
+                <img src='/images/banners/banner-6.jpg' />
+              </div>
+              <div className="col-lg-4">
+                <img src='/images/banners/banner-6.jpg' />
+              </div>
+              <div className="col-lg-4">
+                <img src='/images/banners/banner-6.jpg' />
+              </div>
+            </div>
+          </div>
+
+
+        </section>
+
+
+
       </div>
     );
   }
