@@ -30,7 +30,7 @@
 /* end product dashboard styles */
 
 /* start product list styles */
-/*.product-list {
+.product-list {
   @include media-breakpoint-up(md) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -129,7 +129,7 @@
       }
     }
   }
-} */
+} 
 
 
 
@@ -137,7 +137,9 @@
 
 
 
- @media screen and (max-width: 720px) {
+
+/* my styles starts here*/
+@media screen and (max-width: 720px) {
    .container {
      grid-template-columns: 1fr;
      margin: 50px 30px;
@@ -150,9 +152,10 @@
    display: grid;
    box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.057);
    transition: 0.2s ease-in;
-   width: 32.3%;
+   width: 31%;
    float: left;
-   margin:1%
+   margin:1%;
+   height:40vh
 }
  .cards .card-content {
    display: flex;
@@ -234,6 +237,8 @@
  
 
 
+
+/*my styles ends here*/
 
 
 

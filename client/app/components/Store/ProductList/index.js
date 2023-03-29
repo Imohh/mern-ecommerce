@@ -39,8 +39,8 @@ const ProductList = props => {
     //                   <img
     //                     className='item-image'
     //                     src={`${
-    //                       product.imageUrl
-    //                         ? product.imageUrl
+    //                       product.img
+    //                         ? product.img
     //                         : '/images/placeholder-image.png'
     //                     }`}
     //                   />
@@ -109,8 +109,8 @@ const ProductList = props => {
       >
         <div className="img">
           <img src={`${
-            product.imageUrl
-            ? product.imageUrl
+            product.img
+            ? product.img
             : '/images/placeholder-image.png'
             }`}
           />
@@ -127,7 +127,8 @@ const ProductList = props => {
         </div>
       </div>
       <div className="span product-desc">
-        {product.description}
+        {product.description.length > 150 ? 
+          `${product.description.substring(0, 150)}...` : product.description}
       </div>
       <div className="card-footer">
         

@@ -78,14 +78,14 @@ class ProductPage extends React.PureComponent {
                     <input type="radio" name="slide_switch" id="id1" checked="checked"/>
                     <label for="id1">
                       <img src={`${
-                      product.imageUrl
-                        ? product.imageUrl
+                      product.img
+                        ? product.img
                         : '/images/placeholder-image.png'
                     }`} width="100"/>
                     </label>
                     <img src={`${
-                      product.imageUrl
-                        ? product.imageUrl
+                      product.img
+                        ? product.img
                         : '/images/placeholder-image.png'
                     }`}/>
                     

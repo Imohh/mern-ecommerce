@@ -31,7 +31,7 @@ const CartList = props => {
                       className='item-image mr-2'
                       src={`${
                         item.imageUrl
-                          ? item.imageUrl
+                          ? item.img
                           : '/images/placeholder-image.png'
                       }`}
                     />
