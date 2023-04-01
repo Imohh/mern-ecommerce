@@ -228,6 +228,21 @@ export const placeOrder = () => {
   };
 };
 
+// export const startCheckout = async () => {
+
+//   await fetch('http://localhost:4000/checkout', {
+//     method: "POST",
+//     headers: {
+//       'content-Type': 'application/json'
+//     },
+//     body: JSON.stringify({items: carts.items})
+//   }).then((response) => {
+//     if(response.url) {
+//       window.location.assign(response.url) //Forwarding user to stripe
+//     }
+//   })
+// }
+
 export const clearOrders = () => {
   return {
     type: CLEAR_ORDERS

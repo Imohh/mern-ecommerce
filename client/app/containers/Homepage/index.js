@@ -17,6 +17,7 @@ import { responsiveOneItemCarousel } from '../../components/Common/CarouselSlide
 class Homepage extends React.PureComponent {
   render() {
     return (
+      <>
       <div className='homepage'>
         <Row className='flex-row'>
           <Col xs='12' lg='6' className='order-lg-2 mb-3 px-3 px-md-2'>
@@ -48,36 +49,57 @@ class Homepage extends React.PureComponent {
             </div>
           </Col>
         </Row>
-
-
-        <section className="brands-homepage">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-12">
-                <h1>brands homepage</h1>
-              </div>
-            </div>
-          </div>
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-4">
-                <img src='/images/banners/banner-6.jpg' />
-              </div>
-              <div className="col-lg-4">
-                <img src='/images/banners/banner-6.jpg' />
-              </div>
-              <div className="col-lg-4">
-                <img src='/images/banners/banner-6.jpg' />
-              </div>
-            </div>
-          </div>
-
-
-        </section>
-
-
-
       </div>
+
+
+
+        <div className='brands-homepage'>
+          <Row className='flex-row'>
+            <Col xs='12' lg='12' className='order-lg-1 mb-3 px-3 px-md-2'>
+              <div className="brands-hompage-title">
+                <h2>Brands Homepage</h2>
+              </div>
+            </Col>
+            <Col xs='12' lg='4' className='order-lg-1 mb-3 px-3 px-md-2'>              
+              <img src='/images/banners/banner-6.jpg' />
+            </Col>
+            <Col xs='12' lg='4' className='order-lg-1 mb-3 px-3 px-md-2'> 
+              <img src='/images/banners/banner-6.jpg' />
+            </Col>
+            <Col xs='12' lg='4' className='order-lg-1 mb-3 px-3 px-md-2'> 
+              <img src='/images/banners/banner-6.jpg' />
+            </Col>
+          </Row>
+        </div>
+
+        <div className='brands-homepages'>
+          <Row className='flex-row' style={{margin: "0 auto", textAlign: "center"}}>
+            <Col xs='12' lg='12' className='order-lg-1 mb-3 px-3 px-md-2'>
+              <div className="brands-hompage-title">
+                <h2>Brands Homepage</h2>
+              </div>           
+              <img src='/images/banners/banner-6.jpg' />
+            </Col>
+          </Row>
+        </div>
+
+
+        <div className='brands-homepage'>
+          <Row className='flex-row'>
+            <Col xs='12' lg='12' className='order-lg-1 mb-3 px-3 px-md-2'> 
+              <div className="high-fashion" style={{background: "#e7e7e7", margin: "0 auto", padding: "50px 20px", width: "20%", textAlign: "center"}}>
+                <h2 style={{margin: "0 auto", textAlign: "center", fontWeight: "normal", paddingBottom: "20px"}}>Eminence high fashion</h2>
+                <p tyle={{margin: "0 auto", textAlign: "center", fontWeight: "normal"}}>Discover More ></p>
+              </div>
+            </Col>
+          </Row>
+        </div>
+
+        
+
+
+
+      </>
     );
   }
 }

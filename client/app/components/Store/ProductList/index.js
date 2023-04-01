@@ -84,9 +84,9 @@ const ProductList = props => {
 
 
 
-  <div class="container">
+  <div className="container">
   {products.map((product, index) => (
-    <div key={index} class="cards">
+    <div key={index} className="cards">
       
       <div className="card-content">
         <div className="top-bar">

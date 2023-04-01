@@ -8,7 +8,7 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
-import { Container } from 'reactstrap';
+// import { Container } from 'reactstrap';
 
 import actions from '../../actions';
 
@@ -25,6 +25,8 @@ import Notification from '../Notification';
 import ForgotPassword from '../ForgotPassword';
 import ResetPassword from '../ResetPassword';
 import Shop from '../Shop';
+import Cancel from '../../components/store/cancel/Cancel';
+import Success from '../../components/store/success/Success';
 import BrandsPage from '../BrandsPage';
 import ProductPage from '../ProductPage';
 import Sell from '../Sell';
@@ -77,12 +79,13 @@ class Application extends React.PureComponent {
       <div className='application'>
         <Notification />
         <Navigation />
-        <main className='main'>
-          <Container>
+          
             <div className='wrapper'>
               <Switch>
                 <Route exact path='/' component={HomePage} />
-                <Route path='/shop' component={Shop} />
+                <div className='shape-page'>
+                  <Route path='/shop' component={Shop} />
+                </div>
                 <Route path='/sell' component={Sell} />
                 <Route path='/contact' component={Contact} />
                 <Route path='/brands' component={BrandsPage} />
@@ -91,6 +94,8 @@ class Application extends React.PureComponent {
                 <Route path='/order/:id' component={OrderPage} />
                 <Route path='/login' component={Login} />
                 <Route path='/register' component={Signup} />
+                <Route path='/cancel' component={Cancel} />
+                <Route path='/success' component={Success} />
                 <Route
                   path='/merchant-signup/:token'
                   component={MerchantSignup}
@@ -110,8 +115,7 @@ class Application extends React.PureComponent {
                 <Route path='*' component={Page404} />
               </Switch>
             </div>
-          </Container>
-        </main>
+
         <Footer />
       </div>
     );
