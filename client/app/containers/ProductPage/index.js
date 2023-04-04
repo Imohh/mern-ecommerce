@@ -165,6 +165,25 @@ class ProductPage extends React.PureComponent {
                         }}
                       />
                     </div>
+                    <div className='item-customize'>
+                      <Input
+                        type={'numeber'}
+                        error={shopFormErrors['size']}
+                        label={'Size'}
+                        name={'size'}
+                        decimals={false}
+                        min={1}
+                        max={product.sizer}
+                        placeholder={'Product Size'}
+                        disabled={
+                          product.sizer <= 0 && !shopFormErrors['size']
+                        }
+                        value={productShopData.size}
+                        onInputChange={(name, value) => {
+                          productShopChange(name, value);
+                        }}
+                      />
+                    </div>
                     <div className='my-4 item-share'>
                       <SocialShare product={product} />
                     </div>

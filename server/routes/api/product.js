@@ -291,12 +291,14 @@ router.post(
       const name = req.body.name;
       const description = req.body.description;
       const quantity = req.body.quantity;
+      const size = req.body.size;
       const price = req.body.price;
       const taxable = req.body.taxable;
       const isActive = req.body.isActive;
       const brand = req.body.brand;
       const img = req.file.path;
       const contentType = req.file.mimetype
+      
 
       console.log(img)
 
@@ -324,13 +326,6 @@ router.post(
         return res.status(400).json({ error: 'This sku is already in use.' });
       }
 
-      // const { imageUrl, imageKey } = await s3Upload(image);
-      // const uploadedResponse = await cloudinary.uploader.upload(image, {
-      //   folder: "products",
-      //   upload_preset: 'dev_setups'
-      // });
-      // console.log(uploadedResponse)
-
       const result = await cloudinary.uploader.upload(img);
       
       const product = new Product({
@@ -338,6 +333,7 @@ router.post(
         name,
         description,
         quantity,
+        size,
         price,
         taxable,
         isActive,

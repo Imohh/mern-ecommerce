@@ -30,7 +30,7 @@ const CartList = props => {
                     <img
                       className='item-image mr-2'
                       src={`${
-                        item.imageUrl
+                        item.img
                           ? item.img
                           : '/images/placeholder-image.png'
                       }`}
@@ -71,6 +71,14 @@ const CartList = props => {
                 </Col>
                 <Col xs='3' className='text-right'>
                   <p className='value quantity'>{` ${item.quantity}`}</p>
+                </Col>
+              </Row>
+              <Row className='mb-2 align-items-center'>
+                <Col xs='9'>
+                  <p className='item-label'>size</p>
+                </Col>
+                <Col xs='3' className='text-right'>
+                  <p className='value size'>{` ${item.size}`}</p>
                 </Col>
               </Row>
             </Container>

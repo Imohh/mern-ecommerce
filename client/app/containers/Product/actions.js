@@ -126,7 +126,8 @@ export const fetchStoreProduct = slug => {
       const response = await axios.get(`/api/product/item/${slug}`);
 
       const inventory = response.data.product.quantity;
-      const product = { ...response.data.product, inventory };
+      const sizer = response.data.product.size;
+      const product = { ...response.data.product, inventory, sizer };
 
       dispatch({
         type: FETCH_STORE_PRODUCT,
@@ -212,6 +213,7 @@ export const fetchProduct = id => {
       const response = await axios.get(`/api/product/${id}`);
 
       const inventory = response.data.product.quantity;
+      const sizer = response.data.product.size
 
       const brand = response.data.product.brand;
       const isBrand = brand ? true : false;
@@ -223,7 +225,7 @@ export const fetchProduct = id => {
 
       response.data.product.brand = brandData[0];
 
-      const product = { ...response.data.product, inventory };
+      const product = { ...response.data.product, inventory, sizer };
 
       dispatch({
         type: FETCH_PRODUCT,
@@ -244,6 +246,7 @@ export const addProduct = () => {
         name: 'required',
         description: 'required|max:200',
         quantity: 'required|numeric',
+        size: 'required|numeric',
         price: 'required|numeric',
         taxable: 'required',
         image: 'required',
@@ -262,6 +265,7 @@ export const addProduct = () => {
         description: product.description,
         price: product.price,
         quantity: product.quantity,
+        size: product.size,
         image: product.image,
         isActive: product.isActive,
         taxable: product.taxable.value,
@@ -282,6 +286,7 @@ export const addProduct = () => {
         'max.description':
           'Description may not be greater than 200 characters.',
         'required.quantity': 'Quantity is required.',
+        'required.size': 'Size is required.',
         'required.price': 'Price is required.',
         'required.taxable': 'Taxable is required.',
         'required.image': 'Please upload files with jpg, jpeg, png format.',
@@ -339,6 +344,7 @@ export const updateProduct = () => {
         slug: 'required|alpha_dash',
         description: 'required|max:200',
         quantity: 'required|numeric',
+        size: 'required|numeric',
         price: 'required|numeric',
         taxable: 'required',
         brand: 'required'
@@ -354,6 +360,7 @@ export const updateProduct = () => {
         slug: product.slug,
         description: product.description,
         quantity: product.quantity,
+        size: product.size,
         price: product.price,
         taxable: product.taxable,
         brand: brand != 0 ? brand : null
@@ -371,6 +378,7 @@ export const updateProduct = () => {
         'max.description':
           'Description may not be greater than 200 characters.',
         'required.quantity': 'Quantity is required.',
+        'required.size': 'Size is required.',
         'required.price': 'Price is required.',
         'required.taxable': 'Taxable is required.',
         'required.brand': 'Brand is required.'

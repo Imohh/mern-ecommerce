@@ -83,9 +83,9 @@ class Application extends React.PureComponent {
             <div className='wrapper'>
               <Switch>
                 <Route exact path='/' component={HomePage} />
-                <div className='shape-page'>
+                {/*<div className='shape-page'>*/}
                   <Route path='/shop' component={Shop} />
-                </div>
+                {/*</div>*/}
                 <Route path='/sell' component={Sell} />
                 <Route path='/contact' component={Contact} />
                 <Route path='/brands' component={BrandsPage} />

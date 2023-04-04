@@ -38,6 +38,7 @@ const initialState = {
     name: '',
     description: '',
     quantity: 1,
+    size: 1,
     price: 1,
     image: {},
     isActive: true,
@@ -49,7 +50,8 @@ const initialState = {
   },
   isLoading: false,
   productShopData: {
-    quantity: 1
+    quantity: 1,
+    size: 1
   },
   formErrors: {},
   editFormErrors: {},
@@ -92,7 +94,8 @@ const productReducer = (state = initialState, action) => {
         ...state,
         storeProduct: action.payload,
         productShopData: {
-          quantity: 1
+          quantity: 1,
+          size: 1
         },
         shopFormErrors: {}
       };
@@ -164,6 +167,7 @@ const productReducer = (state = initialState, action) => {
           name: '',
           description: '',
           quantity: 1,
+          size: 1,
           price: 1,
           image: {},
           isActive: true,
@@ -182,7 +186,8 @@ const productReducer = (state = initialState, action) => {
       return {
         ...state,
         productShopData: {
-          quantity: 1
+          quantity: 1,
+          size: 1
         },
         shopFormErrors: {}
       };
