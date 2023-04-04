@@ -84,7 +84,7 @@ const ProductList = props => {
 
 
 
-  <div className="container">
+  <div className="container shop-container">
   {products.map((product, index) => (
     <div key={index} className="cards">
       
@@ -127,8 +127,8 @@ const ProductList = props => {
         </div>
       </div>
       <div className="span product-desc">
-        {product.description.length > 150 ? 
-          `${product.description.substring(0, 150)}...` : product.description}
+        {product.description.length > 90 ? 
+          `${product.description.substring(0, 70) + "..."}` : product.description}
       </div>
       <div className="card-footer">
         
