@@ -35,7 +35,7 @@ class Shop extends React.PureComponent {
     super();
     this.state = {
       name: "React",
-      showHide: true
+      showHide: false
     };
     this.hideComponent = this.hideComponent.bind(this)
   }
@@ -50,6 +50,12 @@ class Shop extends React.PureComponent {
         null;
     }
   }
+
+  toggleClass() {
+    const currentState = this.state.showHide;
+    this.setState({ showHide: !currentState });
+  };
+
 
   render() {
     const { products, advancedFilters, filterProducts } = this.props;
@@ -84,7 +90,16 @@ class Shop extends React.PureComponent {
                 xs={{ size: 12, order: 1 }}
                 sm={{ size: 12, order: 1 }}
                 md={{ size: 5, order: 1 }}
-                lg={{ size: 6, order: 1 }}
+                lg={{ size: 2, order: 1 }}
+                className='text-center text-md-left mt-3 mt-md-0 mb-1 mb-md-0'
+              >
+                <button onClick={() => this.setState({showHide: !this.state.showHide}) }>Filters: </button>
+              </Col>
+              <Col
+                xs={{ size: 12, order: 1 }}
+                sm={{ size: 12, order: 1 }}
+                md={{ size: 5, order: 1 }}
+                lg={{ size: 4, order: 1 }}
                 className='text-center text-md-left mt-3 mt-md-0 mb-1 mb-md-0'
               >
                 <span>Showing: </span>
@@ -105,7 +120,7 @@ class Shop extends React.PureComponent {
                 xs={{ size: 12, order: 2 }}
                 sm={{ size: 12, order: 2 }}
                 md={{ size: 5, order: 2 }}
-                lg={{ size: 4, order: 2 }}
+                lg={{ size: 2, order: 2 }}
               >
                 <SelectOption
                   name={'sorting'}
