@@ -59,13 +59,13 @@ class ProductPage extends React.PureComponent {
     } = this.props;
 
     return (
-      <div className='product-shop' style={{padding: "10px 150px", margin: "0 auto"}}>
+      <div className='product-shop' style={{padding: "10px 50px", margin: "0 auto"}}>
         {isLoading ? (
           <LoadingIndicator />
         ) : Object.keys(product).length > 0 ? (
           <>
             <Row className='flex-row'>
-              <Col xs='12' md='5' lg='5' className='mb-3 px-3 px-md-2'>
+              <Col xs='12' md='5' lg='8' className='mb-3 px-3 px-md-2'>
                 <div className='position-relative'>
                   {/*<img
                     className='item-image'
@@ -125,7 +125,7 @@ class ProductPage extends React.PureComponent {
                   )}
                 </div>
               </Col>
-              <Col xs='12' md='7' lg='7' className='mb-3 px-3 px-md-2'>
+              <Col xs='12' md='7' lg='4' className='mb-3 px-3 px-md-2'>
                 <div className='product-container'>
                   <div className='item-box'>
                     <div className='item-details'>
@@ -165,7 +165,26 @@ class ProductPage extends React.PureComponent {
                           }}
                         />
                       </div>
-                      <div className='item-actions'>
+                      <div className='item-customize'>
+                      <Input
+                        type={'number'}
+                        error={shopFormErrors['quantity']}
+                        label={'Quantity'}
+                        name={'quantity'}
+                        decimals={false}
+                        min={1}
+                        max={product.inventory}
+                        placeholder={'Product Quantity'}
+                        disabled={
+                          product.inventory <= 0 && !shopFormErrors['quantity']
+                        }
+                        value={productShopData.quantity}
+                        onInputChange={(name, value) => {
+                          productShopChange(name, value);
+                        }}
+                      />
+                    </div>
+                      <div className='item-actions' style={{marginBottom: "5%"}}>
                         {itemInCart ? (
                           <Button
                             variant='primary'
@@ -203,29 +222,30 @@ class ProductPage extends React.PureComponent {
                         </div>
                       </section>
 
+                      <section id="accordions">
+                        <div>
+                          <input type="checkbox" id="check-1" />
+                          <label for="check-1">Size and Fit<span>^</span></label>
+                          <article id="article">
+                            <p>{product.description}</p>
+                          </article>
+                        </div>
+                      </section>
+
+                      <section id="accordionss">
+                        <div>
+                          <input type="checkbox" id="check-1" />
+                          <label for="check-1">shipping & returns<span>^</span></label>
+                          <article>
+                            <p>{product.description}</p>
+                          </article>
+                        </div>
+                      </section>
 
 
                       
                     </div>
-                    <div className='item-customize'>
-                      <Input
-                        type={'number'}
-                        error={shopFormErrors['quantity']}
-                        label={'Quantity'}
-                        name={'quantity'}
-                        decimals={false}
-                        min={1}
-                        max={product.inventory}
-                        placeholder={'Product Quantity'}
-                        disabled={
-                          product.inventory <= 0 && !shopFormErrors['quantity']
-                        }
-                        value={productShopData.quantity}
-                        onInputChange={(name, value) => {
-                          productShopChange(name, value);
-                        }}
-                      />
-                    </div>
+                    
                     
                     <div className='my-4 item-share'>
                       <SocialShare product={product} />

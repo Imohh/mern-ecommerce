@@ -443,7 +443,7 @@ On click the images will be displayed at normal size to complete the effect
     width: 50%;
 }
 #accordion {
-  margin: 5% 0;
+  margin-top: 5% 0;
 }
 #accordion input {
   display: none;
@@ -479,6 +479,95 @@ On click the images will be displayed at normal size to complete the effect
 #accordion input:checked article {
 }
 #accordion input:checked ~ article {
+  border-bottom-left-radius: .25em;
+  border-bottom-right-radius: .25em;
+  height: auto;
+  margin-bottom: .125em;
+}
+
+/*2*/
+#accordions {
+  margin-top: 5% 0;
+}
+#accordions input {
+  display: none;
+}
+#accordions label {
+  background: transparent;
+  border-radius: .25em;
+  border-top: 1px solid #ccc;
+  cursor: pointer;
+  display: block;
+  margin-bottom: .125em;
+  padding: 20px 10px;
+  z-index: 20;
+}
+#accordions label span {
+  float: right
+}
+
+#accordions input:checked + label {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  color: #000;
+}
+#accordions #article {
+  background: #f7f7f7;
+  height:0px;
+  overflow:hidden;
+  z-index:10;
+}
+#accordions #article p {
+  padding: 1em;
+}
+#accordions input:checked #article {
+}
+#accordions input:checked ~ #article {
+  border-bottom-left-radius: .25em;
+  border-bottom-right-radius: .25em;
+  height: auto;
+  margin-bottom: .125em;
+}
+
+
+/*3*/
+#accordionss {
+  margin-top: 5% 0;
+}
+#accordionss input {
+  display: none;
+}
+#accordionss label {
+  background: transparent;
+  border-radius: .25em;
+  border-top: 1px solid #ccc;
+  cursor: pointer;
+  display: block;
+  margin-bottom: .125em;
+  padding: 20px 10px;
+  z-index: 20;
+}
+#accordionss label span {
+  float: right
+}
+
+#accordionss input:checked + label {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  color: #000;
+}
+#accordionss article {
+  background: #f7f7f7;
+  height:0px;
+  overflow:hidden;
+  z-index:10;
+}
+#accordionss article p {
+  padding: 1em;
+}
+#accordionss input:checked article {
+}
+#accordionss input:checked ~ article {
   border-bottom-left-radius: .25em;
   border-bottom-right-radius: .25em;
   height: auto;
