@@ -84,13 +84,12 @@ const ProductList = props => {
 
 
 
-  <div className="container shop-container">
+  // <div className="container shop-container">
+  <div>  
   {products.map((product, index) => (
     <div key={index} className="cards">
-      
       <div className="card-content">
         <div className="top-bar">
-          
           <span className="float-right lnr lnr-heart">
             <AddToWishList
               id={product._id}

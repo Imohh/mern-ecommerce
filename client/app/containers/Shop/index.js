@@ -31,6 +31,26 @@ class Shop extends React.PureComponent {
     document.body.classList.remove('shop-page');
   }
 
+  constructor() {
+    super();
+    this.state = {
+      name: "React",
+      showHide: false
+    };
+    this.hideComponent = this.hideComponent.bind(this)
+  }
+
+  hideComponent(name) {
+    console.log(name);
+    switch (name) {
+      case "showHide":
+        this.setState({ showHide: !this.state.showHide });
+        break;
+      default:
+        null;
+    }
+  }
+
   render() {
     const { products, advancedFilters, filterProducts } = this.props;
     const { totalPages, currentPage, count, limit, order } = advancedFilters;
@@ -39,22 +59,25 @@ class Shop extends React.PureComponent {
     const left = limit * (currentPage - 1) + 1;
     const right = totalProducts + left - 1;
 
+    const {showHide} = this.state
+
+
     return (
       <div className='shop'>
         <Row xs='12'>
-          {/*<Col
+          <Col
             xs={{ size: 12, order: 1 }}
             sm={{ size: 12, order: 1 }}
             md={{ size: 12, order: 1 }}
             lg={{ size: 3, order: 1 }}
           >
-            <ProductFilter filterProducts={filterProducts} />
-          </Col>*/}
+            {showHide && <ProductFilter filterProducts={filterProducts}  /> }
+          </Col>
           <Col
             xs={{ size: 12, order: 2 }}
             sm={{ size: 12, order: 2 }}
             md={{ size: 12, order: 2 }}
-            lg={{ size: 12, order: 2 }}
+            lg={{ size: 9, order: 2 }}
           >
             <Row className='align-items-center mx-0 mb-4 mt-4 mt-lg-0 py-3 py-lg-0 bg-white shop-toolbar'>
               <Col

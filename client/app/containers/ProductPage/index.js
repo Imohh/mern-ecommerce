@@ -57,7 +57,7 @@ class ProductPage extends React.PureComponent {
     } = this.props;
 
     return (
-      <div className='product-shop' style={{padding: "10px 10px", margin: "0 auto"}}>
+      <div className='product-shop' style={{padding: "10px 150px", margin: "0 auto"}}>
         {isLoading ? (
           <LoadingIndicator />
         ) : Object.keys(product).length > 0 ? (

@@ -149,13 +149,13 @@
  .cards {
    position: relative;
    padding: 10px;
-   background: white;
+   background: #f1f1f1;
    display: grid;
    box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.057);
    transition: 0.2s ease-in;
-   width: 31%;
+   width: 25%;
    float: left;
-   margin:1%;
+   border: 1px solid #fff;
    height:55vh
 }
  .cards .card-content {
@@ -250,6 +250,13 @@
 /* end product list styles */
 
 /* start product page styles */
+
+.product-shop-container {
+  padding: 20px 50px;
+  margin-bottom: 20%;
+}
+
+
 .product-page {
   .main {
     background-color: $theme-white;
