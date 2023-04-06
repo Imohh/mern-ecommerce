@@ -573,3 +573,18 @@ On click the images will be displayed at normal size to complete the effect
   height: auto;
   margin-bottom: .125em;
 }
+
+
+
+/*button*/
+.product-detail-btn {
+  background: #000 !important;
+  color: #fff !important;
+  width: 100%;
+  padding: 60px 0;
+  border-radius: none
+}
+
+.product-detail-btn:hover {
+  background: #201f1f;
+}

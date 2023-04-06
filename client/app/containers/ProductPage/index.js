@@ -166,45 +166,49 @@ class ProductPage extends React.PureComponent {
                         />
                       </div>
                       <div className='item-customize'>
-                      <Input
-                        type={'number'}
-                        error={shopFormErrors['quantity']}
-                        label={'Quantity'}
-                        name={'quantity'}
-                        decimals={false}
-                        min={1}
-                        max={product.inventory}
-                        placeholder={'Product Quantity'}
-                        disabled={
-                          product.inventory <= 0 && !shopFormErrors['quantity']
-                        }
-                        value={productShopData.quantity}
-                        onInputChange={(name, value) => {
-                          productShopChange(name, value);
-                        }}
-                      />
-                    </div>
+                        <Input
+                          type={'number'}
+                          error={shopFormErrors['quantity']}
+                          label={'Quantity'}
+                          name={'quantity'}
+                          decimals={false}
+                          min={1}
+                          max={product.inventory}
+                          placeholder={'Product Quantity'}
+                          disabled={
+                            product.inventory <= 0 && !shopFormErrors['quantity']
+                          }
+                          value={productShopData.quantity}
+                          onInputChange={(name, value) => {
+                            productShopChange(name, value);
+                          }}
+                        />
+
+                        {/*<button className="increase" onClick={() => product.inventory++}>+</button>
+                        <span>{productShopData.quantity}</span>
+                        <button className="decrease" onClick={() => product.inventory--}>-</button>*/}
+
+
+                      </div>
                       <div className='item-actions' style={{marginBottom: "5%"}}>
                         {itemInCart ? (
                           <Button
-                            variant='primary'
                             disabled={
                               product.inventory <= 0 &&
                               !shopFormErrors['quantity']
                             }
                             text='Remove From Bag'
-                            className='bag-btn'
+                            className='product-detail-btn'
                             icon={<BagIcon />}
                             onClick={() => handleRemoveFromCart(product)}
                           />
                         ) : (
                           <Button
-                            variant='primary'
                             disabled={
                               product.quantity <= 0 && !shopFormErrors['quantity']
                             }
                             text='Add To Bag'
-                            className='bag-btn'
+                            className='product-detail-btn'
                             icon={<BagIcon />}
                             onClick={() => handleAddToCart(product)}
                           />
