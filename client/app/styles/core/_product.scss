@@ -434,3 +434,53 @@ On click the images will be displayed at normal size to complete the effect
   opacity: 1;
   transform: scale(1);
 }
+
+
+/*accordion */
+
+#container {
+    margin: 0 auto;
+    width: 50%;
+}
+#accordion {
+  margin: 5% 0;
+}
+#accordion input {
+  display: none;
+}
+#accordion label {
+  background: transparent;
+  border-radius: .25em;
+  border-top: 1px solid #ccc;
+  cursor: pointer;
+  display: block;
+  margin-bottom: .125em;
+  padding: 20px 10px;
+  z-index: 20;
+}
+#accordion label span {
+  float: right
+}
+
+#accordion input:checked + label {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  color: #000;
+}
+#accordion article {
+  background: #f7f7f7;
+  height:0px;
+  overflow:hidden;
+  z-index:10;
+}
+#accordion article p {
+  padding: 1em;
+}
+#accordion input:checked article {
+}
+#accordion input:checked ~ article {
+  border-bottom-left-radius: .25em;
+  border-bottom-right-radius: .25em;
+  height: auto;
+  margin-bottom: .125em;
+}

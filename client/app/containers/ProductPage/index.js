@@ -38,6 +38,8 @@ class ProductPage extends React.PureComponent {
     document.body.classList.remove('product-page');
   }
 
+
+
   render() {
     const {
       isLoading,
@@ -124,14 +126,14 @@ class ProductPage extends React.PureComponent {
                 </div>
               </Col>
               <Col xs='12' md='7' lg='7' className='mb-3 px-3 px-md-2'>
-                <div className='product-container' style={{background: "#f9f6f2", width: "50%", margin: "0 auto"}}>
+                <div className='product-container'>
                   <div className='item-box'>
                     <div className='item-details'>
                       <h1 className='item-name one-line-ellipsis'>
                         {product.name}
                       </h1>
-                      <p className='sku'>{product.sku}</p>
-                      <hr />
+                      {/* <p className='sku'>{product.sku}</p>
+                       <hr />*/}
                       {product.brand && (
                         <p className='by'>
                           see more from{' '}
@@ -143,8 +145,67 @@ class ProductPage extends React.PureComponent {
                           </Link>
                         </p>
                       )}
-                      <p className='item-desc'>{product.description}</p>
                       <p className='price'>${product.price}</p>
+                      <div className='item-customize'>
+                        <Input
+                          type={'numeber'}
+                          error={shopFormErrors['size']}
+                          label={'Size'}
+                          name={'size'}
+                          decimals={false}
+                          min={1}
+                          max={product.sizer}
+                          placeholder={'Product Size'}
+                          disabled={
+                            product.sizer <= 0 && !shopFormErrors['size']
+                          }
+                          value={productShopData.size}
+                          onInputChange={(name, value) => {
+                            productShopChange(name, value);
+                          }}
+                        />
+                      </div>
+                      <div className='item-actions'>
+                        {itemInCart ? (
+                          <Button
+                            variant='primary'
+                            disabled={
+                              product.inventory <= 0 &&
+                              !shopFormErrors['quantity']
+                            }
+                            text='Remove From Bag'
+                            className='bag-btn'
+                            icon={<BagIcon />}
+                            onClick={() => handleRemoveFromCart(product)}
+                          />
+                        ) : (
+                          <Button
+                            variant='primary'
+                            disabled={
+                              product.quantity <= 0 && !shopFormErrors['quantity']
+                            }
+                            text='Add To Bag'
+                            className='bag-btn'
+                            icon={<BagIcon />}
+                            onClick={() => handleAddToCart(product)}
+                          />
+                        )}
+                      </div>
+
+                      {/*accordion section*/}
+                      <section id="accordion">
+                        <div>
+                          <input type="checkbox" id="check-1" />
+                          <label for="check-1">Details<span>^</span></label>
+                          <article>
+                            <p>{product.description}</p>
+                          </article>
+                        </div>
+                      </section>
+
+
+
+                      
                     </div>
                     <div className='item-customize'>
                       <Input
@@ -165,54 +226,11 @@ class ProductPage extends React.PureComponent {
                         }}
                       />
                     </div>
-                    <div className='item-customize'>
-                      <Input
-                        type={'numeber'}
-                        error={shopFormErrors['size']}
-                        label={'Size'}
-                        name={'size'}
-                        decimals={false}
-                        min={1}
-                        max={product.sizer}
-                        placeholder={'Product Size'}
-                        disabled={
-                          product.sizer <= 0 && !shopFormErrors['size']
-                        }
-                        value={productShopData.size}
-                        onInputChange={(name, value) => {
-                          productShopChange(name, value);
-                        }}
-                      />
-                    </div>
+                    
                     <div className='my-4 item-share'>
                       <SocialShare product={product} />
                     </div>
-                    <div className='item-actions'>
-                      {itemInCart ? (
-                        <Button
-                          variant='primary'
-                          disabled={
-                            product.inventory <= 0 &&
-                            !shopFormErrors['quantity']
-                          }
-                          text='Remove From Bag'
-                          className='bag-btn'
-                          icon={<BagIcon />}
-                          onClick={() => handleRemoveFromCart(product)}
-                        />
-                      ) : (
-                        <Button
-                          variant='primary'
-                          disabled={
-                            product.quantity <= 0 && !shopFormErrors['quantity']
-                          }
-                          text='Add To Bag'
-                          className='bag-btn'
-                          icon={<BagIcon />}
-                          onClick={() => handleAddToCart(product)}
-                        />
-                      )}
-                    </div>
+                    
                   </div>
                 </div>
               </Col>

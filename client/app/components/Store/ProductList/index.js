@@ -90,7 +90,7 @@ const ProductList = props => {
     <div key={index} className="cards">
       <div className="card-content">
         <div className="top-bar">
-          <span className="float-right lnr lnr-heart">
+          {/*<span className="float-right lnr lnr-heart">
             <AddToWishList
               id={product._id}
               liked={product?.isLiked ?? false}
@@ -98,7 +98,7 @@ const ProductList = props => {
               updateWishlist={updateWishlist}
               authenticated={authenticated}
             />
-          </span>
+          </span>*/}
         </div>
       <Link
         to={`/product/${product.slug}`}
