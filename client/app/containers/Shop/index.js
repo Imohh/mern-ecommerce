@@ -35,7 +35,7 @@ class Shop extends React.PureComponent {
     super();
     this.state = {
       name: "React",
-      showHide: false
+      showHide: true
     };
     this.hideComponent = this.hideComponent.bind(this)
   }
@@ -66,18 +66,18 @@ class Shop extends React.PureComponent {
       <div className='shop'>
         <Row xs='12'>
           <Col
-            xs={{ size: 12, order: 1 }}
-            sm={{ size: 12, order: 1 }}
-            md={{ size: 12, order: 1 }}
-            lg={{ size: 3, order: 1 }}
+            xs={{ size: `${showHide ? 12 : null}`, order: `${showHide ? 1 : null}` }}
+            sm={{ size: `${showHide ? 12 : null}`, order: `${showHide ? 1 : null}` }}
+            md={{ size: `${showHide ? 12 : null}`, order: `${showHide ? 1 : null}` }}
+            lg={{ size: `${showHide ? 3 : null}`, order: `${showHide ? 1 : null}` }}
           >
             {showHide && <ProductFilter filterProducts={filterProducts}  /> }
           </Col>
           <Col
-            xs={{ size: 12, order: 2 }}
-            sm={{ size: 12, order: 2 }}
-            md={{ size: 12, order: 2 }}
-            lg={{ size: 9, order: 2 }}
+            xs={{ size: `${showHide ? 9 : 12}`, order: 2 }}
+            sm={{ size: `${showHide ? 9 : 12}`, order: 2 }}
+            md={{ size: `${showHide ? 9 : 12}`, order: 2 }}
+            lg={{ size: `${showHide ? 9 : 12}`, order: 2 }}
           >
             <Row className='align-items-center mx-0 mb-4 mt-4 mt-lg-0 py-3 py-lg-0 bg-white shop-toolbar'>
               <Col
