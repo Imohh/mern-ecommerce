@@ -30,7 +30,7 @@
 /* end product dashboard styles */
 
 /* start product list styles */
-/*.product-list {
+.product-list {
   @include media-breakpoint-up(md) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -129,7 +129,7 @@
       }
     }
   }
-} */
+} 
 
 
 
@@ -137,7 +137,10 @@
 
 
 
- @media screen and (max-width: 720px) {
+
+/* my styles starts here*/
+
+@media screen and (max-width: 720px) {
    .container {
      grid-template-columns: 1fr;
      margin: 50px 30px;
@@ -146,13 +149,14 @@
  .cards {
    position: relative;
    padding: 10px;
-   background: white;
+   background: #f1f1f1;
    display: grid;
    box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.057);
    transition: 0.2s ease-in;
-   width: 32.3%;
+   width: 25%;
    float: left;
-   margin:1%
+   border: 1px solid #fff;
+   height:55vh
 }
  .cards .card-content {
    display: flex;
@@ -182,7 +186,7 @@
 }
  .cards .card-content .img img {
    max-width: 100%;
-   max-height: 220px;
+   max-height: 500px;
 }
  .cards .card-description {
    padding: 10px;
@@ -235,6 +239,8 @@
 
 
 
+/*my styles ends here*/
+
 
 
 
@@ -244,6 +250,13 @@
 /* end product list styles */
 
 /* start product page styles */
+
+.product-shop-container {
+  padding: 20px 50px;
+  margin-bottom: 20%;
+}
+
+
 .product-page {
   .main {
     background-color: $theme-white;
@@ -316,10 +329,11 @@
   }
 
   .item-name {
-    color: $primary-color !important;
+    color: #000 !important;
     font-size: $font-size-heading-small !important;
     font-weight: $font-weight-medium;
     margin: 0px;
+    text-transform: uppercase;
   }
 
   .item-label {
@@ -371,14 +385,13 @@
   /*Lets add a shadow*/
 }
 
-
 /*Last thing remaining is to add transitions*/
 .slider>img{
   position: absolute;
   left: 0; top: 0;
   transition: all 0.5s;
-  height:100.5%;
-  width:100.5%
+  height:100%;
+  width:100%
 }
 
 .slider input[name='slide_switch'] {
@@ -420,4 +433,158 @@ On click the images will be displayed at normal size to complete the effect
 .slider input[name='slide_switch']:checked+label+img {
   opacity: 1;
   transform: scale(1);
+}
+
+
+/*accordion */
+
+#container {
+    margin: 0 auto;
+    width: 50%;
+}
+#accordion {
+  margin-top: 5% 0;
+}
+#accordion input {
+  display: none;
+}
+#accordion label {
+  background: transparent;
+  border-radius: .25em;
+  border-top: 1px solid #ccc;
+  cursor: pointer;
+  display: block;
+  margin-bottom: .125em;
+  padding: 20px 10px;
+  z-index: 20;
+}
+#accordion label span {
+  float: right
+}
+
+#accordion input:checked + label {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  color: #000;
+}
+#accordion article {
+  background: #f7f7f7;
+  height:0px;
+  overflow:hidden;
+  z-index:10;
+}
+#accordion article p {
+  padding: 1em;
+}
+#accordion input:checked article {
+}
+#accordion input:checked ~ article {
+  border-bottom-left-radius: .25em;
+  border-bottom-right-radius: .25em;
+  height: auto;
+  margin-bottom: .125em;
+}
+
+/*2*/
+#accordions {
+  margin-top: 5% 0;
+}
+#accordions input {
+  display: none;
+}
+#accordions label {
+  background: transparent;
+  border-radius: .25em;
+  border-top: 1px solid #ccc;
+  cursor: pointer;
+  display: block;
+  margin-bottom: .125em;
+  padding: 20px 10px;
+  z-index: 20;
+}
+#accordions label span {
+  float: right
+}
+
+#accordions input:checked + label {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  color: #000;
+}
+#accordions #article {
+  background: #f7f7f7;
+  height:0px;
+  overflow:hidden;
+  z-index:10;
+}
+#accordions #article p {
+  padding: 1em;
+}
+#accordions input:checked #article {
+}
+#accordions input:checked ~ #article {
+  border-bottom-left-radius: .25em;
+  border-bottom-right-radius: .25em;
+  height: auto;
+  margin-bottom: .125em;
+}
+
+
+/*3*/
+#accordionss {
+  margin-top: 5% 0;
+}
+#accordionss input {
+  display: none;
+}
+#accordionss label {
+  background: transparent;
+  border-radius: .25em;
+  border-top: 1px solid #ccc;
+  cursor: pointer;
+  display: block;
+  margin-bottom: .125em;
+  padding: 20px 10px;
+  z-index: 20;
+}
+#accordionss label span {
+  float: right
+}
+
+#accordionss input:checked + label {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  color: #000;
+}
+#accordionss article {
+  background: #f7f7f7;
+  height:0px;
+  overflow:hidden;
+  z-index:10;
+}
+#accordionss article p {
+  padding: 1em;
+}
+#accordionss input:checked article {
+}
+#accordionss input:checked ~ article {
+  border-bottom-left-radius: .25em;
+  border-bottom-right-radius: .25em;
+  height: auto;
+  margin-bottom: .125em;
+}
+
+
+
+/*button*/
+.product-detail-btn {
+  background: #000 !important;
+  color: #fff !important;
+  width: 100%;
+  padding: 60px 0;
+  border-radius: none
+}
+
+.product-detail-btn:hover {
+  background: #201f1f;
 }

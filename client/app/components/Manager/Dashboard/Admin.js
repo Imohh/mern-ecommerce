@@ -26,7 +26,7 @@ import Wishlist from '../../../containers/WishList';
 
 const Admin = props => {
   return (
-    <div className='admin'>
+    <div className='admin' style={{padding: "20px 180px"}}>
       <Row>
         <Col xs='12' md='5' xl='3'>
           <AccountMenu {...props} />

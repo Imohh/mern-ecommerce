@@ -90,8 +90,8 @@ const OrderItems = props => {
                   <img
                     className='item-image'
                     src={`${
-                      item.product && item.product.imageUrl
-                        ? item.product.imageUrl
+                      item.product && item.product.img
+                        ? item.product.img
                         : '/images/placeholder-image.png'
                     }`}
                   />
@@ -126,6 +126,10 @@ const OrderItems = props => {
                         Quantity
                         <span className='order-label'>{` ${item.quantity}`}</span>
                       </p>
+                      <p className='mb-1 mr-4'>
+                        Size
+                        <span className='order-label'>{` ${item.size}`}</span>
+                      </p>
                       <p>
                         Total Price
                         <span className='order-label'>{` $${item.totalPrice}`}</span>
@@ -143,6 +147,11 @@ const OrderItems = props => {
                   <div className='text-center'>
                     <p className='order-label'>{` ${item.quantity}`}</p>
                     <p>Quantity</p>
+                  </div>
+
+                  <div className='text-center'>
+                    <p className='order-label'>{` ${item.size}`}</p>
+                    <p>Size</p>
                   </div>
 
                   <div className='text-center'>

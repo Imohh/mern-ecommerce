@@ -135,7 +135,7 @@ const AddProduct = props => {
           </Col>
           <Col xs='12' md='12'>
             <Input
-              type={'file'}
+              type={'file'} multiple
               error={formErrors['file']}
               name={'image'}
               label={'file'}

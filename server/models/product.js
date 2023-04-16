@@ -23,24 +23,7 @@ const ProductSchema = new Schema({
     type: String,
     slug: 'name',
     unique: true
-  },
-  // imageUrl: {
-  //   type: String
-  // },
-  // imageKey: {
-  //   type: String
-  // },
-  // fileStr: {
-  //   public_id: {
-  //     type: String,
-  //     required: true
-  //   },
-  //   url: {
-  //     type: String,
-  //     required: true
-  //   }    
-  // },
-  
+  },  
   img: {
     type: String,
     required: true
@@ -49,12 +32,12 @@ const ProductSchema = new Schema({
     type: String,
     required: true
   },
-
-
-
   description: {
     type: String,
     trim: true
+  },
+  size: {
+    type: String
   },
   quantity: {
     type: Number

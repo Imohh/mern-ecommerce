@@ -31,6 +31,32 @@ class Shop extends React.PureComponent {
     document.body.classList.remove('shop-page');
   }
 
+  constructor() {
+    super();
+    this.state = {
+      name: "React",
+      showHide: false
+    };
+    this.hideComponent = this.hideComponent.bind(this)
+  }
+
+  hideComponent(name) {
+    console.log(name);
+    switch (name) {
+      case "showHide":
+        this.setState({ showHide: !this.state.showHide });
+        break;
+      default:
+        null;
+    }
+  }
+
+  toggleClass() {
+    const currentState = this.state.showHide;
+    this.setState({ showHide: !currentState });
+  };
+
+
   render() {
     const { products, advancedFilters, filterProducts } = this.props;
     const { totalPages, currentPage, count, limit, order } = advancedFilters;
@@ -39,29 +65,41 @@ class Shop extends React.PureComponent {
     const left = limit * (currentPage - 1) + 1;
     const right = totalProducts + left - 1;
 
+    const {showHide} = this.state
+
+
     return (
       <div className='shop'>
         <Row xs='12'>
           <Col
-            xs={{ size: 12, order: 1 }}
-            sm={{ size: 12, order: 1 }}
-            md={{ size: 12, order: 1 }}
-            lg={{ size: 3, order: 1 }}
+            xs={{ size: `${showHide ? 12 : null}`, order: `${showHide ? 1 : null}` }}
+            sm={{ size: `${showHide ? 12 : null}`, order: `${showHide ? 1 : null}` }}
+            md={{ size: `${showHide ? 12 : null}`, order: `${showHide ? 1 : null}` }}
+            lg={{ size: `${showHide ? 3 : null}`, order: `${showHide ? 1 : null}` }}
           >
-            <ProductFilter filterProducts={filterProducts} />
+            {showHide && <ProductFilter filterProducts={filterProducts}  /> }
           </Col>
           <Col
-            xs={{ size: 12, order: 2 }}
-            sm={{ size: 12, order: 2 }}
-            md={{ size: 12, order: 2 }}
-            lg={{ size: 9, order: 2 }}
+            xs={{ size: `${showHide ? 9 : 12}`, order: 2 }}
+            sm={{ size: `${showHide ? 9 : 12}`, order: 2 }}
+            md={{ size: `${showHide ? 9 : 12}`, order: 2 }}
+            lg={{ size: `${showHide ? 9 : 12}`, order: 2 }}
           >
             <Row className='align-items-center mx-0 mb-4 mt-4 mt-lg-0 py-3 py-lg-0 bg-white shop-toolbar'>
               <Col
                 xs={{ size: 12, order: 1 }}
                 sm={{ size: 12, order: 1 }}
                 md={{ size: 5, order: 1 }}
-                lg={{ size: 6, order: 1 }}
+                lg={{ size: 2, order: 1 }}
+                className='text-center text-md-left mt-3 mt-md-0 mb-1 mb-md-0'
+              >
+                <button onClick={() => this.setState({showHide: !this.state.showHide}) }>Filters: </button>
+              </Col>
+              <Col
+                xs={{ size: 12, order: 1 }}
+                sm={{ size: 12, order: 1 }}
+                md={{ size: 5, order: 1 }}
+                lg={{ size: 4, order: 1 }}
                 className='text-center text-md-left mt-3 mt-md-0 mb-1 mb-md-0'
               >
                 <span>Showing: </span>
@@ -82,7 +120,7 @@ class Shop extends React.PureComponent {
                 xs={{ size: 12, order: 2 }}
                 sm={{ size: 12, order: 2 }}
                 md={{ size: 5, order: 2 }}
-                lg={{ size: 4, order: 2 }}
+                lg={{ size: 2, order: 2 }}
               >
                 <SelectOption
                   name={'sorting'}

@@ -1,15 +1,40 @@
 // .homepage {
 // }
 
-
+.homepage {
+	
+}
 
 .brands-homepage {
-	background: green;
 	padding:100px;
 }
 
-.homepage {
-	background: red;
-	width: 100%
+.brands-homepages {
+	padding:100px;
+	background-color: #e7e7e7
 }
 
+.brands-homepage .brands-hompage-title {
+	color: #313131;
+	text-align: center;
+	font-weight: normal;
+    font-style: normal;
+    font-size: 36px;
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 38px;
+}
+
+.brands-homepage .brands-hompage-title h2 {
+	font-size: 30px;
+    letter-spacing: 4px;
+    font-variant-ligatures: none;
+    line-height: 35px;
+    text-transform: initial;
+}
+d
+
+brands-homepage .high-fashion {
+	background: green;
+	padding: 20px;
+}

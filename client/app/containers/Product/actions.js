@@ -244,6 +244,7 @@ export const addProduct = () => {
         name: 'required',
         description: 'required|max:200',
         quantity: 'required|numeric',
+        size: 'required',
         price: 'required|numeric',
         taxable: 'required',
         image: 'required',
@@ -262,6 +263,7 @@ export const addProduct = () => {
         description: product.description,
         price: product.price,
         quantity: product.quantity,
+        size: product.size,
         image: product.image,
         isActive: product.isActive,
         taxable: product.taxable.value,
@@ -339,6 +341,7 @@ export const updateProduct = () => {
         slug: 'required|alpha_dash',
         description: 'required|max:200',
         quantity: 'required|numeric',
+        size: 'required',
         price: 'required|numeric',
         taxable: 'required',
         brand: 'required'
@@ -354,6 +357,7 @@ export const updateProduct = () => {
         slug: product.slug,
         description: product.description,
         quantity: product.quantity,
+        size: product.size,
         price: product.price,
         taxable: product.taxable,
         brand: brand != 0 ? brand : null

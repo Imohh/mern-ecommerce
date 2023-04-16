@@ -39,8 +39,8 @@ const ProductList = props => {
     //                   <img
     //                     className='item-image'
     //                     src={`${
-    //                       product.imageUrl
-    //                         ? product.imageUrl
+    //                       product.img
+    //                         ? product.img
     //                         : '/images/placeholder-image.png'
     //                     }`}
     //                   />
@@ -84,16 +84,13 @@ const ProductList = props => {
 
 
 
-  <div class="container">
+  // <div className="container shop-container">
+  <div>  
   {products.map((product, index) => (
-    <div key={index} class="cards">
-      
+    <div key={index} className="cards">
       <div className="card-content">
         <div className="top-bar">
-          <span className="price-text">
-            ${product.price}
-          </span>
-          <span className="float-right lnr lnr-heart">
+          {/*<span className="float-right lnr lnr-heart">
             <AddToWishList
               id={product._id}
               liked={product?.isLiked ?? false}
@@ -101,16 +98,16 @@ const ProductList = props => {
               updateWishlist={updateWishlist}
               authenticated={authenticated}
             />
-          </span>
+          </span>*/}
         </div>
       <Link
         to={`/product/${product.slug}`}
         className='d-flex flex-column h-100'
       >
-        <div className="img">
+        <div className="img product-list-img">
           <img src={`${
-            product.imageUrl
-            ? product.imageUrl
+            product.img
+            ? product.img
             : '/images/placeholder-image.png'
             }`}
           />
@@ -126,10 +123,16 @@ const ProductList = props => {
           {product.name}
         </div>
       </div>
-      <div className="span product-desc">
-        {product.description}
+      <div>
+        <span className="price-text">
+          ${product.price}
+        </span>
       </div>
-      <div className="card-footer">
+      {/*<div className="span product-desc">
+        {product.description.length > 90 ? 
+          `${product.description.substring(0, 70) + "..."}` : product.description}
+      </div>*/}
+      {/*<div className="card-footer">
         
         {product.brand && Object.keys(product.brand).length > 0 && (
           <div className="span">
@@ -151,7 +154,7 @@ const ProductList = props => {
             </p>  
         </div>
         )}
-      </div>
+      </div>*/}
       </Link>
     </div>
     ))}

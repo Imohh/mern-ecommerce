@@ -285,33 +285,21 @@ router.post(
   role.check(ROLES.Admin, ROLES.Merchant),
   upload.single('image'),
   async (req, res) => {
-    // console.log(req.file)
     try {
       const sku = req.body.sku;
       const name = req.body.name;
       const description = req.body.description;
       const quantity = req.body.quantity;
       const price = req.body.price;
+      const size = req.body.size;
       const taxable = req.body.taxable;
       const isActive = req.body.isActive;
       const brand = req.body.brand;
-      const image = req.file.path;
       const img = req.file.path;
       const contentType = req.file.mimetype
-
-      console.log(img)
-
       
 
-
-
-
-
-
-
-
-
-
+      console.log(img)
 
       if (!sku) {
         return res.status(400).json({ error: 'You must enter sku.' });
@@ -337,13 +325,6 @@ router.post(
         return res.status(400).json({ error: 'This sku is already in use.' });
       }
 
-      // const { imageUrl, imageKey } = await s3Upload(image);
-      // const uploadedResponse = await cloudinary.uploader.upload(image, {
-      //   folder: "products",
-      //   upload_preset: 'dev_setups'
-      // });
-      // console.log(uploadedResponse)
-
       const result = await cloudinary.uploader.upload(img);
       
       const product = new Product({
@@ -352,12 +333,12 @@ router.post(
         description,
         quantity,
         price,
+        size,
         taxable,
         isActive,
         brand,
         img: result.url,
         contentType
-        // imageUrl: uploadedResponse.url
       });
 
 

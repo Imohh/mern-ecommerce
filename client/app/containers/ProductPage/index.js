@@ -38,6 +38,18 @@ class ProductPage extends React.PureComponent {
     document.body.classList.remove('product-page');
   }
 
+  state = {
+    value: "0"
+  }
+
+  handleSizes = (event) => {
+    this.setState({
+      value: event.target.value
+    }, () => {
+      console.log(this.state.value)
+    });
+  }
+
   render() {
     const {
       isLoading,
@@ -57,35 +69,27 @@ class ProductPage extends React.PureComponent {
     } = this.props;
 
     return (
-      <div className='product-shop'>
+      <div className='product-shop' style={{padding: "10px 50px", margin: "0 auto"}}>
         {isLoading ? (
           <LoadingIndicator />
         ) : Object.keys(product).length > 0 ? (
           <>
             <Row className='flex-row'>
-              <Col xs='12' md='5' lg='5' className='mb-3 px-3 px-md-2'>
+              <Col xs='12' md='5' lg='8' className='mb-3 px-3 px-md-2'>
                 <div className='position-relative'>
-                  {/*<img
-                    className='item-image'
-                    src={`${
-                      product.imageUrl
-                        ? product.imageUrl
-                        : '/images/placeholder-image.png'
-                    }`}
-                  />*/}
 
                   <div className="slider">
                     <input type="radio" name="slide_switch" id="id1" checked="checked"/>
                     <label for="id1">
                       <img src={`${
-                      product.imageUrl
-                        ? product.imageUrl
+                      product.img
+                        ? product.img
                         : '/images/placeholder-image.png'
-                    }`} width="100"/>
+                      }`} width="100" height= "100"/>
                     </label>
                     <img src={`${
-                      product.imageUrl
-                        ? product.imageUrl
+                      product.img
+                        ? product.img
                         : '/images/placeholder-image.png'
                     }`}/>
                     
@@ -123,15 +127,15 @@ class ProductPage extends React.PureComponent {
                   )}
                 </div>
               </Col>
-              <Col xs='12' md='7' lg='7' className='mb-3 px-3 px-md-2'>
+              <Col xs='12' md='7' lg='4' className='mb-3 px-3 px-md-2'>
                 <div className='product-container'>
                   <div className='item-box'>
                     <div className='item-details'>
                       <h1 className='item-name one-line-ellipsis'>
                         {product.name}
                       </h1>
-                      <p className='sku'>{product.sku}</p>
-                      <hr />
+                      {/* <p className='sku'>{product.sku}</p>
+                       <hr />*/}
                       {product.brand && (
                         <p className='by'>
                           see more from{' '}
@@ -143,57 +147,143 @@ class ProductPage extends React.PureComponent {
                           </Link>
                         </p>
                       )}
-                      <p className='item-desc'>{product.description}</p>
                       <p className='price'>${product.price}</p>
-                    </div>
-                    <div className='item-customize'>
-                      <Input
-                        type={'number'}
-                        error={shopFormErrors['quantity']}
-                        label={'Quantity'}
-                        name={'quantity'}
-                        decimals={false}
-                        min={1}
-                        max={product.inventory}
-                        placeholder={'Product Quantity'}
-                        disabled={
-                          product.inventory <= 0 && !shopFormErrors['quantity']
-                        }
-                        value={productShopData.quantity}
-                        onInputChange={(name, value) => {
+                      <div className='item-customize'>
+
+
+                      <label for="size">Size:</label>
+
+                      <select name="size" value={this.state.value} onChange={this.handleSizes} id="size">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                      </select>
+
+
+                      {/*handleSizes = (name, value, event) => {
+                        this.setState({
+                          value: event.target.value
+                        }, () => {
                           productShopChange(name, value);
-                        }}
-                      />
+                          console.log(this.state.value)
+                        });
+                      }
+                    
+
+                      onInputChange={(name, value) => {
+                        productShopChange(name, value);
+                      }}
+
+                      onChange={(e) => setState(e.target.value)} */}
+
+                        
+
+                        {/*<Input
+                          type={'number'}
+                          error={shopFormErrors['size']}
+                          label={'Size'}
+                          name={'size'}
+                          decimals={false}
+                          min={1}
+                          max={product.sizer}
+                          placeholder={'Product Size'}
+                          disabled={
+                            product.sizer <= 0 && !shopFormErrors['size']
+                          }
+                          value={productShopData.size}
+                          onInputChange={(name, value) => {
+                            productShopChange(name, value);
+                          }}
+                        />*/}
+                      </div>
+                      <div className='item-customize'>
+                        <Input
+                          type={'number'}
+                          error={shopFormErrors['quantity']}
+                          label={'Quantity'}
+                          name={'quantity'}
+                          decimals={false}
+                          min={1}
+                          max={product.inventory}
+                          placeholder={'Product Quantity'}
+                          disabled={
+                            product.inventory <= 0 && !shopFormErrors['quantity']
+                          }
+                          value={productShopData.quantity}
+                          onInputChange={(name, value) => {
+                            productShopChange(name, value);
+                          }}
+                        />
+
+
+                      </div>
+                      <div className='item-actions' style={{marginBottom: "5%"}}>
+                        {itemInCart ? (
+                          <Button
+                            disabled={
+                              product.inventory <= 0 &&
+                              !shopFormErrors['quantity']
+                            }
+                            text='Remove From Bag'
+                            className='product-detail-btn'
+                            icon={<BagIcon />}
+                            onClick={() => handleRemoveFromCart(product)}
+                          />
+                        ) : (
+                          <Button
+                            disabled={
+                              product.quantity <= 0 && !shopFormErrors['quantity']
+                            }
+                            text='Add To Bag'
+                            className='product-detail-btn'
+                            icon={<BagIcon />}
+                            onClick={() => handleAddToCart(product)}
+                          />
+                        )}
+                      </div>
+
+                      {/*accordion section*/}
+                      <section id="accordion">
+                        <div>
+                          <input type="checkbox" id="check-1" />
+                          <label for="check-1">Details<span>^</span></label>
+                          <article>
+                            <p>{product.description}</p>
+                          </article>
+                        </div>
+                      </section>
+
+                      <section id="accordions">
+                        <div>
+                          <input type="checkbox" id="check-1" />
+                          <label for="check-1">Size and Fit<span>^</span></label>
+                          <article id="article">
+                            <p>{product.description}</p>
+                          </article>
+                        </div>
+                      </section>
+
+                      <section id="accordionss">
+                        <div>
+                          <input type="checkbox" id="check-1" />
+                          <label for="check-1">shipping & returns<span>^</span></label>
+                          <article>
+                            <p>{product.description}</p>
+                          </article>
+                        </div>
+                      </section>
+
+
+                      
                     </div>
+                    
+                    
                     <div className='my-4 item-share'>
                       <SocialShare product={product} />
                     </div>
-                    <div className='item-actions'>
-                      {itemInCart ? (
-                        <Button
-                          variant='primary'
-                          disabled={
-                            product.inventory <= 0 &&
-                            !shopFormErrors['quantity']
-                          }
-                          text='Remove From Bag'
-                          className='bag-btn'
-                          icon={<BagIcon />}
-                          onClick={() => handleRemoveFromCart(product)}
-                        />
-                      ) : (
-                        <Button
-                          variant='primary'
-                          disabled={
-                            product.quantity <= 0 && !shopFormErrors['quantity']
-                          }
-                          text='Add To Bag'
-                          className='bag-btn'
-                          icon={<BagIcon />}
-                          onClick={() => handleAddToCart(product)}
-                        />
-                      )}
-                    </div>
+                    
                   </div>
                 </div>
               </Col>
