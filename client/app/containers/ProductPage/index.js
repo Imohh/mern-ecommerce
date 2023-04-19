@@ -38,17 +38,18 @@ class ProductPage extends React.PureComponent {
     document.body.classList.remove('product-page');
   }
 
-  state = {
-    value: "0"
-  }
 
-  handleSizes = (event) => {
-    this.setState({
-      value: event.target.value
-    }, () => {
-      console.log(this.state.value)
-    });
-  }
+  //state = {
+  //  value: "0",
+  //}
+
+  // handleSizes = (event) => {
+  //   this.setState({
+  //     value: event.target.value
+  //   }, () => {
+  //     console.log(this.state.value)
+  //   });
+  // }
 
   render() {
     const {
@@ -67,6 +68,9 @@ class ProductPage extends React.PureComponent {
       reviewChange,
       reviewFormErrors
     } = this.props;
+
+
+
 
     return (
       <div className='product-shop' style={{padding: "10px 50px", margin: "0 auto"}}>
@@ -151,55 +155,42 @@ class ProductPage extends React.PureComponent {
                       <div className='item-customize'>
 
 
-                      <label for="size">Size:</label>
+                      {/*  <label for="size">Size:</label>
 
-                      <select name="size" value={this.state.value} onChange={this.handleSizes} id="size">
-                        <option value="XS">XS</option>
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                        <option value="XL">XL</option>
-                      </select>
+                        <select name="size" value={this.state.value} onChange={(name, value, event) => {
+                            this.setState({
+                              value: event.target.value
+                            }, () => {
+                              productShopChange(name, value);
+                            })
+                          }} id="size">
+                          <option value="XS">XS</option>
+                          <option value="S">S</option>
+                          <option value="M">M</option>
+                          <option value="L">L</option>
+                          <option value="XL">XL</option>
+                        </select>
 
 
-                      {/*handleSizes = (name, value, event) => {
-                        this.setState({
-                          value: event.target.value
-                        }, () => {
-                          productShopChange(name, value);
-                          console.log(this.state.value)
-                        });
-                      }
                     
-
-                      onInputChange={(name, value) => {
-                        productShopChange(name, value);
-                      }}
-
-                      onChange={(e) => setState(e.target.value)} */}
+                        */}
 
                         
 
-                        {/*<Input
-                          type={'number'}
+                        <Input
+                          type={'text'}
                           error={shopFormErrors['size']}
                           label={'Size'}
                           name={'size'}
-                          decimals={false}
-                          min={1}
-                          max={product.sizer}
                           placeholder={'Product Size'}
-                          disabled={
-                            product.sizer <= 0 && !shopFormErrors['size']
-                          }
                           value={productShopData.size}
                           onInputChange={(name, value) => {
                             productShopChange(name, value);
                           }}
-                        />*/}
-                      </div>
+                          />
+                        </div>
                       <div className='item-customize'>
-                        <Input
+                        {/*<Input
                           type={'number'}
                           error={shopFormErrors['quantity']}
                           label={'Quantity'}
@@ -215,7 +206,33 @@ class ProductPage extends React.PureComponent {
                           onInputChange={(name, value) => {
                             productShopChange(name, value);
                           }}
-                        />
+                        />*/}
+                        <button
+                          className="quantity-btn"
+                          disabled={productShopData.quantity <= 1}
+                          onClick={() => {
+                            productShopChange('quantity', productShopData.quantity - 1);
+                          }}
+                        >
+                          -
+                        </button>
+                        
+                        <span className="quantity-value">{productShopData.quantity}</span>
+                        
+
+                        <button
+                          className="quantity-btn"
+                          disabled={product.inventory <= 0}
+                          onClick={() => {
+                            if (productShopData.quantity < product.inventory) {
+                              productShopChange('quantity', productShopData.quantity + 1);
+                            }
+                          }}
+                        >
+                          +
+                        </button>
+
+
 
 
                       </div>
@@ -245,35 +262,35 @@ class ProductPage extends React.PureComponent {
                       </div>
 
                       {/*accordion section*/}
-                      <section id="accordion">
-                        <div>
-                          <input type="checkbox" id="check-1" />
-                          <label for="check-1">Details<span>^</span></label>
-                          <article>
-                            <p>{product.description}</p>
-                          </article>
-                        </div>
-                      </section>
 
-                      <section id="accordions">
-                        <div>
-                          <input type="checkbox" id="check-1" />
-                          <label for="check-1">Size and Fit<span>^</span></label>
-                          <article id="article">
-                            <p>{product.description}</p>
-                          </article>
-                        </div>
-                      </section>
 
-                      <section id="accordionss">
-                        <div>
-                          <input type="checkbox" id="check-1" />
-                          <label for="check-1">shipping & returns<span>^</span></label>
-                          <article>
-                            <p>{product.description}</p>
-                          </article>
-                        </div>
-                      </section>
+
+
+                          <div class="tabs" style={{ maxHeight: '250px', overflow: 'auto' }}>
+                            <div class="tab">
+                              <input type="checkbox" id="chck1" />
+                              <label class="tab-label" for="chck1">Details</label>
+                              <div class="tab-content">
+                                {product.description}
+                              </div>
+                            </div>
+                            <div class="tab">
+                              <input type="checkbox" id="chck2" />
+                              <label class="tab-label" for="chck2">Size & Fit</label>
+                              <div class="tab-content">
+                                <img src='/images/cloth.webp'/>
+                              </div>
+                            </div>
+                            <div class="tab">
+                              <input type="checkbox" id="chck3" />
+                              <label class="tab-label" for="chck3">Shipping & Returns</label>
+                              <div class="tab-content">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+                              </div>
+                            </div>
+                          </div>
+
+
 
 
                       

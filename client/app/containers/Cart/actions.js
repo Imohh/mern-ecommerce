@@ -31,7 +31,7 @@ import { toggleCart } from '../Navigation/actions';
 export const handleAddToCart = product => {
   return (dispatch, getState) => {
     product.quantity = Number(getState().product.productShopData.quantity);
-    product.size = String(getState().product.size);
+    product.size = String(getState().product.productShopData.size);
     product.totalPrice = product.quantity * product.price;
     product.totalPrice = parseFloat(product.totalPrice.toFixed(2));
     const inventory = getState().product.storeProduct.inventory;
