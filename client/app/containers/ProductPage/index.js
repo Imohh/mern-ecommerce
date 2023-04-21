@@ -39,18 +39,6 @@ class ProductPage extends React.PureComponent {
   }
 
 
-  //state = {
-  //  value: "0",
-  //}
-
-  // handleSizes = (event) => {
-  //   this.setState({
-  //     value: event.target.value
-  //   }, () => {
-  //     console.log(this.state.value)
-  //   });
-  // }
-
   render() {
     const {
       isLoading,
@@ -152,32 +140,9 @@ class ProductPage extends React.PureComponent {
                         </p>
                       )}
                       <p className='price'>${product.price}</p>
-                      <div className='item-customize'>
+                      <div className='item-customize product-select-section'>
 
-
-                      {/*  <label for="size">Size:</label>
-
-                        <select name="size" value={this.state.value} onChange={(name, value, event) => {
-                            this.setState({
-                              value: event.target.value
-                            }, () => {
-                              productShopChange(name, value);
-                            })
-                          }} id="size">
-                          <option value="XS">XS</option>
-                          <option value="S">S</option>
-                          <option value="M">M</option>
-                          <option value="L">L</option>
-                          <option value="XL">XL</option>
-                        </select>
-
-
-                    
-                        */}
-
-                        
-
-                        <Input
+                        {/*<Input
                           type={'text'}
                           error={shopFormErrors['size']}
                           label={'Size'}
@@ -187,26 +152,25 @@ class ProductPage extends React.PureComponent {
                           onInputChange={(name, value) => {
                             productShopChange(name, value);
                           }}
-                          />
-                        </div>
-                      <div className='item-customize'>
-                        {/*<Input
-                          type={'number'}
-                          error={shopFormErrors['quantity']}
-                          label={'Quantity'}
-                          name={'quantity'}
-                          decimals={false}
-                          min={1}
-                          max={product.inventory}
-                          placeholder={'Product Quantity'}
-                          disabled={
-                            product.inventory <= 0 && !shopFormErrors['quantity']
-                          }
-                          value={productShopData.quantity}
-                          onInputChange={(name, value) => {
-                            productShopChange(name, value);
-                          }}
                         />*/}
+
+                        <select
+                          className="select"
+                          name="size"
+                          value={productShopData.size}
+                          onChange={(e) => {
+                            productShopChange(e.target.name, e.target.value);
+                          }}
+                        >
+                          <option value="">Size</option>
+                          <option value="S">Small</option>
+                          <option value="M">Medium</option>
+                          <option value="L">Large</option>
+                          <option value="XL">Extra Large</option>
+                        </select>
+
+                      </div>
+                      <div className='item-customize'>
                         <button
                           className="quantity-btn"
                           disabled={productShopData.quantity <= 1}

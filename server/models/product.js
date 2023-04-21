@@ -42,6 +42,9 @@ const ProductSchema = new Schema({
   quantity: {
     type: Number
   },
+  size: {
+    type: Number,
+  },
   price: {
     type: Number
   },

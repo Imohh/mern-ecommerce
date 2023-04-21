@@ -283,7 +283,7 @@ router.post(
   '/add',
   auth,
   role.check(ROLES.Admin, ROLES.Merchant),
-  upload.single('image'),
+  upload.array('image'),
   async (req, res) => {
     try {
       const sku = req.body.sku;
