@@ -1,7 +1,22 @@
 // (Login, SignUp, forgetPassword,resetPassword) => Styles
+
+
+
 .signup-form {
   .checkbox {
     margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .signup-form{
+    padding: 10px 100px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .signup-form{
+    padding: 10px 10px;
   }
 }
 
@@ -42,3 +57,26 @@
     height: 30px;
   }
 }
+
+@media screen and (min-width: 601px) {
+  .login-form{
+    padding: 10px 100px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .login-form{
+    padding: 10px 10px;
+  }
+}
+
+.embtn {
+  background: #000 !important; 
+  color: #fff
+}
+
+.embtn:hover {
+  background: #1e1d1d !important;
+  transition: 0.2s
+}
+

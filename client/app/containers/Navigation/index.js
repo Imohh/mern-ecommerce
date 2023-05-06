@@ -137,7 +137,7 @@ class Navigation extends React.PureComponent {
 
     return (
       <header className='header fixed-mobile-header'>
-        <div className='header-info'>
+        {/*<div className='header-info'>
           <Container>
             <Row>
               <Col md='4' className='text-center d-none d-md-block'>
@@ -158,7 +158,7 @@ class Navigation extends React.PureComponent {
               </Col>
             </Row>
           </Container>
-        </div>
+        </div>*/}
         <Container>
           <Row className='align-items-center top-header'>
             <Col
@@ -179,19 +179,7 @@ class Navigation extends React.PureComponent {
                     onClick={() => this.toggleMenu()}
                   />
                 )}
-                <Link to='/'>
-                  <h1 className='logo'>MERN Store</h1>
-                </Link>
-              </div>
-            </Col>
-            <Col
-              xs={{ size: 12, order: 4 }}
-              sm={{ size: 12, order: 4 }}
-              md={{ size: 12, order: 4 }}
-              lg={{ size: 5, order: 2 }}
-              className='pt-2 pt-lg-0'
-            >
-              <Autosuggest
+                <Autosuggest
                 suggestions={suggestions}
                 onSuggestionsFetchRequested={onSuggestionsFetchRequested}
                 onSuggestionsClearRequested={onSuggestionsClearRequested}
@@ -202,6 +190,18 @@ class Navigation extends React.PureComponent {
                   history.push(`/product/${item.suggestion.slug}`);
                 }}
               />
+              </div>
+            </Col>
+            <Col
+              xs={{ size: 12, order: 4 }}
+              sm={{ size: 12, order: 4 }}
+              md={{ size: 12, order: 4 }}
+              lg={{ size: 5, order: 2 }}
+              className='pt-2 pt-lg-0'
+            >
+              <Link to='/'>
+                <h1 className='logo' style={{textAlign: "center"}}>EMINENCE</h1>
+              </Link>
             </Col>
             <Col
               xs={{ size: 12, order: 2 }}

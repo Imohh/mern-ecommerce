@@ -36,6 +36,8 @@ html,
 body {
   height: 100%;
   margin: 0;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 
@@ -148,7 +150,7 @@ h6,
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $white;
+  background: red;
   border-left: $border-default;
   border-color: $theme-light-white;
 }

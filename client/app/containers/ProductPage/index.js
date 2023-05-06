@@ -19,6 +19,9 @@ import { BagIcon } from '../../components/Common/Icon';
 import ProductReviews from '../../components/Store/ProductReviews';
 import SocialShare from '../../components/Store/SocialShare';
 
+
+import Lightbox from 'react-image-lightbox'
+
 class ProductPage extends React.PureComponent {
   componentDidMount() {
     const slug = this.props.match.params.slug;
@@ -58,19 +61,35 @@ class ProductPage extends React.PureComponent {
     } = this.props;
 
 
-
-
     return (
-      <div className='product-shop' style={{padding: "10px 50px", margin: "0 auto"}}>
+      <div className='product-shop' style={{margin: "0 auto"}}>
         {isLoading ? (
           <LoadingIndicator />
         ) : Object.keys(product).length > 0 ? (
           <>
             <Row className='flex-row'>
-              <Col xs='12' md='5' lg='8' className='mb-3 px-3 px-md-2'>
-                <div className='position-relative'>
+              <Col xs='12' md='5' lg='8' className='mb-3 px-md-2 px-0'>
+                <div className='position-relative product-image-left'>
 
-                  <div className="slider">
+
+                  <img src={`${
+                    product.img
+                      ? product.img
+                      : '/images/placeholder-image.png'
+                    }`} width="450px" height= "550px"
+                    onClick={this.handleOpen}
+                  />
+                  <img src="http://thecodeplayer.com/uploads/media/40Ly3VB.jpg" width="450px" height="550px"/>
+                  <div><img src="http://thecodeplayer.com/uploads/media/40Ly3VB.jpg" width="450px" height="550px"/>
+                  <img src="http://thecodeplayer.com/uploads/media/40Ly3VB.jpg" width="450px" height="550px"/></div>
+
+
+
+
+
+
+
+                  {/*<div className="slider">
                     <input type="radio" name="slide_switch" id="id1" checked="checked"/>
                     <label for="id1">
                       <img src={`${
@@ -83,10 +102,10 @@ class ProductPage extends React.PureComponent {
                       product.img
                         ? product.img
                         : '/images/placeholder-image.png'
-                    }`}/>
+                    }`}/>*/}
                     
                     {/*<!--Lets show the second image by default on page load-->*/}
-                    <input type="radio" name="slide_switch" id="id2"/>
+                    {/*<input type="radio" name="slide_switch" id="id2"/>
                     <label for="id2">
                       <img src="http://thecodeplayer.com/uploads/media/40Ly3VB.jpg" width="100"/>
                     </label>
@@ -109,7 +128,7 @@ class ProductPage extends React.PureComponent {
                       <img src="http://thecodeplayer.com/uploads/media/8k3N3EL.jpg" width="100"/>
                     </label>
                     <img src="http://thecodeplayer.com/uploads/media/8k3N3EL.jpg"/>
-                  </div>
+                  </div>*/}
 
 
                   {product.inventory <= 0 && !shopFormErrors['quantity'] ? (
@@ -119,7 +138,7 @@ class ProductPage extends React.PureComponent {
                   )}
                 </div>
               </Col>
-              <Col xs='12' md='7' lg='4' className='mb-3 px-3 px-md-2'>
+              <Col xs='12' md='7' lg='4' className='mb-3 px-md-2 px-0' noGutters>
                 <div className='product-container'>
                   <div className='item-box'>
                     <div className='item-details'>
@@ -209,6 +228,7 @@ class ProductPage extends React.PureComponent {
                             }
                             text='Remove From Bag'
                             className='product-detail-btn'
+                            style={{color: "#fff !important"}}
                             icon={<BagIcon />}
                             onClick={() => handleRemoveFromCart(product)}
                           />
@@ -232,21 +252,21 @@ class ProductPage extends React.PureComponent {
 
                           <div class="tabs" style={{ maxHeight: '250px', overflow: 'auto' }}>
                             <div class="tab">
-                              <input type="checkbox" id="chck1" />
+                              <input type="checkbox" id="chck1" className="inputstyle"/>
                               <label class="tab-label" for="chck1">Details</label>
                               <div class="tab-content">
                                 {product.description}
                               </div>
                             </div>
                             <div class="tab">
-                              <input type="checkbox" id="chck2" />
+                              <input type="checkbox" id="chck2" className="inputstyle"/>
                               <label class="tab-label" for="chck2">Size & Fit</label>
                               <div class="tab-content">
                                 <img src='/images/cloth.webp'/>
                               </div>
                             </div>
                             <div class="tab">
-                              <input type="checkbox" id="chck3" />
+                              <input type="checkbox" id="chck3" className="inputstyle"/>
                               <label class="tab-label" for="chck3">Shipping & Returns</label>
                               <div class="tab-content">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!

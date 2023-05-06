@@ -135,15 +135,16 @@ const AddProduct = props => {
           </Col>
           <Col xs='12' md='12'>
             <Input
-              type={'file'} multiple
+              type={'file'} 
               error={formErrors['file']}
-              name={'image'}
+              name={'image[]'}
               label={'file'}
               placeholder={'Please Upload Image'}
               value={image}
               onInputChange={(name, value) => {
                 productChange(name, value);
               }}
+              multiple="multiple"
             />
           </Col>
           <Col xs='12' md='12' className='my-2'>

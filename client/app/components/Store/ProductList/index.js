@@ -90,7 +90,7 @@ const ProductList = props => {
     <div key={index} className="cards">
       <div className="card-content">
         <div className="top-bar">
-          {/*<span className="float-right lnr lnr-heart">
+          <span className="float-right lnr lnr-heart">
             <AddToWishList
               id={product._id}
               liked={product?.isLiked ?? false}
@@ -98,21 +98,21 @@ const ProductList = props => {
               updateWishlist={updateWishlist}
               authenticated={authenticated}
             />
-          </span>*/}
+          </span>
         </div>
-      <Link
-        to={`/product/${product.slug}`}
-        className='d-flex flex-column h-100'
-      >
-        <div className="img product-list-img">
-          <img src={`${
-            product.img
-            ? product.img
-            : '/images/placeholder-image.png'
-            }`}
-          />
-        </div>
-      </Link>
+        <Link
+          to={`/product/${product.slug}`}
+          className='d-flex flex-column h-100'
+        >
+          <div className="img product-list-img">
+            <img src={`${
+              product.img
+              ? product.img
+              : '/images/placeholder-image.png'
+              }`}
+            />
+          </div>
+        </Link>
       </div>
       <Link
         to={`/product/${product.slug}`}
@@ -120,14 +120,15 @@ const ProductList = props => {
       >
       <div className="card-description">
         <div className="title">
-          {product.name}
+          {product.name}<br/>
+          ${product.price}
         </div>
       </div>
-      <div>
+      {/*<div className="card-description">
         <span className="price-text">
           ${product.price}
         </span>
-      </div>
+      </div>*/}
       {/*<div className="span product-desc">
         {product.description.length > 90 ? 
           `${product.description.substring(0, 70) + "..."}` : product.description}

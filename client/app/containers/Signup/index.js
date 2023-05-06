@@ -122,7 +122,7 @@ class Signup extends React.PureComponent {
           <div className='d-flex flex-column flex-md-row align-items-md-center justify-content-between'>
             <Button
               type='submit'
-              variant='primary'
+              className="custom-btn-dark"
               text='Sign Up'
               disabled={isSubmitting}
             />

@@ -92,8 +92,9 @@ class Login extends React.PureComponent {
             <div className='d-flex justify-content-between align-items-center mb-3 mb-md-0'>
               <Button
                 type='submit'
-                variant='primary'
+                className="custom-btn-dark"
                 text='Login'
+                style={{color: "#fff"}}
                 disabled={isSubmitting}
               />
               <Button

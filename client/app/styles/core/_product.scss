@@ -146,18 +146,30 @@
      margin: 50px 30px;
   }
 }
- .cards {
-   position: relative;
-   padding: 10px;
-   background: #f1f1f1;
-   display: grid;
-   box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.057);
-   transition: 0.2s ease-in;
-   width: 25%;
-   float: left;
-   border: 1px solid #fff;
-   height:55vh
+
+@media screen and (min-width: 720px) {
+  .cards {
+    width: 25%
+  }
 }
+
+@media screen and (min-width: 601px) and (max-width: 719px) {
+  .cards {
+    width: 50%
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cards {
+    width: 50%
+  }
+}
+
+
+
+
+
+
  .cards .card-content {
    display: flex;
    justify-content: center;
@@ -178,29 +190,45 @@
  .cards .card-content .top-bar .float-right {
    float: right;
 }
- .cards .card-content .img {
-   width: 100%;
-   justify-content: bottom;
-   align-content: bottom;
-   text-align: center;
-}
- .cards .card-content .img img {
-   max-width: 100%;
-   max-height: 500px;
-}
- .cards .card-description {
-   padding: 10px;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   font-weight: 400;
-   font-size: 14px;
-   letter-spacing: 0.1em;
-   width: calc(100% - 20px);
-}
- .cards .card-description .title {
-   text-transform: uppercase;
-   text-align: left;
+
+@media screen and (min-width: 601px) {
+  .cards {
+     position: relative;
+     padding: 10px;
+     background: #f1f1f1;
+     display: grid;
+     transition: 0.2s ease-in;
+     float: left;
+     border: 1px solid #fff;
+     height:405px;
+  }
+  .cards .card-content .img {
+     width: 100%;
+     justify-content: bottom;
+     align-content: bottom;
+     text-align: center;
+  }
+   .cards .card-content .img img {
+     max-width: 100%;
+     max-height:300px;
+  }
+  .cards .card-description {
+     padding: 10px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     font-weight: 400;
+     font-size: 14px;
+     letter-spacing: 0.1em;
+     width: 100%;
+     text-align: center;
+  }
+  .cards .card-description .title {
+     text-transform: uppercase;
+     text-align: center;
+     width: 100%
+  }
+
 }
  .cards .card-description .cart {
    float: right;
@@ -242,7 +270,11 @@
 /*my styles ends here*/
 
 
-
+@media screen and (min-width: 601px) {
+  .product-shop {
+    padding: 10px 50px
+  }
+}
 
 
 
@@ -364,7 +396,8 @@
 }
 
 .in-stock {
-  color: $primary-color;
+  color: #fff;
+  background: #000 !important;
 }
 
 .out-of-stock {
@@ -603,7 +636,7 @@ On click the images will be displayed at normal size to complete the effect
 
 /*accordion*/
 
- input {
+ .inputstyle {
    position: absolute;
    opacity: 0;
    z-index: -1;
@@ -693,4 +726,64 @@ input:checked ~ .tab-content {
 
 .product-select-section {
   margin: 5% 0
+}
+
+
+
+@media screen and (min-width: 720px) {
+  .product-image-left {
+    max-height: 550px;
+    overflow: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .cards {
+     position: relative;
+     padding: 10px;
+     background: #f1f1f1;
+     display: grid;
+     transition: 0.2s ease-in;
+     float: left;
+     border: 1px solid #fff;
+     height: 30vh;
+  }
+
+  .shop-row {
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow-x: hidden;
+  }
+
+  .card-description {
+    text-align: center;
+    width: 100%;
+  }
+
+  .cards .card-content .img {
+     width: 100%;
+     justify-content: bottom;
+     align-content: bottom;
+     text-align: center;
+  }
+   .cards .card-content .img img {
+     
+  }
+
+  .no-gutter.row,
+  .no-gutter.container,
+  .no-gutter.container-fluid{
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .no-gutter>[class^="col-"]{
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+
+  .item-box {
+    text-align: center
+  }
 }

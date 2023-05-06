@@ -25,8 +25,6 @@ import Notification from '../Notification';
 import ForgotPassword from '../ForgotPassword';
 import ResetPassword from '../ResetPassword';
 import Shop from '../Shop';
-import Cancel from '../../components/store/cancel/Cancel';
-import Success from '../../components/store/success/Success';
 import BrandsPage from '../BrandsPage';
 import ProductPage from '../ProductPage';
 import Sell from '../Sell';
@@ -34,6 +32,7 @@ import Contact from '../Contact';
 import OrderSuccess from '../OrderSuccess';
 import OrderPage from '../OrderPage';
 import AuthSuccess from '../AuthSuccess';
+import Success from '../Success'
 
 import Footer from '../../components/Common/Footer';
 import Page404 from '../../components/Common/Page404';
@@ -88,14 +87,13 @@ class Application extends React.PureComponent {
                 {/*</div>*/}
                 <Route path='/sell' component={Sell} />
                 <Route path='/contact' component={Contact} />
+                <Route path='/success' component={Success} />
                 <Route path='/brands' component={BrandsPage} />
                 <Route path='/product/:slug' component={ProductPage} />
                 <Route path='/order/success/:id' component={OrderSuccess} />
                 <Route path='/order/:id' component={OrderPage} />
                 <Route path='/login' component={Login} />
                 <Route path='/register' component={Signup} />
-                <Route path='/cancel' component={Cancel} />
-                <Route path='/success' component={Success} />
                 <Route
                   path='/merchant-signup/:token'
                   component={MerchantSignup}

@@ -69,7 +69,7 @@ class Shop extends React.PureComponent {
 
 
     return (
-      <div className='shop'>
+      <div className='shop' style={{paddingBottom: "20px"}}>
         <Row xs='12'>
           <Col
             xs={{ size: `${showHide ? 12 : null}`, order: `${showHide ? 1 : null}` }}
@@ -79,11 +79,11 @@ class Shop extends React.PureComponent {
           >
             {showHide && <ProductFilter filterProducts={filterProducts}  /> }
           </Col>
-          <Col
-            xs={{ size: `${showHide ? 9 : 12}`, order: 2 }}
-            sm={{ size: `${showHide ? 9 : 12}`, order: 2 }}
-            md={{ size: `${showHide ? 9 : 12}`, order: 2 }}
-            lg={{ size: `${showHide ? 9 : 12}`, order: 2 }}
+          <Col className="px-0" noGutters
+            xs={{ size: `${showHide ? 9 : 12}`, order: 5 }}
+            sm={{ size: `${showHide ? 9 : 12}`, order: 5 }}
+            md={{ size: `${showHide ? 9 : 12}`, order: 5 }}
+            lg={{ size: `${showHide ? 9 : 12}`, order: 5 }}
           >
             <Row className='align-items-center mx-0 mb-4 mt-4 mt-lg-0 py-3 py-lg-0 bg-white shop-toolbar'>
               <Col

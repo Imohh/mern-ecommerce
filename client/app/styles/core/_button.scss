@@ -198,6 +198,32 @@ body.user-is-tabbing button:focus {
   }
 }
 
+//product button
+.input-btn {
+  &.product-detail-btn {
+    background: #000 !important;
+    color: #fff !important;
+    width: 100%;
+    padding: 15px 0;
+    border-radius: none;
+
+    .btn-text {
+      color: $white !important;
+      -webkit-transition: $layout-transition-speed;
+      transition: $layout-transition-speed;
+    }  
+    &:hover {
+      background-color: $dark-hover-bg;
+
+      .btn-text {
+        -webkit-transition: $layout-transition-speed;
+        transition: $layout-transition-speed;
+        color: $white !important;
+      }
+    }
+  }
+}
+
 // dark button
 .input-btn {
   &.custom-btn-dark {

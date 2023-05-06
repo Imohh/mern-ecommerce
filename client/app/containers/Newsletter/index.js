@@ -47,7 +47,7 @@ class Newsletter extends React.PureComponent {
 }
 
 const SubscribeButton = (
-  <Button type='submit' variant='primary' text='Subscribe' />
+  <Button type='submit' className="custom-btn-dark" text='Subscribe' />
 );
 
 const mapStateToProps = state => {
