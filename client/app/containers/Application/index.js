@@ -37,6 +37,7 @@ import Payment from '../Payment'
 import Return from '../Return'
 import Faq from '../Faq'
 import Shipping from '../Shipping'
+import Legal from '../Legal'
 import TrackOrders from '../TrackOrders'
 
 import Footer from '../../components/Common/Footer';
@@ -97,6 +98,7 @@ class Application extends React.PureComponent {
                 <Route path='/return' component={Return} />
                 <Route path='/faq' component={Faq} />
                 <Route path='/shipping' component={Shipping} />
+                <Route path='/legal' component={Legal} />
                 <Route path='/track-orders' component={TrackOrders} />
                 <Route path='/brands' component={BrandsPage} />
                 <Route path='/product/:slug' component={ProductPage} />
