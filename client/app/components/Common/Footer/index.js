@@ -31,7 +31,7 @@ const Footer = () => {
     { id: 0, name: 'FAQs', to: '/faq' },
     { id: 1, name: 'Payment Options', to: '/payment' },
     { id: 2, name: 'Shipping', to: '/shipping' },
-    { id: 3, name: 'Return & Exchanges', to: '/returns' },
+    { id: 3, name: 'Return & Exchanges', to: '/return' },
     { id: 4, name: 'Track Orders', to: '/track-orders' }
   ];
 

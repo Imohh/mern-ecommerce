@@ -33,6 +33,11 @@ import OrderSuccess from '../OrderSuccess';
 import OrderPage from '../OrderPage';
 import AuthSuccess from '../AuthSuccess';
 import Success from '../Success'
+import Payment from '../Payment'
+import Return from '../Return'
+import Faq from '../Faq'
+import Shipping from '../Shipping'
+import TrackOrders from '../TrackOrders'
 
 import Footer from '../../components/Common/Footer';
 import Page404 from '../../components/Common/Page404';
@@ -88,6 +93,11 @@ class Application extends React.PureComponent {
                 <Route path='/sell' component={Sell} />
                 <Route path='/contact' component={Contact} />
                 <Route path='/success' component={Success} />
+                <Route path='/payment' component={Payment} />
+                <Route path='/return' component={Return} />
+                <Route path='/faq' component={Faq} />
+                <Route path='/shipping' component={Shipping} />
+                <Route path='/track-orders' component={TrackOrders} />
                 <Route path='/brands' component={BrandsPage} />
                 <Route path='/product/:slug' component={ProductPage} />
                 <Route path='/order/success/:id' component={OrderSuccess} />
