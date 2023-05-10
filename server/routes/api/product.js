@@ -291,7 +291,7 @@ router.post(
       const description = req.body.description;
       const quantity = req.body.quantity;
       const price = req.body.price;
-      const size = req.body.size;
+      // const size = req.body.size;
       const taxable = req.body.taxable;
       const isActive = req.body.isActive;
       const brand = req.body.brand;
@@ -333,7 +333,7 @@ router.post(
         description,
         quantity,
         price,
-        size,
+        // size,
         taxable,
         isActive,
         brand,
