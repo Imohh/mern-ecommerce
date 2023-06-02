@@ -728,6 +728,20 @@ input:checked ~ .tab-content {
   margin: 5% 0
 }
 
+.product-select-section .size-select {
+  border: 2px solid #000;
+  padding: 10px 20px;
+  margin-right: 2%
+}
+
+.product-select-section .active-select {
+  background: #000;
+  color: #fff !important;
+  padding: 10px 20px;
+  margin-right: 2%;
+  border: 2px solid #000;
+}
+
 
 
 @media screen and (min-width: 720px) {

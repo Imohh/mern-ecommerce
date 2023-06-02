@@ -22,13 +22,18 @@ exports.caculateTaxAmount = order => {
     order.totalTax = 0;
     if (order.products && order.products.length > 0) {
       order.products.map(item => {
-        const price = item.purchasePrice || (item?.product?.price ?? 0);
+        // const price = item.purchasePrice || (item?.product?.price ?? 0);
+        const price = item.purchasePrice || (item && item.product && item.product.price) || 0;
+
+
         const quantity = item.quantity;
         item.totalPrice = price * quantity;
         item.purchasePrice = price;
 
         if (item.status !== 'Cancelled') {
-          if (item.product?.taxable && item.priceWithTax === 0) {
+          //if (item.product?.taxable && item.priceWithTax === 0) {
+          if (item.product && item.product.taxable && item.priceWithTax === 0) {
+
             const taxAmount = price * (taxRate / 100) * 100;
             item.totalTax = parseFloat(
               Number((taxAmount * quantity).toFixed(2))
@@ -115,11 +120,14 @@ exports.formatOrders = orders => {
       _id: order._id,
       total: parseFloat(Number(order.total.toFixed(2))),
       created: order.created,
-      products: order?.cart?.products
+      // products: order?.cart?.products
+      products: order && order.cart && order.cart.products
+
     };
   });
 
   return newOrders.map(order => {
-    return order?.products ? this.caculateTaxAmount(order) : order;
+    // return order?.products ? this.caculateTaxAmount(order) : order;
+    return order && order.products ? this.caculateTaxAmount(order) : order;
   });
 };

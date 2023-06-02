@@ -69,7 +69,9 @@ router.get('/:slug', async (req, res) => {
     const productDoc = await Product.findOne({ slug: req.params.slug });
 
     const hasNoBrand =
-      productDoc?.brand === null || productDoc?.brand?.isActive === false;
+      // productDoc?.brand === null || productDoc?.brand?.isActive === false;
+      productDoc && productDoc.brand === null || productDoc && productDoc.brand && productDoc.brand.isActive === false;
+
 
     if (!productDoc || hasNoBrand) {
       return res.status(404).json({

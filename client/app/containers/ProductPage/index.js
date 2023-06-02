@@ -161,19 +161,7 @@ class ProductPage extends React.PureComponent {
                       <p className='price'>${product.price}</p>
                       <div className='item-customize product-select-section'>
 
-                        {/*<Input
-                          type={'text'}
-                          error={shopFormErrors['size']}
-                          label={'Size'}
-                          name={'size'}
-                          placeholder={'Product Size'}
-                          value={productShopData.size}
-                          onInputChange={(name, value) => {
-                            productShopChange(name, value);
-                          }}
-                        />*/}
-
-                        <select
+                        {/*<select
                           className="select"
                           name="size"
                           value={productShopData.size}
@@ -186,7 +174,34 @@ class ProductPage extends React.PureComponent {
                           <option value="M">Medium</option>
                           <option value="L">Large</option>
                           <option value="XL">Extra Large</option>
-                        </select>
+                        </select>*/}
+
+
+                        <button
+                          className={`size-option ${productShopData.size === "S" ? "active-select" : "size-select"}`}
+                          onClick={() => productShopChange("size", "S")}
+                        >
+                          S
+                        </button>
+                        <button
+                          className={`size-option ${productShopData.size === "M" ? "active-select" : "size-select"}`}
+                          onClick={() => productShopChange("size", "M")}
+                        >
+                          M
+                        </button>
+                        <button
+                          className={`size-option ${productShopData.size === "L" ? "active-select" : "size-select"}`}
+                          onClick={() => productShopChange("size", "L")}
+                        >
+                          L
+                        </button>
+                        <button
+                          className={`size-option ${productShopData.size === "XL" ? "active-select" : "size-select"}`}
+                          onClick={() => productShopChange("size", "XL")}
+                        >
+                          XL
+                        </button>
+
 
                       </div>
                       <div className='item-customize'>

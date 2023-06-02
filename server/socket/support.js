@@ -40,14 +40,17 @@ exports.supportHandler = (io, socket) => {
     const user = findUserBySocketId(socket.id);
     const notMe = users.filter(x => x.socketId !== socket.id);
     const adminUsers = users.filter(x => x.isAdmin === true);
-    const userDocs = user?.isAdmin ? notMe : adminUsers;
+    // const userDocs = user?.isAdmin ? notMe : adminUsers;
+    const userDocs = user && user.isAdmin ? notMe : adminUsers;
     io.to(socket.id).emit('getUsers', userDocs);
   });
 
   socket.on('getMessages', () => {
     const user = findUserBySocketId(socket.id);
-    const sentMsgs = messages.filter(m => m.from === user?.id);
-    const receivedMsgs = messages.filter(m => m.to === user?.id);
+    // const sentMsgs = messages.filter(m => m.from === user?.id);
+    const sentMsgs = messages.filter(m => m.from === user && user.id);
+    // const receivedMsgs = messages.filter(m => m.to === user?.id);
+    const receivedMsgs = messages.filter(m => m.to === user && user.id);
     io.to(socket.id).emit('getMessages', [...sentMsgs, ...receivedMsgs]);
   });
 
@@ -62,7 +65,8 @@ exports.supportHandler = (io, socket) => {
       time: Date.now(),
       user: user,
       from: user.id,
-      to: userTo?.id
+      // to: userTo?.id
+      to: userTo && userTo.id
     };
 
     messages.push(message);

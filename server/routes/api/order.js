@@ -103,7 +103,8 @@ router.get('/search', auth, async (req, res) => {
           _id: o._id,
           total: parseFloat(Number(o.total.toFixed(2))),
           created: o.created,
-          products: o.cart?.products
+          // products: o.cart?.products
+          products: o.cart && o.cart.products
         };
       });
 
@@ -238,7 +239,8 @@ router.get('/:orderId', auth, async (req, res) => {
       total: orderDoc.total,
       created: orderDoc.created,
       totalTax: 0,
-      products: orderDoc?.cart?.products,
+      // products: orderDoc?.cart?.products,
+      products: orderDoc && orderDoc.cart && orderDoc.cart.products,
       cartId: orderDoc.cart._id
     };
 

@@ -27,9 +27,11 @@ const authHandler = async (socket, next) => {
 
     const u = {
       id,
-      role: user?.role,
+      // role: user?.role,
+      role: user && user.role,
       isAdmin: user.role === ROLES.Admin,
-      name: `${user?.firstName} ${user?.lastName}`,
+      // name: `${user?.firstName} ${user?.lastName}`,
+      name: `${user && user.firstName} ${user && user.lastName}`,
       socketId: socket.id,
       messages: []
     };

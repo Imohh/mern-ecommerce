@@ -58,7 +58,8 @@ router.get('/item/:slug', async (req, res) => {
     );
 
     const hasNoBrand =
-      productDoc?.brand === null || productDoc?.brand?.isActive === false;
+      // productDoc?.brand === null || productDoc?.brand?.isActive === false;
+      productDoc && productDoc.brand === null || productDoc && productDoc.brand && productDoc.brand.isActive === false
 
     if (!productDoc || hasNoBrand) {
       return res.status(404).json({
@@ -283,7 +284,7 @@ router.post(
   '/add',
   auth,
   role.check(ROLES.Admin, ROLES.Merchant),
-  upload.array('image'),
+  upload.single('image'),
   async (req, res) => {
     try {
       const sku = req.body.sku;
@@ -291,12 +292,11 @@ router.post(
       const description = req.body.description;
       const quantity = req.body.quantity;
       const price = req.body.price;
-      // const size = req.body.size;
       const taxable = req.body.taxable;
       const isActive = req.body.isActive;
       const brand = req.body.brand;
-      const img = req.file.path;
-      const contentType = req.file.mimetype
+      // const img = req.file.path;
+      // const contentType = req.file.mimetype
       
 
       console.log(img)
@@ -325,7 +325,7 @@ router.post(
         return res.status(400).json({ error: 'This sku is already in use.' });
       }
 
-      const result = await cloudinary.uploader.upload(img);
+      // const result = await cloudinary.uploader.upload(img);
       
       const product = new Product({
         sku,
@@ -333,12 +333,11 @@ router.post(
         description,
         quantity,
         price,
-        // size,
         taxable,
         isActive,
         brand,
-        img: result.url,
-        contentType
+        // img: result.url,
+        // contentType
       });
 
 
@@ -371,7 +370,8 @@ router.get(
           merchant: req.user.merchant
         }).populate('merchant', '_id');
 
-        const brandId = brands[0]?.['_id'];
+        //const brandId = brands[0]?.['_id'];
+        const brandId = brands[0] && brands[0]['_id'];
 
         products = await Product.find({})
           .populate({
