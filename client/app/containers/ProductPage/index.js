@@ -8,6 +8,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import ImageGallery from "react-image-gallery";
+import "react-image-gallery/styles/css/image-gallery.css";
 
 import actions from '../../actions';
 
@@ -60,6 +62,28 @@ class ProductPage extends React.PureComponent {
       reviewFormErrors
     } = this.props;
 
+    const images = [
+      {
+        original: `${product.img || '/images/placeholder-image.png'}`,
+        thumbnail: `${product.img || '/images/placeholder-image.png'}`
+      },
+      {
+        original: "https://picsum.photos/id/1/300/150",
+        thumbnail: "https://picsum.photos/id/1/300/150"
+      },
+      {
+        original: "https://picsum.photos/id/10/300/150",
+        thumbnail: "https://picsum.photos/id/10/300/150"
+      },
+      {
+        original: "https://picsum.photos/id/100/300/150",
+        thumbnail: "https://picsum.photos/id/100/300/150"
+      },
+      {
+        original: "https://picsum.photos/id/101/300/150",
+        thumbnail: "https://picsum.photos/id/101/300/150"
+      }
+    ];
 
     return (
       <div className='product-shop' style={{margin: "0 auto"}}>
@@ -72,18 +96,18 @@ class ProductPage extends React.PureComponent {
                 <div className='position-relative product-image-left'>
 
 
-                  <img src={`${
-                    product.img
-                      ? product.img
-                      : '/images/placeholder-image.png'
-                    }`} width="450px" height= "550px"
-                    onClick={this.handleOpen}
+                  
+                  <ImageGallery
+                    items={images}
+                    showBullets={false}
+                    showIndex={false}
+                    showThumbnails={true}
+                    lazyLoad={false}
+                    showPlayButton={false}
+                    showNav={false}
+                    showFullscreenButton={false}
+                    thumbnailPosition={"left"}
                   />
-                  <img src="http://thecodeplayer.com/uploads/media/40Ly3VB.jpg" width="450px" height="550px"/>
-                  <div><img src="http://thecodeplayer.com/uploads/media/40Ly3VB.jpg" width="450px" height="550px"/>
-                  <img src="http://thecodeplayer.com/uploads/media/40Ly3VB.jpg" width="450px" height="550px"/></div>
-
-
 
 
 

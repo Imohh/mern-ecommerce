@@ -25,23 +25,23 @@ const SocialShare = props => {
   return (
     <ul className='d-flex flex-row mx-0 mb-0 justify-content-center justify-content-md-start share-box'>
       <li>
-        <FacebookShareButton url={`${shareMsg}`} className='share-btn facebook'>
-          <i className='fa fa-facebook'></i>
+        <FacebookShareButton url={`${shareMsg}`}>
+          <img width="32" height="32" src="https://img.icons8.com/windows/32/null/facebook-f--v1.png"/>
         </FacebookShareButton>
       </li>
       <li>
-        <TwitterShareButton url={`${shareMsg}`} className='share-btn twitter'>
-          <i className='fa fa-twitter'></i>
+        <TwitterShareButton url={`${shareMsg}`}>
+          <img width="32" height="32" src="https://img.icons8.com/ios-filled/32/null/twitter.png"/>
         </TwitterShareButton>
       </li>
       <li>
-        <EmailShareButton url={`${shareMsg}`} className='share-btn envelope'>
-          <i className='fa fa-envelope-o'></i>
+        <EmailShareButton url={`${shareMsg}`}>
+          <img width="32" height="32" src="https://img.icons8.com/metro/26/secured-letter.png" alt="secured-letter"/>
         </EmailShareButton>
       </li>
       <li>
-        <WhatsappShareButton url={`${shareMsg}`} className='share-btn whatsapp'>
-          <i className='fa fa-whatsapp'></i>
+        <WhatsappShareButton url={`${shareMsg}`}>
+          <img width="32" height="32" src="https://img.icons8.com/windows/32/whatsapp--v1.png" alt="whatsapp--v1"/>
         </WhatsappShareButton>
       </li>
     </ul>
