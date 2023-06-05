@@ -80,3 +80,91 @@
   transition: 0.2s
 }
 
+
+
+
+
+// slider
+#slider {
+  margin: 0 auto;
+  display: block;
+  overflow: hidden;
+  width: 200px;
+  height: 100px;
+}
+
+@media screen and (min-width: 400px) {
+  #slider {
+    width: 400px;
+    height: 200px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  h1 {
+    font-size: 30px;
+  }
+  
+  #slider {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+#slider figure {
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 20s slider infinite;
+}
+
+#slider figure .image {
+  width: 20%;
+  float: left;
+}
+
+/* Calculado para 5 items */
+@keyframes slider {
+    0% { left: 0; }
+    20% { left: 0; }
+    25% { left: -100%; }
+    45% { left: -100%; }
+    50% { left: -200%; }
+    70% { left: -200%; }
+    75% { left: -300%; }
+    95% { left: -300%; }
+    100% { left: -400%; }
+}
+
+
+// login right
+.login-right {
+  padding: 5%;
+}
+
+.signup-provider{
+  
+}
+
+.sign-up-button{
+  text-align: center;
+  margin-top: 25%;
+  span {
+    color: blue;
+    cursor: pointer
+  }
+}
+
+
+.login-btn {
+  align-items: center;
+  width: 98%;
+  margin: 2% 0;
+  background: #000;
+}

@@ -130,22 +130,6 @@ class ProductPage extends React.PureComponent {
                     
                     {/*<!--Lets show the second image by default on page load-->*/}
                     {/*<input type="radio" name="slide_switch" id="id2"/>
-                    <label for="id2">
-                      <img src="http://thecodeplayer.com/uploads/media/40Ly3VB.jpg" width="100"/>
-                    </label>
-                    <img src="http://thecodeplayer.com/uploads/media/40Ly3VB.jpg"/>
-                    
-                    <input type="radio" name="slide_switch" id="id3"/>
-                    <label for="id3">
-                      <img src="http://thecodeplayer.com/uploads/media/00kih8g.jpg" width="100"/>
-                    </label>
-                    <img src="http://thecodeplayer.com/uploads/media/00kih8g.jpg"/>
-                    
-                    <input type="radio" name="slide_switch" id="id4"/>
-                    <label for="id4">
-                      <img src="http://thecodeplayer.com/uploads/media/2rT2vdx.jpg" width="100"/>
-                    </label>
-                    <img src="http://thecodeplayer.com/uploads/media/2rT2vdx.jpg"/>
                     
                     <input type="radio" name="slide_switch" id="id5"/>
                     <label for="id5">
