@@ -199,9 +199,23 @@ img {
   width: 50%;
 }
 
-.forgot-password-header {
+.login-right .forgot-password-header {
   text-transform: uppercase;
   text-align: center;
-  font-size: 30px;
+  font-size: 50px;
   margin-bottom: 10%;
 }
+
+
+// show password
+#showText{
+  position: absolute;
+  right: 40px;
+  top: 28%;
+  transform: translateY(-50%);
+  color: #39CDCC;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+

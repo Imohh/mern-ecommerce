@@ -78,6 +78,7 @@ class ForgotPassword extends React.PureComponent {
                           forgotPasswordChange(name, value);
                         }}
                       />
+                      
                     </Col>
                     <Col xs='12' md='12'>
                       <Button
