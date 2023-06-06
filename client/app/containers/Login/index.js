@@ -77,14 +77,14 @@ class Login extends React.PureComponent {
                   xs={{ size: 12, order: 2 }}
                   md={{ size: '12', order: 1 }}
                   className='p-0'
+                  style={{margin: "auto"}}
                 >
                   <Col xs='12' md='12'>
                     <Input
                       type={'text'}
                       error={formErrors['email']}
-                      label={'Email Address'}
+                      label={'Email Address*'}
                       name={'email'}
-                      placeholder={'Please Enter Your Email'}
                       value={loginFormData.email}
                       onInputChange={(name, value) => {
                         loginChange(name, value);
@@ -95,21 +95,19 @@ class Login extends React.PureComponent {
                     <Input
                       type={'password'}
                       error={formErrors['password']}
-                      label={'Password'}
+                      label={'Password*'}
                       name={'password'}
-                      placeholder={'Please Enter Your Password'}
                       value={loginFormData.password}
                       onInputChange={(name, value) => {
                         loginChange(name, value);
                       }}
                     />
                     <Link
-                      className='redirect-link forgot-password-link'
+                      className=' forgot-password-links'
                       to={'/forgot-password'}
                     >
                       Forgot Password?
                     </Link>
-                  </Col>
                     <Button
                       type='submit'
                       className="custom-btn-dark login-btn"
@@ -117,6 +115,7 @@ class Login extends React.PureComponent {
                       style={{color: "#fff"}}
                       disabled={isSubmitting}
                     />
+                  </Col>
                 </Col>
               </Row>
                     
@@ -130,12 +129,6 @@ class Login extends React.PureComponent {
 
               <div className="sign-up-button">
                 <p>Don't have an account yet? <span onClick={registerLink}>Sign Up</span></p>
-                {/*<Button
-                    text='Create an account'
-                    variant='link'
-                    className='ml-md-3'
-                    onClick={registerLink}
-                  />*/}
               </div>
             </form>
           </Col>
@@ -143,91 +136,6 @@ class Login extends React.PureComponent {
         </Row>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-{/*
-
-
-        {isLoading && <LoadingIndicator />}
-        <h2>Login</h2>
-        <hr />
-        <form onSubmit={handleSubmit} noValidate>
-          <Row>
-            <Col
-              xs={{ size: 12, order: 2 }}
-              md={{ size: '6', order: 1 }}
-              className='p-0'
-            >
-              <Col xs='12' md='12'>
-                <Input
-                  type={'text'}
-                  error={formErrors['email']}
-                  label={'Email Address'}
-                  name={'email'}
-                  placeholder={'Please Enter Your Email'}
-                  value={loginFormData.email}
-                  onInputChange={(name, value) => {
-                    loginChange(name, value);
-                  }}
-                />
-              </Col>
-              <Col xs='12' md='12'>
-                <Input
-                  type={'password'}
-                  error={formErrors['password']}
-                  label={'Password'}
-                  name={'password'}
-                  placeholder={'Please Enter Your Password'}
-                  value={loginFormData.password}
-                  onInputChange={(name, value) => {
-                    loginChange(name, value);
-                  }}
-                />
-              </Col>
-            </Col>
-            <Col
-              xs={{ size: 12, order: 1 }}
-              md={{ size: '6', order: 2 }}
-              className='mb-2 mb-md-0'
-            >
-              <SignupProvider />
-            </Col>
-          </Row>
-          <hr />
-          <div className='d-flex flex-column flex-md-row align-items-md-center justify-content-between'>
-            <div className='d-flex justify-content-between align-items-center mb-3 mb-md-0'>
-              <Button
-                type='submit'
-                className="custom-btn-dark"
-                text='Login'
-                style={{color: "#fff"}}
-                disabled={isSubmitting}
-              />
-              <Button
-                text='Create an account'
-                variant='link'
-                className='ml-md-3'
-                onClick={registerLink}
-              />
-            </div>
-            <Link
-              className='redirect-link forgot-password-link'
-              to={'/forgot-password'}
-            >
-              Forgot Password?
-            </Link>
-          </div>
-        </form>*/}
       </div>
 
       </>
