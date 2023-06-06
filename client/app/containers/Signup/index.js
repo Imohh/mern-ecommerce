@@ -19,6 +19,24 @@ import LoadingIndicator from '../../components/Common/LoadingIndicator';
 import SignupProvider from '../../components/Common/SignupProvider';
 
 class Signup extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showPassword: false,
+      password: ''
+    };
+  }
+
+  handleTogglePassword = () => {
+    this.setState((prevState) => ({
+      showPassword: !prevState.showPassword
+    }))
+  }
+
+  handlePasswordChange = (event) => {
+    this.setState({ password: event.target.value });
+  }
+
   render() {
     const {
       authenticated,
@@ -38,6 +56,9 @@ class Signup extends React.PureComponent {
       event.preventDefault();
       signUp();
     };
+
+    const { showPassword, password } = this.state;
+
 
     return (
 
@@ -114,7 +135,7 @@ class Signup extends React.PureComponent {
                   </Col>
                   <Col xs='12' md='12'>
                     <Input
-                      type={'password'}
+                      type={showPassword ? 'text' : 'password'}
                       label={'Password*'}
                       error={formErrors['password']}
                       name={'password'}
@@ -123,6 +144,17 @@ class Signup extends React.PureComponent {
                       onInputChange={(name, value) => {
                         signupChange(name, value);
                       }}
+                      style={{ paddingRight: '30px' }}
+                    />
+                    <img 
+                      onClick={this.handleTogglePassword}
+                      id="showText"
+                      src={
+                          showPassword ? 
+                          'https://img.icons8.com/material-rounded/24/hide.png' 
+                          : 
+                          'https://img.icons8.com/ios-glyphs/30/visible--v1.png'
+                      }
                     />
                     <Button
                       type='submit'
