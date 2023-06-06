@@ -181,3 +181,27 @@ img {
     display: none;
   }
 }
+
+
+// forgot password
+.forgot-password-form {
+  margin: auto;
+  padding: 200px 100px;
+  text-align: center;
+}
+
+.forgot-password-container {
+  margin: auto;
+  text-align: center
+}
+
+.forgot-password-container input {
+  width: 50%;
+}
+
+.forgot-password-header {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 10%;
+}
