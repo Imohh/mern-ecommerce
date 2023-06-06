@@ -77,14 +77,14 @@ class Login extends React.PureComponent {
                   xs={{ size: 12, order: 2 }}
                   md={{ size: '12', order: 1 }}
                   className='p-0'
+                  style={{margin: "auto"}}
                 >
                   <Col xs='12' md='12'>
                     <Input
                       type={'text'}
                       error={formErrors['email']}
-                      label={'Email Address'}
+                      label={'Email Address*'}
                       name={'email'}
-                      placeholder={'Please Enter Your Email'}
                       value={loginFormData.email}
                       onInputChange={(name, value) => {
                         loginChange(name, value);
@@ -95,21 +95,19 @@ class Login extends React.PureComponent {
                     <Input
                       type={'password'}
                       error={formErrors['password']}
-                      label={'Password'}
+                      label={'Password*'}
                       name={'password'}
-                      placeholder={'Please Enter Your Password'}
                       value={loginFormData.password}
                       onInputChange={(name, value) => {
                         loginChange(name, value);
                       }}
                     />
                     <Link
-                      className='redirect-link forgot-password-link'
+                      className=' forgot-password-links'
                       to={'/forgot-password'}
                     >
                       Forgot Password?
                     </Link>
-                  </Col>
                     <Button
                       type='submit'
                       className="custom-btn-dark login-btn"
@@ -117,6 +115,7 @@ class Login extends React.PureComponent {
                       style={{color: "#fff"}}
                       disabled={isSubmitting}
                     />
+                  </Col>
                 </Col>
               </Row>
                     

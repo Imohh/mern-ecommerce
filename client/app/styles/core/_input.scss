@@ -5,7 +5,7 @@ input[type='password'],
 input[type='file'],
 textarea {
   width: 100%;
-  padding: 8px 10px;
+  padding: 30px 20px;
   border: $border-default;
   font-size: $font-size-medium;
   color: $font-custom-color;
@@ -28,6 +28,10 @@ textarea {
     background-color: $disabled-bg;
     border: none !important;
     cursor: not-allowed;
+  }
+
+  &:hover {
+  border-color: #000 !important
   }
 }
 

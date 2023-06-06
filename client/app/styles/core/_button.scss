@@ -229,7 +229,7 @@ body.user-is-tabbing button:focus {
   &.custom-btn-dark {
     position: relative;
     border: $border-default;
-    background-color: $dark-bg;
+    background-color: #000;
     -webkit-transition: $layout-transition-speed;
     transition: $layout-transition-speed;
 
@@ -240,7 +240,7 @@ body.user-is-tabbing button:focus {
     }
 
     &:hover {
-      background-color: $dark-hover-bg;
+      background-color: $dark-bg;
 
       .btn-text {
         -webkit-transition: $layout-transition-speed;
