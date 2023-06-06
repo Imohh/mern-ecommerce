@@ -80,25 +80,21 @@ brands-homepage .high-fashion {
   overflow: hidden;
 }
 
-.categories-image1 {
-    max-width: 90vw;
-    min-height: 50vh;
-    margin: 20px auto;
-}
 
-.categories-image1 p {
+
+.categories-image p {
     text-transform: uppercase;
     font-size: 4.2rem;
     font-weight: 600;
-    color: #181818;
+    color: #fcf3f3;
     letter-spacing: 3px;
     position: absolute;
     bottom: 8px;
     left: 16px;
 }
   
-  .categories-image1 .content-overlay {
-    background: rgba(0,0,0,0.7);
+  .categories-image .content-overlay {
+    background: rgba(0,0,0,0.6);
     position: absolute;
     height: 100%;
     width: 100%;
@@ -106,13 +102,13 @@ brands-homepage .high-fashion {
     top: 0;
     bottom: 0;
     right: 0;
-    opacity: 0;
+    opacity: 0.1;
     -webkit-transition: all 0.4s ease-in-out 0s;
     -moz-transition: all 0.4s ease-in-out 0s;
     transition: all 0.4s ease-in-out 0s;
   }
   
-  .categories-image1:hover .content-overlay{
+  .categories-image:hover .content-overlay{
     opacity: 1;
   }
 
@@ -133,7 +129,7 @@ brands-homepage .high-fashion {
     transition: all 0.3s ease-in-out 0s;
   }
 
-  .categories-image1:hover .content-details{
+  .categories-image:hover .content-details{
     top: 70%;
     left: 30%;
     opacity: 1;
@@ -193,3 +189,28 @@ brands-homepage .high-fashion {
 	}
 }
 
+.categories-image1 {
+    max-width: 90vw;
+    min-height: 50vh;
+    margin: 20px auto;
+}
+
+.categories-image2 {
+    margin: 12px 2.3%;
+    min-height: 70vh;
+ p {
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: #fcf3f3;
+    letter-spacing: 3px;
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+ }
+}
+
+.categories-image3 {
+    height: 64vh;
+    margin-top: 12px;
+}
