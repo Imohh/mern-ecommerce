@@ -40,6 +40,129 @@ class Signup extends React.PureComponent {
     };
 
     return (
+
+  <>
+      <div className='login-forms'>
+      {isLoading && <LoadingIndicator />}
+        <Row>
+          <Col
+            xs={{ size: 12, order: 2 }}
+            md={{ size: '6', order: 1 }}
+            className='p-0'
+          >
+            <div id="slider">
+                  <figure>
+                    <div className="image"><img src="https://www.essence.com/wp-content/uploads/2020/12/Oliver-Kumbi-GQ.com-by-Daniel-Jackson.jpg" height="300px" alt="Slider 1" /></div>
+                    <div className="image"><img src="https://www.essence.com/wp-content/uploads/2020/12/Luka-Sabbat-SID-Pre-Fall-2015-Ph-Yu-Cong.jpg" height="300px"alt="Slider 2" /></div>
+                    <div className="image"><img src="https://www.essence.com/wp-content/uploads/2020/12/Oliver-Kumbi-GQ.com-by-Daniel-Jackson.jpg" height="300px" alt="Slider 3" /></div>
+                    <div className="image"><img src="https://www.essence.com/wp-content/uploads/2020/12/Luka-Sabbat-SID-Pre-Fall-2015-Ph-Yu-Cong.jpg" height="300px" alt="Slider 4" /></div>
+                  </figure>
+                </div>
+          </Col>
+
+          <Col
+            xs={{ size: 12, order: 1 }}
+            md={{ size: '6', order: 2 }}
+            className='login-right'
+          >
+            <form onSubmit={handleSubmit} noValidate>
+              <Row>
+                <Col
+                  xs={{ size: 12, order: 2 }}
+                  md={{ size: '12', order: 1 }}
+                  className='p-0'
+                  style={{margin: "auto"}}
+                >
+                  <Col xs='12' md='12'>
+                    <Input
+                      type={'text'}
+                      error={formErrors['firstName']}
+                      label={'First Name*'}
+                      name={'firstName'}
+                      placeholder={'John'}
+                      value={signupFormData.firstName}
+                      onInputChange={(name, value) => {
+                        signupChange(name, value);
+                      }}
+                    />
+                  </Col>
+                  <Col xs='12' md='12'>
+                    <Input
+                      type={'text'}
+                      error={formErrors['lastName']}
+                      label={'Last Name*'}
+                      name={'lastName'}
+                      placeholder={'Doe'}
+                      value={signupFormData.lastName}
+                      onInputChange={(name, value) => {
+                        signupChange(name, value);
+                      }}
+                    />
+                  </Col>
+                  <Col xs='12' md='12'>
+                    <Input
+                      type={'text'}
+                      error={formErrors['email']}
+                      label={'Email*'}
+                      name={'email'}
+                      placeholder={'name@example.com'}
+                      value={signupFormData.email}
+                      onInputChange={(name, value) => {
+                        signupChange(name, value);
+                      }}
+                    />
+                  </Col>
+                  <Col xs='12' md='12'>
+                    <Input
+                      type={'password'}
+                      label={'Password*'}
+                      error={formErrors['password']}
+                      name={'password'}
+                      placeholder={'Password'}
+                      value={signupFormData.password}
+                      onInputChange={(name, value) => {
+                        signupChange(name, value);
+                      }}
+                    />
+              
+                    <Link
+                      className=' forgot-password-links'
+                      to={'/forgot-password'}
+                    >
+                      Forgot Password?
+                    </Link>
+                    <Button
+                      type='submit'
+                      className="custom-btn-dark login-btn"
+                      text='Sign Up'
+                      style={{color: "#fff"}}
+                      disabled={isSubmitting}
+                    />
+                  </Col>
+                </Col>
+              </Row>
+                    
+              <Col
+                xs={{ size: 12, order: 1 }}
+                md={{ size: '12', order: 2 }}
+                className='mb-2 mb-md-0 signup-provider'
+              >
+                <SignupProvider />
+              </Col>
+
+              <div className="sign-up-button">
+                <p>Already have an account? <Link to={'/login'}><span>Login</span></Link></p>
+              </div>
+            </form>
+          </Col>
+
+        </Row>
+
+
+      </div>
+
+
+{/*
       <div className='signup-form'>
         {isLoading && <LoadingIndicator />}
         <h2>Sign Up</h2>
@@ -131,7 +254,9 @@ class Signup extends React.PureComponent {
             </Link>
           </div>
         </form>
-      </div>
+      </div>*/}
+
+      </>
     );
   }
 }
