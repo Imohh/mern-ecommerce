@@ -9,32 +9,187 @@
 	padding:100px;
 }
 
-.brands-homepages {
-	padding:100px;
-	background-color: #e7e7e7
-}
 
-.brands-homepage .brands-hompage-title {
-	color: #313131;
-	text-align: center;
-	font-weight: normal;
-    font-style: normal;
-    font-size: 36px;
-    text-transform: uppercase;
-    position: relative;
-    margin-bottom: 38px;
-}
+// .brands-homepage .brands-hompage-title {
+// 	color: #313131;
+// 	text-align: center;
+// 	font-weight: normal;
+//     font-style: normal;
+//     font-size: 4rem;
+//     text-transform: uppercase;
+//     position: relative;
+// }
 
 .brands-homepage .brands-hompage-title h2 {
-	font-size: 30px;
-    letter-spacing: 4px;
+	font-size: 4.3rem;
+    letter-spacing: 7px;
     font-variant-ligatures: none;
-    line-height: 35px;
+    line-height: 37px;
     text-transform: initial;
 }
-d
 
 brands-homepage .high-fashion {
 	background: green;
 	padding: 20px;
 }
+
+// CATEGORIES
+
+.categories {
+    padding: 2.2em;
+	background-color: #e7e7e7;
+    text-align: center;
+}
+.categories h2 {
+    font-size: 5vw !important;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    color: #1b1919 !important;
+}
+
+.categories p {
+    font-size: 2.5vw;
+    font-weight: 300;
+}
+
+.categories button {
+    margin: 12px 0;
+    border: 2px solid black !important;
+    text-align: center !important;
+    padding: 5px 20px !important;
+    border-radius: 29px !important;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 500;
+    background-color: transparent;
+}
+
+.categories button:hover, .categories button:focus {
+    transition: 0.2s ease-in;
+    box-shadow: 0 0.5em 0.5em -0.4em rgb(219, 9, 9);
+    border-radius: 12px !important;
+    transform: translateY(-0.25em);
+}
+
+
+.categories-image {
+  background-position: center;
+  background-size: cover;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.categories-image1 {
+    max-width: 90vw;
+    min-height: 50vh;
+    margin: 20px auto;
+}
+
+.categories-image1 p {
+    text-transform: uppercase;
+    font-size: 4.2rem;
+    font-weight: 600;
+    color: #181818;
+    letter-spacing: 3px;
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+}
+  
+  .categories-image1 .content-overlay {
+    background: rgba(0,0,0,0.7);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    -webkit-transition: all 0.4s ease-in-out 0s;
+    -moz-transition: all 0.4s ease-in-out 0s;
+    transition: all 0.4s ease-in-out 0s;
+  }
+  
+  .categories-image1:hover .content-overlay{
+    opacity: 1;
+  }
+
+  .content-details {
+    position: absolute;
+    text-align: center;
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  .categories-image1:hover .content-details{
+    top: 70%;
+    left: 30%;
+    opacity: 1;
+  }
+  
+  .content-details h3{
+    color: #fffffff5 !important;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: calc(1em + 1vw) !important;   
+}
+  
+  .fadeIn-bottom{
+    top: 80%;
+  }
+  
+  .fadeIn-right{
+    left: 80%;
+  }
+  
+  .fadeIn-top{
+    top: 20%;
+  }
+  
+  .fadeIn-left{
+    left: 20%;
+  }
+  
+  .icon-go {
+    rotate: (-180deg);
+    color: wheat;
+    cursor: pointer;
+    margin-bottom: 25px;
+    display: inline-flex;
+  }
+
+  .icon-go:hover{
+    transform: scale(1.5);
+    animation: arrow-right .5s cubic-bezier(.36,.07,.57,.99) infinite;
+  }
+
+  @keyframes arrow-right {
+	0% {
+		transform: scale(1.5) translateX(0);
+	}
+	33% {
+		transform: scale(1.5) translateX(-5px);
+	}
+	66% {
+		transform: scale(1.5) translateX(5px);
+	}
+	100% {
+		transform: scale(1.5) translateX(0);
+	}
+}
+
