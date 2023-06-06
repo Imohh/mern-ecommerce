@@ -132,7 +132,7 @@ class Faq extends React.PureComponent {
                 <h2>interact with us</h2>
                 <p>you can leave a message with us and well be with you.</p>
 
-                <a href="contact.php">
+                <a href="/contact">
                   <button type="text" className="faq-btn" name="">Contact Us</button>
                 </a>
               </div>
