@@ -89,7 +89,7 @@ class Homepage extends React.PureComponent {
             <Col xs='12' lg='12' className='order-lg-1 mb-3 px-3 px-md-2'> 
               <div className="high-fashion" style={{background: "#e7e7e7", margin: "0 auto", padding: "50px 20px", width: "20%", textAlign: "center"}}>
                 <h2 style={{margin: "0 auto", textAlign: "center", fontWeight: "normal", paddingBottom: "20px"}}>Eminence high fashion</h2>
-                <p tyle={{margin: "0 auto", textAlign: "center", fontWeight: "normal"}}>Discover More ></p>
+                <p tyle={{margin: "0 auto", textAlign: "center", fontWeight: "normal"}}>Discover More</p>
               </div>
             </Col>
           </Row>
