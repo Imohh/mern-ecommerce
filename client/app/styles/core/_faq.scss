@@ -1,0 +1,54 @@
+/*FAQ PAGE*/
+.faq-top {
+    padding: 0 50px;
+    margin: 0;
+    background: #f6f5f3;
+}
+
+
+.bottom-faq {
+    background: #fff;
+    padding: 35px;
+    margin-top: 5%;
+    height: 250px;
+}
+
+.bottom-faq h2 {
+    text-transform: uppercase;
+    font-size: 19px;
+    font-weight: 900;
+}
+
+.faq {
+    background: #f6f5f3;
+}
+
+
+
+
+.faq-accordion {
+    margin-top: 5%;
+    padding: 20px 10px;
+    border-radius: 0;
+    cursor: pointer;
+}
+.accorditmebtn {
+    padding: 30px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+
+.accorditmebtn span {
+    float: right;
+}
+
+.faq-btn {
+    margin-top: 5%;
+    width: 100%;
+    color: #fff !important;
+    border: none;
+    padding: 25px;
+    background: #000;
+    font-size: 14px;
+}
