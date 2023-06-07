@@ -19,6 +19,24 @@ import LoadingIndicator from '../../components/Common/LoadingIndicator';
 import SignupProvider from '../../components/Common/SignupProvider';
 
 class Signup extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showPassword: false,
+      password: ''
+    };
+  }
+
+  handleTogglePassword = () => {
+    this.setState((prevState) => ({
+      showPassword: !prevState.showPassword
+    }))
+  }
+
+  handlePasswordChange = (event) => {
+    this.setState({ password: event.target.value });
+  }
+
   render() {
     const {
       authenticated,
@@ -38,6 +56,9 @@ class Signup extends React.PureComponent {
       event.preventDefault();
       signUp();
     };
+
+    const { showPassword, password } = this.state;
+
 
     return (
 
@@ -114,7 +135,7 @@ class Signup extends React.PureComponent {
                   </Col>
                   <Col xs='12' md='12'>
                     <Input
-                      type={'password'}
+                      type={showPassword ? 'text' : 'password'}
                       label={'Password*'}
                       error={formErrors['password']}
                       name={'password'}
@@ -123,14 +144,18 @@ class Signup extends React.PureComponent {
                       onInputChange={(name, value) => {
                         signupChange(name, value);
                       }}
+                      style={{ paddingRight: '30px' }}
                     />
-              
-                    <Link
-                      className=' forgot-password-links'
-                      to={'/forgot-password'}
-                    >
-                      Forgot Password?
-                    </Link>
+                    <img 
+                      onClick={this.handleTogglePassword}
+                      id="showText"
+                      src={
+                          showPassword ? 
+                          'https://img.icons8.com/material-rounded/24/hide.png' 
+                          : 
+                          'https://img.icons8.com/ios-glyphs/30/visible--v1.png'
+                      }
+                    />
                     <Button
                       type='submit'
                       className="custom-btn-dark login-btn"
@@ -155,106 +180,8 @@ class Signup extends React.PureComponent {
               </div>
             </form>
           </Col>
-
         </Row>
-
-
       </div>
-
-
-{/*
-      <div className='signup-form'>
-        {isLoading && <LoadingIndicator />}
-        <h2>Sign Up</h2>
-        <hr />
-        <form onSubmit={handleSubmit} noValidate>
-          <Row>
-            <Col
-              xs={{ size: 12, order: 2 }}
-              md={{ size: '6', order: 1 }}
-              className='p-0'
-            >
-              <Col xs='12' md='12'>
-                <Input
-                  type={'text'}
-                  error={formErrors['email']}
-                  label={'Email Address'}
-                  name={'email'}
-                  placeholder={'Please Enter Your Email'}
-                  value={signupFormData.email}
-                  onInputChange={(name, value) => {
-                    signupChange(name, value);
-                  }}
-                />
-              </Col>
-              <Col xs='12' md='12'>
-                <Input
-                  type={'text'}
-                  error={formErrors['firstName']}
-                  label={'First Name'}
-                  name={'firstName'}
-                  placeholder={'Please Enter Your First Name'}
-                  value={signupFormData.firstName}
-                  onInputChange={(name, value) => {
-                    signupChange(name, value);
-                  }}
-                />
-              </Col>
-              <Col xs='12' md='12'>
-                <Input
-                  type={'text'}
-                  error={formErrors['lastName']}
-                  label={'Last Name'}
-                  name={'lastName'}
-                  placeholder={'Please Enter Your Last Name'}
-                  value={signupFormData.lastName}
-                  onInputChange={(name, value) => {
-                    signupChange(name, value);
-                  }}
-                />
-              </Col>
-              <Col xs='12' md='12'>
-                <Input
-                  type={'password'}
-                  label={'Password'}
-                  error={formErrors['password']}
-                  name={'password'}
-                  placeholder={'Please Enter Your Password'}
-                  value={signupFormData.password}
-                  onInputChange={(name, value) => {
-                    signupChange(name, value);
-                  }}
-                />
-              </Col>
-            </Col>
-            <Col
-              xs={{ size: 12, order: 1 }}
-              md={{ size: '6', order: 2 }}
-              className='mb-2 mb-md-0'
-            >
-              <SignupProvider />
-            </Col>
-          </Row>
-          <hr />
-          <Checkbox
-            id={'subscribe'}
-            label={'Subscribe to newsletter'}
-            checked={isSubscribed}
-            onChange={subscribeChange}
-          />
-          <div className='d-flex flex-column flex-md-row align-items-md-center justify-content-between'>
-            <Button
-              type='submit'
-              className="custom-btn-dark"
-              text='Sign Up'
-              disabled={isSubmitting}
-            />
-            <Link className='mt-3 mt-md-0 redirect-link' to={'/login'}>
-              Back to login
-            </Link>
-          </div>
-        </form>
-      </div>*/}
 
       </>
     );
