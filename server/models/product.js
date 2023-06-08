@@ -36,9 +36,6 @@ const ProductSchema = new Schema({
     type: String,
     trim: true
   },
-  size: {
-    type: String
-  },
   quantity: {
     type: Number
   },

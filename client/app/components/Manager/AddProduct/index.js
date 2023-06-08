@@ -37,7 +37,7 @@ const AddProduct = props => {
 
   return (
     <div className='add-product'>
-      <form onSubmit={handleSubmit} noValidate>
+      <form onSubmit={handleSubmit}>
         <Row>
           <Col xs='12' lg='6'>
             <Input
@@ -135,16 +135,15 @@ const AddProduct = props => {
           </Col>
           <Col xs='12' md='12'>
             <Input
-              type={'file'} 
+              type={'file'}
               error={formErrors['file']}
-              name={'image[]'}
+              name={'image'}
               label={'file'}
               placeholder={'Please Upload Image'}
               value={image}
               onInputChange={(name, value) => {
                 productChange(name, value);
               }}
-              multiple="multiple"
             />
           </Col>
           <Col xs='12' md='12' className='my-2'>
