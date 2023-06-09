@@ -174,24 +174,14 @@ class Navigation extends React.PureComponent {
             </div>
           </div>
         </nav>*/}
-
-
-
-
-
-
-
-
-
-
-      <header className='header fixed-mobile-header'>
+   <header className='header fixed-mobile-header'>
         <Container>
           <Row className='align-items-center top-header'>
             <Col
               xs={{ size: 12, order: 1 }}
               sm={{ size: 12, order: 1 }}
               md={{ size: 3, order: 1 }}
-              lg={{ size: 3, order: 1 }}
+              lg={{ size: 3, order: 3 }}
               className='pr-0'
             >
               <div className='brand'>
@@ -199,7 +189,7 @@ class Navigation extends React.PureComponent {
                   <Button
                     borderless
                     variant='empty'
-                    className='d-none d-md-block'
+                    className='d-none d-md-block mr-3'
                     ariaLabel='open the menu'
                     icon={<BarsIcon />}
                     onClick={() => this.toggleMenu()}
@@ -222,11 +212,11 @@ class Navigation extends React.PureComponent {
               xs={{ size: 12, order: 4 }}
               sm={{ size: 12, order: 4 }}
               md={{ size: 12, order: 4 }}
-              lg={{ size: 5, order: 2 }}
-              className='pt-2 pt-lg-0'
+              lg={{ size: 5, order: 1 }}
+              className='pt-2 pt-lg-1'
             >
               <Link to='/'>
-                <h1 className='logo' style={{textAlign: "center"}}>EMINENCE</h1>
+                <h1 className='logo'>Eminence</h1>
               </Link>
             </Col>
             <Col
@@ -251,7 +241,7 @@ class Navigation extends React.PureComponent {
               xs={{ size: 12, order: 2 }}
               sm={{ size: 12, order: 2 }}
               md={{ size: 9, order: 1 }}
-              lg={{ size: 4, order: 3 }}
+              lg={{ size: 4, order: 2 }}
               // className='px-0'
             >
               <Navbar color='light' light expand='md' className='mt-1 mt-md-0'>
