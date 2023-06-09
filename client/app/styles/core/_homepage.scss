@@ -1,33 +1,120 @@
-// .homepage {
-// }
+:root {
+  --orange: #fd9940;
+  --darkorange: #dd7d25;
+  --platinum: #e5e5e5;
+  --black: #2b2d42;
+  --white: #fff;
+  --thumb: #edf2f4;
+}
 
 .brands-homepage {
 	padding:100px;
 }
 
 
-// .brands-homepage .brands-hompage-title {
-// 	color: #313131;
-// 	text-align: center;
-// 	font-weight: normal;
-//     font-style: normal;
-//     font-size: 4rem;
-//     text-transform: uppercase;
-//     position: relative;
+.cardars {
+  box-sizing: border-box;
+  display: grid;
+  grid-auto-columns: 40%;
+  grid-column-gap: 2px;
+  grid-auto-flow: column;
+  padding: 15px 0px;
+  list-style: none;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+
+.cardars::-webkit-scrollbar {
+  display: none;
+}
+
+.cardar {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);
+  scroll-snap-align: start;
+  transition: all 0.2s;
+  width: 22vw;
+  cursor: pointer;
+
+  img {
+    object-fit: cover;
+    height: 300px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+}
+
+
+
+@media (min-width: 500px) {
+  .cardars {
+    grid-auto-columns: calc(50% - 10px);
+    grid-column-gap: 20px;
+  }
+}
+
+@media (min-width: 700px) {
+  .cardars {
+    grid-auto-columns: calc(calc(100% / 3) - 20px);
+    grid-column-gap: 30px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .cardars {
+    grid-auto-columns: calc(25% - 30px);
+    grid-column-gap: 40px;
+  }
+}
+
+.latest {
+  display: block !important;
+  padding: 35px;
+
+  button {
+    border: 2px solid black !important;
+    padding: 5px 20px !important;
+    border-radius: 209px !important;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-left: auto;
+  }
+}
+
+.cardar-info {
+  padding: 8px 8px;
+  h3 {
+    font-size: 1em !important;
+  }
+  h1 {
+    font-size: 1.6vw !important;
+    text-transform: capitalize;
+  }
+  p {
+    display: inline-block;
+  }
+}
+
+.latest h2 {
+  font-size: 4vw !important;
+}
+
+// .brands-homepage .brands-hompage-title h2 {
+// 	font-size: 4rem;
+//     letter-spacing: 7px;
+//     font-variant-ligatures: none;
+//     line-height: 37px;
+//     text-transform: initial;
 // }
 
-.brands-homepage .brands-hompage-title h2 {
-	font-size: 4.3rem;
-    letter-spacing: 7px;
-    font-variant-ligatures: none;
-    line-height: 37px;
-    text-transform: initial;
-}
-
-brands-homepage .high-fashion {
-	background: green;
-	padding: 20px;
-}
+// brands-homepage .high-fashion {
+// 	background: green;
+// 	padding: 20px;
+// }
 
 // CATEGORIES
 
@@ -37,16 +124,18 @@ brands-homepage .high-fashion {
     text-align: center;
 }
 .categories h2 {
-    font-size: 5vw !important;
+    font-size: 4.5vw !important;
     font-weight: 900;
     text-align: center;
     text-transform: uppercase;
-    color: #1b1919 !important;
+    color: #2c2525 !important;
+    font-size: 2em;
 }
 
 .categories p {
     font-size: calc(4px + 1.2vw);
     font-weight: 300;
+    color: #e7e7e7;
 }
 
 .categories button {
@@ -54,7 +143,7 @@ brands-homepage .high-fashion {
     border: 2px solid black !important;
     text-align: center !important;
     padding: 5px 20px !important;
-    border-radius: 29px !important;
+    border-radius: 209px !important;
     font-size: 18px;
     text-transform: uppercase;
     font-weight: 500;
@@ -63,7 +152,7 @@ brands-homepage .high-fashion {
 
 .categories button:hover, .categories button:focus {
     transition: 0.2s ease-in;
-    box-shadow: 0 0.5em 0.5em -0.4em rgb(219, 9, 9);
+    box-shadow: 0 0.5em 0.5em -0.4em #ec1111;
     border-radius: 12px !important;
     transform: translateY(-0.25em);
 }
@@ -72,7 +161,7 @@ brands-homepage .high-fashion {
 .categories-image {
   background-position: center;
   background-size: cover;
-  border-radius: 25px;
+  border-radius: 7px;
   overflow: hidden;
 }
 
@@ -104,7 +193,7 @@ brands-homepage .high-fashion {
     transition: all 0.4s ease-in-out 0s;
   }
   
-  .categories-image:hover .content-overlay{
+  .categories-image:hover .content-overlay {
     opacity: 1;
   }
 
@@ -131,7 +220,7 @@ brands-homepage .high-fashion {
     opacity: 1;
   }
   
-  .content-details h3{
+  .content-details h3 {
     color: #fffffff5 !important;
     font-weight: 700;
     letter-spacing: 0.15em;
@@ -220,3 +309,38 @@ brands-homepage .high-fashion {
     left: 16px;
   }
 }
+
+.poster {
+  img {
+  filter: grayscale(100%);
+  object-fit: cover;
+  aspect-ratio: 16/9;
+  height: 44vw; 
+}
+
+  p {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4.5rem;
+    color: #e7e7e7;
+    letter-spacing: 3px;
+    font-weight: 800;
+    text-shadow: -1px -1px 0px #121212,
+    3px 3px 0px #121212,
+    6px 6px 0px #00000055;
+    text-transform: uppercase;
+    width: 1em;
+  }
+}
+
+
+.homepage {
+  max-width: 1280px;
+  margin: 0 auto;
+  max-height: 44vw;
+  position: relative;
+}
+
+

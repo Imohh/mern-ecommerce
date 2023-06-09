@@ -17,39 +17,56 @@ import background from './assets/ron-lach.jpg'
 import bottomImg from './assets/bottoms.header.jpg'
 import accessoriesImg from './assets/accessorizz.jpg'
 import { ArrowBackIcon } from '../../components/Common/Icon';
-import NewArrivals from '../NewArrivals';
+import collection from './collection.json'
 
 class Homepage extends React.PureComponent {
   render() {
     return (
       <>
       <div className='homepage'>
-        <Row className='flex-row'>
-          <Col xs='12' lg='6' className='order-lg-2 mb-3 px-3 px-md-2'>
             <div className='home-carousel'>
               <CarouselSlider
                 swipeable={true}
-                showDots={true}
+                showDots={false}
                 infinite={true}
-                autoPlay={false}
+                autoPlay={true}
                 slides={banners}
                 responsive={responsiveOneItemCarousel}
+                autoPlaySpeed = {5000}
               >
                 {banners.map((item, index) => (
+                  <div className='poster'>
                   <img key={index} src={item.imageUrl} />
+                  <p>{item.content}</p>
+                  </div>
                 ))}
               </CarouselSlider>
             </div>
-          </Col>
-       </Row>
       </div>
 
-
+           <div className='latest'>
+            <h2>Latest Arrivals</h2>
+            <button>See all</button>
+            <ul className='cardars'>
+              {
+                collection.map((item, index) => (
+                  <li key = {index} className='cardar'>
+                      <img src= {item.imageUrl} />
+                    <div className = 'cardar-info'>
+                      <h3>{item.category}</h3>
+                      <h1>{item.name}</h1>
+                      <p> Price: ${item.price}</p>
+                    </div>
+                  </li>
+                ))
+              }
+            </ul>
+           </div>
+        
         <div className='categories'>
           <Row className='flex-row' >
             <Col xs='12' lg='12'>
                 <h2>Shop by category</h2>  
-                <p>T-shirts, pants, accessories , we've got it all</p> 
                 <button>Shop now</button>     
             </Col>
             <Col lg = '12' className='categories-image categories-image1' style={{ backgroundImage: `url(${background})` }}>
