@@ -1,10 +1,6 @@
 // .homepage {
 // }
 
-.homepage {
-	
-}
-
 .brands-homepage {
 	padding:100px;
 }
@@ -49,7 +45,7 @@ brands-homepage .high-fashion {
 }
 
 .categories p {
-    font-size: 2.5vw;
+    font-size: calc(4px + 1.2vw);
     font-weight: 300;
 }
 
@@ -197,7 +193,7 @@ brands-homepage .high-fashion {
 
 .categories-image2 {
     margin: 12px 2.3%;
-    min-height: 70vh;
+    min-height: 50vh;
  p {
     text-transform: uppercase;
     font-size: 3.5rem;
@@ -213,4 +209,14 @@ brands-homepage .high-fashion {
 .categories-image3 {
     height: 64vh;
     margin-top: 12px;
+  p {
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: #fcf3f3;
+    letter-spacing: 3px;
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+  }
 }

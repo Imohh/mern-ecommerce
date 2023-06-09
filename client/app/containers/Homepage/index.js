@@ -17,6 +17,7 @@ import background from './assets/ron-lach.jpg'
 import bottomImg from './assets/bottoms.header.jpg'
 import accessoriesImg from './assets/accessorizz.jpg'
 import { ArrowBackIcon } from '../../components/Common/Icon';
+import NewArrivals from '../NewArrivals';
 
 class Homepage extends React.PureComponent {
   render() {
@@ -40,44 +41,14 @@ class Homepage extends React.PureComponent {
               </CarouselSlider>
             </div>
           </Col>
-          <Col xs='12' lg='3' className='order-lg-1 mb-3 px-3 px-md-2'>
-            <div className='d-flex flex-column h-100 justify-content-between'>
-              <img src='/images/banners/banner-2.jpg' className='mb-3' />
-              <img src='/images/banners/banner-5.jpg' />
-            </div>
-          </Col>
-          <Col xs='12' lg='3' className='order-lg-3 mb-3 px-3 px-md-2'>
-            <div className='d-flex flex-column h-100 justify-content-between'>
-              <img src='/images/banners/banner-2.jpg' className='mb-3' />
-              <img src='/images/banners/banner-6.jpg' />
-            </div>
-          </Col>
-        </Row>
+       </Row>
       </div>
 
-
-
-        <div className='brands-homepage'>
-          <Row className='flex-col'>
-            <Col xs='12' lg='12' className='order-lg-1 mb-3 px-3 px-md-2'>
-                <h2>Our brands and partners</h2>
-            </Col>
-            <Col xs='12' lg='4' className='order-lg-1 mb-3 px-3 px-md-2'>              
-              <img src='/images/banners/banner-6.jpg' />
-            </Col>
-            <Col xs='12' lg='4' className='order-lg-1 mb-3 px-3 px-md-2'> 
-              <img src='/images/banners/banner-6.jpg' />
-            </Col>
-            <Col xs='12' lg='4' className='order-lg-1 mb-3 px-3 px-md-2'> 
-              <img src='/images/banners/banner-6.jpg' />
-            </Col>
-          </Row>
-        </div>
 
         <div className='categories'>
           <Row className='flex-row' >
             <Col xs='12' lg='12'>
-                <h2>Kentyle categories</h2>  
+                <h2>Shop by category</h2>  
                 <p>T-shirts, pants, accessories , we've got it all</p> 
                 <button>Shop now</button>     
             </Col>
