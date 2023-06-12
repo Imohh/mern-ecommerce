@@ -7,9 +7,9 @@
   background-color: $white;
   height: 100%;
   width: 470px;
-  z-index: 1000;
-  // -webkit-box-shadow: $box-shadow;
-  // box-shadow: $box-shadow;
+  z-index: 1030;
+  -webkit-box-shadow: $box-shadow;
+  box-shadow: $box-shadow;
   @include transition($layout-transition-higher-speed);
 
   @include media-breakpoint-down(xs) {
@@ -45,7 +45,6 @@
     overflow-y: auto;
     overflow-x: hidden;
     max-height: 100%;
-    background-color: $white;
   }
 
   .item-box {

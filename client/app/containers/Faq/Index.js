@@ -26,20 +26,6 @@ class Faq extends React.PureComponent {
   render() {
     return (
       <>
-      
-        {/*<section className="faq-section">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-8">
-                left
-              </div>
-
-              <div className="col-lg-4">
-                right
-              </div>
-            </div>
-          </div>
-        </section>*/}
 
         <div class="faq-top">
           <Row>
@@ -139,7 +125,7 @@ class Faq extends React.PureComponent {
             </Col>
           </Row>
 
-</div>
+        </div>
 
 
 

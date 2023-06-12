@@ -139,49 +139,120 @@ class Navigation extends React.PureComponent {
 
       <>
 
-        {/*<nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <a className="navbar-brand" href="#">Navbar</a>
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
+          <nav className="navbar navbar-expand-lg fixed-top">
+            <Button
+              borderless
+              variant='empty'
+              className='d-none d-md-block nav-btn'
+              ariaLabel='open the menu'
+              icon={<BarsIcon />}
+              onClick={() => this.toggleMenu()}
+            />
+            <Autosuggest
+              suggestions={suggestions}
+              onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+              onSuggestionsClearRequested={onSuggestionsClearRequested}
+              getSuggestionValue={this.getSuggestionValue}
+              renderSuggestion={this.renderSuggestion}
+              inputProps={inputProps}
+              onSuggestionSelected={(_, item) => {
+                history.push(`/product/${item.suggestion.slug}`);
+              }}
+            />
 
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav mr-auto">
-              <li className="nav-item active">
-                <a className="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Link</a>
-              </li>
-              <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Dropdown
-                </a>
-                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a className="dropdown-item" href="#">Action</a>
-                  <a className="dropdown-item" href="#">Another action</a>
-                  <div className="dropdown-divider"></div>
-                  <a className="dropdown-item" href="#">Something else here</a>
+              <a className="navbar-brand mx-auto" href="#">eminence</a>
+              
+
+              <div className="form-inline my-4 my-lg-0">
+                <Nav navbar>
+                  {authenticated ? (
+                    <UncontrolledDropdown nav inNavbar>
+                      <DropdownToggle nav>
+                        {user.firstName ? user.firstName : 'Welcome'}
+                        <span className='fa fa-chevron-down dropdown-caret'></span>
+                      </DropdownToggle>
+                      <DropdownMenu right>
+                        <DropdownItem
+                          onClick={() => history.push('/dashboard')}
+                        >
+                          Dashboard
+                        </DropdownItem>
+                        <DropdownItem onClick={signOut}>Sign Out</DropdownItem>
+                      </DropdownMenu>
+                    </UncontrolledDropdown>
+                  ) : (
+                    <UncontrolledDropdown nav inNavbar>
+                      <DropdownToggle nav>
+                        <img className="account-image" width="24" height="24" src="https://img.icons8.com/material-outlined/24/user--v1.png" alt="user--v1"/>Welcome!
+                        <span className='fa fa-chevron-down dropdown-caret'></span>
+                      </DropdownToggle>
+                      <DropdownMenu right>
+                        <DropdownItem onClick={() => history.push('/login')}>
+                          Login
+                        </DropdownItem>
+                        <DropdownItem onClick={() => history.push('/register')}>
+                          Sign Up
+                        </DropdownItem>
+                      </DropdownMenu>
+                    </UncontrolledDropdown>
+                  )}
+                </Nav>
+                <div className='header-links cart-icon-nav'>
+                  <CartIcon
+                    className='d-none d-md-block'
+                    cartItems={cartItems}
+                    onClick={toggleCart}
+                  />
                 </div>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link disabled" href="#">Disabled</a>
-              </li>
-            </ul>
-            <div className="form-inline my-2 my-lg-0">
-              <CartIcon cartItems={cartItems} onClick={toggleCart} />
-              hello
+              </div>
+          </nav>
+
+
+          <div
+            className={isCartOpen ? 'mini-cart-open' : 'hidden-mini-cart'}
+            aria-hidden={`${isCartOpen ? false : true}`}
+          >
+            <div className='mini-cart'>
+              <Cart />
             </div>
+            <div
+              className={
+                isCartOpen ? 'drawer-backdrop dark-overflow' : 'drawer-backdrop'
+              }
+              onClick={toggleCart}
+            />
           </div>
-        </nav>*/}
-   <header className='header fixed-mobile-header'>
+
+          
+          <div
+            className={isMenuOpen ? 'mini-menu-open' : 'hidden-mini-menu'}
+            aria-hidden={`${isMenuOpen ? false : true}`}
+          >
+            <div className='mini-menu'>
+              <Menu brands={brands} />
+            </div>
+            <div
+              className={
+                isMenuOpen ? 'drawer-backdrop dark-overflow' : 'drawer-backdrop'
+              }
+              onClick={toggleMenu}
+            />
+          </div>
+
+
+
+
+
+
+
+      {/*<header className='header fixed-mobile-header'>
         <Container>
           <Row className='align-items-center top-header'>
             <Col
               xs={{ size: 12, order: 1 }}
               sm={{ size: 12, order: 1 }}
               md={{ size: 3, order: 1 }}
-              lg={{ size: 3, order: 3 }}
+              lg={{ size: 3, order: 1 }}
               className='pr-0'
             >
               <div className='brand'>
@@ -189,7 +260,7 @@ class Navigation extends React.PureComponent {
                   <Button
                     borderless
                     variant='empty'
-                    className='d-none d-md-block mr-3'
+                    className='d-none d-md-block'
                     ariaLabel='open the menu'
                     icon={<BarsIcon />}
                     onClick={() => this.toggleMenu()}
@@ -212,11 +283,11 @@ class Navigation extends React.PureComponent {
               xs={{ size: 12, order: 4 }}
               sm={{ size: 12, order: 4 }}
               md={{ size: 12, order: 4 }}
-              lg={{ size: 5, order: 1 }}
-              className='pt-2 pt-lg-1'
+              lg={{ size: 5, order: 2 }}
+              className='pt-2 pt-lg-0'
             >
               <Link to='/'>
-                <h1 className='logo'>Eminence</h1>
+                <h1 className='logo' style={{textAlign: "center"}}>EMINENCE</h1>
               </Link>
             </Col>
             <Col
@@ -241,7 +312,7 @@ class Navigation extends React.PureComponent {
               xs={{ size: 12, order: 2 }}
               sm={{ size: 12, order: 2 }}
               md={{ size: 9, order: 1 }}
-              lg={{ size: 4, order: 2 }}
+              lg={{ size: 4, order: 3 }}
               // className='px-0'
             >
               <Navbar color='light' light expand='md' className='mt-1 mt-md-0'>
@@ -318,7 +389,7 @@ class Navigation extends React.PureComponent {
           </Row>
         </Container>
 
-        {/* hidden cart drawer */}
+        
         <div
           className={isCartOpen ? 'mini-cart-open' : 'hidden-mini-cart'}
           aria-hidden={`${isCartOpen ? false : true}`}
@@ -334,7 +405,7 @@ class Navigation extends React.PureComponent {
           />
         </div>
 
-        {/* hidden menu drawer */}
+        
         <div
           className={isMenuOpen ? 'mini-menu-open' : 'hidden-mini-menu'}
           aria-hidden={`${isMenuOpen ? false : true}`}
@@ -350,7 +421,7 @@ class Navigation extends React.PureComponent {
           />
         </div>
       </header>
-
+*/}
 
       </>
     );

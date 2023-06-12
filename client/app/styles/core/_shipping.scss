@@ -1,0 +1,58 @@
+.shipping-section{
+	padding: 100px;
+}
+
+.first-shipping-section {
+	padding: 50px 0;
+	height: 400px;
+}
+
+.shipping-text-section {
+	height: auto;
+	margin: auto;
+}
+
+.first-shipping-section h2 {
+	font-size: 150px;
+	margin-bottom: 2%;
+	text-transform: capitalize
+}
+
+.first-shipping-section p {
+	color: #ccc;
+	margin-bottom: 2%;
+}
+
+.first-shipping-section button {
+	
+}
+
+@media (min-width: 767px) {
+	.shipping-btn {
+	    width: 40%;
+	    color: #fff !important;
+	    border: none;
+	    padding: 25px;
+	    background: #000;
+	    font-size: 14px;
+	    margin-top: 5%;
+	}
+}
+
+@media (max-width: 766px) {
+	.shipping-btn {
+	    width: 100%;
+	    color: #fff !important;
+	    border: none;
+	    padding: 25px;
+	    background: #000;
+	    font-size: 14px;
+	    margin-top: 5%;
+	}
+}
+
+// .second-shipping-section {
+//	background: #000;
+//	padding: 50px 0;
+//	color: #fff !important;
+// }

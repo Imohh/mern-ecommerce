@@ -39,7 +39,7 @@ class Contact extends React.PureComponent {
           <Col
             xs={{ size: 12, order: 1 }}
             md={{ size: '6', order: 2 }}
-            className='login-right'
+            className='login-right contact-right'
           >
           <h3 className='text-uppercase'>Contact Information</h3>
           <hr />

@@ -30,13 +30,12 @@ const Footer = () => {
   const infoLinks = [
     { id: 0, name: 'FAQs', to: '/faq' },
     { id: 1, name: 'Payment Options', to: '/payment' },
-    { id: 2, name: 'Shipping', to: '/shipping' },
-    { id: 3, name: 'Return & Exchanges', to: '/return' },
-    { id: 4, name: 'Track Orders', to: '/track-orders' }
+    { id: 2, name: 'Return & Exchanges', to: '/return' },
+    { id: 3, name: 'Track Orders', to: '/track-orders' }
   ];
 
   const aboutCompany = [
-    { id: 0, name: 'about eminence', to: '/about-eminence' },
+    { id: 0, name: 'About Eminence', to: '/about-eminence' },
     { id: 1, name: 'Legal', to: '/legal' },
     { id: 2, name: 'Shipping', to: '/shipping' },
     { id: 3, name: 'Contact Us', to: '/contact' }
@@ -72,9 +71,18 @@ const Footer = () => {
     </li>
   ));
 
+  const aboutFooterLinks = aboutCompany.map(item => (
+    <li key={item.id} className='footer-link'>
+      <Link key={item.id} to={item.to}>
+        {item.name}
+      </Link>
+    </li>
+  ));
+
   return (
     <footer className='footer'>
-      <Container className="footer-conainer">
+      {/*<Container className="footer-conainer" style={{background: "red"}}>*/}
+      <div className="footer-container">
         <div className='footer-content'>
           <div className='footer-block'>
             <div className='block-title'>
@@ -89,7 +97,7 @@ const Footer = () => {
               <h3 className='text-uppercase'>the company</h3>
             </div>
             <div className='block-content'>
-              <ul>{footerLinks}</ul>
+              <ul>{aboutFooterLinks}</ul>
             </div>
           </div>
           <div className='footer-block'>
@@ -105,6 +113,17 @@ const Footer = () => {
               <h3 className='text-uppercase'>Newsletter</h3>
               <Newsletter />
               <button onClick={showSocial}>follow us</button>
+              <div className="accepted-cards">
+                <div className="accepted-column">
+                  <img width="50" height="50" src="https://img.icons8.com/glyph-neue/50/visa.png" alt="visa"/>
+                </div>
+                <div className="accepted-column">
+                  <img width="50" height="50" src="https://img.icons8.com/fluency-systems-filled/50/mastercard.png" alt="mastercard"/>
+                </div>
+                <div className="accepted-column">
+                  <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/amex.png" alt="amex"/>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -139,13 +158,16 @@ const Footer = () => {
         <div className='footer-copyright'>
           {/*<span>© {new Date().getFullYear()} MERN Store</span>*/}
           <span>EMINENCE</span>
+          <div className="footer-copyright-text">
+            <p>© Copyright 2023. All rights reserved - Oprime Tech</p>
+          </div>
         </div>
 
 
 
         
-
-      </Container>
+      </div>
+      {/*</Container>*/}
 
       <div className="mobile-footer">
             <Accordion>
@@ -166,7 +188,7 @@ const Footer = () => {
                       </AccordionItemButton>
                   </AccordionItemHeading>
                   <AccordionItemPanel>
-                      <ul>{footerLinks}</ul>
+                      <ul>{aboutFooterLinks}</ul>
                   </AccordionItemPanel>
               </AccordionItem>
               <AccordionItem>
@@ -191,6 +213,26 @@ const Footer = () => {
               </AccordionItem>
             </Accordion>
             <div className="mobile-footer-title">
+              <div className="social-media">
+        
+                <ul className='footer-social-item'>
+                  <li>
+                    <a href='/#facebook' rel='noreferrer noopener' target='_blank'>
+                      <img src="https://img.icons8.com/windows/32/null/facebook-f--v1.png"/>
+                    </a>
+                  </li>
+                  <li>
+                    <a href='/#instagram' rel='noreferrer noopener' target='_blank'>
+                      <img src="https://img.icons8.com/material-outlined/32/null/instagram-new--v1.png"/>
+                    </a>
+                  </li>
+                  <li>
+                    <a href='/#twitter' rel='noreferrer noopener' target='_blank'>
+                      <img src="https://img.icons8.com/ios-filled/32/null/twitter.png"/>
+                    </a>
+                  </li>
+                </ul>
+              </div>
               <h3>EMINENCE</h3>
             </div>
         </div>

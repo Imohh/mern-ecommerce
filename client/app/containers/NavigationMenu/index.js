@@ -14,10 +14,11 @@ import actions from '../../actions';
 
 import Button from '../../components/Common/Button';
 import { CloseIcon } from '../../components/Common/Icon';
+import MiniBrand from '../../components/Store//MiniBrand';
 
 class NavigationMenu extends React.PureComponent {
   render() {
-    const { isMenuOpen, categories, toggleMenu } = this.props;
+    const { isMenuOpen, categories, toggleMenu, brands } = this.props;
 
     const handleCategoryClick = () => {
       this.props.toggleMenu();
@@ -57,6 +58,14 @@ class NavigationMenu extends React.PureComponent {
             </nav>
           </Container>
         </div>
+        <div>
+          <Container>
+            <h3 className='menu-title'>Shop By Brand</h3>
+            <MiniBrand
+              brands={brands}
+            />
+          </Container>
+        </div>
       </div>
     );
   }
@@ -65,7 +74,8 @@ class NavigationMenu extends React.PureComponent {
 const mapStateToProps = state => {
   return {
     isMenuOpen: state.navigation.isMenuOpen,
-    categories: state.category.storeCategories
+    categories: state.category.storeCategories,
+    brands: state.brand.storeBrands
   };
 };
 

@@ -18,8 +18,25 @@ class Shipping extends React.PureComponent {
     return (
       <>
       
+        <div className="shipping-section">
 
-        <h2>Shipping page</h2>
+          <div className="first-shipping-section">
+            <div className="containers">
+              <div className="row">
+                <div className="col-lg-6 col-sm-12 shipping-text-section">
+                  <h2>Your Items will get to you anywhere in the world</h2>
+                  <p>we outsource this service to DHL to handle and we trust their ability to always deliver hence the partnership</p>
+                  <button type="text" className="shipping-btn">Shipping status</button>
+                </div>
+
+                <div className="col-lg-6 col-sm-12">
+                  <img src="images/logistics.png" alt="logistics"/>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
 
 
 
