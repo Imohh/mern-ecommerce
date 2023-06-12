@@ -1,0 +1,32 @@
+[
+    {
+    "imageUrl": "/images/catalog/banner-1.jpg",
+    "price": "400",
+    "name": "Eminence-faque",
+    "category" : "T-shirt"
+    },
+    {
+    "imageUrl": "/images/catalog/banner-2.jpg",
+    "price": "600",
+    "name": "Moncler Jacket",
+    "category" : "Jacket"
+    },
+    {
+    "imageUrl": "/images/catalog/banner-3.jpg",
+    "price": "900",
+    "name": "jakarta",
+    "category" : "Pants"
+    },
+    {
+        "imageUrl": "/images/catalog/banner-3.jpg",
+        "price": "900",
+        "name": "jakarta",
+        "category" : "Jacket"
+    },
+    {
+        "imageUrl": "/images/catalog/banner-3.jpg",
+        "price": "900",
+        "name": "Ekelebe Stunna",
+        "category" : "Pants"
+    }
+]
