@@ -146,7 +146,7 @@ class ProductPage extends React.PureComponent {
                   )}
                 </div>
               </Col>
-              <Col xs='12' md='7' lg='4' className='mb-3 px-md-2 px-0' noGutters>
+              <Col xs='12' md='7' lg='4' className='mb-3 px-md-2 px-0'>
                 <div className='product-container'>
                   <div className='item-box'>
                     <div className='item-details'>
@@ -273,25 +273,25 @@ class ProductPage extends React.PureComponent {
 
 
 
-                          <div class="tabs" style={{ maxHeight: '250px', overflow: 'auto' }}>
-                            <div class="tab">
+                          <div className="tabs" style={{ maxHeight: '250px', overflow: 'auto' }}>
+                            <div className="tab">
                               <input type="checkbox" id="chck1" className="inputstyle"/>
-                              <label class="tab-label" for="chck1">Details</label>
-                              <div class="tab-content">
+                              <label className="tab-label" for="chck1">Details</label>
+                              <div className="tab-content">
                                 {product.description}
                               </div>
                             </div>
-                            <div class="tab">
+                            <div className="tab">
                               <input type="checkbox" id="chck2" className="inputstyle"/>
-                              <label class="tab-label" for="chck2">Size & Fit</label>
-                              <div class="tab-content">
+                              <label className="tab-label" for="chck2">Size & Fit</label>
+                              <div className="tab-content">
                                 <img src='/images/cloth.webp'/>
                               </div>
                             </div>
-                            <div class="tab">
+                            <div className="tab">
                               <input type="checkbox" id="chck3" className="inputstyle"/>
-                              <label class="tab-label" for="chck3">Shipping & Returns</label>
-                              <div class="tab-content">
+                              <label className="tab-label" for="chck3">Shipping & Returns</label>
+                              <div className="tab-content">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
                               </div>
                             </div>

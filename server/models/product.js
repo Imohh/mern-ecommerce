@@ -32,6 +32,22 @@ const ProductSchema = new Schema({
     type: String,
     required: true
   },
+  // img: {
+  //   type: [String], // Array of strings to store multiple image paths
+  //   required: true,
+  // },
+  // img: [
+  //   {
+  //     path: {
+  //       type: String,
+  //       required: true
+  //     },
+  //     contentType: {
+  //       type: String,
+  //       required: true
+  //     }
+  //   }
+  // ],
   description: {
     type: String,
     trim: true

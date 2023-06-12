@@ -297,6 +297,7 @@ router.post(
       const brand = req.body.brand;
       const img = req.file.path;
       const contentType = req.file.mimetype
+      // const img = req.files.map(file => file.path);
       
 
       console.log(img)
@@ -326,6 +327,9 @@ router.post(
       }
 
       const result = await cloudinary.uploader.upload(img);
+      // const resultPromises = img.map(image => cloudinary.uploader.upload(image));
+      // const results = await Promise.all(resultPromises);
+
       
       const product = new Product({
         sku,
@@ -338,6 +342,7 @@ router.post(
         brand,
         img: result.url,
         contentType
+        // img: results.map(result => result.url),
       });
 
 
@@ -348,8 +353,8 @@ router.post(
         message: `Product has been added successfully!`,
         product: savedProduct
       });
-    } catch (error) {
-      return res.status(400).json({
+      } catch (error) {
+        return res.status(400).json({
         error: 'Your request could not be processed. Please try again. 006'
       });
     }

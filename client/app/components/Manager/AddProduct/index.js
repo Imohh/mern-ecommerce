@@ -36,8 +36,9 @@ const AddProduct = props => {
   };
 
   return (
+
     <div className='add-product'>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} noValidate>
         <Row>
           <Col xs='12' lg='6'>
             <Input
@@ -144,6 +145,7 @@ const AddProduct = props => {
               onInputChange={(name, value) => {
                 productChange(name, value);
               }}
+              // multiple={'multiple'}
             />
           </Col>
           <Col xs='12' md='12' className='my-2'>
