@@ -1,25 +1,92 @@
 .navbar {
-  padding: 20px 70px;
-  background: #fff;
-  z-index: 1020;
+    background: #fff;
+    z-index: 1020;
+  }
+
+@media (min-width: 992px) {
+  .navbar {
+    padding: 20px 70px;
+  }
+
+  .cart-icon-nav {
+    margin-left: 20px;
+  }
+
+  .nav-btn {
+    margin-right: 20px;
+  }
+
+  .account-image{
+    width: 20%;
+    margin-right: 5px;
+  }
+
+  .show-mobile {
+    display: none
+  }
 }
 
-.cart-icon-nav {
-  margin-left: 20px;
+@media (min-width:768px) and (max-width: 991px) {
+  .navbar {
+    padding: 0 50px;
+  }
+
+  .cart-icon-nav {
+    margin-left: 20px;
+  }
+
+  .nav-btn {
+    margin-right: 20px;
+  }
+
+  .account-image{
+    width: 20%;
+    margin-right: 5px;
+  }
+
+  .show-mobile {
+    display: none
+  }
 }
 
-.nav-btn {
-  margin-right: 20px;
+@media (max-width: 767px) {
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .cart-icon-nav {
+    margin-left: 2px;
+  }
+
+  .nav-btn {
+    margin-right: 2px;
+  }
+
+  .hide-display {
+    display: none;
+  }
+
+  .fa-chevron-down.dropdown-caret{
+    display: none;
+  }
+
+  .account-image{
+    width: 60%;
+    margin-right: 20px;
+  }
+
+  .search-icon {
+    width: 5%;
+    margin-left: 2%;
+  }
 }
 
-.navbar-brand{
+
+
+.navbar-brand {
   text-transform: uppercase;
   font-size: 30px;
   font-weight: 800;
   color: #000 !important;
 }
 
-.account-image{
-  width: 20%;
-  margin-right: 5px;
-}

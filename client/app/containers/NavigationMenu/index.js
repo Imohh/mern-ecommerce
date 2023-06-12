@@ -38,7 +38,15 @@ class NavigationMenu extends React.PureComponent {
           )}
         </div>
         <div className='menu-body'>
+
           <Container>
+            <NavLink
+              to='/shop'
+              activeClassName='menu-title'
+            >
+              Shop
+            </NavLink>
+
             <h3 className='menu-title'>Shop By Category</h3>
             <nav role='navigation'>
               <ul className='menu-list'>
@@ -57,13 +65,24 @@ class NavigationMenu extends React.PureComponent {
               </ul>
             </nav>
           </Container>
-        </div>
-        <div>
           <Container>
             <h3 className='menu-title'>Shop By Brand</h3>
-            <MiniBrand
-              brands={brands}
-            />
+            <nav role='navigation'>
+              <ul className='menu-list'>
+              {brands.map((brand, index) => (
+                <li key={index} className='menu-item'>
+                  <NavLink
+                    onClick={handleCategoryClick}
+                    to={`/shop/brand/${brand.slug}`}
+                    activeClassName='active-link'
+                    exact
+                  >
+                    {brand.name}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </nav>
           </Container>
         </div>
       </div>

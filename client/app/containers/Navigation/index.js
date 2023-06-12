@@ -141,24 +141,28 @@ class Navigation extends React.PureComponent {
 
           <nav className="navbar navbar-expand-lg fixed-top">
             <Button
-              borderless
               variant='empty'
-              className='d-none d-md-block nav-btn'
+              className='nav-btn'
               ariaLabel='open the menu'
               icon={<BarsIcon />}
               onClick={() => this.toggleMenu()}
             />
-            <Autosuggest
-              suggestions={suggestions}
-              onSuggestionsFetchRequested={onSuggestionsFetchRequested}
-              onSuggestionsClearRequested={onSuggestionsClearRequested}
-              getSuggestionValue={this.getSuggestionValue}
-              renderSuggestion={this.renderSuggestion}
-              inputProps={inputProps}
-              onSuggestionSelected={(_, item) => {
-                history.push(`/product/${item.suggestion.slug}`);
-              }}
-            />
+            <span className="hide-display">
+              <Autosuggest
+                suggestions={suggestions}
+                onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+                onSuggestionsClearRequested={onSuggestionsClearRequested}
+                getSuggestionValue={this.getSuggestionValue}
+                renderSuggestion={this.renderSuggestion}
+                inputProps={inputProps}
+                onSuggestionSelected={(_, item) => {
+                  history.push(`/product/${item.suggestion.slug}`);
+                }}
+              />
+            </span>
+
+            <img className="show-mobile search-icon" width="24" height="24" src="https://img.icons8.com/ios-glyphs/24/search--v1.png" alt="search--v1"/>
+
 
               <a className="navbar-brand mx-auto" href="#">eminence</a>
               
@@ -183,8 +187,8 @@ class Navigation extends React.PureComponent {
                   ) : (
                     <UncontrolledDropdown nav inNavbar>
                       <DropdownToggle nav>
-                        <img className="account-image" width="24" height="24" src="https://img.icons8.com/material-outlined/24/user--v1.png" alt="user--v1"/>Welcome!
-                        <span className='fa fa-chevron-down dropdown-caret'></span>
+                        <img className="account-image" width="24" height="24" src="https://img.icons8.com/material-outlined/24/user--v1.png" alt="user--v1"/><span className="hide-display">Welcome!</span>
+                        <span className='fa fa-chevron-down dropdown-caret hide-display'></span>
                       </DropdownToggle>
                       <DropdownMenu right>
                         <DropdownItem onClick={() => history.push('/login')}>
@@ -199,7 +203,7 @@ class Navigation extends React.PureComponent {
                 </Nav>
                 <div className='header-links cart-icon-nav'>
                   <CartIcon
-                    className='d-none d-md-block'
+                    className=''
                     cartItems={cartItems}
                     onClick={toggleCart}
                   />

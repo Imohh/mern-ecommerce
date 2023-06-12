@@ -167,3 +167,12 @@ body.user-is-tabbing *:focus {
   box-shadow: $outline-box-shadow;
   border-radius: $border-radius-default;
 }
+
+
+
+//CONTACT PAGE
+@media (max-width: 767px) {
+  .contact {
+    margin-top: 20%
+  }
+}
