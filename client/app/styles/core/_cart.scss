@@ -48,9 +48,6 @@
   }
 
   .item-box {
-    padding: 10px;
-    margin-bottom: 5px;
-    border-bottom: $border-default;
 
     &:last-child {
       border-bottom: none;
@@ -139,3 +136,20 @@
   }
 }
 /* end cart common styles */
+
+
+@media (min-width: 721px) {
+  .item-box {
+    padding: 10px;
+    margin-bottom: 5px;
+    border-bottom: $border-default;
+  }
+}
+
+@media (max-width: 720px) {
+  .item-box {
+    padding: 1px;
+    margin-bottom: 5px;
+    border-bottom: $border-default;
+  }
+}

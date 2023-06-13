@@ -13,7 +13,6 @@ const CartSummary = props => {
 
   return (
     <div className='cart-summary'>
-      <Container>
         <Row className='mb-2 summary-item'>
           <Col xs='9'>
             <p className='summary-label'>Free Shipping</p>
@@ -40,7 +39,6 @@ const CartSummary = props => {
             <p className='summary-value'>${cartTotal}</p>
           </Col>
         </Row>
-      </Container>
     </div>
   );
 };
