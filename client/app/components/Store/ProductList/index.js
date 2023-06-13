@@ -88,7 +88,7 @@ const ProductList = props => {
   <div>  
   {products.map((product, index) => (
     <div key={index} className="cards">
-      <div className="card-content">
+      <div className="card-content" >
         <div className="top-bar">
           <span className="float-right lnr lnr-heart">
             <AddToWishList

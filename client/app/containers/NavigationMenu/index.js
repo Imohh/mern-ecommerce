@@ -40,13 +40,10 @@ class NavigationMenu extends React.PureComponent {
         <div className='menu-body'>
 
           <Container>
-            <NavLink
-              to='/shop'
-              activeClassName='menu-title'
-            >
-              Shop
-            </NavLink>
-
+            <p 
+              // to='/shop'
+              onClick={handleCategoryClick} 
+              className='menu-title'><a href="/shop">Shop</a></p>
             <h3 className='menu-title'>Shop By Category</h3>
             <nav role='navigation'>
               <ul className='menu-list'>

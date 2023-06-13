@@ -79,16 +79,17 @@ class Shop extends React.PureComponent {
           >
             {showHide && <ProductFilter filterProducts={filterProducts}  /> }
           </Col>
+          {/*when filter display by the side*/}
           <Col className="px-0" noGutters
-            xs={{ size: `${showHide ? 9 : 12}`, order: 5 }}
-            sm={{ size: `${showHide ? 9 : 12}`, order: 5 }}
-            md={{ size: `${showHide ? 9 : 12}`, order: 5 }}
+            xs={{ size: `${showHide ? 12 : 12}`, order: 5 }}
+            sm={{ size: `${showHide ? 12 : 12}`, order: 5 }}
+            md={{ size: `${showHide ? 12 : 12}`, order: 5 }}
             lg={{ size: `${showHide ? 9 : 12}`, order: 5 }}
           >
             <Row className='align-items-center mx-0 mb-4 mt-4 mt-lg-0 py-3 py-lg-0 bg-white shop-toolbar'>
               <Col
-                xs={{ size: 12, order: 1 }}
-                sm={{ size: 12, order: 1 }}
+                xs={{ size: 6, order: 1 }}
+                sm={{ size: 6, order: 1 }}
                 md={{ size: 5, order: 1 }}
                 lg={{ size: 2, order: 1 }}
                 className='text-center text-md-left mt-3 mt-md-0 mb-1 mb-md-0'
@@ -100,7 +101,7 @@ class Shop extends React.PureComponent {
                 sm={{ size: 12, order: 1 }}
                 md={{ size: 5, order: 1 }}
                 lg={{ size: 4, order: 1 }}
-                className='text-center text-md-left mt-3 mt-md-0 mb-1 mb-md-0'
+                className='text-center text-md-left d-none mt-3 mt-md-0 mb-1 mb-md-0'
               >
                 <span>Showing: </span>
                 {totalProducts > 0
@@ -117,8 +118,8 @@ class Shop extends React.PureComponent {
                 <span>Sort by</span>
               </Col>
               <Col
-                xs={{ size: 12, order: 2 }}
-                sm={{ size: 12, order: 2 }}
+                xs={{ size: 6, order: 2 }}
+                sm={{ size: 6, order: 2 }}
                 md={{ size: 5, order: 2 }}
                 lg={{ size: 2, order: 2 }}
               >

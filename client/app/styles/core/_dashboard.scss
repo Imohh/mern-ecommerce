@@ -36,13 +36,13 @@
     padding: 0px;
   }
 
-  //.menu-panel {
-  //  display: none;
-  //  width: 100%;
-  //  @include media-breakpoint-down(sm) {
-  //    display: block;
-  //    cursor: pointer;
-  //  }
+  .menu-panel {
+    display: none;
+    width: 100%;
+    @include media-breakpoint-down(sm) {
+      display: block;
+      cursor: pointer;
+    }
 
   //  &:hover {
   //    background-color: transparent;
@@ -52,7 +52,7 @@
   //    font-size: $font-size-heading-xsmall !important;
   //    font-weight: $font-weight-normal;
   //  }
-  //}
+  }
 
   .panel-links {
     width: 100%;
