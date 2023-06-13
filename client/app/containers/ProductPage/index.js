@@ -85,6 +85,7 @@ class ProductPage extends React.PureComponent {
       }
     ];
 
+
     return (
       <div className='product-shop' style={{margin: "0 auto"}}>
         {isLoading ? (
@@ -108,36 +109,6 @@ class ProductPage extends React.PureComponent {
                     showFullscreenButton={false}
                     thumbnailPosition={"left"}
                   />
-
-
-
-
-
-                  {/*<div className="slider">
-                    <input type="radio" name="slide_switch" id="id1" checked="checked"/>
-                    <label for="id1">
-                      <img src={`${
-                      product.img
-                        ? product.img
-                        : '/images/placeholder-image.png'
-                      }`} width="100" height= "100"/>
-                    </label>
-                    <img src={`${
-                      product.img
-                        ? product.img
-                        : '/images/placeholder-image.png'
-                    }`}/>*/}
-                    
-                    {/*<!--Lets show the second image by default on page load-->*/}
-                    {/*<input type="radio" name="slide_switch" id="id2"/>
-                    
-                    <input type="radio" name="slide_switch" id="id5"/>
-                    <label for="id5">
-                      <img src="http://thecodeplayer.com/uploads/media/8k3N3EL.jpg" width="100"/>
-                    </label>
-                    <img src="http://thecodeplayer.com/uploads/media/8k3N3EL.jpg"/>
-                  </div>*/}
-
 
                   {product.inventory <= 0 && !shopFormErrors['quantity'] ? (
                     <p className='stock out-of-stock'>Out of stock</p>
@@ -168,23 +139,6 @@ class ProductPage extends React.PureComponent {
                       )}
                       <p className='price'>${product.price}</p>
                       <div className='item-customize product-select-section'>
-
-                        {/*<select
-                          className="select"
-                          name="size"
-                          value={productShopData.size}
-                          onChange={(e) => {
-                            productShopChange(e.target.name, e.target.value);
-                          }}
-                        >
-                          <option value="">Size</option>
-                          <option value="S">Small</option>
-                          <option value="M">Medium</option>
-                          <option value="L">Large</option>
-                          <option value="XL">Extra Large</option>
-                        </select>*/}
-
-
                         <button
                           className={`size-option ${productShopData.size === "S" ? "active-select" : "size-select"}`}
                           onClick={() => productShopChange("size", "S")}
@@ -209,8 +163,6 @@ class ProductPage extends React.PureComponent {
                         >
                           XL
                         </button>
-
-
                       </div>
                       <div className='item-customize'>
                         <button
@@ -263,9 +215,16 @@ class ProductPage extends React.PureComponent {
                             text='Add To Bag'
                             className='product-detail-btn'
                             icon={<BagIcon />}
-                            onClick={() => handleAddToCart(product)}
+                            onClick={() => {
+                              if (!productShopData.size) {
+                                alert("Please select a size."); // Display an error message
+                                return; // Exit the function
+                              }
+                             handleAddToCart(product)
+                           }}
                           />
                         )}
+                        
                       </div>
 
                       {/*accordion section*/}
