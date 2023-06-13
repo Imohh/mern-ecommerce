@@ -139,6 +139,12 @@
   }
 }
 
+@media (max-width: 600px) {
+  .social-media {
+    display: none
+  }
+}
+
 .social-media p {
   text-align: center;
   text-decoration: capitalize;
@@ -182,18 +188,39 @@
   margin-right: 2%;
 }
 
-.accepted-column {
-  float: left;
-  width: 13.33%;
-  padding: 5px;
-}
+@media (min-width: 601px) {
+  .accepted-column {  
+    float: left;
+    width: 13.33%;
+    padding: 5px;
+  }
 
 
-.accepted-cards::after {
-  content: "";
-  clear: both;
-  display: table;
+  .accepted-cards::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
 }
+ 
+@media (max-width: 600px) {
+
+  .accepted-cards {
+    padding-left: 35%;
+  }
+
+  .accepted-column {  
+    float: left;
+    width: 50px;
+    padding: 5px;
+  }
+
+  .accepted-cards::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+} 
 
 @media(min-width: 1400px) {
   .footer-container {

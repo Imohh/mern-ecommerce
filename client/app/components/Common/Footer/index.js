@@ -208,7 +208,7 @@ const Footer = () => {
                       </AccordionItemButton>
                   </AccordionItemHeading>
                   <AccordionItemPanel>
-                    
+                    <Newsletter />
                   </AccordionItemPanel>
               </AccordionItem>
             </Accordion>
@@ -234,6 +234,20 @@ const Footer = () => {
                 </ul>
               </div>
               <h3>EMINENCE</h3>
+              <div className="footer-copyright-text">
+                <p>© Copyright 2023. All rights reserved - Oprime Tech</p>
+              </div>
+                <div className="accepted-cards">
+                  <div className="accepted-column">
+                    <img width="50" height="50" src="https://img.icons8.com/glyph-neue/50/visa.png" alt="visa"/>
+                  </div>
+                  <div className="accepted-column">
+                    <img width="50" height="50" src="https://img.icons8.com/fluency-systems-filled/50/mastercard.png" alt="mastercard"/>
+                  </div>
+                  <div className="accepted-column">
+                    <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/amex.png" alt="amex"/>
+                  </div>
+                </div>
             </div>
         </div>
 

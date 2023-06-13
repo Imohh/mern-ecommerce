@@ -43,7 +43,7 @@ class Cart extends React.PureComponent {
           )}
         </div>
         {cartItems.length > 0 ? (
-          <div className='cart-body'>
+          <div className='cart-body' style={{background: "red"}}>
             <CartList
               toggleCart={toggleCart}
               cartItems={cartItems}
