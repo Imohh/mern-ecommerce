@@ -1,24 +1,70 @@
 /*FAQ PAGE*/
-.faq-top {
-    padding-right: 50px;
-    padding-left: 50px;
-    padding-bottom: 5%;
-    margin: 0;
-    background: #f6f5f3;
+@media (min-width: 768px) {
+    .faq-top {
+        padding-top: 50px;
+        padding-right: 50px;
+        padding-left: 50px;
+        padding-bottom: 5%;
+        margin: 0;
+        background: #f6f5f3;
+    }
+}
+
+@media (max-width: 767px) {
+    .faq-top {
+        padding-top: 50px;
+        padding-right: 50px;
+        padding-left: 50px;
+        padding-bottom: 5%;
+        margin: 0;
+        background: #f6f5f3;
+    }
 }
 
 
-.bottom-faq {
-    background: #fff;
-    padding: 35px;
-    margin-top: 5%;
-    height: 250px;
+@media (min-width: 1039px) {
+    .bottom-faq {
+        background: #fff;
+        padding: 35px;
+        margin-top: 5%;
+        height: 250px;
+    }
+
+    .bottom-faq h2 {
+        text-transform: uppercase;
+        font-size: 19px;
+        font-weight: 900;
+    }
 }
 
-.bottom-faq h2 {
-    text-transform: uppercase;
-    font-size: 19px;
-    font-weight: 900;
+@media (min-width: 768px) and (max-width: 1038px) {
+    .bottom-faq {
+        background: #fff;
+        padding: 35px;
+        margin-top: 5%;
+        height: 300px;
+    }
+
+    .bottom-faq h2 {
+        text-transform: uppercase;
+        font-size: 19px;
+        font-weight: 900;
+    }
+}
+
+@media (max-width: 767px) {
+    .bottom-faq {
+        background: #fff;
+        padding: 35px;
+        margin-top: 5%;
+        height: 250px;
+    }
+
+    .bottom-faq h2 {
+        text-transform: uppercase;
+        font-size: 19px;
+        font-weight: 900;
+    }
 }
 
 .faq {
@@ -57,4 +103,8 @@
 
 .faq-btn:hover {
     background: #2a2525
+}
+
+.faq-right {
+    margin-top: 5%;
 }

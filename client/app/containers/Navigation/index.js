@@ -36,6 +36,7 @@ import Menu from '../NavigationMenu';
 import Cart from '../Cart';
 
 class Navigation extends React.PureComponent {
+
   componentDidMount() {
     this.props.fetchStoreBrands();
     this.props.fetchStoreCategories();
@@ -147,7 +148,7 @@ class Navigation extends React.PureComponent {
               icon={<BarsIcon />}
               onClick={() => this.toggleMenu()}
             />
-            <span className="hide-display">
+            {/*<span className="hide-display">
               <Autosuggest
                 suggestions={suggestions}
                 onSuggestionsFetchRequested={onSuggestionsFetchRequested}
@@ -159,10 +160,31 @@ class Navigation extends React.PureComponent {
                   history.push(`/product/${item.suggestion.slug}`);
                 }}
               />
-            </span>
+            </span>*/}
 
-            <img className="show-mobile search-icon" width="24" height="24" src="https://img.icons8.com/ios-glyphs/24/search--v1.png" alt="search--v1"/>
+            
+            {/*<a href="#open-modal">
+              <img 
+                className="search-icon" 
+                width="24" 
+                height="24" 
+                src="https://img.icons8.com/ios-glyphs/24/search--v1.png" 
+                alt="search--v1"
+              />
+            </a>*/}
+            
 
+                <div className="interior">
+                  <a className="btn" href="#open-modal">
+                    <img 
+                      className="search-icon" 
+                      width="24" 
+                      height="24" 
+                      src="https://img.icons8.com/ios-glyphs/24/search--v1.png" 
+                      alt="search--v1"
+                    />
+                  </a>
+                </div>
 
               <a className="navbar-brand mx-auto" href="#">eminence</a>
               
@@ -210,6 +232,40 @@ class Navigation extends React.PureComponent {
                 </div>
               </div>
           </nav>
+
+          
+          <div id="open-modal" className="modal-window">
+            <div>
+              {/*<a href="#" title="Close"><img width="50" height="50" src="https://img.icons8.com/ios/50/delete-sign--v1.png" alt="delete-sign--v1"/></a>*/}
+              <a href="#" title="Close" className="modal-close">Close</a>
+              <Autosuggest
+                suggestions={suggestions}
+                onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+                onSuggestionsClearRequested={onSuggestionsClearRequested}
+                getSuggestionValue={this.getSuggestionValue}
+                renderSuggestion={this.renderSuggestion}
+                inputProps={inputProps}
+                onSuggestionSelected={(_, item) => {
+                  history.push(`/product/${item.suggestion.slug}`);
+                }}
+              />
+            </div>
+          </div>
+
+          
+            {/*<span className="show-displays">
+              <Autosuggest
+                suggestions={suggestions}
+                onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+                onSuggestionsClearRequested={onSuggestionsClearRequested}
+                getSuggestionValue={this.getSuggestionValue}
+                renderSuggestion={this.renderSuggestion}
+                inputProps={inputProps}
+                onSuggestionSelected={(_, item) => {
+                  history.push(`/product/${item.suggestion.slug}`);
+                }}
+              />
+            </span>*/}
 
 
           <div

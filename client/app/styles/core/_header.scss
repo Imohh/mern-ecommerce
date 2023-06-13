@@ -24,6 +24,10 @@
   .show-mobile {
     display: none
   }
+
+  .show-display {
+    display: none
+  }
 }
 
 @media (min-width:768px) and (max-width: 991px) {
@@ -45,6 +49,10 @@
   }
 
   .show-mobile {
+    display: none
+  }
+
+  .show-display {
     display: none
   }
 }
@@ -75,9 +83,12 @@
     margin-right: 20px;
   }
 
+  .interior {
+    width: 50px;
+  }
+
   .search-icon {
-    width: 5%;
-    margin-left: 2%;
+    width: 100%;
   }
 }
 
@@ -88,5 +99,88 @@
   font-size: 30px;
   font-weight: 800;
   color: #000 !important;
+}
+
+.show-displays {
+  position: fixed;
+}
+
+
+//MODAL
+@media (min-width: 601px) {
+  .modal-window {
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.25);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;
+    &:target {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+    }
+    & > div {
+      width: 70%;
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 2em;
+      background: white;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .modal-window {
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.25);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;
+    &:target {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+    }
+    & > div {
+      width: 100%;
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 2em;
+      background: white;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+  }
+}
+
+.modal-close {
+  color: #aaa;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  text-align: center;
+  right: 0;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+  &:hover {
+    color: black;
+  }
 }
 
