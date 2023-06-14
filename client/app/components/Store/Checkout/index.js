@@ -83,9 +83,9 @@ const Checkout = props => {
         )}
       </div>
       <div id="open-modals" className="modal-window" style={{marginTop: "10%"}}>
-        <div>
+        <div style={{marginTop: "5%"}}>
           <a href="#" title="Close" className="modal-close">Close</a>
-          <div className="checkout-form" style={{marginTop: "10%"}}>
+          <div className="checkout-form">
             <div className="checkout-field">
               <label>Name</label>
               <input
