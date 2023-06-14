@@ -27,7 +27,7 @@ const OrderMeta = props => {
   };
 
   return (
-    <div className='order-meta'>
+    <div className='order-meta' style={{marginTop: "5%"}}>
       <div className='d-flex align-items-center justify-content-between mb-3 title'>
         <h2 className='mb-0'>Order Details</h2>
         <Button

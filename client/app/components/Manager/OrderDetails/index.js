@@ -15,7 +15,7 @@ import OrderSummary from '../OrderSummary';
 const OrderDetails = props => {
   const { order, user, cancelOrder, updateOrderItemStatus, onBack } = props;
   return (
-    <div className='order-details'>
+    <div className='order-details' style={{padding: "50px"}}>
       <Row>
         <Col xs='12' md='12'>
           <OrderMeta order={order} cancelOrder={cancelOrder} onBack={onBack} />

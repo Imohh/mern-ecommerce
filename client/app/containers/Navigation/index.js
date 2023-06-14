@@ -148,45 +148,20 @@ class Navigation extends React.PureComponent {
               icon={<BarsIcon />}
               onClick={() => this.toggleMenu()}
             />
-            {/*<span className="hide-display">
-              <Autosuggest
-                suggestions={suggestions}
-                onSuggestionsFetchRequested={onSuggestionsFetchRequested}
-                onSuggestionsClearRequested={onSuggestionsClearRequested}
-                getSuggestionValue={this.getSuggestionValue}
-                renderSuggestion={this.renderSuggestion}
-                inputProps={inputProps}
-                onSuggestionSelected={(_, item) => {
-                  history.push(`/product/${item.suggestion.slug}`);
-                }}
-              />
-            </span>*/}
 
-            
-            {/*<a href="#open-modal">
-              <img 
-                className="search-icon" 
-                width="24" 
-                height="24" 
-                src="https://img.icons8.com/ios-glyphs/24/search--v1.png" 
-                alt="search--v1"
-              />
-            </a>*/}
-            
+            <div className="interior">
+              <a className="btn" href="#open-modal">
+                <img 
+                  className="search-icon" 
+                  width="24" 
+                  height="24" 
+                  src="https://img.icons8.com/ios-glyphs/24/search--v1.png" 
+                  alt="search--v1"
+                />
+              </a>
+            </div>
 
-                <div className="interior">
-                  <a className="btn" href="#open-modal">
-                    <img 
-                      className="search-icon" 
-                      width="24" 
-                      height="24" 
-                      src="https://img.icons8.com/ios-glyphs/24/search--v1.png" 
-                      alt="search--v1"
-                    />
-                  </a>
-                </div>
-
-              <a className="navbar-brand mx-auto" href="#">eminence</a>
+              <a className="navbar-brand mx-auto" href="/">eminence</a>
               
 
               <div className="form-inline my-4 my-lg-0">
@@ -236,7 +211,6 @@ class Navigation extends React.PureComponent {
           
           <div id="open-modal" className="modal-window">
             <div>
-              {/*<a href="#" title="Close"><img width="50" height="50" src="https://img.icons8.com/ios/50/delete-sign--v1.png" alt="delete-sign--v1"/></a>*/}
               <a href="#" title="Close" className="modal-close">Close</a>
               <Autosuggest
                 suggestions={suggestions}
@@ -251,23 +225,6 @@ class Navigation extends React.PureComponent {
               />
             </div>
           </div>
-
-          
-            {/*<span className="show-displays">
-              <Autosuggest
-                suggestions={suggestions}
-                onSuggestionsFetchRequested={onSuggestionsFetchRequested}
-                onSuggestionsClearRequested={onSuggestionsClearRequested}
-                getSuggestionValue={this.getSuggestionValue}
-                renderSuggestion={this.renderSuggestion}
-                inputProps={inputProps}
-                onSuggestionSelected={(_, item) => {
-                  history.push(`/product/${item.suggestion.slug}`);
-                }}
-              />
-            </span>*/}
-
-
           <div
             className={isCartOpen ? 'mini-cart-open' : 'hidden-mini-cart'}
             aria-hidden={`${isCartOpen ? false : true}`}
@@ -298,190 +255,6 @@ class Navigation extends React.PureComponent {
               onClick={toggleMenu}
             />
           </div>
-
-
-
-
-
-
-
-      {/*<header className='header fixed-mobile-header'>
-        <Container>
-          <Row className='align-items-center top-header'>
-            <Col
-              xs={{ size: 12, order: 1 }}
-              sm={{ size: 12, order: 1 }}
-              md={{ size: 3, order: 1 }}
-              lg={{ size: 3, order: 1 }}
-              className='pr-0'
-            >
-              <div className='brand'>
-                {categories && categories.length > 0 && (
-                  <Button
-                    borderless
-                    variant='empty'
-                    className='d-none d-md-block'
-                    ariaLabel='open the menu'
-                    icon={<BarsIcon />}
-                    onClick={() => this.toggleMenu()}
-                  />
-                )}
-                <Autosuggest
-                suggestions={suggestions}
-                onSuggestionsFetchRequested={onSuggestionsFetchRequested}
-                onSuggestionsClearRequested={onSuggestionsClearRequested}
-                getSuggestionValue={this.getSuggestionValue}
-                renderSuggestion={this.renderSuggestion}
-                inputProps={inputProps}
-                onSuggestionSelected={(_, item) => {
-                  history.push(`/product/${item.suggestion.slug}`);
-                }}
-              />
-              </div>
-            </Col>
-            <Col
-              xs={{ size: 12, order: 4 }}
-              sm={{ size: 12, order: 4 }}
-              md={{ size: 12, order: 4 }}
-              lg={{ size: 5, order: 2 }}
-              className='pt-2 pt-lg-0'
-            >
-              <Link to='/'>
-                <h1 className='logo' style={{textAlign: "center"}}>EMINENCE</h1>
-              </Link>
-            </Col>
-            <Col
-              xs={{ size: 12, order: 2 }}
-              sm={{ size: 12, order: 2 }}
-              md={{ size: 4, order: 1 }}
-              lg={{ size: 5, order: 3 }}
-              className='desktop-hidden'
-            >
-              <div className='header-links'>
-                <Button
-                  borderless
-                  variant='empty'
-                  ariaLabel='open the menu'
-                  icon={<BarsIcon />}
-                  onClick={() => this.toggleMenu()}
-                />
-                <CartIcon cartItems={cartItems} onClick={toggleCart} />
-              </div>
-            </Col>
-            <Col
-              xs={{ size: 12, order: 2 }}
-              sm={{ size: 12, order: 2 }}
-              md={{ size: 9, order: 1 }}
-              lg={{ size: 4, order: 3 }}
-              // className='px-0'
-            >
-              <Navbar color='light' light expand='md' className='mt-1 mt-md-0'>
-                <CartIcon
-                  className='d-none d-md-block'
-                  cartItems={cartItems}
-                  onClick={toggleCart}
-                />
-                <Nav navbar>
-                  {brands && brands.length > 0 && (
-                    <Dropdown
-                      nav
-                      inNavbar
-                      toggle={() => this.toggleBrand()}
-                      isOpen={isBrandOpen}
-                    >
-                      <DropdownToggle nav>
-                        Brands
-                        <span className='fa fa-chevron-down dropdown-caret'></span>
-                      </DropdownToggle>
-                      <DropdownMenu right className='nav-brand-dropdown'>
-                        <div className='mini-brand'>
-                          <MiniBrand
-                            brands={brands}
-                            toggleBrand={() => this.toggleBrand()}
-                          />
-                        </div>
-                      </DropdownMenu>
-                    </Dropdown>
-                  )}
-                  <NavItem>
-                    <NavLink
-                      tag={ActiveLink}
-                      to='/shop'
-                      activeClassName='active'
-                    >
-                      Shop
-                    </NavLink>
-                  </NavItem>
-                  {authenticated ? (
-                    <UncontrolledDropdown nav inNavbar>
-                      <DropdownToggle nav>
-                        {user.firstName ? user.firstName : 'Welcome'}
-                        <span className='fa fa-chevron-down dropdown-caret'></span>
-                      </DropdownToggle>
-                      <DropdownMenu right>
-                        <DropdownItem
-                          onClick={() => history.push('/dashboard')}
-                        >
-                          Dashboard
-                        </DropdownItem>
-                        <DropdownItem onClick={signOut}>Sign Out</DropdownItem>
-                      </DropdownMenu>
-                    </UncontrolledDropdown>
-                  ) : (
-                    <UncontrolledDropdown nav inNavbar>
-                      <DropdownToggle nav>
-                        Welcome!
-                        <span className='fa fa-chevron-down dropdown-caret'></span>
-                      </DropdownToggle>
-                      <DropdownMenu right>
-                        <DropdownItem onClick={() => history.push('/login')}>
-                          Login
-                        </DropdownItem>
-                        <DropdownItem onClick={() => history.push('/register')}>
-                          Sign Up
-                        </DropdownItem>
-                      </DropdownMenu>
-                    </UncontrolledDropdown>
-                  )}
-                </Nav>
-              </Navbar>
-            </Col>
-          </Row>
-        </Container>
-
-        
-        <div
-          className={isCartOpen ? 'mini-cart-open' : 'hidden-mini-cart'}
-          aria-hidden={`${isCartOpen ? false : true}`}
-        >
-          <div className='mini-cart'>
-            <Cart />
-          </div>
-          <div
-            className={
-              isCartOpen ? 'drawer-backdrop dark-overflow' : 'drawer-backdrop'
-            }
-            onClick={toggleCart}
-          />
-        </div>
-
-        
-        <div
-          className={isMenuOpen ? 'mini-menu-open' : 'hidden-mini-menu'}
-          aria-hidden={`${isMenuOpen ? false : true}`}
-        >
-          <div className='mini-menu'>
-            <Menu />
-          </div>
-          <div
-            className={
-              isMenuOpen ? 'drawer-backdrop dark-overflow' : 'drawer-backdrop'
-            }
-            onClick={toggleMenu}
-          />
-        </div>
-      </header>
-*/}
 
       </>
     );

@@ -39,6 +39,7 @@ import Faq from '../Faq'
 import Shipping from '../Shipping'
 import Legal from '../Legal'
 import TrackOrders from '../TrackOrders'
+import Check from '../../components/store/Check'
 
 import Footer from '../../components/Common/Footer';
 import Page404 from '../../components/Common/Page404';
@@ -106,6 +107,7 @@ class Application extends React.PureComponent {
                 <Route path='/order/:id' component={OrderPage} />
                 <Route path='/login' component={Login} />
                 <Route path='/register' component={Signup} />
+                <Route path='/check' component={Check} />
                 <Route
                   path='/merchant-signup/:token'
                   component={MerchantSignup}

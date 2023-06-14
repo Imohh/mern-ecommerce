@@ -80,7 +80,7 @@ class Shop extends React.PureComponent {
             {showHide && <ProductFilter filterProducts={filterProducts}  /> }
           </Col>
           {/*when filter display by the side*/}
-          <Col className="px-0" noGutters
+          <Col className="px-0"
             xs={{ size: `${showHide ? 12 : 12}`, order: 5 }}
             sm={{ size: `${showHide ? 12 : 12}`, order: 5 }}
             md={{ size: `${showHide ? 12 : 12}`, order: 5 }}
