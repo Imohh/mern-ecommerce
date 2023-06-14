@@ -7,7 +7,7 @@
   background: $white;
   height: 100%;
   width: 370px;
-  z-index: 1000;
+  z-index: 1030;
   // -webkit-box-shadow: $box-shadow;
   // box-shadow: $box-shadow;
   @include transition($layout-transition-higher-speed);
@@ -37,7 +37,7 @@
 
 .navigation-menu {
   height: 100%;
-  background-color: $theme-white;
+  background-color: #fff;
 
   .menu-header {
     border-bottom: $border-default;
@@ -61,6 +61,7 @@
         a {
           color: $font-custom-color !important;
           font-weight: $font-weight-normal;
+          font-size: 20px;
           text-transform: capitalize;
           display: block;
           padding: 10px 30px 10px 30px;
@@ -69,8 +70,8 @@
 
           &:hover {
             background-color: $white;
-            border-left: 3px solid $primary-color;
-            color: $primary-color !important;
+            border-left: 3px solid #000;
+            font-weight: 800;
             @include transition();
           }
 
@@ -94,5 +95,6 @@
   }
 }
 
-
-
+.sidebar-shop {
+  background: red
+}

@@ -85,6 +85,7 @@ class ProductPage extends React.PureComponent {
       }
     ];
 
+
     return (
       <div className='product-shop' style={{margin: "0 auto"}}>
         {isLoading ? (
@@ -109,36 +110,6 @@ class ProductPage extends React.PureComponent {
                     thumbnailPosition={"left"}
                   />
 
-
-
-
-
-                  {/*<div className="slider">
-                    <input type="radio" name="slide_switch" id="id1" checked="checked"/>
-                    <label for="id1">
-                      <img src={`${
-                      product.img
-                        ? product.img
-                        : '/images/placeholder-image.png'
-                      }`} width="100" height= "100"/>
-                    </label>
-                    <img src={`${
-                      product.img
-                        ? product.img
-                        : '/images/placeholder-image.png'
-                    }`}/>*/}
-                    
-                    {/*<!--Lets show the second image by default on page load-->*/}
-                    {/*<input type="radio" name="slide_switch" id="id2"/>
-                    
-                    <input type="radio" name="slide_switch" id="id5"/>
-                    <label for="id5">
-                      <img src="http://thecodeplayer.com/uploads/media/8k3N3EL.jpg" width="100"/>
-                    </label>
-                    <img src="http://thecodeplayer.com/uploads/media/8k3N3EL.jpg"/>
-                  </div>*/}
-
-
                   {product.inventory <= 0 && !shopFormErrors['quantity'] ? (
                     <p className='stock out-of-stock'>Out of stock</p>
                   ) : (
@@ -146,7 +117,7 @@ class ProductPage extends React.PureComponent {
                   )}
                 </div>
               </Col>
-              <Col xs='12' md='7' lg='4' className='mb-3 px-md-2 px-0' noGutters>
+              <Col xs='12' md='7' lg='4' className='mb-3 px-md-2 px-0'>
                 <div className='product-container'>
                   <div className='item-box'>
                     <div className='item-details'>
@@ -168,23 +139,6 @@ class ProductPage extends React.PureComponent {
                       )}
                       <p className='price'>${product.price}</p>
                       <div className='item-customize product-select-section'>
-
-                        {/*<select
-                          className="select"
-                          name="size"
-                          value={productShopData.size}
-                          onChange={(e) => {
-                            productShopChange(e.target.name, e.target.value);
-                          }}
-                        >
-                          <option value="">Size</option>
-                          <option value="S">Small</option>
-                          <option value="M">Medium</option>
-                          <option value="L">Large</option>
-                          <option value="XL">Extra Large</option>
-                        </select>*/}
-
-
                         <button
                           className={`size-option ${productShopData.size === "S" ? "active-select" : "size-select"}`}
                           onClick={() => productShopChange("size", "S")}
@@ -209,8 +163,6 @@ class ProductPage extends React.PureComponent {
                         >
                           XL
                         </button>
-
-
                       </div>
                       <div className='item-customize'>
                         <button
@@ -263,9 +215,16 @@ class ProductPage extends React.PureComponent {
                             text='Add To Bag'
                             className='product-detail-btn'
                             icon={<BagIcon />}
-                            onClick={() => handleAddToCart(product)}
+                            onClick={() => {
+                              if (!productShopData.size) {
+                                alert("Please select a size."); // Display an error message
+                                return; // Exit the function
+                              }
+                             handleAddToCart(product)
+                           }}
                           />
                         )}
+                        
                       </div>
 
                       {/*accordion section*/}
@@ -273,25 +232,25 @@ class ProductPage extends React.PureComponent {
 
 
 
-                          <div class="tabs" style={{ maxHeight: '250px', overflow: 'auto' }}>
-                            <div class="tab">
+                          <div className="tabs" style={{ maxHeight: '250px', overflow: 'auto' }}>
+                            <div className="tab">
                               <input type="checkbox" id="chck1" className="inputstyle"/>
-                              <label class="tab-label" for="chck1">Details</label>
-                              <div class="tab-content">
+                              <label className="tab-label" for="chck1">Details</label>
+                              <div className="tab-content">
                                 {product.description}
                               </div>
                             </div>
-                            <div class="tab">
+                            <div className="tab">
                               <input type="checkbox" id="chck2" className="inputstyle"/>
-                              <label class="tab-label" for="chck2">Size & Fit</label>
-                              <div class="tab-content">
+                              <label className="tab-label" for="chck2">Size & Fit</label>
+                              <div className="tab-content">
                                 <img src='/images/cloth.webp'/>
                               </div>
                             </div>
-                            <div class="tab">
+                            <div className="tab">
                               <input type="checkbox" id="chck3" className="inputstyle"/>
-                              <label class="tab-label" for="chck3">Shipping & Returns</label>
-                              <div class="tab-content">
+                              <label className="tab-label" for="chck3">Shipping & Returns</label>
+                              <div className="tab-content">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
                               </div>
                             </div>

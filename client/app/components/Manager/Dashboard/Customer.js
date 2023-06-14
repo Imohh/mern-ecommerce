@@ -23,7 +23,7 @@ const Customer = props => {
   const { user } = props;
 
   return (
-    <div className='customer'>
+    <div className='admin'>
       <Row>
         <Col xs='12' md='5' xl='3'>
           <AccountMenu {...props} />

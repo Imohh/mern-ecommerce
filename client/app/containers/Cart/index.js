@@ -64,6 +64,7 @@ class Cart extends React.PureComponent {
               handleCheckout={handleCheckout}
               placeOrder={placeOrder}
               authenticated={authenticated}
+              cartTotal={cartTotal}
             />
           </div>
         )}

@@ -11,19 +11,19 @@ import { Row, Col } from 'reactstrap';
 
 import actions from '../../actions';
 import banners from './banners.json';
-import CarouselSlider from '../../components/Common/CarouselSlider';
 import { responsiveOneItemCarousel } from '../../components/Common/CarouselSlider/utils';
-import background from './assets/ron-lach.jpg'
-import bottomImg from './assets/bottoms.header.jpg'
-import accessoriesImg from './assets/accessorizz.jpg'
-import { ArrowBackIcon } from '../../components/Common/Icon';
-import collection from './collection.json'
+// import CarouselSlider from '../../components/Common/CarouselSlider';
+// import background from './assets/ron-lach.jpg'
+// import bottomImg from './assets/bottoms.header.jpg'
+// import accessoriesImg from './assets/accessorizz.jpg'
+// import { ArrowBackIcon } from '../../components/Common/Icon';
+// import collection from './collection.json'
 
 class Homepage extends React.PureComponent {
   render() {
     return (
       <>
-      <div className='homepage'>
+      {/*<div className='homepage'>
             <div className='home-carousel'>
               <CarouselSlider
                 swipeable={true}
@@ -121,7 +121,7 @@ class Homepage extends React.PureComponent {
               </div>
             </Col>
           </Row>
-        </div>
+        </div>*/}
           </>
     );
   }

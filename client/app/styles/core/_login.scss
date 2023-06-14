@@ -145,7 +145,7 @@ img {
 
 // login right
 .login-right {
-  padding: 5%;
+  padding: 15% 5% 5% 5%;
 }
 
 .signup-provider{
@@ -219,3 +219,8 @@ img {
   height: 20px;
 }
 
+@media(max-width: 767px) {
+  .login-forms {
+    margin-top: 10%;
+  }
+}

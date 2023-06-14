@@ -13,7 +13,6 @@ const CartSummary = props => {
 
   return (
     <div className='cart-summary'>
-      <Container>
         <Row className='mb-2 summary-item'>
           <Col xs='9'>
             <p className='summary-label'>Free Shipping</p>
@@ -22,7 +21,7 @@ const CartSummary = props => {
             <p className='summary-value'>$0</p>
           </Col>
         </Row>
-        {cartItems.map((item, index) => (
+        {/*{cartItems.map((item, index) => (
         <Row key={index} className='mb-2 summary-item'>
           <Col xs='9'>
             <p className='summary-label'>Size</p>
@@ -31,7 +30,7 @@ const CartSummary = props => {
             <p className='summary-value'>{` ${item.size}`}</p>
           </Col>
         </Row>
-        ))}
+        ))}*/}
         <Row className='mb-2 summary-item'>
           <Col xs='9'>
             <p className='summary-label'>Total</p>
@@ -40,7 +39,6 @@ const CartSummary = props => {
             <p className='summary-value'>${cartTotal}</p>
           </Col>
         </Row>
-      </Container>
     </div>
   );
 };

@@ -36,6 +36,7 @@ import Menu from '../NavigationMenu';
 import Cart from '../Cart';
 
 class Navigation extends React.PureComponent {
+
   componentDidMount() {
     this.props.fetchStoreBrands();
     this.props.fetchStoreCategories();
@@ -139,152 +140,36 @@ class Navigation extends React.PureComponent {
 
       <>
 
-        {/*<nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <a className="navbar-brand" href="#">Navbar</a>
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
+          <nav className="navbar navbar-expand-lg fixed-top">
+            <Button
+              variant='empty'
+              className='nav-btn'
+              ariaLabel='open the menu'
+              icon={<BarsIcon />}
+              onClick={() => this.toggleMenu()}
+            />
 
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav mr-auto">
-              <li className="nav-item active">
-                <a className="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Link</a>
-              </li>
-              <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Dropdown
-                </a>
-                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a className="dropdown-item" href="#">Action</a>
-                  <a className="dropdown-item" href="#">Another action</a>
-                  <div className="dropdown-divider"></div>
-                  <a className="dropdown-item" href="#">Something else here</a>
-                </div>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link disabled" href="#">Disabled</a>
-              </li>
-            </ul>
-            <div className="form-inline my-2 my-lg-0">
-              <CartIcon cartItems={cartItems} onClick={toggleCart} />
-              hello
+            <div className="interior">
+              <a className="btn" href="#open-modal">
+                <img 
+                  className="search-icon" 
+                  width="24" 
+                  height="24" 
+                  src="https://img.icons8.com/ios-glyphs/24/search--v1.png" 
+                  alt="search--v1"
+                />
+              </a>
             </div>
-          </div>
-        </nav>*/}
-   <header className='header fixed-mobile-header'>
-        <Container>
-          <Row className='align-items-center top-header'>
-            <Col
-              xs={{ size: 12, order: 1 }}
-              sm={{ size: 12, order: 1 }}
-              md={{ size: 3, order: 1 }}
-              lg={{ size: 3, order: 3 }}
-              className='pr-0'
-            >
-              <div className='brand'>
-                {categories && categories.length > 0 && (
-                  <Button
-                    borderless
-                    variant='empty'
-                    className='d-none d-md-block mr-3'
-                    ariaLabel='open the menu'
-                    icon={<BarsIcon />}
-                    onClick={() => this.toggleMenu()}
-                  />
-                )}
-                <Autosuggest
-                suggestions={suggestions}
-                onSuggestionsFetchRequested={onSuggestionsFetchRequested}
-                onSuggestionsClearRequested={onSuggestionsClearRequested}
-                getSuggestionValue={this.getSuggestionValue}
-                renderSuggestion={this.renderSuggestion}
-                inputProps={inputProps}
-                onSuggestionSelected={(_, item) => {
-                  history.push(`/product/${item.suggestion.slug}`);
-                }}
-              />
-              </div>
-            </Col>
-            <Col
-              xs={{ size: 12, order: 4 }}
-              sm={{ size: 12, order: 4 }}
-              md={{ size: 12, order: 4 }}
-              lg={{ size: 5, order: 1 }}
-              className='pt-2 pt-lg-1'
-            >
-              <Link to='/'>
-                <h1 className='logo'>Eminence</h1>
-              </Link>
-            </Col>
-            <Col
-              xs={{ size: 12, order: 2 }}
-              sm={{ size: 12, order: 2 }}
-              md={{ size: 4, order: 1 }}
-              lg={{ size: 5, order: 3 }}
-              className='desktop-hidden'
-            >
-              <div className='header-links'>
-                <Button
-                  borderless
-                  variant='empty'
-                  ariaLabel='open the menu'
-                  icon={<BarsIcon />}
-                  onClick={() => this.toggleMenu()}
-                />
-                <CartIcon cartItems={cartItems} onClick={toggleCart} />
-              </div>
-            </Col>
-            <Col
-              xs={{ size: 12, order: 2 }}
-              sm={{ size: 12, order: 2 }}
-              md={{ size: 9, order: 1 }}
-              lg={{ size: 4, order: 2 }}
-              // className='px-0'
-            >
-              <Navbar color='light' light expand='md' className='mt-1 mt-md-0'>
-                <CartIcon
-                  className='d-none d-md-block'
-                  cartItems={cartItems}
-                  onClick={toggleCart}
-                />
+
+              <a className="navbar-brand mx-auto" href="/">eminence</a>
+              
+
+              <div className="form-inline my-4 my-lg-0">
                 <Nav navbar>
-                  {brands && brands.length > 0 && (
-                    <Dropdown
-                      nav
-                      inNavbar
-                      toggle={() => this.toggleBrand()}
-                      isOpen={isBrandOpen}
-                    >
-                      <DropdownToggle nav>
-                        Brands
-                        <span className='fa fa-chevron-down dropdown-caret'></span>
-                      </DropdownToggle>
-                      <DropdownMenu right className='nav-brand-dropdown'>
-                        <div className='mini-brand'>
-                          <MiniBrand
-                            brands={brands}
-                            toggleBrand={() => this.toggleBrand()}
-                          />
-                        </div>
-                      </DropdownMenu>
-                    </Dropdown>
-                  )}
-                  <NavItem>
-                    <NavLink
-                      tag={ActiveLink}
-                      to='/shop'
-                      activeClassName='active'
-                    >
-                      Shop
-                    </NavLink>
-                  </NavItem>
                   {authenticated ? (
                     <UncontrolledDropdown nav inNavbar>
                       <DropdownToggle nav>
-                        {user.firstName ? user.firstName : 'Welcome'}
+                        <img className="account-image" width="24" height="24" src="https://img.icons8.com/material-outlined/24/user--v1.png" alt="user--v1"/><span className="hide-display">{user.firstName ? user.firstName : 'Welcome'}</span>
                         <span className='fa fa-chevron-down dropdown-caret'></span>
                       </DropdownToggle>
                       <DropdownMenu right>
@@ -299,8 +184,8 @@ class Navigation extends React.PureComponent {
                   ) : (
                     <UncontrolledDropdown nav inNavbar>
                       <DropdownToggle nav>
-                        Welcome!
-                        <span className='fa fa-chevron-down dropdown-caret'></span>
+                        <img className="account-image" width="24" height="24" src="https://img.icons8.com/material-outlined/24/user--v1.png" alt="user--v1"/><span className="hide-display">Welcome!</span>
+                        <span className='fa fa-chevron-down dropdown-caret hide-display'></span>
                       </DropdownToggle>
                       <DropdownMenu right>
                         <DropdownItem onClick={() => history.push('/login')}>
@@ -313,44 +198,63 @@ class Navigation extends React.PureComponent {
                     </UncontrolledDropdown>
                   )}
                 </Nav>
-              </Navbar>
-            </Col>
-          </Row>
-        </Container>
+                <div className='header-links cart-icon-nav'>
+                  <CartIcon
+                    className=''
+                    cartItems={cartItems}
+                    onClick={toggleCart}
+                  />
+                </div>
+              </div>
+          </nav>
 
-        {/* hidden cart drawer */}
-        <div
-          className={isCartOpen ? 'mini-cart-open' : 'hidden-mini-cart'}
-          aria-hidden={`${isCartOpen ? false : true}`}
-        >
-          <div className='mini-cart'>
-            <Cart />
+          
+          <div id="open-modal" className="modal-window">
+            <div>
+              <a href="#" title="Close" className="modal-close">Close</a>
+              <Autosuggest
+                suggestions={suggestions}
+                onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+                onSuggestionsClearRequested={onSuggestionsClearRequested}
+                getSuggestionValue={this.getSuggestionValue}
+                renderSuggestion={this.renderSuggestion}
+                inputProps={inputProps}
+                onSuggestionSelected={(_, item) => {
+                  history.push(`/product/${item.suggestion.slug}`);
+                }}
+              />
+            </div>
           </div>
           <div
-            className={
-              isCartOpen ? 'drawer-backdrop dark-overflow' : 'drawer-backdrop'
-            }
-            onClick={toggleCart}
-          />
-        </div>
-
-        {/* hidden menu drawer */}
-        <div
-          className={isMenuOpen ? 'mini-menu-open' : 'hidden-mini-menu'}
-          aria-hidden={`${isMenuOpen ? false : true}`}
-        >
-          <div className='mini-menu'>
-            <Menu />
+            className={isCartOpen ? 'mini-cart-open' : 'hidden-mini-cart'}
+            aria-hidden={`${isCartOpen ? false : true}`}
+          >
+            <div className='mini-cart'>
+              <Cart />
+            </div>
+            <div
+              className={
+                isCartOpen ? 'drawer-backdrop dark-overflow' : 'drawer-backdrop'
+              }
+              onClick={toggleCart}
+            />
           </div>
-          <div
-            className={
-              isMenuOpen ? 'drawer-backdrop dark-overflow' : 'drawer-backdrop'
-            }
-            onClick={toggleMenu}
-          />
-        </div>
-      </header>
 
+          
+          <div
+            className={isMenuOpen ? 'mini-menu-open' : 'hidden-mini-menu'}
+            aria-hidden={`${isMenuOpen ? false : true}`}
+          >
+            <div className='mini-menu'>
+              <Menu brands={brands} />
+            </div>
+            <div
+              className={
+                isMenuOpen ? 'drawer-backdrop dark-overflow' : 'drawer-backdrop'
+              }
+              onClick={toggleMenu}
+            />
+          </div>
 
       </>
     );
