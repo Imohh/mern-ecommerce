@@ -22,7 +22,13 @@ app.use(
     frameguard: true
   })
 );
-app.use(cors());
+app.use(cors(
+  {
+    origin: ["https://mern-ecommerce-server.vercel.app"],
+    methods: ["POST", "GET"],
+    credentials: true
+  }
+));
 app.use(express.static(path.resolve(__dirname, '../dist')));
 
 setupDB();
