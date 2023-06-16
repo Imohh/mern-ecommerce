@@ -126,7 +126,7 @@ class Faq extends React.PureComponent {
             <Col
               xs={{ size: 12, order: 1 }}
               md={{ size: '4', order: 2 }}
-              className='login-right'
+              className='faq-right'
             >     
               <div className="bottom-faq">
                 <h2>interact with us</h2>
