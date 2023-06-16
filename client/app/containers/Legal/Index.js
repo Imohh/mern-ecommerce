@@ -17,7 +17,7 @@ class Legal extends React.PureComponent {
       <>
       
 
-        <h2>Legal Pages</h2>
+        <h2>Legal Page</h2>
 
 
 
