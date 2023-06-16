@@ -38,6 +38,7 @@ export default function mapDispatchToProps(dispatch) {
       ...application,
       ...authentication,
       ...homepage,
+      ...faq,
       ...signup,
       ...login,
       ...forgotPassword,
@@ -58,8 +59,7 @@ export default function mapDispatchToProps(dispatch) {
       ...contact,
       ...order,
       ...review,
-      ...wishlist,
-      ...faq
+      ...wishlist
     },
     dispatch
   );

@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mohamedsamara/mern-ecommerce.git"
+    "url": "git+https://github.com/imohh/mern-ecommerce.git"
   },
   "keywords": [
     "node",
@@ -27,12 +27,12 @@
     "redux-thunk",
     "webpack"
   ],
-  "author": "Mohamed Samara (https://github.com/mohamedsamara)",
+  "author": "Imoh Precious (https://github.com/imohh)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mohamedsamara/mern-ecommerce/issues"
+    "url": "https://github.com/imohh/mern-ecommerce/issues"
   },
-  "homepage": "https://github.com/mohamedsamara/mern-ecommerce#readme",
+  "homepage": "https://github.com/imohh/mern-ecommerce#readme",
   "dependencies": {
     "@fontsource/poppins": "^4.5.9",
     "@stripe/react-stripe-js": "^2.1.0",
