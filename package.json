@@ -13,7 +13,6 @@
     "postinstall": "npm run build",
     "seed:db": "node server/utils/seed.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    //"rimraf": "./node_modules/rimraf/bin.js"
   },
   "repository": {
     "type": "git",
