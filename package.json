@@ -4,7 +4,7 @@
   "description": "MERN Ecommerce",
   "main": "server/index.js",
   "scripts": {
-    "clean": "rimraf dist",
+    "clean": "del-cli dist",
     "build": "npm run clean && cross-env NODE_ENV=production webpack --mode production  --config webpack/webpack.prod.js",
     "dev:client": "cross-env NODE_ENV=development webpack-dev-server  --config webpack/webpack.dev.js --openssl-legacy-provider",
     "dev:server": "nodemon",
@@ -12,8 +12,7 @@
     "start": "cross-env NODE_ENV=production node server/index.js",
     "postinstall": "npm run build",
     "seed:db": "node server/utils/seed.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "rimraf": "./node_modules/rimraf/bin.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -114,6 +113,7 @@
     "cross-env": "^5.2.1",
     "css-loader": "^2.1.1",
     "cssnano": "^4.1.10",
+    "del-cli": "^5.0.0",
     "dotenv-webpack": "^1.8.0",
     "file-loader": "^4.0.0",
     "html-webpack-plugin": "^3.2.0",
