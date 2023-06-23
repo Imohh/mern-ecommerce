@@ -16,7 +16,7 @@ const BASE_API_URL = process.env.BASE_API_URL;
 const config = {
   mode: 'production',
   output: {
-    path: path.join(CURRENT_WORKING_DIR, '/dist'),
+    path: path.join(CURRENT_WORKING_DIR, './dist'),
     filename: 'js/[name].[hash].js',
     publicPath: '/'
   },
