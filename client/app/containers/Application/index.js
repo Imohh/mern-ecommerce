@@ -17,6 +17,7 @@ import Login from '../Login';
 import Signup from '../Signup';
 import MerchantSignup from '../MerchantSignup';
 import HomePage from '../Homepage';
+import Faq from '../Faq';
 import Dashboard from '../Dashboard';
 import Support from '../Support';
 import Navigation from '../Navigation';
@@ -35,7 +36,6 @@ import AuthSuccess from '../AuthSuccess';
 import Success from '../Success'
 import Payment from '../Payment'
 import Return from '../Return'
-import Faq from '../Faq'
 import Shipping from '../Shipping'
 import Legal from '../Legal'
 import TrackOrders from '../TrackOrders'

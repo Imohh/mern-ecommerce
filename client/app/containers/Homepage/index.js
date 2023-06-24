@@ -11,7 +11,7 @@ import { Row, Col } from 'reactstrap';
 
 import actions from '../../actions';
 import banners from './banners.json';
-import { responsiveOneItemCarousel } from '../../components/Common/CarouselSlider/utils';
+// import { responsiveOneItemCarousel } from '../../components/Common/CarouselSlider/utils';
 // import CarouselSlider from '../../components/Common/CarouselSlider';
 // import background from './assets/ron-lach.jpg'
 // import bottomImg from './assets/bottoms.header.jpg'
