@@ -74,7 +74,7 @@ const config = {
     disableHostCheck: false,
     historyApiFallback: true,
     proxy: {
-      '/api': 'http://localhost:3000'
+      '/api': 'https://mern-ecommerce-fawn.vercel.app/'
     }
   },
   devtool: 'eval-source-map'
