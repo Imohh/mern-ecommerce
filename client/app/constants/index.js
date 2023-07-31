@@ -2,7 +2,7 @@ export const BASE_API_URL = process.env.BASE_API_URL;
 
 export const SOCKET_URL =
   window.location.host.indexOf('localhost') >= 0
-    ? 'https://mern-ecommerce-fawn.vercel.app/'
+    ? 'http://127.0.0.1:3000'
     : window.location.host;
 
 export const ROLES = {
