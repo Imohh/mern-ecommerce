@@ -2,7 +2,7 @@ module.exports = {
   app: {
     name: 'Mern Ecommerce',
     apiURL: 'api',
-    serverURL: 'https://main--cute-sfogliatella-eefa6f.netlify.app/',
+    serverURL: 'https://main--cute-sfogliatella-eefa6f.netlify.app',
     clientURL: 'http://localhost:8080'
   },
   port: 3000,
