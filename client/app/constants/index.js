@@ -2,7 +2,7 @@ export const BASE_API_URL = process.env.BASE_API_URL;
 
 export const SOCKET_URL =
   window.location.host.indexOf('localhost') >= 0
-    ? 'https://mern-ecommerce-zwqj.vercel.app'
+    ? 'https://mern-ecommerce-05ka.vercel.app'
     : window.location.host;
 
 export const ROLES = {
