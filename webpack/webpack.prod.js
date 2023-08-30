@@ -11,7 +11,7 @@ const common = require('./webpack.common');
 
 const CURRENT_WORKING_DIR = process.cwd();
 const NODE_ENV = process.env.NODE_ENV;
-const BASE_API_URL = 'https://mern-ecommerce-o5ka.vercel.app'
+const BASE_API_URL = process.env.BASE_API_URL;
 
 const config = {
   mode: 'production',
