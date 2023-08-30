@@ -1,41 +1,41 @@
 module.exports = {
   app: {
     name: 'Mern Ecommerce',
-    apiURL: `${process.env.BASE_API_URL}`,
-    serverURL: process.env.BASE_SERVER_URL,
-    clientURL: process.env.BASE_CLIENT_URL
+    apiURL: 'api',
+    serverURL: 'https://mern-ecommerce-05ka.vercel.app',
+    clientURL: 'http://localhost:8080'
   },
-  port: process.env.PORT || 3000,
+  port: 3000,
   database: {
-    url: process.env.MONGO_URI
+    url: 'mongodb+srv://imoh88:iamnotorious@cluster0.tjyapzm.mongodb.net/shop?retryWrites=true&w=majority'
   },
   jwt: {
-    secret: process.env.JWT_SECRET,
+    secret: 'ghp_ydtlBNGF23U9dIgYYrB3XaHt30a3Pm0sgbr',
     tokenLife: '7d'
   },
   mailchimp: {
-    key: process.env.MAILCHIMP_KEY,
-    listKey: process.env.MAILCHIMP_LIST_KEY
+    key: '03559e35ac6cea95b4bc5ae91c09db28-us14',
+    listKey: '33fb14d351'
   },
   mailgun: {
-    key: process.env.MAILGUN_KEY,
-    domain: process.env.MAILGUN_DOMAIN,
-    sender: process.env.MAILGUN_EMAIL_SENDER
+    key: '66847913af8a4380caa37cf3a9911835',
+    domain: 'sandboxcc0ed5e9c70f4dccbd6e47cf34b04fdb.mailgun.org',
+    sender: 'imoh@gmail.com'
   },
   google: {
-    clientID: process.env.GOOGLE_CLIENT_ID,
-    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: process.env.GOOGLE_CALLBACK_URL
+    clientID: '582988085781-b3m4qcahs7cii3v6qoabvqu08na3qcsg.apps.googleusercontent.com',
+    clientSecret: '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',
+    callbackURL: 'auth/google/callback'
   },
   facebook: {
-    clientID: process.env.FACEBOOK_CLIENT_ID,
-    clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
-    callbackURL: process.env.FACEBOOK_CALLBACK_URL
+    clientID: '730416318564285',
+    clientSecret: '75ae41114167dc8a7a0ba074ba3ca97a',
+    callbackURL: 'auth/facebook/callback'
   },
   aws: {
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-    region: process.env.AWS_REGION,
-    bucketName: process.env.AWS_BUCKET_NAME
-  }
+    accessKeyId: 'AKIAWRNYVI2FSPPTIHS5',
+    secretAccessKey: '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',
+    region: 'elasticache.af-south-1.amazonaws.com',
+    bucketName: 'eminence88'
+  },
 };
