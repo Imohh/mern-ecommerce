@@ -32,7 +32,7 @@
   "bugs": {
     "url": "https://github.com/imohh/mern-ecommerce/issues"
   },
-  "homepage": ".",
+  "homepage": "https://mern-ecommerce-o5ka.vercel.app",
   "dependencies": {
     "@fontsource/poppins": "^4.5.9",
     "@stripe/react-stripe-js": "^2.1.0",
