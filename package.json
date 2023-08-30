@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "MERN Ecommerce",
   "main": "server/index.js",
-  "homepage": ".",
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && cross-env NODE_ENV=production webpack --mode production  --config webpack/webpack.prod.js",
@@ -33,7 +32,7 @@
   "bugs": {
     "url": "https://github.com/imohh/mern-ecommerce/issues"
   },
-  "homepage": "https://github.com/imohh/mern-ecommerce#readme",
+  "homepage": ".",
   "dependencies": {
     "@fontsource/poppins": "^4.5.9",
     "@stripe/react-stripe-js": "^2.1.0",

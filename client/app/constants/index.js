@@ -1,4 +1,4 @@
-export const BASE_API_URL = process.env.BASE_API_URL;
+export const BASE_API_URL = 'api';
 
 export const SOCKET_URL =
   window.location.host.indexOf('localhost') >= 0
