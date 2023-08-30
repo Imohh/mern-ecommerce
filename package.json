@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "MERN Ecommerce",
   "main": "server/index.js",
+  "homepage": ".",
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && cross-env NODE_ENV=production webpack --mode production  --config webpack/webpack.prod.js",
