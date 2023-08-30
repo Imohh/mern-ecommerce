@@ -22,12 +22,20 @@ app.use(
     frameguard: true
   })
 );
-app.use(cors());
+app.use(cors(
+  {
+    origin: ["https://mern-ecommerce-o5ka.vercel.app"],
+    methods: ["POST", "GET"],
+    credentials: true
+  }
+));
 app.use(express.static(path.resolve(__dirname, '../dist')));
 
 setupDB();
 require('./config/passport')(app);
 app.use(routes);
+
+console.log("work perfectly")
 
 console.log('process.env.NODE_ENV ', process.env.NODE_ENV);
 if (process.env.NODE_ENV === 'production') {
