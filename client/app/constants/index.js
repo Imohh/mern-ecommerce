@@ -2,7 +2,7 @@ export const BASE_API_URL = 'api';
 
 export const SOCKET_URL =
   window.location.host.indexOf('localhost') >= 0
-    ? 'https://mern-ecommerce-05ka.vercel.app'
+    ? 'https://main--cute-sfogliatella-eefa6f.netlify.app/'
     : window.location.host;
 
 export const ROLES = {
