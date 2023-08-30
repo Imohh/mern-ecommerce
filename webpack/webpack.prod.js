@@ -11,12 +11,12 @@ const common = require('./webpack.common');
 
 const CURRENT_WORKING_DIR = process.cwd();
 const NODE_ENV = process.env.NODE_ENV;
-const BASE_API_URL = process.env.BASE_API_URL;
+const BASE_API_URL = 'https://mern-ecommerce-o5ka.vercel.app'
 
 const config = {
   mode: 'production',
   output: {
-    path: path.join(CURRENT_WORKING_DIR, 'dist'),
+    path: path.join(CURRENT_WORKING_DIR, './dist'),
     filename: 'js/[name].[hash].js',
     publicPath: '/'
   },
