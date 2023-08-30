@@ -82,8 +82,8 @@ class Application extends React.PureComponent {
   render() {
     return (
       <div className='application'>
-        <Notification />
-        <Navigation />
+        {/*<Notification />
+        <Navigation />*/}
           
             <div className='wrapper'>
               <Switch>
