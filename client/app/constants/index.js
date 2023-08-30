@@ -2,7 +2,7 @@ export const BASE_API_URL = 'api';
 
 export const SOCKET_URL =
   window.location.host.indexOf('localhost') >= 0
-    ? 'https://ecommerce-server-lemon.vercel.app/'
+    ? 'https://ecommerce-server-lemon.vercel.app'
     : window.location.host;
 
 export const ROLES = {
