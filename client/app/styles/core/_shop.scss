@@ -2,11 +2,19 @@
   .shop {
     margin-top: 100px;
   }
+  .product-shop-containers {
+    padding: 20px 50px;
+    margin-bottom: 20%;
+  }
 }
 
 @media (min-width: 992px) and (max-width: 1219px) {
   .shop {
     margin-top: 9%;
+  }
+  .product-shop-containers {
+    padding: 20px 50px;
+    margin-bottom: 20%;
   }
 }
 
@@ -20,7 +28,12 @@
   .shop {
     margin-top: 11%;
   }
+  .product-shop-containers {
+    margin-top: 20%;
+  }
 }
+
+
 
 .shop-page {
   .main {

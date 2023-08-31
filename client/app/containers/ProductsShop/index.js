@@ -26,7 +26,7 @@ class ProductsShop extends React.PureComponent {
     const displayProducts = products && products.length > 0;
 
     return (
-      <div className="product-shop-container">
+      <div className="product-shop-containers">
         {isLoading && <LoadingIndicator />}
         {displayProducts && (
           <ProductList
