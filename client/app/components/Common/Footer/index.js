@@ -111,6 +111,7 @@ const Footer = () => {
           <div className='footer-block'>
             <div className='block-title'>
               <h3 className='text-uppercase'>Newsletter</h3>
+              <p>Sign Up for Our Newsletter</p>
               <Newsletter />
               <button onClick={showSocial}>follow us</button>
               <div className="accepted-cards">

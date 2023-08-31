@@ -22,6 +22,8 @@ import Page404 from '../../components/Common/Page404';
 import ProductFilter from '../../components/Store/ProductFilter';
 import Pagination from '../../components/Common/Pagination';
 import SelectOption from '../../components/Common/SelectOption';
+import Newsletter from '../Newsletter'
+import popupImage from './assets/20230901_030546.jpg'
 
 
 class Homepage extends React.PureComponent {
@@ -37,9 +39,15 @@ componentDidMount() {
     super();
     this.state = {
       name: "React",
-      showHide: false
+      showHide: false,
+      modalState: true
     };
-    this.hideComponent = this.hideComponent.bind(this)
+    this.hideComponent = this.hideComponent.bind(this);
+    this.handleShow = this.handleShow.bind(this)
+  }
+
+  handleShow() {
+    this.setState({ modalState: !this.state.modalState })
   }
 
   hideComponent(name) {
@@ -71,7 +79,32 @@ componentDidMount() {
 
     return (
       <>
-          <div className='shop' style={{paddingBottom: "20px"}}>
+
+        {/*MODAL*/}
+        <div className={"modal fade" + (this.state.modalState ? " show d-block" : " d-none")} tabIndex="-1" role="dialog">
+          <div className="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div className="modal-content">
+              <div className="modal-body">
+                <div className="row">
+                  <div className="col-md-6">
+                    <img src={popupImage} alt="Popup Image" />
+                  </div>
+                  <div className="col-md-6 text-right">
+                    <button type="button" className="btn btn-secondary align-self-end" onClick={this.handleShow}>Close</button>
+                    <div className="d-flex flex-column justify-content-center" style={{height: "100%"}}>
+                      <h1 className="text-center">Sign Up for Our Newsletter</h1>
+                      <Newsletter />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div className='shop' style={{paddingBottom: "20px"}}>
         <Row xs='12'>
           <Col
             xs={{ size: `${showHide ? 12 : null}`, order: `${showHide ? 1 : null}` }}

@@ -13,6 +13,7 @@ import { SocketProvider } from './contexts/Socket';
 import { SET_AUTH } from './containers/Authentication/constants';
 import Application from './containers/Application';
 import ScrollToTop from './scrollToTop';
+import Popup from './popup';
 import setToken from './utils/token';
 
 // Import application sass styles

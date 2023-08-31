@@ -25,7 +25,7 @@ class Newsletter extends React.PureComponent {
 
     return (
       <div className='newsletter-form'>
-        <p>Sign Up for Our Newsletter</p>
+        
         <form onSubmit={handleSubmit}>
           <div className='subscribe'>
             <Input
