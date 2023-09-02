@@ -59,7 +59,7 @@ class Homepage extends React.PureComponent {
               <div className="modal-body">
                 <div className="row">
                   <div className="col-md-6">
-                    <img src={popupImage} alt="Popup Image" />
+                    <img src={popupImage} alt="Popup Image" className="d-none d-md-block" />
                   </div>
                   <div className="col-md-6 text-right">
                     <button type="button" className="btn btn-secondary align-self-end d-none d-md-block float-right" onClick={this.handleShow}>Close</button>
