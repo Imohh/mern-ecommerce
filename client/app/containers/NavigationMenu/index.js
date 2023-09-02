@@ -39,7 +39,7 @@ class NavigationMenu extends React.PureComponent {
         </div>
         <div className='menu-body'>
 
-          <Container>
+          
             <p 
               onClick={handleCategoryClick} 
               className='menu-title'>
@@ -62,8 +62,6 @@ class NavigationMenu extends React.PureComponent {
                 ))}
               </ul>
             </nav>
-          </Container>
-          <Container>
             <h3 className='menu-title'>Shop By Brand</h3>
             <nav role='navigation'>
               <ul className='menu-list'>
@@ -81,7 +79,6 @@ class NavigationMenu extends React.PureComponent {
               ))}
             </ul>
           </nav>
-          </Container>
         </div>
       </div>
     );

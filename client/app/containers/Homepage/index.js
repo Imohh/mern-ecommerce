@@ -19,30 +19,22 @@ import BrandsShop from '../BrandsShop';
 import CategoryShop from '../CategoryShop';
 
 import Page404 from '../../components/Common/Page404';
-import ProductFilter from '../../components/Store/ProductFilter';
-import Pagination from '../../components/Common/Pagination';
 import SelectOption from '../../components/Common/SelectOption';
 import Newsletter from '../Newsletter'
 import popupImage from './assets/20230901_030546.jpg'
-
+import section1 from './assets/20230831_045126.jpg'
+import section2 from './assets/20230831_051121.jpg'
+import agadaImage from './assets/20230901_065504.jpg'
+import slider from './assets/slider.jpg'
+import slider1 from './assets/slider1.jpg'
 
 class Homepage extends React.PureComponent {
-componentDidMount() {
-    document.body.classList.add('shop-page');
-  }
-
-  componentWillUnmount() {
-    document.body.classList.remove('shop-page');
-  }
 
   constructor() {
     super();
     this.state = {
-      name: "React",
-      showHide: false,
       modalState: true
     };
-    this.hideComponent = this.hideComponent.bind(this);
     this.handleShow = this.handleShow.bind(this)
   }
 
@@ -50,47 +42,27 @@ componentDidMount() {
     this.setState({ modalState: !this.state.modalState })
   }
 
-  hideComponent(name) {
-    console.log(name);
-    switch (name) {
-      case "showHide":
-        this.setState({ showHide: !this.state.showHide });
-        break;
-      default:
-        null;
-    }
-  }
-
-  toggleClass() {
-    const currentState = this.state.showHide;
-    this.setState({ showHide: !currentState });
-  };
-
 
   render() {
-    const { products, advancedFilters, filterProducts } = this.props;
-    const { totalPages, currentPage, count, limit, order } = advancedFilters;
-    const displayPagination = totalPages > 1;
-    const totalProducts = products.length;
-    const left = limit * (currentPage - 1) + 1;
-    const right = totalProducts + left - 1;
 
-    const {showHide} = this.state
 
     return (
       <>
 
         {/*MODAL*/}
         <div className={"modal fade" + (this.state.modalState ? " show d-block" : " d-none")} tabIndex="-1" role="dialog">
-          <div className="modal-dialog modal-lg modal-dialog-centered" role="document">
+          <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content">
+            <div className="modal-header d-sm-none">
+              <button type="button" className="btn btn-secondary align-self-end" onClick={this.handleShow}>Close</button>
+            </div>
               <div className="modal-body">
                 <div className="row">
                   <div className="col-md-6">
                     <img src={popupImage} alt="Popup Image" />
                   </div>
                   <div className="col-md-6 text-right">
-                    <button type="button" className="btn btn-secondary align-self-end" onClick={this.handleShow}>Close</button>
+                    <button type="button" className="btn btn-secondary align-self-end d-none d-md-block float-right" onClick={this.handleShow}>Close</button>
                     <div className="d-flex flex-column justify-content-center" style={{height: "100%"}}>
                       <h1 className="text-center">Sign Up for Our Newsletter</h1>
                       <Newsletter />
@@ -102,90 +74,163 @@ componentDidMount() {
           </div>
         </div>
 
+        <div className="" style={{height: "200px"}}>
 
+        </div>
 
-        <div className='shop' style={{paddingBottom: "20px"}}>
-        <Row xs='12'>
-          <Col
-            xs={{ size: `${showHide ? 12 : null}`, order: `${showHide ? 1 : null}` }}
-            sm={{ size: `${showHide ? 12 : null}`, order: `${showHide ? 1 : null}` }}
-            md={{ size: `${showHide ? 12 : null}`, order: `${showHide ? 1 : null}` }}
-            lg={{ size: `${showHide ? 3 : null}`, order: `${showHide ? 1 : null}` }}
-          >
-            {showHide && <ProductFilter filterProducts={filterProducts}  /> }
-          </Col>
-          {/*when filter display by the side*/}
-          <Col className="px-0"
-            xs={{ size: `${showHide ? 12 : 12}`, order: 5 }}
-            sm={{ size: `${showHide ? 12 : 12}`, order: 5 }}
-            md={{ size: `${showHide ? 12 : 12}`, order: 5 }}
-            lg={{ size: `${showHide ? 9 : 12}`, order: 5 }}
-          >
-            <Row className='align-items-center mx-0 mb-4 mt-4 mt-lg-0 py-3 py-lg-0 bg-white shop-toolbar'>
-              <Col
-                xs={{ size: 6, order: 1 }}
-                sm={{ size: 6, order: 1 }}
-                md={{ size: 5, order: 1 }}
-                lg={{ size: 2, order: 1 }}
-                className='text-center text-md-left mt-3 mt-md-0 mb-1 mb-md-0'
-              >
-                <button onClick={() => this.setState({showHide: !this.state.showHide}) }>Filters: </button>
-              </Col>
-              <Col
-                xs={{ size: 12, order: 1 }}
-                sm={{ size: 12, order: 1 }}
-                md={{ size: 5, order: 1 }}
-                lg={{ size: 4, order: 1 }}
-                className='text-center text-md-left d-none mt-3 mt-md-0 mb-1 mb-md-0'
-              >
-                <span>Showing: </span>
-                {totalProducts > 0
-                  ? `${left}-${right} products of ${count} products`
-                  : `${count} products`}
-              </Col>
-              <Col
-                xs={{ size: 12, order: 2 }}
-                sm={{ size: 12, order: 2 }}
-                md={{ size: 2, order: 2 }}
-                lg={{ size: 2, order: 2 }}
-                className='text-right pr-0 d-none d-md-block'
-              >
-                <span>Sort by</span>
-              </Col>
-              <Col
-                xs={{ size: 6, order: 2 }}
-                sm={{ size: 6, order: 2 }}
-                md={{ size: 5, order: 2 }}
-                lg={{ size: 2, order: 2 }}
-              >
-                <SelectOption
-                  name={'sorting'}
-                  value={{ value: order, label: sortOptions[order].label }}
-                  options={sortOptions}
-                  handleSelectChange={(n, v) => {
-                    filterProducts('sorting', n.value);
-                  }}
-                />
-              </Col>
-            </Row>
-            <Switch>
-              <Route exact path='/' component={ProductsShop} />
-              <Route path='/category/:slug' component={CategoryShop} />
-              <Route path='/brand/:slug' component={BrandsShop} />
-              <Route path='*' component={Page404} />
-            </Switch>
-
-            {displayPagination && (
-              <div className='d-flex justify-content-center text-center mt-4'>
-                <Pagination
-                  totalPages={totalPages}
-                  onPagination={filterProducts}
-                />
+        {/*TOP SECTION*/}
+        <div className="" style={{height: "100%"}}>
+          <div className="row">
+            <div 
+              className="col-md-4" 
+              style={{
+                padding: "100px", 
+                backgroundImage: `url(${section1})`, 
+                backgroundSize: "cover",
+                backgroundPosition: "center", 
+                textTransform: "uppercase"
+              }}
+            >
+              <div
+                className="overlay"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  backgroundColor: "rgba(0, 0, 0, 0.7)",
+                  zIndex: 1
+                }}
+              ></div>
+              <div className="text-center" style={{position: "relative", zIndex: 20}}>
+                <p style={{color: "white", fontWeight: "900", fontSize: "20px"}}>agbada</p>
+                <a href="" className="top-section-link">shop now</a>
               </div>
-            )}
-          </Col>
-        </Row>
-      </div>
+            </div>
+            <div 
+              className="col-md-4" 
+              style={{
+                padding: "100px", 
+                backgroundImage: `url(${section1})`, 
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                textTransform: "uppercase"
+              }}
+            >
+              <div
+                className="overlay"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  backgroundColor: "rgba(0, 0, 0, 0.7)",
+                  zIndex: 1
+                }}
+              ></div>
+              <div className="text-center" style={{position: "relative", zIndex: 20}}>
+                <p style={{color: "white", fontWeight: "900", fontSize: "20px"}}>suit</p>
+                <a href="" className="top-section-link">shop now</a>
+              </div>
+            </div>
+            <div 
+              className="col-md-4" 
+              style={{
+                padding: "100px", 
+                backgroundImage: `url(${section1})`, 
+                backgroundSize: "cover",
+                backgroundPosition: "center", 
+                textTransform: "uppercase"
+              }}
+            >
+              <div
+                className="overlay"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  backgroundColor: "rgba(0, 0, 0, 0.7)",
+                  zIndex: 1
+                }}
+              ></div>
+              <div className="text-center" style={{position: "relative", zIndex: 20}}>
+                <p style={{color: "white", fontWeight: "900", fontSize: "20px"}}>native</p>
+                <a href="" className="top-section-link">shop now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+        {/*NEW SECTION*/}
+        <div style={{height: "100%"}}>
+          <div className="row">
+            <div className="col-md-6"
+              style={{
+                height: "500px",
+                paddingTop: "250px",
+                paddingLeft: "50px", 
+                backgroundImage: `url(${section2})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+
+              <div
+                className="overlay"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  backgroundColor: "rgba(0, 0, 0, 0.7)",
+                  zIndex: 1
+                }}
+              ></div>
+              <div  className="text-center" style={{position: "relative", zIndex: 20}}>
+                <p className="classic-section-text" style={{textTransform: "uppercase", color: "white", fontWeight: "900", fontSize: "20px"}}>classic suits for classic men</p>
+                <a href="" className="homepage-button">discover now</a>
+              </div>
+            </div>
+            <div className="col-md-6"
+              style={{
+                height: "500px",
+                paddingTop: "250px",
+                paddingLeft: "50px", 
+                backgroundImage: `url(${agadaImage})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <div
+                className="overlay"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  backgroundColor: "rgba(0, 0, 0, 0.7)",
+                  zIndex: 1
+                }}
+              ></div>
+              <div  className="text-center" style={{position: "relative", zIndex: 20}}>
+                <p style={{textTransform: "uppercase", color: "white", fontWeight: "900", fontSize: "20px"}}>agbada attire</p>
+                <a href="" className="homepage-button">discover now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
       </>
     );
   }
