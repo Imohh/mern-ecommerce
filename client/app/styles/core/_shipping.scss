@@ -1,11 +1,4 @@
-.shipping-section{
-	padding: 100px;
-}
 
-.first-shipping-section {
-	padding: 50px 0;
-	height: 400px;
-}
 
 .shipping-text-section {
 	height: auto;
@@ -23,28 +16,49 @@
 	margin-bottom: 2%;
 }
 
-.first-shipping-section button {
-	
-}
+@media (max-width: 767px) {
+	.shipping-section {
+		margin-top: 20%;
+		height: 100%;
+		padding: 20px;
+	}
 
-@media (min-width: 767px) {
+	.shipping-image {
+		width: 70% !important;
+	}
+
+	.shipping-text-section {
+		margin-top: 50px;
+	}
+
 	.shipping-btn {
-	    width: 40%;
+	    width: 100%;
 	    color: #fff !important;
 	    border: none;
-	    padding: 25px;
+	    width: 50%;
+	    padding: 20px 15px;
 	    background: #000;
 	    font-size: 14px;
 	    margin-top: 5%;
 	}
 }
 
-@media (max-width: 766px) {
+@media (min-width: 768px) {
+	.shipping-section{
+		padding: 100px;
+	}
+	
+	.first-shipping-section {
+		padding: 50px 0;
+		height: 400px;
+	}
+	
 	.shipping-btn {
-	    width: 100%;
+	    width: 40%;
 	    color: #fff !important;
 	    border: none;
-	    padding: 25px;
+	    width: 50%;
+	    padding: 20px 25px;
 	    background: #000;
 	    font-size: 14px;
 	    margin-top: 5%;
