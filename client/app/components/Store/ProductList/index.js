@@ -16,7 +16,7 @@ const ProductList = props => {
   return (
 
 
-  <div>  
+  <div style={{height: "100%"}}>  
   {products.map((product, index) => (
     <div key={index} className="cards">
       <div className="card-content" >
@@ -51,7 +51,7 @@ const ProductList = props => {
       >
       <div className="card-description">
         <div className="title">
-          {product.name}<br/>
+          <span style={{textTransform: "capitalize"}}>{product.name}</span><br />
           ${product.price}
         </div>
       </div>

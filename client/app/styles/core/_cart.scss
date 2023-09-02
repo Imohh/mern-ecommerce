@@ -153,3 +153,16 @@
     border-bottom: $border-default;
   }
 }
+
+
+// cart badge
+.cart-badge {
+  position: absolute;
+  padding: 4px 6px;
+  margin-top: -5px;
+  font-size: 9px;
+  margin-left: -7px;
+  background: black;
+  color: white;
+  border-radius: 50%;
+}
