@@ -25,6 +25,8 @@ import popupImage from './assets/20230901_030546.jpg'
 import section1 from './assets/20230831_045126.jpg'
 import section2 from './assets/20230831_051121.jpg'
 import agadaImage from './assets/20230901_065504.jpg'
+import native from './assets/20230903_015047.jpg'
+import suit from './assets/20230903_015006.jpg'
 import slider from './assets/slider.jpg'
 import slider1 from './assets/slider1.jpg'
 
@@ -105,14 +107,14 @@ class Homepage extends React.PureComponent {
               ></div>
               <div className="text-center" style={{position: "relative", zIndex: 20}}>
                 <p style={{color: "white", fontWeight: "900", fontSize: "20px"}}>agbada</p>
-                <a href="" className="top-section-link">shop now</a>
+                <a href="/shop/brand/agbada" className="top-section-link">shop now</a>
               </div>
             </div>
             <div 
               className="col-md-4" 
               style={{
                 padding: "100px", 
-                backgroundImage: `url(${section1})`, 
+                backgroundImage: `url(${suit})`, 
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 textTransform: "uppercase"
@@ -132,14 +134,14 @@ class Homepage extends React.PureComponent {
               ></div>
               <div className="text-center" style={{position: "relative", zIndex: 20}}>
                 <p style={{color: "white", fontWeight: "900", fontSize: "20px"}}>suit</p>
-                <a href="" className="top-section-link">shop now</a>
+                <a href="/shop/brand/suit" className="top-section-link">shop now</a>
               </div>
             </div>
             <div 
               className="col-md-4" 
               style={{
                 padding: "100px", 
-                backgroundImage: `url(${section1})`, 
+                backgroundImage: `url(${native})`, 
                 backgroundSize: "cover",
                 backgroundPosition: "center", 
                 textTransform: "uppercase"
@@ -159,13 +161,17 @@ class Homepage extends React.PureComponent {
               ></div>
               <div className="text-center" style={{position: "relative", zIndex: 20}}>
                 <p style={{color: "white", fontWeight: "900", fontSize: "20px"}}>native</p>
-                <a href="" className="top-section-link">shop now</a>
+                <a href="/shop/brand/native" className="top-section-link">shop now</a>
               </div>
             </div>
           </div>
         </div>
 
 
+        {/*SHOP SECTION*/}
+        <div className="bg-red-500 py-40">
+          <h1>hello world</h1>
+        </div>
 
 
 
@@ -198,7 +204,7 @@ class Homepage extends React.PureComponent {
               ></div>
               <div  className="text-center" style={{position: "relative", zIndex: 20}}>
                 <p className="classic-section-text" style={{textTransform: "uppercase", color: "white", fontWeight: "900", fontSize: "20px"}}>classic suits for classic men</p>
-                <a href="" className="homepage-button">discover now</a>
+                <a href="/shop/brand/suit" className="homepage-button">discover now</a>
               </div>
             </div>
             <div className="col-md-6"
@@ -225,7 +231,7 @@ class Homepage extends React.PureComponent {
               ></div>
               <div  className="text-center" style={{position: "relative", zIndex: 20}}>
                 <p style={{textTransform: "uppercase", color: "white", fontWeight: "900", fontSize: "20px"}}>agbada attire</p>
-                <a href="" className="homepage-button">discover now</a>
+                <a href="/shop/brand/agbada" className="homepage-button">discover now</a>
               </div>
             </div>
           </div>
