@@ -92,7 +92,7 @@ const Footer = () => {
         <div className='footer-content'>
           <div className='footer-block'>
             <div className='block-title'>
-              <h3 className='text-uppercase'>legal</h3>
+              <h3 className='text-uppercase'>services</h3>
             </div>
             <div className='block-content'>
               <ul>{footerLinks}</ul>
