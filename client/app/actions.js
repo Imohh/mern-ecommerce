@@ -10,6 +10,7 @@ import * as application from './containers/Application/actions';
 import * as authentication from './containers/Authentication/actions';
 import * as homepage from './containers/Homepage/actions';
 import * as faq from './containers/Faq/actions';
+import * as legal from './containers/Legal/actions';
 import * as signup from './containers/Signup/actions';
 import * as login from './containers/Login/actions';
 import * as forgotPassword from './containers/ForgotPassword/actions';
@@ -39,6 +40,7 @@ export default function mapDispatchToProps(dispatch) {
       ...authentication,
       ...homepage,
       ...faq,
+      ...legal,
       ...signup,
       ...login,
       ...forgotPassword,

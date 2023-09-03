@@ -12,6 +12,7 @@ import { reducer as notifications } from 'react-notification-system-redux';
 import applicationReducer from './containers/Application/reducer';
 import homepageReducer from './containers/Homepage/reducer';
 import faqReducer from './containers/Faq/reducer';
+import legalReducer from './containers/Legal/reducer';
 import signupReducer from './containers/Signup/reducer';
 import loginReducer from './containers/Login/reducer';
 import forgotPasswordReducer from './containers/ForgotPassword/reducer';
@@ -42,6 +43,7 @@ const createReducer = history =>
     application: applicationReducer,
     homepage: homepageReducer,
     faq: faqReducer,
+    legal: legalReducer,
     signup: signupReducer,
     login: loginReducer,
     forgotPassword: forgotPasswordReducer,

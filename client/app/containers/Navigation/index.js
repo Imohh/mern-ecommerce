@@ -164,6 +164,8 @@ class Navigation extends React.PureComponent {
               <a className="navbar-brand mx-auto" href="/">eminence</a>
               
 
+              
+
               <div className="form-inline my-4 my-lg-0">
                 <Nav navbar>
                   {authenticated ? (

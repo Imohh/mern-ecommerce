@@ -4,7 +4,7 @@
  *
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
@@ -30,6 +30,17 @@ import suit from './assets/20230903_015006.jpg'
 import slider from './assets/slider.jpg'
 import slider1 from './assets/slider1.jpg'
 
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/swiper-bundle.min.css';
+
+
+
+
+
+
 class Homepage extends React.PureComponent {
 
   constructor() {
@@ -45,7 +56,13 @@ class Homepage extends React.PureComponent {
   }
 
 
+
   render() {
+
+    const onAutoplayTimeLeft = (s, time, progress) => {
+      progressCircle.current.style.setProperty('--progress', 1 - progress);
+      progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+    };
 
 
     return (
@@ -76,8 +93,25 @@ class Homepage extends React.PureComponent {
           </div>
         </div>
 
+
         <div className="" style={{height: "200px"}}>
 
+        </div>
+
+        <div className="">
+          <div id="carouselExampleSlidesOnly" className="carousel slide" data-ride="carousel">
+            <div className="carousel-inner">
+              <div className="carousel-item active">
+                <img className="d-block w-100" src={slider} alt="First slide" />
+              </div>
+              <div className="carousel-item">
+                <img className="d-block w-100" src={slider1} alt="Second slide" />
+              </div>
+              <div className="carousel-item">
+                <img className="d-block w-100" src={slider} alt="Third slide" />
+              </div>
+            </div>
+          </div>
         </div>
 
         {/*TOP SECTION*/}

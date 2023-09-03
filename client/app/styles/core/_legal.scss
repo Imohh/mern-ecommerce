@@ -1,0 +1,23 @@
+@media(min-width: 768px) {
+	.legal-section {
+		padding: 5% 20%
+	}
+}
+
+@media(max-width: 767px) {
+	.legal-section {
+		padding: 5% 10%
+	}
+}
+
+.legal-section h2 {
+	text-transform: capitalize
+}
+
+.legal-heading {
+	font-size: 15px;	
+}
+
+.legal-content ul li {
+	margin-bottom: 10px;
+}
