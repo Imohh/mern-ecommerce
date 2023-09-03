@@ -37,15 +37,13 @@ const Footer = () => {
   const aboutCompany = [
     { id: 0, name: 'About Eminence', to: '/about-eminence' },
     { id: 1, name: 'Legal', to: '/legal' },
-    { id: 2, name: 'Shipping', to: '/shipping' },
-    { id: 3, name: 'Contact Us', to: '/contact' }
+    { id: 2, name: 'Shipping', to: '/shipping' }
   ];
 
-  const servicesLinks = [
-    { id: 0, name: 'about eminence', to: '/about-eminence' },
-    { id: 1, name: 'Legal', to: '/legal' },
-    { id: 2, name: 'Shipping', to: '/shipping' },
-    { id: 3, name: 'Contact Us', to: '/contact' }
+  const help = [
+    { id: 0, name: 'Email Unsubscribe', to: '/unsubscribe' },
+    { id: 1, name: 'Maintenance and Repairs', to: '/maintenance-repair' },
+    { id: 2, name: 'Contact Us', to: '/contact' }
   ];
 
   const showSocial = () => {
@@ -79,6 +77,14 @@ const Footer = () => {
     </li>
   ));
 
+  const helpLinks = help.map(item => (
+    <li key={item.id} className='footer-link'>
+      <Link key={item.id} to={item.to}>
+        {item.name}
+      </Link>
+    </li>
+  ));
+
   return (
     <footer className='footer'>
       {/*<Container className="footer-conainer" style={{background: "red"}}>*/}
@@ -86,7 +92,7 @@ const Footer = () => {
         <div className='footer-content'>
           <div className='footer-block'>
             <div className='block-title'>
-              <h3 className='text-uppercase'>services</h3>
+              <h3 className='text-uppercase'>legal</h3>
             </div>
             <div className='block-content'>
               <ul>{footerLinks}</ul>
@@ -102,10 +108,10 @@ const Footer = () => {
           </div>
           <div className='footer-block'>
             <div className='block-title'>
-              <h3 className='text-uppercase'>legal</h3>
+              <h3 className='text-uppercase'>may we help you?</h3>
             </div>
             <div className='block-content'>
-              <ul>{footerLinks}</ul>
+              <ul>{helpLinks}</ul>
             </div>
           </div>
           <div className='footer-block'>
@@ -140,7 +146,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href='/#instagram' rel='noreferrer noopener' target='_blank'>
+                <a href='https://instagram.com/eminencebygtx' rel='noreferrer noopener' target='_blank'>
                   <img src="https://img.icons8.com/material-outlined/32/null/instagram-new--v1.png"/>
                 </a>
               </li>
@@ -199,7 +205,7 @@ const Footer = () => {
                       </AccordionItemButton>
                   </AccordionItemHeading>
                   <AccordionItemPanel>
-                      <ul>{footerLinks}</ul>
+                      <ul>{helpLinks}</ul>
                   </AccordionItemPanel>
               </AccordionItem>
               <AccordionItem>

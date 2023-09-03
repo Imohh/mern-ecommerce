@@ -1,0 +1,67 @@
+
+@media(min-width: 768px) {	
+	.unsubscribe-section {
+		margin-top: 5%;
+		margin-bottom: 2%;
+	}
+
+	.unsubscribe-form-section {
+		padding: 100px 100px;
+		text-align: center;
+	}
+
+	.unsubscribe-form-section p {
+		font-size: 25px;
+		text-transform: capitalize;
+	}
+
+	.unsubscribe-form-section input {
+		padding: 20px 20px;
+		background: #ededed;
+		border: 2px solid #ededed;
+		width: 50%;
+	}
+
+	.unsubscribe-form-section button {
+		background: black;
+		margin-top: 20px;
+		font-size: 18px;
+		border: none;
+		color: white !important;
+		padding: 20px 40px;
+	}
+}
+
+
+
+@media(max-width: 767px) {	
+	.unsubscribe-section {
+		margin-top: 5%;
+		margin-bottom: 2%;
+	}
+
+	.unsubscribe-form-section {
+		padding: 100px 40px;
+		text-align: center;
+	}
+
+	.unsubscribe-form-section p {
+		font-size: 20px;
+		text-transform: capitalize;
+	}
+
+	.unsubscribe-form-section input {
+		padding: 20px 20px;
+		background: #ededed;
+		border: 2px solid #ededed;
+		width: 100%;
+	}
+
+	.unsubscribe-form-section button {
+		background: black;
+		margin-top: 20px;
+		font-size: 15px;
+		color: white !important;
+		padding: 15px 30px;
+	}
+}

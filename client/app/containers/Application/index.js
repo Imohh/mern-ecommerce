@@ -35,6 +35,7 @@ import OrderPage from '../OrderPage';
 import AuthSuccess from '../AuthSuccess';
 import Success from '../Success'
 import Payment from '../Payment'
+import Unsubscribe from '../Unsubscribe'
 import Return from '../Return'
 import Shipping from '../Shipping'
 import Legal from '../Legal'
@@ -96,6 +97,7 @@ class Application extends React.PureComponent {
                 <Route path='/contact' component={Contact} />
                 <Route path='/success' component={Success} />
                 <Route path='/payment' component={Payment} />
+                <Route path='/unsubscribe' component={Unsubscribe} />
                 <Route path='/return' component={Return} />
                 <Route path='/faq' component={Faq} />
                 <Route path='/shipping' component={Shipping} />
