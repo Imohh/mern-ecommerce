@@ -30,12 +30,8 @@ import suit from './assets/20230903_015006.jpg'
 import slider from './assets/slider.jpg'
 import slider1 from './assets/slider1.jpg'
 
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
-import 'swiper/swiper-bundle.min.css';
-
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/styles.css';
 
 
 
@@ -94,25 +90,23 @@ class Homepage extends React.PureComponent {
         </div>
 
 
-        <div className="" style={{height: "200px"}}>
+        <div className="" style={{height: "100px"}}></div>
 
-        </div>
-
+        {/*SLIDER*/}
         <div className="">
-          <div id="carouselExampleSlidesOnly" className="carousel slide" data-ride="carousel">
-            <div className="carousel-inner">
-              <div className="carousel-item active">
-                <img className="d-block w-100" src={slider} alt="First slide" />
-              </div>
-              <div className="carousel-item">
-                <img className="d-block w-100" src={slider1} alt="Second slide" />
-              </div>
-              <div className="carousel-item">
-                <img className="d-block w-100" src={slider} alt="Third slide" />
-              </div>
-            </div>
-          </div>
+
+          <AwesomeSlider animation="cubeAnimation" style={{height: "600px"}} >
+            <div data-src={slider} style={{height: "600px"}} />
+            <div data-src={slider1} style={{height: "600px"}} />
+            <div data-src={slider} style={{height: "600px"}} />
+          </AwesomeSlider>
+
         </div>
+
+        <div style={{textAlign: "center", padding: "10% 0"}}>
+          <i style={{fontSize: "18px"}}>fashion is like eating, you shouldn't stick to the same menu...</i>
+        </div>
+
 
         {/*TOP SECTION*/}
         <div className="" style={{height: "100%"}}>
