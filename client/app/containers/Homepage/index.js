@@ -103,8 +103,8 @@ class Homepage extends React.PureComponent {
 
         </div>
 
-        <div style={{textAlign: "center", padding: "10% 0"}}>
-          <i style={{fontSize: "18px"}}>fashion is like eating, you shouldn't stick to the same menu...</i>
+        <div style={{textAlign: "center", padding: "10% 2%"}}>
+          <i style={{fontSize: "22px"}}>fashion is like eating, you shouldn't stick to the same menu...</i>
         </div>
 
 
