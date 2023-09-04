@@ -31,7 +31,7 @@ class OrderSuccess extends React.PureComponent {
     const { order, isLoading } = this.props;
 
     return (
-      <div className='order-success'>
+      <div className='order-success' style={{marginTop: "10%"}}>
         {isLoading ? (
           <LoadingIndicator />
         ) : order._id ? (
