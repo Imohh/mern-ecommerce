@@ -171,7 +171,7 @@ class Navigation extends React.PureComponent {
                   {authenticated ? (
                     <UncontrolledDropdown nav inNavbar>
                       <DropdownToggle nav>
-                        <img className="account-image" width="24" height="24" src="https://img.icons8.com/material-outlined/24/user--v1.png" alt="user--v1"/>
+                        <img className="account-image" width="30" height="30" src="https://img.icons8.com/small/30/user.png" alt="user"/>
                         <span className="hide-display">{user.firstName ? user.firstName : 'Welcome'}</span>
                         <span className='fa fa-chevron-down dropdown-caret'></span>
                       </DropdownToggle>
@@ -187,7 +187,7 @@ class Navigation extends React.PureComponent {
                   ) : (
                     <UncontrolledDropdown nav inNavbar>
                       <DropdownToggle nav>
-                        <img className="account-image" width="24" height="24" src="https://img.icons8.com/material-outlined/24/user--v1.png" alt="user--v1"/>
+                        <img className="account-image" width="24" height="24" src="https://img.icons8.com/small/24/user.png" alt="user"/>
                         <span className="hide-display">Welcome!</span>
                         <span className='fa fa-chevron-down dropdown-caret hide-display'></span>
                       </DropdownToggle>
