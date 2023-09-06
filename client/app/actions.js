@@ -11,13 +11,13 @@ import * as authentication from './containers/Authentication/actions';
 import * as homepage from './containers/Homepage/actions';
 import * as faq from './containers/Faq/actions';
 import * as legal from './containers/Legal/actions';
-import * as unsubscribe from './containers/Unsubscribe/actions';
 import * as signup from './containers/Signup/actions';
 import * as login from './containers/Login/actions';
 import * as forgotPassword from './containers/ForgotPassword/actions';
 import * as navigation from './containers/Navigation/actions';
 import * as cart from './containers/Cart/actions';
 import * as newsletter from './containers/Newsletter/actions';
+import * as unsubscribe from './containers/Unsubscribe/actions';
 import * as dashboard from './containers/Dashboard/actions';
 import * as account from './containers/Account/actions';
 import * as address from './containers/Address/actions';
@@ -41,7 +41,6 @@ export default function mapDispatchToProps(dispatch) {
       ...authentication,
       ...homepage,
       ...faq,
-      ...unsubscribe,
       ...legal,
       ...signup,
       ...login,
@@ -49,6 +48,7 @@ export default function mapDispatchToProps(dispatch) {
       ...navigation,
       ...cart,
       ...newsletter,
+      ...unsubscribe,
       ...dashboard,
       ...account,
       ...address,

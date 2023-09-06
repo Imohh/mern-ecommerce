@@ -1,18 +1,38 @@
 /*
  *
- * unsubscribe reducer
+ * Unsubscribe reducer
  *
  */
 
-import { DEFAULT_ACTION } from './constants';
+import {
+  UNSUBSCRIBE_CHANGE,
+  SET_UNSUBSCRIBE_FORM_ERRORS,
+  UNSUBSCRIBE_RESET
+} from './constants';
 
-const initialState = {};
+const initialState = {
+  email: '',
+  formErrors: {}
+};
 
 const unsubscribeReducer = (state = initialState, action) => {
-  let newState;
   switch (action.type) {
-    case DEFAULT_ACTION:
-      return newState;
+    case UNSUBSCRIBE_CHANGE:
+      return {
+        ...state,
+        email: action.payload
+      };
+    case SET_UNSUBSCRIBE_FORM_ERRORS:
+      return {
+        ...state,
+        formErrors: action.payload
+      };
+    case UNSUBSCRIBE_RESET:
+      return {
+        ...state,
+        email: '',
+        formErrors: {}
+      };
     default:
       return state;
   }

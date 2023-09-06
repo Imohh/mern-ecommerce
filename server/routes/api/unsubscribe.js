@@ -1,15 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-const mailchimp = require('../../services/mailchimp');
-const mailgun = require('../../services/mailgun');
+// Bring in Models & Helpers
+const Unsubscribe = require('../../models/unsubscribe');
 
-const Newsletter = require('../../models/Newsletter');
-
-router.post('/subscribe', async (req, res) => {
+router.post('/unsubscribe', auth, async (req, res) => {
   try {
     const email = req.body.email;
-    const formEntry = new Newsletter({
+    const formEntry = new Unsubscribe({
       email,
     });
 
@@ -24,7 +22,6 @@ router.post('/subscribe', async (req, res) => {
     console.error(error);
     res.status(500).json({ error: 'Internal server error' });
   }
-  
 });
 
 module.exports = router;

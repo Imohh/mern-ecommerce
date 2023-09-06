@@ -13,7 +13,6 @@ import applicationReducer from './containers/Application/reducer';
 import homepageReducer from './containers/Homepage/reducer';
 import faqReducer from './containers/Faq/reducer';
 import legalReducer from './containers/Legal/reducer';
-import unsubscribeReducer from './containers/Unsubscribe/reducer';
 import signupReducer from './containers/Signup/reducer';
 import loginReducer from './containers/Login/reducer';
 import forgotPasswordReducer from './containers/ForgotPassword/reducer';
@@ -21,6 +20,7 @@ import navigationReducer from './containers/Navigation/reducer';
 import authenticationReducer from './containers/Authentication/reducer';
 import cartReducer from './containers/Cart/reducer';
 import newsletterReducer from './containers/Newsletter/reducer';
+import unsubscribeReducer from './containers/Unsubscribe/reducer';
 import dashboardReducer from './containers/Dashboard/reducer';
 import accountReducer from './containers/Account/reducer';
 import addressReducer from './containers/Address/reducer';
@@ -45,7 +45,6 @@ const createReducer = history =>
     homepage: homepageReducer,
     faq: faqReducer,
     legal: legalReducer,
-    unsubscribe: unsubscribeReducer,
     signup: signupReducer,
     login: loginReducer,
     forgotPassword: forgotPasswordReducer,
@@ -53,6 +52,7 @@ const createReducer = history =>
     authentication: authenticationReducer,
     cart: cartReducer,
     newsletter: newsletterReducer,
+    unsubscribe: unsubscribeReducer,
     dashboard: dashboardReducer,
     account: accountReducer,
     address: addressReducer,
