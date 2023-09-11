@@ -4,23 +4,29 @@ const router = express.Router();
 // Bring in Models & Helpers
 const Unsubscribe = require('../../models/unsubscribe');
 
-router.post('/unsubscribe', auth, async (req, res) => {
+router.post('/unsubscribe', async (req, res) => {
   try {
     const email = req.body.email;
-    const formEntry = new Unsubscribe({
-      email,
-    });
 
     if (!email) {
       return res.status(400).json({ error: 'You must enter an email address.' });
     }
 
-    await formEntry.save();
-    res.status(200).json({ message: 'Form data saved successfully' });
+    const unsubscribe = new Unsubscribe({
+      email
+    });
+
+    const unsubscribeDoc = await unsubscribe.save();
+    res.status(200).json({
+      success: true,
+      message: `We receved your email, we will reach you on your email address ${email}!`,
+      unsubscribe: unsubscribeDoc
+    });
 
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Internal server error' });
+    return res.status(400).json({
+      error: 'Your request could not be processed. Please try again.'
+    });
   }
 });
 

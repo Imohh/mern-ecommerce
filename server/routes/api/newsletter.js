@@ -3,6 +3,7 @@ const router = express.Router();
 
 const mailchimp = require('../../services/mailchimp');
 const mailgun = require('../../services/mailgun');
+const { sendWelcomeEmail } = require('../../services/email')
 
 const Newsletter = require('../../models/Newsletter');
 
@@ -18,6 +19,10 @@ router.post('/subscribe', async (req, res) => {
     }
 
     await formEntry.save();
+
+    // Send a welcome email to the use after saving the subscription
+    await sendWelcomeEmail(email)
+
     res.status(200).json({ message: 'Form data saved successfully' });
 
   } catch (error) {

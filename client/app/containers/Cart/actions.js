@@ -207,17 +207,46 @@ const getCartItems = cartItems => {
   return newCartItems;
 };
 
-// const calculatePurchaseQuantity = inventory => {
-//   if (inventory <= 25) {
-//     return 1;
-//   } else if (inventory > 25 && inventory <= 100) {
-//     return 5;
-//   } else if (inventory > 100 && inventory < 500) {
-//     return 25;
-//   } else {
-//     return 50;
-//   }
-// };
+export const handlePayment = () => {
+  return async (dispatch, getState) => {  
+    const cartTotal = parseFloat(localStorage.getItem(CART_TOTAL));
+    const cartItems = getState().cart.cartItems;
+    const productNames = cartItems.map(item => item.name);
+    console.log('cartItems:', cartItems)
+    try {
+      const response = await axios.post('/api/stripe/create-checkout-session', {
+        cartItems,
+        cartTotal,
+        productNames,
+      })
+
+      window.location.href = response.data.url
+    } catch (error) {
+      console.log('Error, error')
+    }
+  }
+}
+
+// export const handlePayment = async () => {
+//   const cartTotal = parseFloat(localStorage.getItem(CART_TOTAL));
+//   const cartItems = getState().cart.cartItems;
+//   const productNames = cartItems.map(item => item.name);
+
+//   // const dataToSend = {
+//   //   cartTotal,
+//   //   productNames,
+//   // }
+
+//   const res = await fetch('/api/stripe/create-checkout-session', {
+//     method: 'POST',
+//     headers: {
+//       "Content-Type": 'application/json'
+//     },
+//     body: JSON.stringify({cartTotal, productNames}),
+//   })
+//   const body = await res.json()
+//   window.location.href = body.url
+// }
 
 
 const calculatePurchaseQuantity = inventory => {

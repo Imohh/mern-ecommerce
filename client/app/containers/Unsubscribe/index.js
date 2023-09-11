@@ -15,7 +15,6 @@ import landscape from '../../images/20230903_015023.jpg'
 
 class Unsubscribe extends React.PureComponent  {
   render() {
-
     const { email, unsubscribeChange, unsubscribeToNewsletter, formErrors } =
       this.props;
 
@@ -23,10 +22,6 @@ class Unsubscribe extends React.PureComponent  {
       event.preventDefault();
       unsubscribeToNewsletter();
     };
-
-
-    
-
 
     return (
       <>
@@ -60,7 +55,9 @@ class Unsubscribe extends React.PureComponent  {
 }
 
 const mapStateToProps = state => {
-  return {};
+  return {
+    email: state.unsub.email,
+    formErrors: state.unsub.formErrors
+  };
 };
-
 export default connect(mapStateToProps, actions)(Unsubscribe);

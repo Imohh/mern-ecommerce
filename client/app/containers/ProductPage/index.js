@@ -68,8 +68,8 @@ class ProductPage extends React.PureComponent {
         thumbnail: `${product.img || '/images/placeholder-image.png'}`
       },
       {
-        original: "https://picsum.photos/id/1/300/150",
-        thumbnail: "https://picsum.photos/id/1/300/150"
+        original: `${product.imgs || '/images/placeholder-image.png'}`,
+        thumbnail: `${product.imgs || '/images/placeholder-image.png'}`
       },
       {
         original: "https://picsum.photos/id/10/300/150",

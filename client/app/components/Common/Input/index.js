@@ -23,7 +23,8 @@ const Input = props => {
     label,
     name,
     onInputChange,
-    inlineElement
+    inlineElement,
+    multiple
   } = props;
 
   const _onChange = e => {
@@ -130,6 +131,7 @@ const Input = props => {
             name={name}
             value={value}
             placeholder={placeholder}
+            multiple={multiple}
           />
           {inlineElement}
         </div>
