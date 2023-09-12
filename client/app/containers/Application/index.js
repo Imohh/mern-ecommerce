@@ -18,6 +18,7 @@ import Signup from '../Signup';
 import MerchantSignup from '../MerchantSignup';
 import HomePage from '../Homepage';
 import Faq from '../Faq';
+import About from '../About';
 import Dashboard from '../Dashboard';
 import Support from '../Support';
 import Navigation from '../Navigation';
@@ -100,6 +101,7 @@ class Application extends React.PureComponent {
                 <Route path='/unsubscribe' component={Unsubscribe} />
                 <Route path='/return' component={Return} />
                 <Route path='/faq' component={Faq} />
+                <Route path='/about' component={About} />
                 <Route path='/shipping' component={Shipping} />
                 <Route path='/legal' component={Legal} />
                 <Route path='/track-orders' component={TrackOrders} />
