@@ -35,7 +35,7 @@ const Footer = () => {
   ];
 
   const aboutCompany = [
-    { id: 0, name: 'About Eminence', to: '/about-eminence' },
+    { id: 0, name: 'About Eminence', to: '/about' },
     { id: 1, name: 'Legal', to: '/legal' },
     { id: 2, name: 'Shipping', to: '/shipping' }
   ];
