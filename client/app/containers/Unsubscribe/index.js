@@ -12,6 +12,7 @@ import { Row, Col } from 'reactstrap';
 import actions from '../../actions';
 
 import landscape from '../../images/20230903_015023.jpg'
+import Input from '../../components/Common/Input';
 
 class Unsubscribe extends React.PureComponent  {
   render() {
@@ -36,7 +37,7 @@ class Unsubscribe extends React.PureComponent  {
           <div className="unsubscribe-form-section">
             <p>please enter your email address below and we will remove you from our mailing list.</p>
             <form onSubmit={handleSubmit}>
-              <input 
+              <Input 
                 type={'text'}
                 name={'email'} 
                 value={email}
@@ -56,8 +57,8 @@ class Unsubscribe extends React.PureComponent  {
 
 const mapStateToProps = state => {
   return {
-    email: state.unsub.email,
-    formErrors: state.unsub.formErrors
-  };
+    email: state.unsubscribe.email,
+    formErrors: state.unsubscribe.formErrors
+  }
 };
 export default connect(mapStateToProps, actions)(Unsubscribe);

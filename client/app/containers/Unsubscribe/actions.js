@@ -30,7 +30,7 @@ export const unsubscribeToNewsletter = () => {
       };
 
       const user = {};
-      user.email = getState().unsub.email;
+      user.email = getState().unsubscribe.email;
 
       const { isValid, errors } = allFieldsValidation(user, rules, {
         'required.email': 'Email is required.',
@@ -41,7 +41,7 @@ export const unsubscribeToNewsletter = () => {
         return dispatch({ type: SET_UNSUBSCRIBE_FORM_ERRORS, payload: errors });
       }
 
-      const response = await axios.post('/api/unsub/unsubscribe', user);
+      const response = await axios.post('/api/unsubscribe/unsubscribe', user);
 
       const successfulOptions = {
         title: `${response.data.message}`,

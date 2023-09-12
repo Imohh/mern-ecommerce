@@ -58,7 +58,7 @@ const Checkout = props => {
   //     // onClose: () => alert("Wait! Don't leave :("),
 // }
 
-
+  
   // STRIPE PAYMENT
 
   useEffect(() => {

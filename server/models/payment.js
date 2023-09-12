@@ -16,6 +16,10 @@ const PaymentSchema = new Schema({
   //   type: String,
   //   required: true,
   // },
+  unit_amount: {
+    type: String,
+    required: true,
+  },
   paymentDescription: {
     type: String,
     required: true,
