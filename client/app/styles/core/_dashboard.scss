@@ -108,3 +108,17 @@
     padding: 50px 20px;
   }
 }
+
+
+// account menu
+@media(min-width: 768px) {
+  .mobile-account {
+    display: none
+  }
+}
+
+@media(max-width: 767px) {
+  .mobile-account {
+    display: block
+  }
+}

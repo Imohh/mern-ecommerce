@@ -33,6 +33,27 @@ const AccountMenu = props => {
         onClick={toggleMenu}
       />
       <h3 className='panel-title'>Account</h3>
+
+      {/*mobile view*/}
+      <ul className='panel-links mobile-account'>
+        {links.map((link, index) => {
+          const PREFIX = link.prefix ? link.prefix : '';
+          const isProviderAllowed = getAllowedProvider(link);
+          if (!isProviderAllowed) return;
+          return (
+            <li key={index}>
+              <NavLink
+                to={PREFIX + link.to}
+                activeClassName='active-link'
+                exact
+              >
+                {link.name}
+              </NavLink>
+            </li>
+          );
+        })}
+      </ul>
+
       <Navbar color='light' light expand='md'>
         <Collapse isOpen={isMenuOpen} navbar>
           <ul className='panel-links'>
