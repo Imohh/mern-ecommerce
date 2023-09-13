@@ -85,6 +85,8 @@ class ProductPage extends React.PureComponent {
       }
     ];
 
+    const pound = '\u00A3'
+
 
     return (
       <div className='product-shop' style={{margin: "0 auto"}}>
@@ -137,7 +139,7 @@ class ProductPage extends React.PureComponent {
                           </Link>
                         </p>
                       )}
-                      <p className='price'>${product.price}</p>
+                      <p className='price'>{pound}{product.price}</p>
                       <div className='item-customize product-select-section'>
                         <button
                           className={`size-option ${productShopData.size === "S" ? "active-select" : "size-select"}`}
