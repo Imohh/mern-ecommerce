@@ -28,7 +28,20 @@ const Input = props => {
   } = props;
 
   const _onChange = e => {
-    if (e.target.name == 'image') {
+    // if (e.target.name == 'image') {
+    //   onInputChange(e.target.name, e.target.files[0]);
+    // } else {
+    //   onInputChange(e.target.name, e.target.value);
+    // }
+    if (e.target.name === 'image' && multiple) {
+      // Handle multiple image uploads
+      const files = e.target.files;
+      const uploadedImages = [];
+      for (let i = 0; i < files.length; i++) {
+        uploadedImages.push(files[i]);
+      }
+      onInputChange(e.target.name, uploadedImages);
+    } else if (e.target.name === 'image') {
       onInputChange(e.target.name, e.target.files[0]);
     } else {
       onInputChange(e.target.name, e.target.value);
@@ -146,7 +159,8 @@ Input.defaultProps = {
   decimals: true,
   rows: '4',
   inlineElement: null,
-  autoComplete: 'on'
+  autoComplete: 'on',
+  multiple: false
 };
 
 export default Input;

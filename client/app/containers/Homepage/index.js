@@ -42,14 +42,39 @@ class Homepage extends React.PureComponent {
   constructor() {
     super();
     this.state = {
-      modalState: true
+      modalState: false
     };
     this.handleShow = this.handleShow.bind(this)
   }
 
   handleShow() {
-    this.setState({ modalState: !this.state.modalState })
+    this.setState({ modalState: false })
   }
+
+  componentDidMount() {
+    // Check if the modal should be shown when the component mounts
+    this.checkShowModal();
+  }
+
+  checkShowModal = () => {
+    const lastDisplayDate = localStorage.getItem('lastModalDisplayDate');
+    if (!lastDisplayDate) {
+      // If the last display date is not set, show the modal and set the current date
+      this.setState({ modalState: true });
+      localStorage.setItem('lastModalDisplayDate', new Date().toISOString());
+    } else {
+      // If the last display date is set, compare it with the current date
+      const lastDisplayTimestamp = Date.parse(lastDisplayDate);
+      const currentDateTimestamp = new Date().getTime();
+      const twentyDaysInMillis = 20 * 24 * 60 * 60 * 1000; // 20 days in milliseconds
+
+      if (currentDateTimestamp - lastDisplayTimestamp >= twentyDaysInMillis) {
+        // If 20 days have passed, show the modal and update the last display date
+        this.setState({ modalState: true });
+        localStorage.setItem('lastModalDisplayDate', new Date().toISOString());
+      }
+    }
+  };
 
 
 

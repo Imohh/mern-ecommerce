@@ -324,7 +324,7 @@ router.post(
       if (foundProduct) {
         return res.status(400).json({ error: 'This sku is already in use.' });
       }
-
+      
       const result = await cloudinary.uploader.upload(img);
       
       const product = new Product({
