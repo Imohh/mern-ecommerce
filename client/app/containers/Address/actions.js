@@ -88,6 +88,25 @@ export const fetchAddress = addressId => {
   };
 };
 
+export const fetchAddressCart = (addressId) => {
+  return async (dispatch, getState) => {
+    try {
+      const response = await axios.get(`/api/address/${addressId}`);
+
+      // Dispatch the address data along with the addressId
+      dispatch({
+        type: FETCH_ADDRESS,
+        payload: {
+          addressId, // Include the addressId
+          address: response.data.address,
+        },
+      });
+    } catch (error) {
+      handleError(error, dispatch);
+    }
+  };
+};
+
 export const addAddress = () => {
   return async (dispatch, getState) => {
     try {

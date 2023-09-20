@@ -15,7 +15,12 @@ import Checkout from '../../components/Store/Checkout';
 import { BagIcon, CloseIcon } from '../../components/Common/Icon';
 import Button from '../../components/Common/Button';
 
+import { fetchAddress, fetchAddresses } from '../Address/actions';
+
 class Cart extends React.PureComponent {
+  componentDidMount() {
+    this.props.fetchAddresses();
+  }
   render() {
     const {
       isCartOpen,
@@ -27,7 +32,8 @@ class Cart extends React.PureComponent {
       handlePayment,
       handleRemoveFromCart,
       placeOrder,
-      authenticated
+      authenticated,
+      addresses,
     } = this.props;
 
     return (
@@ -59,13 +65,18 @@ class Cart extends React.PureComponent {
         )}
         {cartItems.length > 0 && (
           <div className='cart-checkout'>
-            <CartSummary cartTotal={cartTotal} cartItems={cartItems} />
+            <CartSummary 
+              addresses={addresses}
+              cartTotal={cartTotal} 
+              cartItems={cartItems}
+            />
             <Checkout
               handleShopping={handleShopping}
               handleCheckout={handleCheckout}
               placeOrder={placeOrder}
               authenticated={authenticated}
               cartTotal={cartTotal}
+              // total={total}
               cartItems={cartItems}
               handlePayment={handlePayment}
             />
