@@ -23,11 +23,13 @@ import {
   SET_PRODUCT_SHOP_FORM_ERRORS,
   RESET_PRODUCT_SHOP
 } from '../Product/constants';
+import { FETCH_ADDRESSES } from '../Address/constants'
 
 import { CART_ID, CART_ITEMS, CART_TOTAL } from '../../constants';
 import handleError from '../../utils/error';
 import { allFieldsValidation } from '../../utils/validation';
 import { toggleCart } from '../Navigation/actions';
+// import { fetchAddresses } from '../Address/actions'
 
 
 // Handle Add To Cart
@@ -35,10 +37,11 @@ export const handleAddToCart = (product, total) => {
   return (dispatch, getState) => {
     product.quantity = Number(getState().product.productShopData.quantity);
     product.size = String(getState().product.productShopData.size);
-    // product.totalPrice = product.quantity * product.price;
-    product.totalPrice = total;
+    product.totalPrice = product.quantity * product.price;
     product.totalPrice = parseFloat(product.totalPrice.toFixed(2));
     const inventory = getState().product.storeProduct.inventory;
+
+
 
     const result = calculatePurchaseQuantity(inventory);
 
@@ -97,6 +100,9 @@ export const handleRemoveFromCart = product => {
 export const calculateCartTotal = () => {
   return (dispatch, getState) => {
     const cartItems = getState().cart.cartItems;
+    // const address = getState().address.addresses;
+
+    // console.log('Address:', address);
 
     let total = 0;
 
@@ -104,11 +110,29 @@ export const calculateCartTotal = () => {
       total += item.price * item.quantity;
     });
 
+    // Check the country in the address and adjust the shipping fee accordingly
+    // if (address.country === 'nigeria') {
+    //   dispatch(setShippingFee(0));
+    // } else {
+    //   dispatch(setShippingFee(4));
+    //   total += 4; // Add $4 to the total for other countries
+    // }
+
     total = parseFloat(total.toFixed(2));
-    localStorage.setItem(CART_TOTAL, total);
+    localStorage.setItem(CART_TOTAL, total); // this is where the shippingfee should be added and it will reflect in stripe checkout
     dispatch({
       type: HANDLE_CART_TOTAL,
       payload: total
+    });
+  };
+};
+
+export const setShippingFee = (fee) => {
+  return (dispatch) => {
+    localStorage.setItem(SET_SHIPPING_FEE, fee);
+    dispatch({
+      type: SET_SHIPPING_FEE,
+      payload: fee,
     });
   };
 };
@@ -216,31 +240,27 @@ export const updateCartTotal = total => ({
   payload: total,
 });
 
-export const handlePayments = (newTotal) => {
+export const handlePayments = total => {
   return async (dispatch, getState) => {
     const cartTotal = parseFloat(localStorage.getItem(CART_TOTAL));
     const cartItems = getState().cart.cartItems;
     const productNames = cartItems.map(item => item.name);
 
-    dispatch(updateCartTotal(newTotal));
-
-    console.log('cartItems:', cartItems)
+    console.log('total:', total)
   }
 }
 
-export const handlePayment = (newTotal) => {
+export const handlePayment = (total) => {
   return async (dispatch, getState) => {  
-    const cartTotal = parseFloat(localStorage.getItem(CART_TOTAL)) + shippingFee;
+    // const cartTotal = parseFloat(localStorage.getItem(CART_TOTAL));
     const cartItems = getState().cart.cartItems;
     const productNames = cartItems.map(item => item.name);
-
-    dispatch(updateCartTotal(newTotal));
 
     console.log('cartItems:', cartItems)
     try {
       const response = await axios.post('/api/stripe/create-checkout-session', {
         cartItems,
-        cartTotal,
+        total,
         productNames,
       })
 
@@ -288,9 +308,9 @@ const calculatePurchaseQuantity = inventory => {
 
 
 // SHIPPING FEE
-export const setShippingFee = shippingFee => ({
-  type: SET_SHIPPING_FEE,
-  payload: shippingFee,
-});
+// export const setShippingFee = shippingFee => ({
+//   type: SET_SHIPPING_FEE,
+//   payload: shippingFee,
+// });
 
 // TOTAL PRICE ON CART

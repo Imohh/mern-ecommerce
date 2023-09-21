@@ -18,7 +18,7 @@ const initialState = {
   cartItems: [],
   cartTotal: 0,
   cartId: '',
-  shippingFee: 7,
+  shippingFee: 0,
 };
 
 const cartReducer = (state = initialState, action) => {

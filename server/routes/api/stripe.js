@@ -7,7 +7,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 router.post('/create-checkout-session', async (req, res) => {
     try {
 
-        const { cartTotal, productNames } = req.body;
+        const { total, productNames } = req.body;
 
         const combineProductNames = productNames.join(', ');
         const timestampId = Date.now().toString();
@@ -17,7 +17,7 @@ router.post('/create-checkout-session', async (req, res) => {
 
         const newPayment = new Payment({
           paymentDescription,
-          unit_amount: cartTotal,
+          unit_amount: total,
         });
 
         await newPayment.save();
@@ -30,7 +30,7 @@ router.post('/create-checkout-session', async (req, res) => {
                     product_data: {
                         name: combineProductNames,
                     },
-                    unit_amount: cartTotal * 100,
+                    unit_amount: total * 100,
                 },
                 quantity: 1,
               },

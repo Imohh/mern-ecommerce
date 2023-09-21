@@ -30,10 +30,12 @@ class Cart extends React.PureComponent {
       handleShopping,
       handleCheckout,
       handlePayment,
+      handlePayments,
       handleRemoveFromCart,
       placeOrder,
       authenticated,
       addresses,
+      order
     } = this.props;
 
     return (
@@ -69,6 +71,7 @@ class Cart extends React.PureComponent {
               addresses={addresses}
               cartTotal={cartTotal} 
               cartItems={cartItems}
+              order={order}
             />
             <Checkout
               handleShopping={handleShopping}
@@ -79,6 +82,7 @@ class Cart extends React.PureComponent {
               // total={total}
               cartItems={cartItems}
               handlePayment={handlePayment}
+              handlePayments={handlePayments}
             />
           </div>
         )}

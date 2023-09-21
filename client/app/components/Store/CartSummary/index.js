@@ -7,14 +7,17 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Container, Row, Col } from 'reactstrap';
-import { updateCartTotal } from '../../../containers/Cart/actions'
+import { updateCartTotal, handlePayments } from '../../../containers/Cart/actions'
 
 const CartSummary = props => {
   const { cartTotal, cartItems } = props;
   const addresses = useSelector((state) => state.address.addresses);
+  const order = useSelector((state) => state.order.order);
   const [ shippingFee, setShippingFee ] = useState(0);
-  const [ total, setTotal ] = useState(0);
+  const [ newTotal, setNewTotal ] = useState(0);
   const dispatch = useDispatch();
+
+  const finalShipping = shippingFee * cartItems[0].quantity
 
   useEffect(() => {
     // Calculate the shipping fee based on the country
@@ -30,11 +33,13 @@ const CartSummary = props => {
 
   useEffect(() => {
     // Calculate the total when shippingFee or cartTotal changes
-    const newTotal = shippingFee + cartTotal;
-    setTotal(newTotal);
+    const total = shippingFee * cartItems[0].quantity + cartTotal;
+    setNewTotal(total);
 
     // Dispatch the action with the new total
-    dispatch(updateCartTotal(newTotal));
+    dispatch(updateCartTotal(total));
+
+    dispatch(handlePayments(total))
 
   }, [shippingFee, cartTotal, dispatch]);
 
@@ -47,7 +52,7 @@ const CartSummary = props => {
             <p className='summary-label'>Shipping fee</p>
           </Col>
           <Col xs='3' className='text-right'>
-            <p className='summary-value'>£{shippingFee}</p>
+            <p className='summary-value'>£{finalShipping}</p>
           </Col>
         </Row>
         <Row className='mb-2 summary-item'>
@@ -55,7 +60,7 @@ const CartSummary = props => {
             <p className='summary-label'>Total</p>
           </Col>
           <Col xs='3' className='text-right'>
-            <p className='summary-value'>£{total}</p>
+            <p className='summary-value'>£{newTotal}</p>
           </Col>
         </Row>
     </div>
