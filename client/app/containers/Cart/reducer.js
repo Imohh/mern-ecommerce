@@ -12,6 +12,7 @@ import {
   SET_CART_ID,
   CLEAR_CART,
   SET_SHIPPING_FEE,
+  UPDATE_CART_TOTAL,
 } from './constants';
 
 const initialState = {
@@ -19,6 +20,7 @@ const initialState = {
   cartTotal: 0,
   cartId: '',
   shippingFee: 0,
+  total: 0,
 };
 
 const cartReducer = (state = initialState, action) => {
@@ -84,6 +86,11 @@ const cartReducer = (state = initialState, action) => {
         shippingFee: 0,
       };
       return newState;
+    case UPDATE_CART_TOTAL:
+      return {
+        ...state,
+        total: action.payload, // Update the total value
+      };
 
     default:
       return state;

@@ -100,9 +100,6 @@ export const handleRemoveFromCart = product => {
 export const calculateCartTotal = () => {
   return (dispatch, getState) => {
     const cartItems = getState().cart.cartItems;
-    // const address = getState().address.addresses;
-
-    // console.log('Address:', address);
 
     let total = 0;
 
@@ -110,16 +107,8 @@ export const calculateCartTotal = () => {
       total += item.price * item.quantity;
     });
 
-    // Check the country in the address and adjust the shipping fee accordingly
-    // if (address.country === 'nigeria') {
-    //   dispatch(setShippingFee(0));
-    // } else {
-    //   dispatch(setShippingFee(4));
-    //   total += 4; // Add $4 to the total for other countries
-    // }
-
     total = parseFloat(total.toFixed(2));
-    localStorage.setItem(CART_TOTAL, total); // this is where the shippingfee should be added and it will reflect in stripe checkout
+    localStorage.setItem(UPDATE_CART_TOTAL, total); // this is where the shippingfee should be added and it will reflect in stripe checkout
     dispatch({
       type: HANDLE_CART_TOTAL,
       payload: total
@@ -240,19 +229,22 @@ export const updateCartTotal = total => ({
   payload: total,
 });
 
-export const handlePayments = total => {
+export const handlePayments = () => {
   return async (dispatch, getState) => {
+    const storedTotal = JSON.parse(localStorage.getItem('shippingTotal'));
     const cartTotal = parseFloat(localStorage.getItem(CART_TOTAL));
     const cartItems = getState().cart.cartItems;
     const productNames = cartItems.map(item => item.name);
 
-    console.log('total:', total)
+    console.log('shippingTotal:', storedTotal)
+
   }
 }
 
-export const handlePayment = (total) => {
+export const handlePayment = () => {
   return async (dispatch, getState) => {  
     // const cartTotal = parseFloat(localStorage.getItem(CART_TOTAL));
+    const total = JSON.parse(localStorage.getItem('shippingTotal'));
     const cartItems = getState().cart.cartItems;
     const productNames = cartItems.map(item => item.name);
 

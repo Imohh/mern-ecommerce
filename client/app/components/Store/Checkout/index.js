@@ -65,7 +65,7 @@ const Checkout = props => {
             <Button
               variant='primary'
               text='Place Order'
-              onClick={() => handlePayments()}
+              onClick={() => handlePayment()}
             />
         ) : (
           <Button

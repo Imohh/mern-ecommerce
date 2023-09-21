@@ -25,8 +25,11 @@ const CartSummary = props => {
 
     if(country === 'nigeria' || country === 'united kingdom') {
       setShippingFee(0)
+    } else if(cartTotal >= 120) {
+      setShippingFee(0)
+      console.log('cartTotal greater than 120')
     } else {
-      setShippingFee(4)
+      setShippingFee(5)
     }
 
   }, [addresses]);
@@ -42,6 +45,8 @@ const CartSummary = props => {
     dispatch(handlePayments(total))
 
   }, [shippingFee, cartTotal, dispatch]);
+
+  localStorage.setItem('shippingTotal', JSON.stringify(newTotal));
 
   // const total = shippingFee + cartTotal
 
