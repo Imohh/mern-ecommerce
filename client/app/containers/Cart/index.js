@@ -18,9 +18,9 @@ import Button from '../../components/Common/Button';
 import { fetchAddress, fetchAddresses } from '../Address/actions';
 
 class Cart extends React.PureComponent {
-  componentDidMount() {
-    this.props.fetchAddresses();
-  }
+  // componentDidMount() {
+  //   this.props.fetchAddresses();
+  // }
   render() {
     const {
       isCartOpen,
