@@ -236,7 +236,7 @@ export const handlePayments = () => {
     const cartItems = getState().cart.cartItems;
     const productNames = cartItems.map(item => item.name);
 
-    console.log('shippingTotal:', storedTotal)
+    // console.log('shippingTotal:', storedTotal)
 
   }
 }
