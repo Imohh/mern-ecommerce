@@ -18,9 +18,6 @@ import Button from '../../components/Common/Button';
 import { fetchAddress, fetchAddresses } from '../Address/actions';
 
 class Cart extends React.PureComponent {
-  // componentDidMount() {
-  //   this.props.fetchAddresses();
-  // } // THIS IS THE REASON THE WEBSITE WAS NOT LOADING PROPERLY WHEN NOT LOGGED IN
   componentDidMount() {
     if(this.props.authenticated) {
       this.props.fetchAddresses()

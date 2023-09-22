@@ -297,12 +297,3 @@ const calculatePurchaseQuantity = inventory => {
     return 50;
   }
 };
-
-
-// SHIPPING FEE
-// export const setShippingFee = shippingFee => ({
-//   type: SET_SHIPPING_FEE,
-//   payload: shippingFee,
-// });
-
-// TOTAL PRICE ON CART

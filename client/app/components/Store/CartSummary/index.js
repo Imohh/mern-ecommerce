@@ -19,22 +19,35 @@ const CartSummary = props => {
 
   const finalShipping = shippingFee * cartItems[0].quantity
 
+  // useEffect(() => {
+  //   // Calculate the shipping fee based on the country
+  //   const country = addresses.length > 0 ? addresses[0].country.trim().toLowerCase() : ''; // Assuming the country is in the first address
+
+  //   if (cartTotal >= 120) {
+  //     setShippingFee(0)
+  //   } else if (country === 'nigeria' || country === 'united kingdom') {
+  //     setShippingFee(0)
+  //     console.log('cartTotal greater than 120')
+  //   } else {
+  //     setShippingFee(5)
+  //   }
+
+  // }, [addresses]);
+
   useEffect(() => {
     // Calculate the shipping fee based on the country
     const country = addresses.length > 0 ? addresses[0].country.trim().toLowerCase() : ''; // Assuming the country is in the first address
 
-    if(country === 'nigeria' || country === 'united kingdom') {
+    if (cartTotal >= 120) {
       setShippingFee(0)
-    } else if(cartTotal >= 120) {
+    } else if (country === 'nigeria' || country === 'united kingdom') {
       setShippingFee(0)
       console.log('cartTotal greater than 120')
     } else {
       setShippingFee(5)
     }
 
-  }, [addresses]);
 
-  useEffect(() => {
     // Calculate the total when shippingFee or cartTotal changes
     const total = shippingFee * cartItems[0].quantity + cartTotal;
     setNewTotal(total);
@@ -44,9 +57,13 @@ const CartSummary = props => {
 
     dispatch(handlePayments(total))
 
-  }, [shippingFee, cartTotal, dispatch]);
+    localStorage.setItem('shippingFee', shippingFee);
+    localStorage.setItem('cartTotal', cartTotal);
+
+  }, [shippingFee, cartItems, addresses, cartTotal, dispatch]);
 
   localStorage.setItem('shippingTotal', JSON.stringify(newTotal));
+
 
   // const total = shippingFee + cartTotal
 
