@@ -19,20 +19,7 @@ const CartSummary = props => {
 
   const finalShipping = shippingFee * cartItems[0].quantity
 
-  // useEffect(() => {
-  //   // Calculate the shipping fee based on the country
-  //   const country = addresses.length > 0 ? addresses[0].country.trim().toLowerCase() : ''; // Assuming the country is in the first address
-
-  //   if (cartTotal >= 120) {
-  //     setShippingFee(0)
-  //   } else if (country === 'nigeria' || country === 'united kingdom') {
-  //     setShippingFee(0)
-  //     console.log('cartTotal greater than 120')
-  //   } else {
-  //     setShippingFee(5)
-  //   }
-
-  // }, [addresses]);
+  const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   useEffect(() => {
     // Calculate the shipping fee based on the country
@@ -44,7 +31,7 @@ const CartSummary = props => {
       setShippingFee(0)
       console.log('cartTotal greater than 120')
     } else {
-      setShippingFee(5)
+      setShippingFee(5 * totalQuantity)
     }
 
 
