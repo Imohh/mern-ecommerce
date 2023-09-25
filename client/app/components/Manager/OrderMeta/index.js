@@ -21,9 +21,9 @@ const OrderMeta = props => {
       order.products.filter(i => i.status === CART_ITEM_STATUS.Delivered)
         .length < 1;
 
-    if (isNotDelivered) {
-      return <Button size='sm' text='Cancel Order' onClick={cancelOrder} />;
-    }
+    // if (isNotDelivered) {
+    //   return <Button size='sm' text='Cancel Order' onClick={cancelOrder} />;
+    // }
   };
 
   return (
