@@ -17,8 +17,6 @@ const CartSummary = props => {
   const [ newTotal, setNewTotal ] = useState(0);
   const dispatch = useDispatch();
 
-  const finalShipping = shippingFee * cartItems[0].quantity
-
   const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   useEffect(() => {
@@ -36,7 +34,7 @@ const CartSummary = props => {
 
 
     // Calculate the total when shippingFee or cartTotal changes
-    const total = shippingFee * cartItems[0].quantity + cartTotal;
+    const total = shippingFee + cartTotal;
     setNewTotal(total);
 
     // Dispatch the action with the new total
@@ -51,9 +49,6 @@ const CartSummary = props => {
 
   localStorage.setItem('shippingTotal', JSON.stringify(newTotal));
 
-
-  // const total = shippingFee + cartTotal
-
   return (
     <div className='cart-summary'>
         <Row className='mb-2 summary-item'>
@@ -61,7 +56,7 @@ const CartSummary = props => {
             <p className='summary-label'>Shipping fee</p>
           </Col>
           <Col xs='3' className='text-right'>
-            <p className='summary-value'>£{finalShipping}</p>
+            <p className='summary-value'>£{shippingFee}</p>
           </Col>
         </Row>
         <Row className='mb-2 summary-item'>

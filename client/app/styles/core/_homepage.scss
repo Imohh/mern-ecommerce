@@ -377,14 +377,34 @@
   .modal-dialog-centered {
     max-width: 800px;
   }
+  .modal-logo {
+    text-transform: uppercase
+  }
+  .modal-discount-text {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 5% 0;
+  }
 }
 
 @media (max-width: 767px) {
   .modal-dialog-centered {
-    max-width: 90%;
+    max-width: 93%;
   }
   .d-sm-none {
     display: block !important;
+  }
+
+  .modal-dialog-centered .modal-body .modal-logo {
+    text-transform: uppercase;
+    font-size: 10px;
+  }
+  .modal-discount-text {
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: 700;
+    margin: 5% 0;
   }
 }
 

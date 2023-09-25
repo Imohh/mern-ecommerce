@@ -222,6 +222,13 @@
   }
 } 
 
+@media(max-width: 767px) {
+  accepted-cards {
+    background: red;
+    text-align: center
+  }
+}
+
 @media(min-width: 1400px) {
   .footer-container {
     padding: 100px 250px;

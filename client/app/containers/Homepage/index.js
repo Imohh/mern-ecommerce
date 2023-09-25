@@ -94,18 +94,25 @@ class Homepage extends React.PureComponent {
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content">
             <div className="modal-header d-sm-none">
-              <button type="button" className="btn btn-secondary align-self-end" onClick={this.handleShow}>Close</button>
+              <button type="button" className="btn btn-secondary align-self-end float-right" onClick={this.handleShow}>
+                <img width="20" height="20" src="https://img.icons8.com/ios/20/delete-sign--v1.png" alt="close-sign--v1"/>
+              </button>
             </div>
               <div className="modal-body">
                 <div className="row">
-                  <div className="col-md-6">
+                  <div className="col-md-4">
                     <img src={popupImage} alt="Popup Image" className="d-none d-md-block" />
                   </div>
-                  <div className="col-md-6 text-right">
-                    <button type="button" className="btn btn-secondary align-self-end d-none d-md-block float-right" onClick={this.handleShow}>Close</button>
+                  <div className="col-md-8 text-center">
+                    <button type="button" className="btn btn-secondary align-self-end d-none d-md-block float-right" onClick={this.handleShow}>
+                      <img width="30" height="30" src="https://img.icons8.com/ios/30/delete-sign--v1.png" alt="close-sign--v1"/>
+                    </button>
                     <div className="d-flex flex-column justify-content-center" style={{height: "100%"}}>
-                      <h1 className="text-center">Sign Up for Our Newsletter</h1>
+                      <h1 className="modal-logo">eminencebygtx</h1>
+                      <p className="modal-discount-text">unlock 10% off your first order</p>
+                      <p style={{textTransform: "capitalize" }}>sign up for an instant discount, plus early access to new products, sales and more!</p>
                       <Newsletter />
+                      <p style={{textTransform: "capitalize", fontSize: "12px", textColor: "gray", margin: "5% 0"}}>by signing up you agree to receive email marketing</p>
                     </div>
                   </div>
                 </div>

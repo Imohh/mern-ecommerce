@@ -65,12 +65,20 @@ exports.caculateTaxAmount = order => {
       order.total = this.caculateOrderTotal(order);
     }
 
-    order.totalWithTax = order.total + order.totalTax;
+    // if(order.totalWithTax >= 120) {
+    //   order.totalWithTax = order.total
+    // } else {
+    //   order.totalWithTax = order.total + order.totalTax
+    // }
+
+    const calculatedTotal = order.totalWithTax >= 120 ? order.total : (order.total + order.totalTax);
+    // order.totalWithTax = order.total + order.totalTax;
+
     order.total = parseFloat(Number(order.total.toFixed(2)));
     order.totalTax = parseFloat(
       Number(order.totalTax && order.totalTax.toFixed(2))
     );
-    order.totalWithTax = parseFloat(Number(order.totalWithTax.toFixed(2)));
+    order.totalWithTax = parseFloat(Number(calculatedTotal.toFixed(2)));
     return order;
   } catch (error) {
     return order;
@@ -102,7 +110,7 @@ exports.caculateItemsSalesTax = items => {
     if (item.taxable) {
       const taxAmount = price * (taxRate / 100) * 100;
 
-      item.totalTax = parseFloat(Number((taxAmount * quantity).toFixed(2)));
+      item.totalTax = parseFloat(Number((5 * quantity).toFixed(2)));
       item.priceWithTax = parseFloat(
         Number((item.totalPrice + item.totalTax).toFixed(2))
       );
