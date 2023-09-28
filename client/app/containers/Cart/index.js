@@ -37,7 +37,8 @@ class Cart extends React.PureComponent {
       placeOrder,
       authenticated,
       addresses,
-      order
+      order,
+      user
     } = this.props;
 
     return (
@@ -85,6 +86,7 @@ class Cart extends React.PureComponent {
               cartItems={cartItems}
               handlePayment={handlePayment}
               handlePayments={handlePayments}
+              user={user}
             />
           </div>
         )}
@@ -98,7 +100,8 @@ const mapStateToProps = state => {
     isCartOpen: state.navigation.isCartOpen,
     cartItems: state.cart.cartItems,
     cartTotal: state.cart.cartTotal,
-    authenticated: state.authentication.authenticated
+    authenticated: state.authentication.authenticated,
+    user: state.account.user,
   };
 };
 

@@ -25,11 +25,12 @@ import {
 } from '../Product/constants';
 import { FETCH_ADDRESSES } from '../Address/constants'
 
-import { CART_ID, CART_ITEMS, CART_TOTAL } from '../../constants';
+import { CART_ID, CART_ITEMS, CART_TOTAL, EMAIL_PROVIDER } from '../../constants';
 import handleError from '../../utils/error';
 import { allFieldsValidation } from '../../utils/validation';
 import { toggleCart } from '../Navigation/actions';
 // import { fetchAddresses } from '../Address/actions'
+
 
 
 // Handle Add To Cart
@@ -229,19 +230,20 @@ export const updateCartTotal = total => ({
   payload: total,
 });
 
-export const handlePayments = () => {
+export const handlePayments = user => {
   return async (dispatch, getState) => {
     const storedTotal = JSON.parse(localStorage.getItem('shippingTotal'));
     const cartTotal = parseFloat(localStorage.getItem(CART_TOTAL));
     const cartItems = getState().cart.cartItems;
     const productNames = cartItems.map(item => item.name);
 
-    // console.log('shippingTotal:', storedTotal)
+    console.log('cartItems:', cartItems)
+    console.log(user.email)
 
   }
 }
 
-export const handlePayment = () => {
+export const handlePayment = user => {
   return async (dispatch, getState) => {  
     // const cartTotal = parseFloat(localStorage.getItem(CART_TOTAL));
     const total = JSON.parse(localStorage.getItem('shippingTotal'));
@@ -254,6 +256,7 @@ export const handlePayment = () => {
         cartItems,
         total,
         productNames,
+        user,
       })
 
       window.location.href = response.data.url

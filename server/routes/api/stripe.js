@@ -1,13 +1,16 @@
 const express = require('express');
 const router = express.Router();
 const Payment = require('../../models/payment');
+const Newsletter = require('../../models/Newsletter');
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 router.post('/create-checkout-session', async (req, res) => {
     try {
 
-        const { total, productNames } = req.body;
+        const { total, productNames, user } = req.body;
+        const email = user.email
+        
 
         const combineProductNames = productNames.join(', ');
         const timestampId = Date.now().toString();
@@ -21,6 +24,14 @@ router.post('/create-checkout-session', async (req, res) => {
         });
 
         await newPayment.save();
+
+        // Fetch the coupon code associated with the user's email
+        const newsletterEntry = await Newsletter.findOne({ email });
+        const couponCode = newsletterEntry ? newsletterEntry.couponId : '';
+
+        // if (!newsletterEntry || !newsletterEntry.couponId) {
+        //     return res.status(400).json({ error: 'Coupon not found for this user.' });
+        // }
 
         const session = await stripe.checkout.sessions.create({
             line_items: [
@@ -36,6 +47,9 @@ router.post('/create-checkout-session', async (req, res) => {
               },
             ],
             mode: 'payment',
+            discounts: [{
+                coupon: couponCode,
+            }],
             success_url: 'http://localhost:8080/success',
             cancel_url: 'http://localhost:8080/contact',
             payment_intent_data: {

@@ -8,12 +8,13 @@ import React, {useState, useEffect} from 'react';
 import { Redirect, useLocation } from 'react-router-dom';
 import { PaystackButton } from 'react-paystack'
 import axios from 'axios'
+import { EMAIL_PROVIDER } from '../../../constants';
 
 import Button from '../../Common/Button';
 
 
 const Checkout = props => {
-  const { authenticated, handleShopping, handleCheckout, handlePayment, handlePayments, placeOrder, cartTotal, cartItems } = props;
+  const { user, authenticated, handleShopping, handleCheckout, handlePayment, handlePayments, placeOrder, cartTotal, cartItems } = props;
   const publicKey = "pk_test_7114661f512e87772aefeab61d6811334b084c85"; // PAYSTACK key
   const amount = cartTotal * 100 * 750; // Remember, set in kobo!
   const [email, setEmail] = useState("");
@@ -43,6 +44,8 @@ const Checkout = props => {
     }
   }, [location.pathname]);
 
+
+
   // Use the paymentSuccess flag to conditionally render content
   if (paymentSuccess) {
     return (
@@ -65,7 +68,7 @@ const Checkout = props => {
             <Button
               variant='primary'
               text='Place Order'
-              onClick={() => handlePayment()}
+              onClick={() => handlePayment(user)}
             />
         ) : (
           <Button

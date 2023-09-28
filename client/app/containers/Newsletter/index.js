@@ -1,8 +1,8 @@
-/*
- *
- * Newsletter
- *
- */
+// /*
+//  *
+//  * Newsletter
+//  *
+//  */
 
 import React from 'react';
 
