@@ -51,20 +51,23 @@ const OrderItems = props => {
     } else if (item.status !== 'Cancelled') {
       if (!isAdmin) {
         return (
-          <DropdownConfirm label='Cancel'>
-            <div className='d-flex flex-column align-items-center justify-content-center p-2'>
-              <p className='text-center mb-2'>{`Are you sure you want to cancel ${item.product?.name}.`}</p>
-              <Button
-                variant='danger'
-                id='CancelOrderItemPopover'
-                size='sm'
-                text='Confirm Cancel'
-                role='menuitem'
-                className='cancel-order-btn'
-                onClick={() => updateOrderItemStatus(item._id, 'Cancelled')}
-              />
-            </div>
-          </DropdownConfirm>
+          <>
+
+          </>
+          // <DropdownConfirm label='Cancel'>
+          //   <div className='d-flex flex-column align-items-center justify-content-center p-2'>
+          //     <p className='text-center mb-2'>{`Are you sure you want to cancel ${item.product?.name}.`}</p>
+          //     <Button
+          //       variant='danger'
+          //       id='CancelOrderItemPopover'
+          //       size='sm'
+          //       text='Confirm Cancel'
+          //       role='menuitem'
+          //       className='cancel-order-btn'
+          //       onClick={() => updateOrderItemStatus(item._id, 'Cancelled')}
+          //     />
+          //   </div>
+          // </DropdownConfirm>
         );
       } else {
         return (

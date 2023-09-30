@@ -47,14 +47,14 @@ const Checkout = props => {
 
 
   // Use the paymentSuccess flag to conditionally render content
-  if (paymentSuccess) {
-    return (
-      <div>
-        {message}
-        <Redirect to="/shop" />
-      </div>
-    );
-  }
+  // if (paymentSuccess) {
+  //   return (
+  //     <div>
+  //       {message}
+  //       <Redirect to="/shop" />
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className='easy-checkout'>

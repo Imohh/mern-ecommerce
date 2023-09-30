@@ -10,7 +10,6 @@ router.post('/create-checkout-session', async (req, res) => {
 
         const { total, productNames, user } = req.body;
         const email = user.email
-        
 
         const combineProductNames = productNames.join(', ');
         const timestampId = Date.now().toString();
@@ -47,9 +46,11 @@ router.post('/create-checkout-session', async (req, res) => {
               },
             ],
             mode: 'payment',
-            discounts: [{
-                coupon: couponCode,
-            }],
+            // discounts: [{
+            //     coupon: couponCode,
+            // }],
+            allow_promotion_codes: true,
+            // promotion_code: couponCode,
             success_url: 'http://localhost:8080/success',
             cancel_url: 'http://localhost:8080/contact',
             payment_intent_data: {

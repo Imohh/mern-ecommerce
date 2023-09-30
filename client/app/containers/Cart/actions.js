@@ -237,8 +237,8 @@ export const handlePayments = user => {
     const cartItems = getState().cart.cartItems;
     const productNames = cartItems.map(item => item.name);
 
-    console.log('cartItems:', cartItems)
-    console.log(user.email)
+    // console.log('cartItems:', cartItems)
+    // console.log(user.email)
 
   }
 }

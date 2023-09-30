@@ -59,6 +59,7 @@
     "mailchimp-api-v3": "^1.14.0",
     "mailgun-js": "^0.22.0",
     "mobile-detect": "^1.4.4",
+    "moment-timezone": "^0.5.43",
     "mongoose": "^5.5.11",
     "mongoose-slug-generator": "^1.0.4",
     "multer": "^1.4.2",
