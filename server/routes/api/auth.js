@@ -12,7 +12,7 @@ const User = require('../../models/user');
 const mailchimp = require('../../services/mailchimp');
 const mailgun = require('../../services/mailgun');
 const keys = require('../../config/keys');
-const { EMAIL_PROVIDER } = require('../../constants');
+const { EMAIL_PROVIDER, JWT_COOKIE } = require('../../constants');
 
 const { secret, tokenLife } = keys.jwt;
 
@@ -307,7 +307,7 @@ router.get(
 router.get(
   '/google/callback',
   passport.authenticate('google', {
-    failureRedirect: '/login',
+    failureRedirect: `${keys.app.clientURL}/login`,
     session: false
   }),
   (req, res) => {
@@ -315,20 +315,10 @@ router.get(
       id: req.user.id
     };
 
-    jwt.sign(payload, secret, { expiresIn: tokenLife }, (err, token) => {
-      const jwtToken = `Bearer ${token}`;
-
-      const htmlWithEmbeddedJWT = `
-    <html>
-      <script>
-        window.localStorage.setItem('token', '${jwtToken}');
-        window.location.href = '/auth/success';
-      </script>
-    </html>       
-    `;
-
-      res.send(htmlWithEmbeddedJWT);
-    });
+    // TODO find another way to send the token to frontend
+    const token = jwt.sign(payload, secret, { expiresIn: tokenLife });
+    const jwtToken = `Bearer ${token}`;
+    res.redirect(`${keys.app.clientURL}/auth/success?token=${jwtToken}`);
   }
 );
 
@@ -343,28 +333,16 @@ router.get(
 router.get(
   '/facebook/callback',
   passport.authenticate('facebook', {
-    failureRedirect: '/',
+    failureRedirect: `${keys.app.clientURL}/login`,
     session: false
   }),
   (req, res) => {
     const payload = {
       id: req.user.id
     };
-
-    jwt.sign(payload, secret, { expiresIn: tokenLife }, (err, token) => {
-      const jwtToken = `Bearer ${token}`;
-
-      const htmlWithEmbeddedJWT = `
-    <html>
-      <script>
-        window.localStorage.setItem('token', '${jwtToken}');
-        window.location.href = '/auth/success';
-      </script>
-    </html>       
-    `;
-
-      res.send(htmlWithEmbeddedJWT);
-    });
+    const token = jwt.sign(payload, secret, { expiresIn: tokenLife });
+    const jwtToken = `Bearer ${token}`;
+    res.redirect(`${keys.app.clientURL}/auth/success?token=${jwtToken}`);
   }
 );
 

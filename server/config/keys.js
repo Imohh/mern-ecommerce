@@ -2,6 +2,7 @@ module.exports = {
   app: {
     name: 'Mern Ecommerce',
     apiURL: 'api',
+    jwtCookie: 'x-jwt-cookie',
     serverURL: 'http://localhost:3000',
     clientURL: 'http://localhost:8080'
   },

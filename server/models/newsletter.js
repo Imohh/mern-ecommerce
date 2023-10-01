@@ -10,9 +10,9 @@ const NewsletterSchema = new Schema({
     type: String,
     required: false,
   },
-  redeem_by: {
-    type: Date,
-    required: false,
+  used: {
+    type: Boolean,
+    default: false,
   },
   created: {
     type: Date,

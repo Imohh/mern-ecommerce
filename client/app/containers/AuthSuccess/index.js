@@ -15,8 +15,15 @@ import LoadingIndicator from '../../components/Common/LoadingIndicator';
 
 class AuthSuccess extends React.PureComponent {
   componentDidMount() {
-    const token = localStorage.getItem('token');
-    setToken(token);
+    const tokenParam = this.props.location.search;
+    const jwtCookie = tokenParam
+      .slice(tokenParam.indexOf('=') + 1)
+      .replace('%20', ' ');
+    if (jwtCookie) {
+      setToken(jwtCookie);
+      localStorage.setItem('token', jwtCookie);
+      this.props.setAuth();
+    }
   }
 
   render() {
