@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const Mongoose = require('mongoose');
+const nodemailer = require('nodemailer');
+const util = require('util')
 
 // Bring in Models & Utils
 const Order = require('../../models/order');
@@ -16,6 +18,9 @@ router.post('/add', auth, async (req, res) => {
     const cart = req.body.cartId;
     const total = req.body.total;
     const user = req.user._id;
+    const users = req.user
+
+    console.log('Users', users.email)
 
     const order = new Order({
       cart,
@@ -40,7 +45,40 @@ router.post('/add', auth, async (req, res) => {
       products: cartDoc.products
     };
 
-    await mailgun.sendEmail(order.user.email, 'order-confirmation', newOrder);
+    // await mailgun.sendEmail(order.user.email, 'order-confirmation', newOrder);
+    console.log('Test 1: ', order._id);
+
+    // SEND EMAIL TO RESET PASSWORD
+    const transporter = nodemailer.createTransport({
+      // service: 'gmail',
+      host: 'smtppro.zoho.com',
+      port: 465,
+      secure: true,
+      auth: {
+        user: 'info@eminencebygtx.com',
+        pass: process.env.EMAIL_PASSWORD,
+      },
+    });
+
+    const mailOptions = {
+      from: '"EminenceByGtx Order Placed" info@eminencebygtx.com',
+      to: users.email,
+      subject:  `Order Confirmation ${order._id}`,
+      text:
+        `Hi ${users.firstName}! Thank you for your order!. \n\n` +
+        `We've received your order and will contact you as soon as your package is shipped. \n\n`
+    };
+
+    transporter.sendMail(mailOptions, function(error, info) {
+      if(error) {
+        console.log(error)
+      } else {
+        console.log('Email sent: ' + info.response)
+      }
+    });
+
+
+
 
     res.status(200).json({
       success: true,

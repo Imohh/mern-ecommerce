@@ -206,13 +206,13 @@
 @media (max-width: 600px) {
 
   .accepted-cards {
-    padding-left: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .accepted-column {  
-    float: left;
-    width: 50px;
-    padding: 5px;
+  .accepted-column {
+    margin: 0 10px
   }
 
   .accepted-cards::after {

@@ -1,3 +1,4 @@
+// DONE
 exports.resetEmail = (host, resetToken) => {
   const message = {
     subject: 'Reset Password',
@@ -48,6 +49,7 @@ exports.merchantWelcome = name => {
   return message;
 };
 
+// DONE
 exports.signupEmail = name => {
   const message = {
     subject: 'Account Registration',
@@ -57,6 +59,7 @@ exports.signupEmail = name => {
   return message;
 };
 
+// DONE
 exports.newsletterSubscriptionEmail = () => {
   const message = {
     subject: 'Newsletter Subscription',

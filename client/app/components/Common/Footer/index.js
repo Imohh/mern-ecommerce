@@ -21,7 +21,6 @@ import {
 
 // Demo styles, see 'Styles' section below for some notes on use.
 import 'react-accessible-accordion/dist/fancy-example.css';
-//import logo from '/images/placeholder-image.png'
 
 
 
@@ -123,13 +122,13 @@ const Footer = () => {
               <button onClick={showSocial}>follow us</button>
               <div className="accepted-cards">
                 <div className="accepted-column">
-                  <img width="50" height="50" src="https://img.icons8.com/glyph-neue/50/visa.png" alt="visa"/>
+                  <img width="50" height="50" src="https://img.icons8.com/color/50/visa.png" alt="visa"/>
                 </div>
                 <div className="accepted-column">
-                  <img width="50" height="50" src="https://img.icons8.com/fluency-systems-filled/50/mastercard.png" alt="mastercard"/>
+                  <img width="50" height="50" src="https://img.icons8.com/color/50/mastercard.png" alt="mastercard"/>
                 </div>
                 <div className="accepted-column">
-                  <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/amex.png" alt="amex"/>
+                  <img width="50" height="50" src="https://img.icons8.com/fluency/50/amex.png" alt="amex"/>
                 </div>
               </div>
             </div>
@@ -164,7 +163,6 @@ const Footer = () => {
 
 
         <div className='footer-copyright'>
-          {/*<span>© {new Date().getFullYear()} MERN Store</span>*/}
           <img src="/images/logo.JPG" style={{width: "10%"}} alt="logo" />
           <div className="footer-copyright-text">
             <p>© Copyright 2023. All rights reserved - <a href="https://instagram.com/oprime.ng" target="_blank">Oprime Tech</a></p>
@@ -241,19 +239,19 @@ const Footer = () => {
                   </li>
                 </ul>
               </div>
-              <img src="/images/logo.JPG" style={{width: "10%"}} alt="logo" />
+              <img src="/images/logo.JPG" style={{width: "20%", marginBottom: "5%"}} alt="logo" />
               <div className="footer-copyright-text">
                 <p>© Copyright 2023. All rights reserved - <a href="https://instagram.com/oprime.ng" target="_blank">Oprime Tech</a></p>
               </div>
                 <div className="accepted-cards">
                   <div className="accepted-column">
-                    <img width="50" height="50" src="https://img.icons8.com/glyph-neue/50/visa.png" alt="visa"/>
+                    <img width="40" height="40" src="https://img.icons8.com/color/40/visa.png" alt="visa"/>
                   </div>
                   <div className="accepted-column">
-                    <img width="50" height="50" src="https://img.icons8.com/fluency-systems-filled/50/mastercard.png" alt="mastercard"/>
+                    <img width="40" height="40" src="https://img.icons8.com/color/40/mastercard.png" alt="mastercard"/>
                   </div>
                   <div className="accepted-column">
-                    <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/amex.png" alt="amex"/>
+                    <img width="40" height="40" src="https://img.icons8.com/fluency/40/amex.png" alt="amex"/>
                   </div>
                 </div>
             </div>

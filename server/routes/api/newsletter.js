@@ -23,29 +23,6 @@ function generateCouponCode() {
   return couponCode;
 }
 
-// Function to send a welcome email
-// async function sendWelcomeEmail() {
-//   const transporter = nodemailer.createTransport({
-//     host: "smtp.gmail.com",
-//     port: 465,
-//     secure: true,
-//     // service: 'gmail',
-//     auth: {
-//       user: 'jaypee88830@gmail.com', // Your email address
-//       pass: 'iamnotorious', // Your email password
-//     },
-//   });
-
-//   const mailOptions = {
-//     from: 'jaypee88830@gmail.com', // Your email address
-//     to: 'okon.precious88@gmail.com', // Subscriber's email address
-//     subject: 'Welcome to Our Newsletter!',
-//     text: 'Thank you for subscribing to our newsletter. Here is your special coupon code: ',
-//   };
-
-//   await transporter.sendMail(mailOptions);
-// }
-
 router.post('/subscribe', async (req, res) => {
   try {
     const email = req.body.email;
@@ -93,7 +70,30 @@ router.post('/subscribe', async (req, res) => {
     await formEntry.save();
 
     // Send a welcome email to the use after saving the subscription
-    // await sendWelcomeEmail(email)
+    const transporter = nodemailer.createTransport({
+      host: 'smtppro.zoho.com',
+      port: 465,
+      secure: true,
+      auth: {
+        user: 'info@eminencebygtx.com',
+        pass: process.env.EMAIL_PASSWORD,
+      },
+    });
+
+    const mailOptions = {
+      from: '"Eminence Newsletter" info@eminencebygtx.com',
+      to: email,
+      subject: 'Welcome to Our Newsletter!',
+      text: 'Thank you for subscribing to our newsletter. Here is your special coupon code: ' + couponCode,
+    };
+
+    transporter.sendMail(mailOptions, function(error, info) {
+      if(error) {
+        console.log(error)
+      } else {
+        console.log('Email sent: ' + info.response)
+      }
+    });
 
     res.status(200).json({ message: 'Form data saved successfully' });
 

@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 const passport = require('passport');
+const nodemailer = require('nodemailer');
 
 const auth = require('../../middleware/auth');
 
@@ -132,12 +133,34 @@ router.post('/register', async (req, res) => {
       id: registeredUser.id
     };
 
-    await mailgun.sendEmail(
-      registeredUser.email,
-      'signup',
-      null,
-      registeredUser
-    );
+    // SEND EMAIL TO CONFIRM USER SIGN UP
+    const transporter = nodemailer.createTransport({
+      // service: 'gmail',
+      host: 'smtppro.zoho.com',
+      port: 465,
+      secure: true,
+      auth: {
+        user: 'info@eminencebygtx.com',
+        pass: process.env.EMAIL_PASSWORD,
+      },
+    });
+
+    const mailOptions = {
+      from: '"Welcome To EminenceByGtx" info@eminencebygtx.com',
+      to: email,
+      subject: 'Account Registration',
+      text: `Hi ${firstName} ${lastName}! Thank you for creating an account with us!.`
+    };
+
+    transporter.sendMail(mailOptions, function(error, info) {
+      if(error) {
+        console.log(error)
+      } else {
+        console.log('Email sent: ' + info.response)
+      }
+    });
+
+
 
     const token = jwt.sign(payload, secret, { expiresIn: tokenLife });
 
@@ -192,6 +215,44 @@ router.post('/forgot', async (req, res) => {
       req.headers.host,
       resetToken
     );
+
+
+    // SEND EMAIL TO RESET PASSWORD
+    const transporter = nodemailer.createTransport({
+      // service: 'gmail',
+      host: 'smtppro.zoho.com',
+      port: 465,
+      secure: true,
+      auth: {
+        user: 'info@eminencebygtx.com',
+        pass: process.env.EMAIL_PASSWORD,
+      },
+    });
+
+    const mailOptions = {
+      from: '"EminenceByGtx Password Reset" info@eminencebygtx.com',
+      to: email,
+      subject: 'Reset Password',
+      text:
+        `${
+          'You are receiving this because you have requested to reset your password for your account.\n\n' +
+          'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
+          'https://'
+        }eminencebygtx.com/reset-password/${resetToken}\n\n` +
+        `If you did not request this, please ignore this email and your password will remain unchanged.\n`
+    };
+
+    transporter.sendMail(mailOptions, function(error, info) {
+      if(error) {
+        console.log(error)
+      } else {
+        console.log('Email sent: ' + info.response)
+      }
+    });
+
+
+
+
 
     res.status(200).json({
       success: true,
