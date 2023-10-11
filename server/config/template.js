@@ -100,6 +100,7 @@ exports.merchantDeactivateAccount = () => {
   return message;
 };
 
+// ORDER
 exports.orderConfirmationEmail = order => {
   const message = {
     subject: `Order Confirmation ${order._id}`,
