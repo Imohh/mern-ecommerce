@@ -33,6 +33,8 @@ const Input = props => {
     // } else {
     //   onInputChange(e.target.name, e.target.value);
     // }
+
+
     if (e.target.name === 'image' && multiple) {
       // Handle multiple image uploads
       const files = e.target.files;

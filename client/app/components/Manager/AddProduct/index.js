@@ -144,6 +144,7 @@ const AddProduct = props => {
               onInputChange={(name, value) => {
                 productChange(name, value);
               }}
+              // multiple
             />
           </Col>
           <Col xs='12' md='12' className='my-2'>

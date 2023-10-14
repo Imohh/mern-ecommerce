@@ -295,7 +295,7 @@ router.post(
       const taxable = req.body.taxable;
       const isActive = req.body.isActive;
       const brand = req.body.brand;
-      const img = req.file.path;
+      const img = req.file.path ;
       const contentType = req.file.mimetype
       
 
@@ -326,7 +326,8 @@ router.post(
       }
       
       const result = await cloudinary.uploader.upload(img);
-      
+
+
       const product = new Product({
         sku,
         name,
