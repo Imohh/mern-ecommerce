@@ -295,11 +295,13 @@ router.post(
       const taxable = req.body.taxable;
       const isActive = req.body.isActive;
       const brand = req.body.brand;
-      const img = req.file.path ;
+      const img = req.file.path;
+      const imgs = req.file.path;
       const contentType = req.file.mimetype
       
 
       console.log(img)
+      console.log(imgs)
 
       if (!sku) {
         return res.status(400).json({ error: 'You must enter sku.' });
@@ -326,6 +328,7 @@ router.post(
       }
       
       const result = await cloudinary.uploader.upload(img);
+      const results = await cloudinary.uploader.upload(imgs);
 
 
       const product = new Product({
@@ -338,6 +341,7 @@ router.post(
         isActive,
         brand,
         img: result.url,
+        imgs: results.url,
         contentType
       });
 

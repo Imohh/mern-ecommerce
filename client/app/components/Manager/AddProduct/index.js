@@ -4,7 +4,7 @@
  *
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Row, Col } from 'reactstrap';
 
@@ -27,7 +27,7 @@ const AddProduct = props => {
     productChange,
     addProduct,
     brands,
-    image
+    image,
   } = props;
 
   const handleSubmit = event => {
@@ -144,7 +144,6 @@ const AddProduct = props => {
               onInputChange={(name, value) => {
                 productChange(name, value);
               }}
-              // multiple
             />
           </Col>
           <Col xs='12' md='12' className='my-2'>
