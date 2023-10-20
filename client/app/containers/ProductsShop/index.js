@@ -13,6 +13,7 @@ import actions from '../../actions';
 import ProductList from '../../components/Store/ProductList';
 import NotFound from '../../components/Common/NotFound';
 import LoadingIndicator from '../../components/Common/LoadingIndicator';
+import Pagination from '../../components/Common/Pagination';
 
 class ProductsShop extends React.PureComponent {
   componentDidMount() {
@@ -21,12 +22,14 @@ class ProductsShop extends React.PureComponent {
   }
 
   render() {
-    const { products, isLoading, authenticated, updateWishlist } = this.props;
-
+    const { products, isLoading, authenticated, updateWishlist, advancedFilters, filterProducts } = this.props;
+    const { totalPages } = advancedFilters;
+    const displayPagination = totalPages > 1;
+    
     const displayProducts = products && products.length > 0;
 
     return (
-      <div className="product-shop-containers" style={{height: "100%"}}>
+      <div className="product-shop-containers" style={{height: "93%"}}>
         {isLoading && <LoadingIndicator />}
         {displayProducts && (
           <ProductList
@@ -34,6 +37,14 @@ class ProductsShop extends React.PureComponent {
             authenticated={authenticated}
             updateWishlist={updateWishlist}
           />
+        )}
+        {displayPagination && (
+          <div className='d-flex justify-content-center text-center'>
+            <Pagination
+              totalPages={totalPages}
+              onPagination={filterProducts}
+            />
+          </div>
         )}
         {!isLoading && !displayProducts && (
           <NotFound message='No products found.' />
@@ -47,6 +58,7 @@ const mapStateToProps = state => {
   return {
     products: state.product.storeProducts,
     isLoading: state.product.isLoading,
+    advancedFilters: state.product.advancedFilters,
     authenticated: state.authentication.authenticated
   };
 };

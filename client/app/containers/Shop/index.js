@@ -140,14 +140,14 @@ class Shop extends React.PureComponent {
               <Route path='*' component={Page404} />
             </Switch>
 
-            {displayPagination && (
+            {/*{displayPagination && (
               <div className='d-flex justify-content-center text-center mt-4'>
                 <Pagination
                   totalPages={totalPages}
                   onPagination={filterProducts}
                 />
               </div>
-            )}
+            )}*/}
           </Col>
         </Row>
       </div>
