@@ -4,7 +4,7 @@
  *
  */
 
-import React, { useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 
 import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
@@ -32,6 +32,16 @@ import slider1 from './assets/slider1.jpg'
 
 import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
+import withAutoplay from 'react-awesome-slider/dist/autoplay'
+
+// import { Swiper, SwiperSlide } from 'swiper/react';
+
+// // Import Swiper styles
+// import 'swiper/css';
+// import 'swiper/css/pagination';
+
+// // import required modules
+// import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 
 
@@ -85,6 +95,8 @@ class Homepage extends React.PureComponent {
       progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
     };
 
+    const AutoplaySlider = withAutoplay(AwesomeSlider)
+
 
     return (
       <>
@@ -127,11 +139,11 @@ class Homepage extends React.PureComponent {
         {/*SLIDER*/}
         <div className="">
 
-          <AwesomeSlider animation="cubeAnimation" style={{height: "600px"}} >
+          <AutoplaySlider play={true} style={{height: "600px"}}>
             <div data-src={slider} style={{height: "600px"}} />
             <div data-src={slider1} style={{height: "600px"}} />
             <div data-src={slider} style={{height: "600px"}} />
-          </AwesomeSlider>
+          </AutoplaySlider>
 
         </div>
 
