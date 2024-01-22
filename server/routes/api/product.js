@@ -240,7 +240,7 @@ router.get('/list/brand/:slug', async (req, res) => {
       ]);
 
       res.status(200).json({
-        products: products.reverse().slice(0, 8),
+        products,
         page: 1,
         pages: products.length > 0 ? Math.ceil(products.length / 8) : 0,
         totalProducts: products.length
