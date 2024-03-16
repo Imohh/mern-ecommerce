@@ -147,168 +147,47 @@ class Homepage extends React.PureComponent {
 
         </div>
 
-        <div style={{textAlign: "center", padding: "10% 2%"}}>
-          <i style={{fontSize: "22px"}}>fashion is like eating, you shouldn't stick to the same menu...</i>
-        </div>
-
-
         {/*TOP SECTION*/}
-        <div className="" style={{height: "100%"}}>
-          <div className="row">
-            <div 
-              className="col-md-4" 
-              style={{
-                padding: "100px", 
-                backgroundImage: `url(${section1})`, 
-                backgroundSize: "cover",
-                backgroundPosition: "center", 
-                textTransform: "uppercase"
-              }}
-            >
-              <div
-                className="overlay"
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                  backgroundColor: "rgba(0, 0, 0, 0.7)",
-                  zIndex: 1
-                }}
-              ></div>
-              <div className="text-center" style={{position: "relative", zIndex: 20}}>
-                <p style={{color: "white", fontWeight: "900", fontSize: "20px"}}>agbada</p>
-                <a href="/shop/brand/agbada" className="top-section-link">shop now</a>
-              </div>
-            </div>
-            <div 
-              className="col-md-4" 
-              style={{
-                padding: "100px", 
-                backgroundImage: `url(${suit})`, 
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                textTransform: "uppercase"
-              }}
-            >
-              <div
-                className="overlay"
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                  backgroundColor: "rgba(0, 0, 0, 0.7)",
-                  zIndex: 1
-                }}
-              ></div>
-              <div className="text-center" style={{position: "relative", zIndex: 20}}>
-                <p style={{color: "white", fontWeight: "900", fontSize: "20px"}}>suit</p>
-                <a href="/shop/brand/suit" className="top-section-link">shop now</a>
-              </div>
-            </div>
-            <div 
-              className="col-md-4" 
-              style={{
-                padding: "100px", 
-                backgroundImage: `url(${native})`, 
-                backgroundSize: "cover",
-                backgroundPosition: "center", 
-                textTransform: "uppercase"
-              }}
-            >
-              <div
-                className="overlay"
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                  backgroundColor: "rgba(0, 0, 0, 0.7)",
-                  zIndex: 1
-                }}
-              ></div>
-              <div className="text-center" style={{position: "relative", zIndex: 20}}>
-                <p style={{color: "white", fontWeight: "900", fontSize: "20px"}}>native</p>
-                <a href="/shop/brand/native" className="top-section-link">shop now</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        {/*SHOP SECTION*/}
-        <div className="bg-red-500 py-40">
-          <h1>hello world</h1>
-        </div>
-
-
-
-
-        {/*NEW SECTION*/}
-        <div style={{height: "100%"}}>
-          <div className="row">
-            <div className="col-md-6"
-              style={{
-                height: "500px",
-                paddingTop: "250px",
-                paddingLeft: "50px", 
-                backgroundImage: `url(${section2})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-
-              <div
-                className="overlay"
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                  backgroundColor: "rgba(0, 0, 0, 0.7)",
-                  zIndex: 1
-                }}
-              ></div>
-              <div  className="text-center" style={{position: "relative", zIndex: 20}}>
-                <p className="classic-section-text" style={{textTransform: "uppercase", color: "white", fontWeight: "900", fontSize: "20px"}}>classic suits for classic men</p>
-                <a href="/shop/brand/suit" className="homepage-button">discover now</a>
-              </div>
-            </div>
-            <div className="col-md-6"
-              style={{
-                height: "500px",
-                paddingTop: "250px",
-                paddingLeft: "50px", 
-                backgroundImage: `url(${agadaImage})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              <div
-                className="overlay"
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                  backgroundColor: "rgba(0, 0, 0, 0.7)",
-                  zIndex: 1
-                }}
-              ></div>
-              <div  className="text-center" style={{position: "relative", zIndex: 20}}>
-                <p style={{textTransform: "uppercase", color: "white", fontWeight: "900", fontSize: "20px"}}>agbada attire</p>
-                <a href="/shop/brand/agbada" className="homepage-button">discover now</a>
-              </div>
-            </div>
-          </div>
-        </div>
         
+
+        <div className="overall-div">
+          {/*NEW SECTION*/}
+          <div className="newsection">
+            <div className="bestseller-title">
+              <p>our bestsellers</p>
+            </div>
+            <div className="row">
+              <div className="col-lg-6 col-md-6 bestseller-section-one">
+                <div className="row">
+                  <div className="col-lg-6 col-md-6 d-flex align-items-center bestseller-text-section">
+                    <div className="d-flex flex-column justify-content-center">
+                      <p className="bestseller-text">agbada</p>
+                      <a href="/shop/brand/suit" className="homepage-button">shop now</a>
+                    </div>
+                  </div>
+                  <div className="col-lg-6 col-md-6">
+                    <img src={agadaImage} alt="image" />
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-6 col-md-6 bestseller-section-one">
+                <div className="row">
+                  <div className="col-lg-6 col-md-6 d-flex align-items-center bestseller-text-section">
+                    <div className="d-flex flex-column justify-content-center">
+                      <p className="bestseller-text">kaftan</p>
+                      <a href="/shop/brand/suit" className="homepage-button">shop now</a>
+                    </div>
+                  </div>
+                  <div className="col-lg-6 col-md-6">
+                    <img src={agadaImage} alt="image" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/*END OF NEW SECTION*/}
+        
+        </div>{/*END OF THE OVERALL DIV */}
       </>
     );
   }

@@ -28,10 +28,9 @@ const Footer = () => {
   const [show, setShow] = useState(false)
 
   const infoLinks = [
+    { id: 0, name: 'Our Story', to: '/about' },
     { id: 0, name: 'FAQs', to: '/faq' },
-    { id: 1, name: 'Payment Options', to: '/payment' },
-    { id: 2, name: 'Return & Exchanges', to: '/return' },
-    { id: 3, name: 'Track Orders', to: '/track-orders' }
+    { id: 1, name: 'Customer Reviews', to: '/payment' },
   ];
 
   const aboutCompany = [
@@ -41,9 +40,12 @@ const Footer = () => {
   ];
 
   const help = [
-    { id: 0, name: 'Email Unsubscribe', to: '/unsubscribe' },
-    { id: 1, name: 'Maintenance and Repairs', to: '/maintenance-repair' },
-    { id: 2, name: 'Contact Us', to: '/contact' }
+    { id: 0, name: 'Contact Us', to: '/contact' },
+    { id: 1, name: 'Returns & Exchanges', to: '/return' },
+    { id: 1, name: 'Payment Options', to: '/payment' },
+    { id: 2, name: 'Shipping', to: '/shipping' },
+    { id: 2, name: 'Maintenance and Repairs', to: '/maintenance-repair' },
+    { id: 1, name: 'Legal', to: '/legal' },
   ];
 
   const showSocial = () => {
@@ -92,15 +94,15 @@ const Footer = () => {
         <div className='footer-content'>
           <div className='footer-block'>
             <div className='block-title'>
-              <h3 className='text-uppercase'>services</h3>
+              <h3 className='text-uppercase'>proudly african</h3>
             </div>
             <div className='block-content'>
-              <ul>{footerLinks}</ul>
+              <p>Eminence by GTX is a leader in the field of Trendy, customized African and international Attires</p>
             </div>
           </div>
           <div className='footer-block'>
             <div className='block-title'>
-              <h3 className='text-uppercase'>the company</h3>
+              <h3 className='text-uppercase'>information</h3>
             </div>
             <div className='block-content'>
               <ul>{aboutFooterLinks}</ul>
@@ -108,13 +110,13 @@ const Footer = () => {
           </div>
           <div className='footer-block'>
             <div className='block-title'>
-              <h3 className='text-uppercase'>may we help you?</h3>
+              <h3 className='text-uppercase'>help</h3>
             </div>
             <div className='block-content'>
               <ul>{helpLinks}</ul>
             </div>
           </div>
-          <div className='footer-block'>
+          {/*<div className='footer-block'>
             <div className='block-title'>
               <h3 className='text-uppercase'>Newsletter</h3>
               <p>Sign Up for Our Newsletter</p>
@@ -132,10 +134,10 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div>*/}
         </div>
 
-        {show && 
+        {/*{show && 
           <div className="social-media">
             <p>Follow Us</p>
     
@@ -157,7 +159,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-        }
+        }*/}
 
 
 
