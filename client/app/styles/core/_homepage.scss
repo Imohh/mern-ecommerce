@@ -467,15 +467,25 @@
 
 .overall-div {
   padding: 40px;
-  margin: 20px;
+  margin: 40px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  height: 100%;
 }
 
-@media (min-width: 1100px) {  
+@media (min-width: 1100px) {
+  .newsection {
+    margin-bottom: 5%
+  }
+
+  .image-right img {
+    float: right
+  }
+
   .bestseller-section-one {
     background: #020d1f;
     padding-left: 50px;
   }
+
 
   .bestseller-section-one .bestseller-text {
     text-transform: uppercase;
@@ -486,14 +496,34 @@
   }
 
   .bestseller-title {
-    
+    margin-bottom: 50px;
   }
-  
+
   .bestseller-title p  {
     font-weight: 600;
     text-transform: uppercase;
-    font-size: 3em;
+    font-size: 40px;
+    letter-spacing: 2px;
     text-align: center;
+  }
+
+  .bestseller-paragraph {
+    color: #fff;
+    text-transform: capitalize;
+  }
+
+  bottom-section {
+    margin-top: 50px;
+    height: 200px;
+  }
+
+  .bottom-section .bestseller-section-one {
+    max-height: 300px;
+    overflow: hidden;
+  }
+
+  .image-right {
+    
   }
 }
 

@@ -227,3 +227,69 @@ navbar {
 }
 
 
+
+
+/*my styles*/
+.navbar-top {
+	padding-top: 3px;
+	border-bottom: 1px solid #84590C;
+}
+
+.navbar-top p {
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.second-nav {
+	padding: 5px 50px;
+}
+
+.third-nav {
+	padding: 15px 50px;
+}
+
+.horizontal-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; 
+}
+
+.horizontal-list li {
+  display: inline-block;
+  margin-right: 10px;
+  text-transform: capitalize;
+}
+
+.horizontals-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; 
+}
+
+.horizontals-list li {
+  display: inline-block;
+  margin-right: 50px;
+  text-transform: capitalize;
+}
+
+.horizontals-list li a {
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.horizontals-list li a:hover {
+	text-decoration: none;
+	color: #84590C;
+	transition: 0.2s
+}
+.nav-category {
+	background: #84590C;
+	color: #fff !important;
+	text-transform: capitalize;
+	width: 20%;
+	padding: 10px;
+}
+
+.nav-input {
+	height: 15px !important;
+}

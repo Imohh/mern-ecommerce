@@ -137,15 +137,7 @@ class Homepage extends React.PureComponent {
         <div className="" style={{height: "100px"}}></div>
 
         {/*SLIDER*/}
-        <div className="">
 
-          <AutoplaySlider play={true} style={{height: "600px"}}>
-            <div data-src={slider} style={{height: "600px"}} />
-            <div data-src={slider1} style={{height: "600px"}} />
-            <div data-src={slider} style={{height: "600px"}} />
-          </AutoplaySlider>
-
-        </div>
 
         {/*TOP SECTION*/}
         
@@ -156,17 +148,17 @@ class Homepage extends React.PureComponent {
             <div className="bestseller-title">
               <p>our bestsellers</p>
             </div>
-            <div className="row">
+            <div className="row justify-content-between">
               <div className="col-lg-6 col-md-6 bestseller-section-one">
                 <div className="row">
-                  <div className="col-lg-6 col-md-6 d-flex align-items-center bestseller-text-section">
+                  <div className="col d-flex align-items-center bestseller-text-section">
                     <div className="d-flex flex-column justify-content-center">
                       <p className="bestseller-text">agbada</p>
                       <a href="/shop/brand/suit" className="homepage-button">shop now</a>
                     </div>
                   </div>
-                  <div className="col-lg-6 col-md-6">
-                    <img src={agadaImage} alt="image" />
+                  <div className="col image-right">
+                    <img src={agadaImage} height="50%" alt="image" />
                   </div>
                 </div>
               </div>
@@ -180,6 +172,28 @@ class Homepage extends React.PureComponent {
                   </div>
                   <div className="col-lg-6 col-md-6">
                     <img src={agadaImage} alt="image" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/*END OF NEW SECTION*/}
+
+
+          {/*NEW SECTION*/}
+          <div className="bottom-section">
+            <div className="row">
+              <div className="col-lg-12 col-md-12">
+                <div className="row">
+                  <div className="col-lg-6 col-md-6 d-flex align-items-center bestseller-text-section">
+                    <div className="d-flex flex-column justify-content-center">
+                      <p className="bestseller-text">aso-oke extravaganza</p>
+                      <p className="bestseller-paragraph">shop different custom pieces with our colourful collectionof Aso-Oke Fabrics</p>
+                      <a href="/shop/brand/suit" className="homepage-button">see more</a>
+                    </div>
+                  </div>
+                  <div className="col-lg-6 col-md-6">
+                    <img src={agadaImage} height="300px" alt="image" />
                   </div>
                 </div>
               </div>

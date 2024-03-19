@@ -32,6 +32,7 @@ import Button from '../../components/Common/Button';
 import CartIcon from '../../components/Common/CartIcon';
 import { BarsIcon } from '../../components/Common/Icon';
 import MiniBrand from '../../components/Store//MiniBrand';
+import logo from "../../images/logo.png"
 import Menu from '../NavigationMenu';
 import Cart from '../Cart';
 
@@ -140,7 +141,54 @@ class Navigation extends React.PureComponent {
 
       <>
 
-          <nav className="navbar navbar-expand-lg fixed-top">
+          <div className="navbar-top">
+            <p>free shipping on orders more than $120 in the uk</p>
+          </div>
+          <div className="second-nav">
+            <div className="row">
+              <div className="col-lg-4 d-flex justify-content-end" style={{margin: "auto"}}>
+                <img src={logo} style={{ width: "200px", height: "auto" }} alt="logo" />
+              </div>
+              <div className="col-lg-4 d-flex">
+                <input type="text" className="form-control nav-input mr-2" placeholder='Search Products' />
+                <button className="homepage-button">search</button>
+              </div>
+              <div className="col-lg-4" style={{margin: "auto"}}>
+                <ul className="horizontal-list">
+                  <li><img src="https://img.icons8.com/material-outlined/24/null/instagram-new--v1.png"/></li>
+                  <li><img src="https://img.icons8.com/windows/24/null/facebook-f--v1.png"/></li>
+                  <li><img width="24" height="24" src="https://img.icons8.com/material-sharp/24/whatsapp--v1.png" alt="whatsapp--v1"/></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="third-nav">
+            <div className="row">
+              <div className="col-lg-4" style={{margin: "auto"}}>
+                <button className="nav-category">all categories</button>
+              </div>
+              <div className="col-lg-4">
+                <ul className="horizontals-list">
+                  <li><a href="/">home</a></li>
+                  <li><a href="/shop">shop</a></li>
+                  <li><a href="">custom</a></li>
+                  <li><a href="">media</a></li>
+                  <li><a href="/about">about</a></li>
+                  <li><a href="/contact">contact</a></li>
+                </ul>
+              </div>
+              <div className="col-lg-4 d-flex justify-content-end" style={{margin: "auto"}}>
+                <ul className="horizontal-list">
+                  <li><img src="https://img.icons8.com/small/50/user.png" alt="user"/></li>
+                  <li><img width="50" height="50" src="https://img.icons8.com/ios/50/like--v1.png" alt="like--v1"/></li>
+                  <li>
+                    <img width="50" height="50" src="https://img.icons8.com/material-sharp/50/shopping-cart.png" alt="shopping-cart"/>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          {/*<nav className="navbar navbar-expand-lg fixed-top">
             <Button
               variant='empty'
               className='nav-btn'
@@ -210,7 +258,7 @@ class Navigation extends React.PureComponent {
                   />
                 </div>
               </div>
-          </nav>
+          </nav>*/}
 
           
           <div id="open-modal" className="modal-window">
