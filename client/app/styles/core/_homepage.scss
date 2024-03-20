@@ -482,10 +482,16 @@
   }
 
   .bestseller-section-one {
-    background: #020d1f;
-    padding-left: 50px;
+
   }
 
+  .bestseller-text-section {
+    background: #020d1f;
+  }
+
+  .bestseller-text-section p, .bestseller-text-section a {
+    margin-left: 20px;
+  }
 
   .bestseller-section-one .bestseller-text {
     text-transform: uppercase;
@@ -528,10 +534,6 @@
 }
 
 @media (min-width: 768px) {
-  .bestseller-section-one {
-    background: #020d1f;
-    padding-left: 30px;
-  }
 
   .bestseller-section-one .bestseller-text {
     text-transform: uppercase;

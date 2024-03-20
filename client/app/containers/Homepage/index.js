@@ -150,7 +150,7 @@ class Homepage extends React.PureComponent {
             </div>
             <div className="row justify-content-between">
               <div className="col-lg-6 col-md-6 bestseller-section-one">
-                <div className="row">
+                <div className="row no-gutters">
                   <div className="col d-flex align-items-center bestseller-text-section">
                     <div className="d-flex flex-column justify-content-center">
                       <p className="bestseller-text">agbada</p>
@@ -163,14 +163,14 @@ class Homepage extends React.PureComponent {
                 </div>
               </div>
               <div className="col-lg-6 col-md-6 bestseller-section-one">
-                <div className="row">
-                  <div className="col-lg-6 col-md-6 d-flex align-items-center bestseller-text-section">
+                <div className="row no-gutters">
+                  <div className="col d-flex align-items-center bestseller-text-section">
                     <div className="d-flex flex-column justify-content-center">
                       <p className="bestseller-text">kaftan</p>
                       <a href="/shop/brand/suit" className="homepage-button">shop now</a>
                     </div>
                   </div>
-                  <div className="col-lg-6 col-md-6">
+                  <div className="col">
                     <img src={agadaImage} alt="image" />
                   </div>
                 </div>
@@ -183,16 +183,16 @@ class Homepage extends React.PureComponent {
           {/*NEW SECTION*/}
           <div className="bottom-section">
             <div className="row">
-              <div className="col-lg-12 col-md-12">
-                <div className="row">
-                  <div className="col-lg-6 col-md-6 d-flex align-items-center bestseller-text-section">
+              <div className="col-lg-12 col-md-12 bestseller-section-one">
+                <div className="row no-gutters">
+                  <div className="col-lg-8 col-md-8 bestseller-text-section">
                     <div className="d-flex flex-column justify-content-center">
                       <p className="bestseller-text">aso-oke extravaganza</p>
                       <p className="bestseller-paragraph">shop different custom pieces with our colourful collectionof Aso-Oke Fabrics</p>
                       <a href="/shop/brand/suit" className="homepage-button">see more</a>
                     </div>
                   </div>
-                  <div className="col-lg-6 col-md-6">
+                  <div className="col-lg-4 col-md-4">
                     <img src={agadaImage} height="300px" alt="image" />
                   </div>
                 </div>

@@ -155,9 +155,9 @@ class Navigation extends React.PureComponent {
               </div>
               <div className="col-lg-4" style={{margin: "auto"}}>
                 <ul className="horizontal-list">
-                  <li><img src="https://img.icons8.com/material-outlined/24/null/instagram-new--v1.png"/></li>
-                  <li><img src="https://img.icons8.com/windows/24/null/facebook-f--v1.png"/></li>
-                  <li><img width="24" height="24" src="https://img.icons8.com/material-sharp/24/whatsapp--v1.png" alt="whatsapp--v1"/></li>
+                  <li><a href=""><img src="https://img.icons8.com/material-outlined/24/null/instagram-new--v1.png"/></a></li>
+                  <li><a href=""><img src="https://img.icons8.com/windows/24/null/facebook-f--v1.png"/></a></li>
+                  <li><a href=""><img width="24" height="24" src="https://img.icons8.com/material-sharp/24/whatsapp--v1.png" alt="whatsapp--v1"/></a></li>
                 </ul>
               </div>
             </div>
@@ -179,11 +179,9 @@ class Navigation extends React.PureComponent {
               </div>
               <div className="col-lg-4 d-flex justify-content-end" style={{margin: "auto"}}>
                 <ul className="horizontal-list">
-                  <li><img src="https://img.icons8.com/small/50/user.png" alt="user"/></li>
-                  <li><img width="50" height="50" src="https://img.icons8.com/ios/50/like--v1.png" alt="like--v1"/></li>
-                  <li>
-                    <img width="50" height="50" src="https://img.icons8.com/material-sharp/50/shopping-cart.png" alt="shopping-cart"/>
-                  </li>
+                  <li><a href=""><img src="https://img.icons8.com/small/50/user.png" alt="user"/></a></li>
+                  <li><a href=""><img width="50" height="50" src="https://img.icons8.com/ios/50/like--v1.png" alt="like--v1"/></a></li>
+                  <li><a href=""><img width="50" height="50" src="https://img.icons8.com/material-sharp/50/shopping-cart.png" alt="shopping-cart"/></a></li>
                 </ul>
               </div>
             </div>
