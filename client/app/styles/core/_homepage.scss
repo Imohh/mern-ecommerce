@@ -428,6 +428,27 @@
   text-decoration: none;
 }
 
+.bestseller-text-section button {
+  background: #84590C;
+  color: #fff !important;
+  padding: 10px 20px;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+}
+
+.bottom-button:hover {
+  background: #fff;
+  color: #000;
+  border-color: black;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.bestseller-text-section button span {
+  margin-right: 5px;
+}
+
 .top-section-link {
   text-decoration: underline;
   color: #fff !important;
@@ -481,10 +502,6 @@
     float: right
   }
 
-  .bestseller-section-one {
-
-  }
-
   .bestseller-text-section {
     background: #020d1f;
   }
@@ -495,7 +512,7 @@
 
   .bestseller-section-one .bestseller-text {
     text-transform: uppercase;
-    font-size: 3.7em; 
+    font-size: 3.7em;
     font-weight: 600;
     color: #fff;
     letter-spacing: 1px;
@@ -528,8 +545,13 @@
     overflow: hidden;
   }
 
-  .image-right {
-    
+  .bottom-section .bestseller-text-section {
+    padding-top: 3%;
+    padding-left: 5%
+  }
+
+  .bottom-section .bestseller-text-section a {
+    margin-top: 20%;
   }
 }
 

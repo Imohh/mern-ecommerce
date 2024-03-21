@@ -164,11 +164,11 @@ class Navigation extends React.PureComponent {
           </div>
           <div className="third-nav">
             <div className="row">
-              <div className="col-lg-4" style={{margin: "auto"}}>
+              <div className="col-lg-3" style={{margin: "auto"}}>
                 <button className="nav-category">all categories</button>
               </div>
-              <div className="col-lg-4">
-                <ul className="horizontals-list">
+              <div className="col-lg-6 d-flex justify-content-center">
+                <ul className="horizontals-list d-flex justify-content-center">
                   <li><a href="/">home</a></li>
                   <li><a href="/shop">shop</a></li>
                   <li><a href="">custom</a></li>
@@ -177,7 +177,7 @@ class Navigation extends React.PureComponent {
                   <li><a href="/contact">contact</a></li>
                 </ul>
               </div>
-              <div className="col-lg-4 d-flex justify-content-end" style={{margin: "auto"}}>
+              <div className="col-lg-3 d-flex justify-content-end" style={{margin: "auto"}}>
                 <ul className="horizontal-list">
                   <li><a href=""><img src="https://img.icons8.com/small/50/user.png" alt="user"/></a></li>
                   <li><a href=""><img width="50" height="50" src="https://img.icons8.com/ios/50/like--v1.png" alt="like--v1"/></a></li>

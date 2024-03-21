@@ -186,14 +186,15 @@ class Homepage extends React.PureComponent {
               <div className="col-lg-12 col-md-12 bestseller-section-one">
                 <div className="row no-gutters">
                   <div className="col-lg-8 col-md-8 bestseller-text-section">
-                    <div className="d-flex flex-column justify-content-center">
                       <p className="bestseller-text">aso-oke extravaganza</p>
                       <p className="bestseller-paragraph">shop different custom pieces with our colourful collectionof Aso-Oke Fabrics</p>
-                      <a href="/shop/brand/suit" className="homepage-button">see more</a>
-                    </div>
+                      <button href="/shop/brand/suit" className="bottom-button">
+                        <span>see more</span>
+                        <img width="24" height="24" src="https://img.icons8.com/material-rounded/24/forward.png" alt="forward"/>
+                      </button>
                   </div>
                   <div className="col-lg-4 col-md-4">
-                    <img src={agadaImage} height="300px" alt="image" />
+                    <img src={agadaImage} height="100%" width="100%" alt="image" />
                   </div>
                 </div>
               </div>

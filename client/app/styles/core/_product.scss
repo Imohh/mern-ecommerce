@@ -149,25 +149,165 @@
 
 @media screen and (min-width: 992px) {
   .cards {
-    width: 25%
+    width: 23%;
+    margin-right: 2%;
+    position: relative;
+  }
+  
+  .cards:hover .overlay {
+    opacity: 0.7;
+    transition: opacity 0.5s ease;
+  }
+
+  .img {
+    position: relative;
+  }
+
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: #020D1F;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .overlay:hover .shop-now {
+    display: block
+  }
+
+  .shop-now {
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid #fff;
   }
 }
 
 @media screen and (min-width: 719px) and (max-width: 991px) {
   .cards {
-    width: 33.3%
+    width: 31.3%;
+    margin-right: 2%;
+    position: relative;
+  }
+
+  .cards:hover .overlay {
+    opacity: 0.7;
+    transition: opacity 0.5s ease;
+  }
+
+  .img {
+    position: relative;
+  }
+
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: #020D1F;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .overlay:hover .shop-now {
+    display: block
+  }
+
+  .shop-now {
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid #fff;
   }
 }
 
 @media screen and (min-width: 601px) and (max-width: 719px) {
   .cards {
-    width: 50%
+    width: 48%;
+    margin-right: 2%;
+    position: relative;
+  }
+
+  .cards:hover .overlay {
+    opacity: 0.7;
+    transition: opacity 0.5s ease;
+  }
+
+  .img {
+    position: relative;
+  }
+
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: #020D1F;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .overlay:hover .shop-now {
+    display: block
+  }
+
+  .shop-now {
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid #fff;
   }
 }
 
 @media screen and (max-width: 600px) {
   .cards {
-    width: 50%
+    width: 48%;
+    margin-right: 2%;
+    position: relative;
+  }
+
+  .cards:hover .overlay {
+    opacity: 0.7;
+    transition: opacity 0.5s ease;
+  }
+
+  .img {
+    position: relative;
+  }
+
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: #020D1F;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .overlay:hover .shop-now {
+    display: block
+  }
+
+  .shop-now {
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid #fff;
   }
 
   .product-filter {
@@ -185,14 +325,27 @@
    justify-content: center;
    align-items: center;
    width: 100%;
+   background: #f1f1f1;
+   margin: 10px;
+   padding: 20px 0;
 }
 .cards .card-content .top-bar {
-  width: calc(100% - 40px);
   position: absolute;
   top: 0;
   left: 0;
   margin: 0 0 0 40px;
 }
+
+.top-bar {
+  background-color: #84590C;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .cards .card-content .price-text {
   font-weight: 900
 }
@@ -205,12 +358,13 @@
   .cards {
      position: relative;
      padding: 10px;
-     background: #f1f1f1;
      display: grid;
      transition: 0.2s ease-in;
      float: left;
      border: 1px solid #fff;
-     height:405px;
+     height: 550px;
+     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+     margin-bottom: 5%;
   }
   .cards .card-content .img {
      width: 100%;
@@ -220,7 +374,7 @@
   }
    .cards .card-content .img img {
      max-width: 100%;
-     max-height:300px;
+     max-height:350px;
   }
   .cards .card-description {
      padding: 10px;

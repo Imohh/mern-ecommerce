@@ -23,7 +23,7 @@ const ProductList = props => {
     <div key={index} className="cards">
       <div className="card-content" >
         <div className="top-bar">
-          <span className="float-right lnr lnr-heart">
+          <span className="float-left lnr lnr-heart">
             <AddToWishList
               id={product._id}
               liked={product?.isLiked ?? false}
@@ -44,6 +44,9 @@ const ProductList = props => {
               : '/images/placeholder-image.png'
               }`}
             />
+            <div className="overlay">
+              <div className="shop-now">Shop Now</div>
+            </div>
           </div>
         </Link>
       </div>

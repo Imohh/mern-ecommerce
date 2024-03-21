@@ -41,3 +41,42 @@
     }
   }
 }
+
+
+.brands-hero {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center;
+  margin-bottom: 2%;
+}
+
+.brands-hero .brands-title {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 3em;
+  letter-spacing: 2px;
+}
+
+.brands-hero .brands-paragraph {
+  font-size: 20px;
+}
+
+.brands-hero .brands-paragraph .slug-up {
+  text-transform: capitalize;
+  font-size: 20px;
+}
+
+.brands-hero .brands-paragraph .brands-color {
+  font-weight: 600;
+  font-size: 20px;
+  text-transform: capitalize;
+  color: #84590C;
+}
+
+.brands-hero .brands-last-paragraph {
+  font-size: 20px;
+  margin-top: 3%;
+  text-transform: capitalize
+}
