@@ -412,17 +412,29 @@
   margin-top: 30px
 }
 
-.homepage-button {
-  background: #84590C;
-  color: white !important;
-  padding: 15px 35px;
-  text-transform: capitalize;
-  width: 140px;
+
+
+/* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+  .homepage-button {
+    padding: 0.8em 1.5em;
+  }
+  .homepage-butt {
+    padding: 0.8em 1.5em;
+  }
 }
 
 .homepage-button:hover {
   background: #fff;
   color: #000;
+  border-color: black;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.homepage-butt:hover {
+  background: #95702f;
+  color: #fff;
   border-color: black;
   transition: 0.3s;
   text-decoration: none;
@@ -486,14 +498,117 @@
 
 
 
-.overall-div {
-  padding: 40px;
-  margin: 40px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  height: 100%;
+
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%; /* Half of the image's height */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  pointer-events: none; /* Allows clicks to go through the overlay */
 }
 
-@media (min-width: 1100px) {
+
+
+@media (min-width: 768px) {
+  .homepage-hero {
+  height: 500px;
+  padding-left: 30px;
+  position: relative;
+  background: #020d1f;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-text {
+  width: 30%;
+  z-index: 1;
+}
+
+.homepage-hero .hero-explore {
+  font-style: italic;
+  margin-bottom: 2%;
+  text-transform: capitalize;
+  width: 50%;
+  color: #fff;
+}
+
+.homepage-hero .hero-custom {
+  font-size: 3em;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 15%;
+  line-height: 50px;
+  color: #fff;
+}
+
+.hero-images {
+  position: relative;
+  width: 30%; /* Adjust as needed */
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0; /* Ensure images are behind text */
+}
+
+.outfit-images {
+  position: relative;
+}
+
+.hero-image:nth-child(2) {
+  top: 30px; /* Adjust vertical position of the second image */
+}
+
+.hero-image:nth-child(3) {
+  top: 60px; /* Adjust vertical position of the third image */
+}
+
+
+
+.homepage-products {
+  padding: 50px 0;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+
+
+  .overall-div {
+    padding: 40px;
+    margin: 40px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 100%;
+  }
+
+  .homepage-button {
+    background: #84590C;
+    color: white !important;
+    padding: 1em 2.5em;
+    text-transform: capitalize;
+    width: 140px;
+    display: inline-block;
+  }
+
+  .homepage-butt {
+    background: #84590C;
+    color: white !important;
+    padding: 1em 2.5em;
+    text-transform: capitalize;
+    width: 140px;
+    display: inline-block;
+  }
+
   .newsection {
     margin-bottom: 5%
   }
@@ -512,7 +627,7 @@
 
   .bestseller-section-one .bestseller-text {
     text-transform: uppercase;
-    font-size: 3.7em;
+    font-size: 6vh;
     font-weight: 600;
     color: #fff;
     letter-spacing: 1px;
@@ -555,13 +670,167 @@
   }
 }
 
-@media (min-width: 768px) {
+
+
+
+
+@media (max-width: 767px) {
+  .homepage-hero {
+    height: 500px;
+    padding-left: 30px;
+    position: relative;
+    background-color: #020d1f;
+  }
+
+  .hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hero-text {
+    width: 100%;
+    z-index: 1;
+  }
+
+  .homepage-hero .hero-explore {
+    font-style: italic;
+    margin-bottom: 2%;
+    text-transform: capitalize;
+    width: 100%;
+    color: #fff;
+  }
+
+  .homepage-hero .hero-custom {
+    font-size: 2em;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 15%;
+    line-height: 50px;
+    color: #fff;
+  }
+
+  .hero-images {
+    position: relative;
+    width: 30%; /* Adjust as needed */
+  }
+
+  .hero-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0; /* Ensure images are behind text */
+  }
+
+  .outfit-images {
+    position: relative;
+  }
+
+  .hero-image:nth-child(2) {
+    top: 30px; /* Adjust vertical position of the second image */
+  }
+
+  .hero-image:nth-child(3) {
+    top: 60px; /* Adjust vertical position of the third image */
+  }
+
+  .homepage-products {
+    padding: 50px 0;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .overall-div {
+    padding: 20px;
+    margin: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 100%;
+  }
+
+  .homepage-button {
+    background: #84590C;
+    color: white !important;
+    padding: 5px 5px;
+    text-transform: capitalize;
+    width: 100px;
+    display: inline-block;
+  }
+
+  .homepage-butt {
+    background: #84590C;
+    color: white !important;
+    padding: 1em 2.5em;
+    text-transform: capitalize;
+    width: 140px;
+    display: inline-block;
+  }
+
+  .newsection {
+    margin-bottom: 5%
+  }
+
+  .newsection .bestseller-section-one {
+    margin-bottom: 3%;
+  }
+
+  .image-right img {
+    float: right
+  }
+
+  .bestseller-text-section {
+    background: #020d1f;
+  }
+
+  .bestseller-text-section p, .bestseller-text-section a {
+    margin-left: 20px;
+  }
 
   .bestseller-section-one .bestseller-text {
     text-transform: uppercase;
-    font-size: 2em; 
+    font-size: 85%;
     font-weight: 600;
     color: #fff;
     letter-spacing: 1px;
   }
+
+  .bestseller-title {
+    margin-bottom: 50px;
+  }
+
+  .bestseller-title p  {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+
+  .bestseller-paragraph {
+    color: #fff;
+    text-transform: capitalize;
+  }
+
+  bottom-section {
+    margin-top: 50px;
+    height: 200px;
+  }
+
+  .bottom-section .bestseller-section-one {
+    max-height: 300px;
+    overflow: hidden;
+  }
+
+  .bottom-section .bestseller-text-section {
+    padding-top: 3%;
+    padding-left: 5%
+  }
+
+  .bottom-section .bestseller-text-section a {
+    margin-top: 20%;
+  }
 }
+
+
+

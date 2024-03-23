@@ -18,7 +18,7 @@ import MiniBrand from '../../components/Store//MiniBrand';
 
 class NavigationMenu extends React.PureComponent {
   render() {
-    const { isMenuOpen, categories, toggleMenu, brands } = this.props;
+    const { isMenuOpen, categories, toggleMenu, brands, signOut, authenticated } = this.props;
 
     const handleCategoryClick = () => {
       this.props.toggleMenu();
@@ -39,13 +39,15 @@ class NavigationMenu extends React.PureComponent {
         </div>
         <div className='menu-body'>
 
-          
+            <p className="menu-title">
+              <a href="" style={{fontSize: "20px"}}>Search</a>
+            </p>
             <p 
               onClick={handleCategoryClick} 
               className='menu-title'>
               <a href="/shop" style={{fontSize: "20px"}}>Shop</a>
             </p>
-            <h3 className='menu-title'>Shop By Category</h3>
+            {/*<h3 className='menu-title'>Shop By Category</h3>
             <nav role='navigation'>
               <ul className='menu-list'>
                 {categories.map((link, index) => (
@@ -61,7 +63,8 @@ class NavigationMenu extends React.PureComponent {
                   </li>
                 ))}
               </ul>
-            </nav>
+            </nav>*/}
+            <hr />
             <h3 className='menu-title'>Shop By Brand</h3>
             <nav role='navigation'>
               <ul className='menu-list'>
@@ -79,6 +82,21 @@ class NavigationMenu extends React.PureComponent {
               ))}
             </ul>
           </nav>
+          <hr />
+          <div>
+            <ul className='menu-list'>
+              <li className='menu-item'><a href="">wishlist</a></li>
+              {authenticated ? (<>
+                <li className='menu-item'><a href="/dashboard">dashboard</a></li>
+                <li className='menu-item'><a href="" onClick={signOut}>logout</a></li>
+                </>
+              ) : (<>
+                <li className='menu-item'><a href="/login">login</a></li>
+                <li className='menu-item'><a href="/register">sign up</a></li>
+                </>
+              )}
+            </ul>
+          </div>
         </div>
       </div>
     );
@@ -89,7 +107,8 @@ const mapStateToProps = state => {
   return {
     isMenuOpen: state.navigation.isMenuOpen,
     categories: state.category.storeCategories,
-    brands: state.brand.storeBrands
+    brands: state.brand.storeBrands,
+    authenticated: state.authentication.authenticated,
   };
 };
 

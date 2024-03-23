@@ -29,7 +29,7 @@ class ProductsShop extends React.PureComponent {
     const displayProducts = products && products.length > 0;
 
     return (
-      <div className="product-shop-containers" style={{height: "93%"}}>
+      <div className="" style={{height: "93%"}}>
         {isLoading && <LoadingIndicator />}
         {displayProducts && (
           <ProductList

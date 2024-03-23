@@ -29,21 +29,21 @@ import native from './assets/20230903_015047.jpg'
 import suit from './assets/20230903_015006.jpg'
 import slider from './assets/slider.jpg'
 import slider1 from './assets/slider1.jpg'
+import agbadahome from './assets/agbada-home.png'
+import kaftanhome from './assets/kaftan-home.png'
+import heroone from './assets/hero-one.png'
+import herotwo from './assets/hero-two.png'
+import herothree from './assets/hero-three.png'
 
 import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
 import withAutoplay from 'react-awesome-slider/dist/autoplay'
 
-// import { Swiper, SwiperSlide } from 'swiper/react';
 
-// // Import Swiper styles
-// import 'swiper/css';
-// import 'swiper/css/pagination';
-
-// // import required modules
-// import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-
-
+import ProductList from '../../components/Store/ProductList';
+import NotFound from '../../components/Common/NotFound';
+import LoadingIndicator from '../../components/Common/LoadingIndicator';
+import Pagination from '../../components/Common/Pagination';
 
 
 
@@ -66,6 +66,7 @@ class Homepage extends React.PureComponent {
     this.checkShowModal();
   }
 
+
   checkShowModal = () => {
     const lastDisplayDate = localStorage.getItem('lastModalDisplayDate');
     if (!lastDisplayDate) {
@@ -87,8 +88,24 @@ class Homepage extends React.PureComponent {
   };
 
 
+  componentDidMount() {
+    const slug = this.props.match.params.slug;
+    this.props.filterProducts(slug);
+  }
+
 
   render() {
+    const { products, isLoading, authenticated, updateWishlist, advancedFilters, filterProducts } = this.props;
+    const { totalPages } = advancedFilters;
+    const displayPagination = totalPages > 1;
+
+    let displayProducts = [];
+    if (products && products.length > 0) {
+        // Ensure only the first 6 products are displayed
+        displayProducts = products.slice(0, 8);
+    }
+
+    console.log(displayProducts)
 
     const onAutoplayTimeLeft = (s, time, progress) => {
       progressCircle.current.style.setProperty('--progress', 1 - progress);
@@ -134,13 +151,27 @@ class Homepage extends React.PureComponent {
         </div>
 
 
-        <div className="" style={{height: "100px"}}></div>
+        
 
         {/*SLIDER*/}
 
 
         {/*TOP SECTION*/}
-        
+        <div className="homepage-hero d-flex flex-column justify-content-center"
+          style={{backgroundImage: `url${heroone}`}}>
+          <div className="hero-content">
+            <div className="hero-text">
+              <p className="hero-explore">explore a world of beautiful African Attires tailored for you.</p>
+              <p className="hero-custom">custom made african prints</p>
+              <a href="" className="homepage-button">shop now</a>
+            </div>
+            <div className="hero-images">
+              <img src={heroone} className="hero-image" alt="Hero One" />
+              <img src={herotwo} className="hero-image" alt="Hero Two" />
+              <img src={herothree} className="hero-image" alt="Hero Three" />
+            </div>
+          </div>
+        </div>
 
         <div className="overall-div">
           {/*NEW SECTION*/}
@@ -154,11 +185,12 @@ class Homepage extends React.PureComponent {
                   <div className="col d-flex align-items-center bestseller-text-section">
                     <div className="d-flex flex-column justify-content-center">
                       <p className="bestseller-text">agbada</p>
-                      <a href="/shop/brand/suit" className="homepage-button">shop now</a>
+                      <a href="/shop/brand/agbada" className="homepage-button">shop now</a>
                     </div>
                   </div>
-                  <div className="col image-right">
-                    <img src={agadaImage} height="50%" alt="image" />
+                  <div className="col image-right" style={{ position: "relative" }}>
+                    <div className="image-overlay"></div>
+                    <img src={agbadahome} height="50%" alt="image" />
                   </div>
                 </div>
               </div>
@@ -167,17 +199,48 @@ class Homepage extends React.PureComponent {
                   <div className="col d-flex align-items-center bestseller-text-section">
                     <div className="d-flex flex-column justify-content-center">
                       <p className="bestseller-text">kaftan</p>
-                      <a href="/shop/brand/suit" className="homepage-button">shop now</a>
+                      <a href="/shop/brand/kaftan" className="homepage-button">shop now</a>
                     </div>
                   </div>
-                  <div className="col">
-                    <img src={agadaImage} alt="image" />
+                  <div className="col" style={{ position: "relative" }}>
+                    <div className="image-overlay"></div>
+                    <img src={kaftanhome} alt="image" />
                   </div>
                 </div>
               </div>
             </div>
           </div>
           {/*END OF NEW SECTION*/}
+
+
+
+          {/* PRODUCT SECTIONS */}
+          <div>
+                
+
+                <div className="" style={{height: "93%"}}>
+                  {isLoading && <LoadingIndicator />}
+                  {displayProducts.length > 0 && (
+                    <ProductList
+                      products={displayProducts}
+                      authenticated={authenticated}
+                      updateWishlist={updateWishlist}
+                    />
+                  )}
+
+                  <div className="homepage-products">
+                    <a href="/shop" className="homepage-butt">view more</a>
+                  </div>
+
+                  {!isLoading && !displayProducts.length === 0 && (
+                    <NotFound message='No products found.' />
+                  )}
+                </div>
+
+
+
+          </div>
+
 
 
           {/*NEW SECTION*/}
@@ -210,8 +273,10 @@ class Homepage extends React.PureComponent {
 
 const mapStateToProps = state => {
   return {
+    products: state.product.storeProducts,
+    isLoading: state.product.isLoading,
     advancedFilters: state.product.advancedFilters,
-    products: state.product.storeProducts
+    authenticated: state.authentication.authenticated
   };
 };
 
