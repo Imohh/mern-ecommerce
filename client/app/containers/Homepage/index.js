@@ -105,8 +105,6 @@ class Homepage extends React.PureComponent {
         displayProducts = products.slice(0, 8);
     }
 
-    console.log(displayProducts)
-
     const onAutoplayTimeLeft = (s, time, progress) => {
       progressCircle.current.style.setProperty('--progress', 1 - progress);
       progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
@@ -215,30 +213,25 @@ class Homepage extends React.PureComponent {
 
 
           {/* PRODUCT SECTIONS */}
-          <div>
-                
+          <div className="homepage-product-section">
+            <div className="" style={{height: "93%"}}>
+              {isLoading && <LoadingIndicator />}
+              {displayProducts.length > 0 && (
+                <ProductList
+                  products={displayProducts}
+                  authenticated={authenticated}
+                  updateWishlist={updateWishlist}
+                />
+              )}
 
-                <div className="" style={{height: "93%"}}>
-                  {isLoading && <LoadingIndicator />}
-                  {displayProducts.length > 0 && (
-                    <ProductList
-                      products={displayProducts}
-                      authenticated={authenticated}
-                      updateWishlist={updateWishlist}
-                    />
-                  )}
+              <div className="homepage-products">
+                <a href="/shop" className="homepage-butt">view more</a>
+              </div>
 
-                  <div className="homepage-products">
-                    <a href="/shop" className="homepage-butt">view more</a>
-                  </div>
-
-                  {!isLoading && !displayProducts.length === 0 && (
-                    <NotFound message='No products found.' />
-                  )}
-                </div>
-
-
-
+              {!isLoading && !displayProducts.length === 0 && (
+                <NotFound message='No products found.' />
+              )}
+            </div>
           </div>
 
 

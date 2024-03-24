@@ -85,7 +85,7 @@ class NavigationMenu extends React.PureComponent {
           <hr />
           <div>
             <ul className='menu-list'>
-              <li className='menu-item'><a href="">wishlist</a></li>
+              <li className='menu-item'><a href="/dashboard/wishlist">wishlist</a></li>
               {authenticated ? (<>
                 <li className='menu-item'><a href="/dashboard">dashboard</a></li>
                 <li className='menu-item'><a href="" onClick={signOut}>logout</a></li>

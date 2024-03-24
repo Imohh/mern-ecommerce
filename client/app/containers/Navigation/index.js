@@ -236,7 +236,7 @@ class Navigation extends React.PureComponent {
                   <li><a href=""><img width="50" height="50" src="https://img.icons8.com/ios/50/like--v1.png" alt="like--v1"/></a></li>
                   <li>
                     <CartIcon
-                      className=''
+                      className='cart-icon-size'
                       cartItems={cartItems}
                       onClick={toggleCart}
                     />

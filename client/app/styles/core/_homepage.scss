@@ -509,86 +509,87 @@
   pointer-events: none; /* Allows clicks to go through the overlay */
 }
 
+@media (min-width: 768px) {
+  .hero-text {
+    width: 50%;
+    z-index: 1;
+  }
+}
+
+@media (min-width: 1100px) {
+  .hero-text {
+    width: 40%;
+    z-index: 1;
+  }
+}
+
 
 
 @media (min-width: 768px) {
   .homepage-hero {
-  height: 500px;
-  padding-left: 30px;
-  position: relative;
-  background: #020d1f;
-}
+    height: 600px;
+    padding-left: 30px;
+    position: relative;
+    background: #020d1f;
+    overflow: hidden;
+  }
 
-.hero-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.hero-text {
-  width: 30%;
-  z-index: 1;
-}
-
-.homepage-hero .hero-explore {
-  font-style: italic;
-  margin-bottom: 2%;
-  text-transform: capitalize;
-  width: 50%;
-  color: #fff;
-}
-
-.homepage-hero .hero-custom {
-  font-size: 3em;
-  font-weight: 900;
-  text-transform: uppercase;
-  margin-bottom: 15%;
-  line-height: 50px;
-  color: #fff;
-}
-
-.hero-images {
-  position: relative;
-  width: 30%; /* Adjust as needed */
-}
-
-.hero-image {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 0; /* Ensure images are behind text */
-}
-
-.outfit-images {
-  position: relative;
-}
-
-.hero-image:nth-child(2) {
-  top: 30px; /* Adjust vertical position of the second image */
-}
-
-.hero-image:nth-child(3) {
-  top: 60px; /* Adjust vertical position of the third image */
-}
+  .hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
 
+  .homepage-hero .hero-explore {
+    font-style: italic;
+    margin-bottom: 2%;
+    text-transform: capitalize;
+    width: 50%;
+    color: #fff;
+  }
 
-.homepage-products {
-  padding: 50px 0;
-  margin: auto;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
+  .homepage-hero .hero-custom {
+    font-size: 3em;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 15%;
+    line-height: 50px;
+    color: #fff;
+  }
 
+  .hero-images {
+    width: 50%;
+  }
 
+  .hero-image {
+    position: absolute;
+    right: 0;
+    width: 70%;
+    height: auto;
+    z-index: 1000; /* Ensure images are behind text */
+  }
 
+  .hero-image:nth-child(2) {
+    top: 30px; /* Adjust vertical position of the second image */
+  }
+
+  .hero-image:nth-child(3) {
+    top: 40px; /* Adjust vertical position of the third image */
+  }
+
+  .homepage-products {
+    padding: 50px 0;
+    margin: auto;
+    text-align: center;
+  }
 
   .overall-div {
     padding: 40px;
     margin: 40px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    height: 100%;
+    height: auto;
+    overflow: hidden;
   }
 
   .homepage-button {
@@ -832,5 +833,7 @@
   }
 }
 
-
+.homepage-product-section{
+  height: 100%;
+}
 
