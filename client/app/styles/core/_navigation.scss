@@ -232,7 +232,7 @@ navbar {
 /*my styles*/
 
 
-@media (min-width: 768px) {	
+@media (min-width: 768px) {
 	.navbar-top {
 		padding-top: 3px;
 		border-bottom: 1px solid #84590C;
@@ -304,9 +304,60 @@ navbar {
 	.mobile-menu {
 		display: none;
 	}
+
+	.full-size-dropdown {
+	  /* position: absolute; */
+	  top: 110%; /* Position dropdown below the button */
+	  left: 0;
+	  width: 100%;
+	  background-color: #ffffff;
+	  border: 1px solid #ccc;
+	  z-index: 1000;
+	  padding: 50px 20px;
+	}
+
+	.full-size-dropdown ul {
+	  list-style-type: none;
+	  padding: 0;
+	  margin: 0;
+	}
+
+	.full-size-dropdown ul li {
+	  padding: 10px;
+	  text-transform: capitalize
+	}
+
+	.full-size-dropdown ul li:last-child {
+	  border-bottom: none; /* Remove border from the last item */
+	}
+
+	.dropdown-title {
+		margin-bottom: 10px;
+	}
+
+	.dropdown-title p {
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-weight: 700;
+		font-size: 20px;
+	}
+
+	.dropdown-image {
+		margin-top: 10%;
+	}
+
+	.dropdown-image p {
+		text-transform: uppercase;
+		text-align: center;
+		margin-top: 5px;
+	}
+
 }
 
 @media (max-width: 767px) {
+	.full-size-dropdown {
+		display: none;
+	}
 	.mobile-menu {
 		display: flex;
 		justify-content: space-between;
@@ -353,3 +404,7 @@ navbar {
 	height: 100px;
 	font-size: 100px;
 }
+
+
+/*all categories dropdown*/
+

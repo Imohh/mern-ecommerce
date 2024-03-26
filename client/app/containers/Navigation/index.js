@@ -4,7 +4,7 @@
  *
  */
 
-import React from 'react';
+import React, {Component} from 'react';
 
 import { connect } from 'react-redux';
 import { Link, NavLink as ActiveLink, withRouter } from 'react-router-dom';
@@ -33,10 +33,25 @@ import CartIcon from '../../components/Common/CartIcon';
 import { BarsIcon } from '../../components/Common/Icon';
 import MiniBrand from '../../components/Store//MiniBrand';
 import logo from "../../images/logo.png"
+import man from "../../images/man.png"
+import woman from "../../images/woman.png"
 import Menu from '../NavigationMenu';
 import Cart from '../Cart';
 
 class Navigation extends React.PureComponent {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      showDropdown: false
+    };
+  }
+
+  toggleDropdown = () => {
+    this.setState(prevState => ({
+      showDropdown: !prevState.showDropdown
+    }));
+  };
 
   componentDidMount() {
     this.props.fetchStoreBrands();
@@ -126,8 +141,10 @@ class Navigation extends React.PureComponent {
       suggestions,
       onSearch,
       onSuggestionsFetchRequested,
-      onSuggestionsClearRequested
+      onSuggestionsClearRequested,
     } = this.props;
+
+    const { showDropdown } = this.state;
 
     const inputProps = {
       placeholder: 'Search Products',
@@ -135,6 +152,10 @@ class Navigation extends React.PureComponent {
       onChange: (_, { newValue }) => {
         onSearch(newValue);
       }
+    };
+
+    const handleCategoryClick = () => {
+      this.props.toggleMenu();
     };
 
     return (
@@ -182,7 +203,7 @@ class Navigation extends React.PureComponent {
           <div className="third-nav">
             <div className="row">
               <div className="col-lg-3" style={{margin: "auto"}}>
-                <button className="nav-category">all categories</button>
+                <button className="nav-category" onClick={this.toggleDropdown}>all categories</button>
               </div>
               <div className="col-lg-6 d-flex justify-content-center" style={{margin: "auto"}}>
                 <ul className="horizontals-list d-flex justify-content-center">
@@ -248,6 +269,60 @@ class Navigation extends React.PureComponent {
               </div>
             </div>
           </div>
+
+
+          {/*ALL CATEGORIES NAV*/}
+          {showDropdown && (
+            <div className="full-size-dropdown">
+              <div className="row">
+                <div className="col-lg-3 col-md-3">
+                  <div className="dropdown-title">
+                    <p>all categories</p>
+                  </div>
+                  <ul>
+                    {brands.map((brand, index) => (
+                      <li key={index} className=''>
+                        <a
+                          href={`/shop/brand/${brand.slug}`}
+                          activeClassName='active-link'
+                        >
+                          {brand.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="col-lg-3 col-md-3">
+                  <div className="dropdown-title">
+                    <p>featured</p>
+                  </div>
+                  <ul>
+                    <li><a href="/shop/brand/aso-oke">female aso-oke suits</a></li>
+                    <li><a href="/shop/brand/agbada">sheikh agbada & cap</a></li>
+                    <li><a href="/shop">d' men dem collection</a></li>
+                    <li><a href="/shop">matching family fits</a></li>
+                  </ul>
+                </div>
+                <div className="col-lg-6 col-md-6">
+                  <div className="row dropdown-image">
+                    <div className="col-lg-6 col-md-6">
+                      <a href="/shop/brand/aso-oke">
+                        <img src={woman} alt="woman in aso oke" />
+                        <p>female aso-oke suits</p>
+                      </a>
+                    </div>
+                    <div className="col-lg-6 col-md-6">
+                      <a href="/shop/brand/agbada">
+                        <img src={man} alt="man in agbada" />
+                        <p>sheikh agbada & cap</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
 
 
           {/*MOBILE MENU*/}
