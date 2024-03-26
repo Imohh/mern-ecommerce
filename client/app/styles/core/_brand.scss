@@ -49,23 +49,31 @@
   flex-direction: column;
   justify-content: center; /* Center vertically */
   align-items: center;
-  margin-bottom: 2%;
+  padding: 0 20px;
+  text-align: center;
 }
 
 .brands-hero .brands-title {
   text-transform: uppercase;
+  text-align: center;
   font-weight: 700;
   font-size: 3em;
   letter-spacing: 2px;
+  color: #fff !important;
+  z-index: 1000;
 }
 
 .brands-hero .brands-paragraph {
   font-size: 20px;
+  color: #fff !important;
+  text-align: center;
+  z-index: 1000;
 }
 
 .brands-hero .brands-paragraph .slug-up {
   text-transform: capitalize;
   font-size: 20px;
+  color: #fff;
 }
 
 .brands-hero .brands-paragraph .brands-color {
@@ -78,5 +86,27 @@
 .brands-hero .brands-last-paragraph {
   font-size: 20px;
   margin-top: 3%;
-  text-transform: capitalize
+  text-transform: capitalize;
+  text-align: center;
+  color: #fff !important;
+  z-index: 1000;
+}
+
+
+.brands-filter {
+  padding: 10px 20px;
+  margin-bottom: 3%;
+  border-bottom: 1px solid #84590C;
+}
+
+.brand-border-right {
+  border-right: 1px solid #84590C;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.brand-border-left {
+  border-left: 1px solid #84590C;
+  text-align: center;
+  text-transform: capitalize;
 }

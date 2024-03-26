@@ -54,6 +54,10 @@
     grid-auto-columns: calc(50% - 10px);
     grid-column-gap: 20px;
   }
+
+  .bestseller-section-one .bestseller-text {
+    font-size: 3vh;
+  }
 }
 
 @media (min-width: 700px) {
@@ -61,12 +65,20 @@
     grid-auto-columns: calc(calc(100% / 3) - 20px);
     grid-column-gap: 30px;
   }
+
+  .bestseller-section-one .bestseller-text {
+    font-size: 4vh;
+  }
 }
 
 @media (min-width: 1100px) {
   .cardars {
     grid-auto-columns: calc(25% - 30px);
     grid-column-gap: 40px;
+  }
+
+  .bestseller-section-one .bestseller-text {
+    font-size: 5vh;
   }
 }
 
@@ -509,12 +521,6 @@
   pointer-events: none; /* Allows clicks to go through the overlay */
 }
 
-@media (min-width: 768px) {
-  .hero-text {
-    width: 50%;
-    z-index: 1;
-  }
-}
 
 @media (min-width: 1100px) {
   .hero-text {
@@ -532,6 +538,11 @@
     position: relative;
     background: #020d1f;
     overflow: hidden;
+  }
+
+  .hero-text {
+    width: 50%;
+    z-index: 1;
   }
 
   .hero-content {
@@ -579,9 +590,8 @@
   }
 
   .homepage-products {
-    padding: 50px 0;
-    margin: auto;
-    text-align: center;
+    margin: 50px 0;
+    text-align: center
   }
 
   .overall-div {
@@ -628,7 +638,6 @@
 
   .bestseller-section-one .bestseller-text {
     text-transform: uppercase;
-    font-size: 6vh;
     font-weight: 600;
     color: #fff;
     letter-spacing: 1px;
@@ -669,6 +678,12 @@
   .bottom-section .bestseller-text-section a {
     margin-top: 20%;
   }
+
+  .bottom-section a {
+    background: red;
+    color: #fff !important;
+    padding: 5px 10px;
+  }
 }
 
 
@@ -680,7 +695,13 @@
     height: 500px;
     padding-left: 30px;
     position: relative;
-    background-color: #020d1f;
+    background: #020d1f;
+    overflow: hidden;
+  }
+
+  .hero-text {
+    width: 100%;
+    z-index: 1;
   }
 
   .hero-content {
@@ -689,22 +710,18 @@
     align-items: center;
   }
 
-  .hero-text {
-    width: 100%;
-    z-index: 1;
-  }
 
   .homepage-hero .hero-explore {
     font-style: italic;
     margin-bottom: 2%;
     text-transform: capitalize;
-    width: 100%;
+    width: 70%;
     color: #fff;
   }
 
   .homepage-hero .hero-custom {
-    font-size: 2em;
-    font-weight: 800;
+    font-size: 3em;
+    font-weight: 900;
     text-transform: uppercase;
     margin-bottom: 15%;
     line-height: 50px;
@@ -712,19 +729,15 @@
   }
 
   .hero-images {
-    position: relative;
-    width: 30%; /* Adjust as needed */
+    width: 50%;
   }
 
   .hero-image {
     position: absolute;
-    top: 0;
     right: 0;
-    z-index: 0; /* Ensure images are behind text */
-  }
-
-  .outfit-images {
-    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 1000; /* Ensure images are behind text */
   }
 
   .hero-image:nth-child(2) {
@@ -736,8 +749,7 @@
   }
 
   .homepage-products {
-    padding: 50px 0;
-    margin: auto;
+    margin: 50px 0;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -790,7 +802,6 @@
 
   .bestseller-section-one .bestseller-text {
     text-transform: uppercase;
-    font-size: 85%;
     font-weight: 600;
     color: #fff;
     letter-spacing: 1px;
@@ -834,6 +845,7 @@
 }
 
 .homepage-product-section{
-  height: 100%;
+  height: auto;
+  overflow: hidden;
 }
 

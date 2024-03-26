@@ -86,16 +86,8 @@ class Shop extends React.PureComponent {
             md={{ size: `${showHide ? 12 : 12}`, order: 5 }}
             lg={{ size: `${showHide ? 9 : 12}`, order: 5 }}
           >
-            <Row className='align-items-center mx-0 mb-4 mt-4 mt-lg-0 py-3 py-lg-0 bg-white shop-toolbar' style={{padding: "0 10px"}}>
-              {/*<Col
-                xs={{ size: 6, order: 1 }}
-                sm={{ size: 6, order: 1 }}
-                md={{ size: 5, order: 1 }}
-                lg={{ size: 2, order: 1 }}
-                className='text-center text-md-left mt-3 mt-md-0 mb-1 mb-md-0'
-              >
-                <button onClick={() => this.setState({showHide: !this.state.showHide}) }>Filters: </button>
-              </Col>*/}
+            {/*<Row className='align-items-center mx-0 mb-4 mt-4 mt-lg-0 py-3 py-lg-0 bg-white shop-toolbar' style={{padding: "0 10px"}}>
+              
               <Col
                 xs={{ size: 6, order: 1 }}
                 sm={{ size: 6, order: 1 }}
@@ -132,7 +124,7 @@ class Shop extends React.PureComponent {
                   }}
                 />
               </Col>
-            </Row>
+            </Row>*/}
             <Switch>
               <Route exact path='/shop' component={ProductsShop} />
               <Route path='/shop/category/:slug' component={CategoryShop} />

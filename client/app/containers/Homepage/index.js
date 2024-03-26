@@ -214,6 +214,9 @@ class Homepage extends React.PureComponent {
 
           {/* PRODUCT SECTIONS */}
           <div className="homepage-product-section">
+            <div className="bestseller-title">
+              <p>always fly 24/7, 365</p>
+            </div>
             <div className="" style={{height: "93%"}}>
               {isLoading && <LoadingIndicator />}
               {displayProducts.length > 0 && (
@@ -224,14 +227,18 @@ class Homepage extends React.PureComponent {
                 />
               )}
 
-              <div className="homepage-products">
-                <a href="/shop" className="homepage-butt">view more</a>
-              </div>
 
               {!isLoading && !displayProducts.length === 0 && (
                 <NotFound message='No products found.' />
               )}
             </div>
+              <div className="homepage-products">
+                <a href="/shop" className="homepage-butt">view more</a>
+              </div>
+          </div>
+
+          <div>
+
           </div>
 
 
@@ -244,10 +251,10 @@ class Homepage extends React.PureComponent {
                   <div className="col-lg-8 col-md-8 bestseller-text-section">
                       <p className="bestseller-text">aso-oke extravaganza</p>
                       <p className="bestseller-paragraph">shop different custom pieces with our colourful collectionof Aso-Oke Fabrics</p>
-                      <button href="/shop/brand/suit" className="bottom-button">
-                        <span>see more</span>
+                      <a href="/shop/brand/suit" className="bottom-button">
+                        see more
                         <img width="24" height="24" src="https://img.icons8.com/material-rounded/24/forward.png" alt="forward"/>
-                      </button>
+                      </a>
                   </div>
                   <div className="col-lg-4 col-md-4">
                     <img src={agadaImage} height="100%" width="100%" alt="image" />
