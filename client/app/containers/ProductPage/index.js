@@ -208,7 +208,7 @@ class ProductPage extends React.PureComponent {
                             }
                             text='Add To Bag'
                             className='product-detail-btn'
-                            icon={<BagIcon />}
+                            // icon={<BagIcon />}
                             onClick={() => {
                               if (!productShopData.size) {
                                 alert("Please select a size."); // Display an error message

@@ -262,7 +262,7 @@ navbar {
 
 	.horizontal-list li {
 	  display: inline-block;
-	  margin-right: 20px;
+	  margin-right: 10px;
 	  text-transform: capitalize;
 	}
 
@@ -306,14 +306,15 @@ navbar {
 	}
 
 	.full-size-dropdown {
-	  /* position: absolute; */
-	  top: 110%; /* Position dropdown below the button */
+	  position: absolute;
+
 	  left: 0;
 	  width: 100%;
 	  background-color: #ffffff;
 	  border: 1px solid #ccc;
-	  z-index: 1000;
-	  padding: 50px 20px;
+	  z-index: 1100; /* Ensure the dropdown appears above other content */
+	  padding: 20px;
+	  box-sizing: border-box; /* Ensure padding is included in width */
 	}
 
 	.full-size-dropdown ul {
@@ -324,7 +325,7 @@ navbar {
 
 	.full-size-dropdown ul li {
 	  padding: 10px;
-	  text-transform: capitalize
+	  text-transform: capitalize;
 	}
 
 	.full-size-dropdown ul li:last-child {
@@ -332,26 +333,25 @@ navbar {
 	}
 
 	.dropdown-title {
-		margin-bottom: 10px;
+	  margin-bottom: 10px;
 	}
 
 	.dropdown-title p {
-		text-transform: uppercase;
-		letter-spacing: 1px;
-		font-weight: 700;
-		font-size: 20px;
+	  text-transform: uppercase;
+	  letter-spacing: 1px;
+	  font-weight: 700;
+	  font-size: 20px;
 	}
 
 	.dropdown-image {
-		margin-top: 10%;
+	  margin-top: 5%;
 	}
 
 	.dropdown-image p {
-		text-transform: uppercase;
-		text-align: center;
-		margin-top: 5px;
+	  text-transform: uppercase;
+	  text-align: center;
+	  margin-top: 5px;
 	}
-
 }
 
 @media (max-width: 767px) {

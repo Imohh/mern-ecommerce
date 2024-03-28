@@ -67,7 +67,7 @@ class BrandsShop extends React.PureComponent {
       <div className='brands-shop'>
         <div className="brands-hero" 
           style={{position: "relative", backgroundImage: `url(${getBackgroundImage(slug)})`,
-          backgroundRepeat: "no-repeat", backgroundSize: "cover"}}>
+          backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center"}}>
           <div
             style={{
                 position: "absolute",

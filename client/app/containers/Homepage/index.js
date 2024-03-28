@@ -250,11 +250,13 @@ class Homepage extends React.PureComponent {
                 <div className="row no-gutters">
                   <div className="col-lg-8 col-md-8 bestseller-text-section">
                       <p className="bestseller-text">aso-oke extravaganza</p>
-                      <p className="bestseller-paragraph">shop different custom pieces with our colourful collectionof Aso-Oke Fabrics</p>
-                      <a href="/shop/brand/suit" className="bottom-button">
-                        see more
-                        <img width="24" height="24" src="https://img.icons8.com/material-rounded/24/forward.png" alt="forward"/>
-                      </a>
+                      <p className="bestseller-paragraph">shop different custom pieces with our colourful collection of Aso-Oke Fabrics</p>
+                      <div className="bottom-button">
+                        <a href="/shop/brand/suit" className="bottom-button">
+                          see more
+                          {/*<img width="24" height="24" src="https://img.icons8.com/material-rounded/24/forward.png" alt="forward"/>*/}
+                        </a>
+                      </div>
                   </div>
                   <div className="col-lg-4 col-md-4">
                     <img src={agadaImage} height="100%" width="100%" alt="image" />

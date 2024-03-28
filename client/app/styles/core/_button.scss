@@ -201,7 +201,7 @@ body.user-is-tabbing button:focus {
 //product button
 .input-btn {
   &.product-detail-btn {
-    background: #000 !important;
+    background: #84590C !important;
     color: #fff !important;
     width: 100%;
     padding: 15px 0;
@@ -229,7 +229,7 @@ body.user-is-tabbing button:focus {
   &.custom-btn-dark {
     position: relative;
     border: $border-default;
-    background-color: #000;
+    background-color: #84590C;
     -webkit-transition: $layout-transition-speed;
     transition: $layout-transition-speed;
 
@@ -274,7 +274,6 @@ body.user-is-tabbing button:focus {
 // button icon styles
 .input-btn {
   .btn-icon {
-    display: inline-flex;
     vertical-align: bottom;
     line-height: 100%;
   }
@@ -374,14 +373,26 @@ body.user-is-tabbing button:focus {
   }
 }
 
-.bag-icon {
-  cursor: pointer;
-  width: 20px;
-  height: 20px;
-  stroke-width: 20px;
-  stroke: $black;
-  -webkit-transition: $layout-transition-speed;
-  transition: $layout-transition-speed;
+@media (min-width: 768px) {  
+  .bag-icon {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    stroke: $black;
+    -webkit-transition: $layout-transition-speed;
+    transition: $layout-transition-speed;
+  }
+}
+
+@media (max-width: 767px) {  
+  .bag-icon {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    stroke: $black;
+    -webkit-transition: $layout-transition-speed;
+    transition: $layout-transition-speed;
+  }
 }
 
 .close-icon {

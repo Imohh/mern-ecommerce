@@ -99,6 +99,30 @@ const Footer = () => {
             <div className='block-content'>
               <p>Eminence by GTX is a leader in the field of Trendy, customized African and international Attires</p>
             </div>
+            <div style={{marginTop: "10%"}}>
+              <ul className="footer-horizontal-list">
+                <li>
+                  <a href="https://instagram.com/eminencebygtx" target="_blank">
+                    <img src="https://img.icons8.com/material-outlined/24/null/instagram-new--v1.png"/>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://facebook.com/eminence" target="_blank">
+                    <img src="https://img.icons8.com/windows/24/null/facebook-f--v1.png"/>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://facebook.com/eminence" target="_blank">
+                    <img width="24" height="24" src="https://img.icons8.com/color/24/gmail-new.png" alt="gmail-new"/>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://wa.me/+447759962526" target="_blank">
+                    <img width="24" height="24" src="https://img.icons8.com/material-sharp/24/whatsapp--v1.png" alt="whatsapp--v1"/>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
           <div className='footer-block'>
             <div className='block-title'>
@@ -182,17 +206,7 @@ const Footer = () => {
               <AccordionItem>
                   <AccordionItemHeading>
                       <AccordionItemButton className="accorditmebtn">
-                          <img src="https://img.icons8.com/ios/30/null/services--v1.png"/>Services
-                      </AccordionItemButton>
-                  </AccordionItemHeading>
-                  <AccordionItemPanel>
-                      <ul>{footerLinks}</ul>
-                  </AccordionItemPanel>
-              </AccordionItem>
-              <AccordionItem>
-                  <AccordionItemHeading>
-                      <AccordionItemButton className="accorditmebtn">
-                          <img src="https://img.icons8.com/ios/30/null/company--v1.png"/>The Company
+                          <img src="https://img.icons8.com/ios/30/null/services--v1.png"/>Information
                       </AccordionItemButton>
                   </AccordionItemHeading>
                   <AccordionItemPanel>
@@ -202,14 +216,14 @@ const Footer = () => {
               <AccordionItem>
                   <AccordionItemHeading>
                       <AccordionItemButton className="accorditmebtn">
-                          <img src="https://img.icons8.com/ios/30/null/scales--v1.png"/>Legal
+                          <img src="https://img.icons8.com/ios/30/null/company--v1.png"/>Help
                       </AccordionItemButton>
                   </AccordionItemHeading>
                   <AccordionItemPanel>
                       <ul>{helpLinks}</ul>
                   </AccordionItemPanel>
               </AccordionItem>
-              <AccordionItem>
+              {/*<AccordionItem>
                   <AccordionItemHeading>
                       <AccordionItemButton className="accorditmebtn">
                           <img src="https://img.icons8.com/material-outlined/30/null/email-open.png"/>Newsletter
@@ -218,7 +232,7 @@ const Footer = () => {
                   <AccordionItemPanel>
                     <Newsletter />
                   </AccordionItemPanel>
-              </AccordionItem>
+              </AccordionItem>*/}
             </Accordion>
             <div className="mobile-footer-title">
               <div className="social-media">

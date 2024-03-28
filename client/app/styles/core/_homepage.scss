@@ -60,14 +60,14 @@
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 768px) {
   .cardars {
     grid-auto-columns: calc(calc(100% / 3) - 20px);
     grid-column-gap: 30px;
   }
 
   .bestseller-section-one .bestseller-text {
-    font-size: 4vh;
+    font-size: 2vh;
   }
 }
 
@@ -461,14 +461,6 @@
   align-items: center;
 }
 
-.bottom-button:hover {
-  background: #fff;
-  color: #000;
-  border-color: black;
-  transition: 0.3s;
-  text-decoration: none;
-}
-
 .bestseller-text-section button span {
   margin-right: 5px;
 }
@@ -529,6 +521,28 @@
   }
 }
 
+@media (min-width: 601px) {
+  .homepage-hero .hero-custom {
+    font-size: 2em;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 15%;
+    line-height: 50px;
+    color: #fff;
+  }
+}
+
+@media (max-width: 600px) {
+  .homepage-hero .hero-custom {
+    font-size: 1.7em;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 15%;
+    line-height: 50px;
+    color: #fff;
+  }
+}
+
 
 
 @media (min-width: 768px) {
@@ -578,7 +592,7 @@
     right: 0;
     width: 70%;
     height: auto;
-    z-index: 1000; /* Ensure images are behind text */
+    z-index: 10; /* Ensure images are behind text */
   }
 
   .hero-image:nth-child(2) {
@@ -675,15 +689,27 @@
     padding-left: 5%
   }
 
-  .bottom-section .bestseller-text-section a {
-    margin-top: 20%;
+  .bottom-section a {
+    background: #84590C;
+    color: #fff !important;
+    padding: 15px 40px;
+    width: 140px;
+    text-transform: capitalize;
+    margin-top: 10% !important;
   }
 
-  .bottom-section a {
-    background: red;
-    color: #fff !important;
-    padding: 5px 10px;
+  .bottom-button {
+    margin-top: 10%
   }
+
+  .bottom-section a:hover {
+    background: #fff;
+    color: #000;
+    border-color: black;
+    transition: 0.3s;
+    text-decoration: none;
+  }
+
 }
 
 
@@ -700,8 +726,7 @@
   }
 
   .hero-text {
-    width: 100%;
-    z-index: 1;
+    z-index: 11;
   }
 
   .hero-content {
@@ -710,21 +735,11 @@
     align-items: center;
   }
 
-
   .homepage-hero .hero-explore {
     font-style: italic;
     margin-bottom: 2%;
     text-transform: capitalize;
     width: 70%;
-    color: #fff;
-  }
-
-  .homepage-hero .hero-custom {
-    font-size: 3em;
-    font-weight: 900;
-    text-transform: uppercase;
-    margin-bottom: 15%;
-    line-height: 50px;
     color: #fff;
   }
 
@@ -836,11 +851,20 @@
 
   .bottom-section .bestseller-text-section {
     padding-top: 3%;
-    padding-left: 5%
+    padding-left: 2%
   }
 
-  .bottom-section .bestseller-text-section a {
-    margin-top: 20%;
+  .bottom-button {
+    margin-bottom: 10%;
+  }
+
+  .bottom-section a {
+    background: #84590C;
+    color: #fff !important;
+    padding: 10px 30px;
+    width: 100px;
+    text-transform: capitalize;
+    margin-top: 10% !important;
   }
 }
 

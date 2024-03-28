@@ -28,13 +28,9 @@ class NavigationMenu extends React.PureComponent {
       <div className='navigation-menu'>
         <div className='menu-header'>
           {isMenuOpen && (
-            <Button
-              borderless
-              variant='empty'
-              ariaLabel='close the menu'
-              icon={<CloseIcon />}
+            <button
               onClick={toggleMenu}
-            />
+            ><img width="20" height="20" src="https://img.icons8.com/ios/20/delete-sign--v1.png" alt="delete-sign--v1"/></button>
           )}
         </div>
         <div className='menu-body'>

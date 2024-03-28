@@ -246,3 +246,15 @@
     padding: 20px 50px;
   }
 }
+
+  .footer-horizontal-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-horizontal-list li {
+    display: inline-block;
+    margin-right: 10px;
+    text-transform: capitalize;
+  }

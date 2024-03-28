@@ -45,13 +45,11 @@ class Cart extends React.PureComponent {
       <div className='cart'>
         <div className='cart-header'>
           {isCartOpen && (
-            <Button
-              borderless
-              variant='empty'
-              ariaLabel='close the cart'
-              icon={<CloseIcon />}
+            <button
               onClick={toggleCart}
-            />
+            >
+              <img width="20" height="20" src="https://img.icons8.com/ios/20/delete-sign--v1.png" alt="delete-sign--v1"/>
+            </button>
           )}
         </div>
         {cartItems.length > 0 ? (

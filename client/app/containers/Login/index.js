@@ -17,6 +17,9 @@ import Button from '../../components/Common/Button';
 import LoadingIndicator from '../../components/Common/LoadingIndicator';
 import SignupProvider from '../../components/Common/SignupProvider';
 
+import login1 from '../../images/login1.jpg'
+import login2 from '../../images/login2.jpg'
+
 class Login extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -80,10 +83,18 @@ class Login extends React.PureComponent {
           >
             <div id="slider">
                   <figure>
-                    <div className="image"><img src="https://www.essence.com/wp-content/uploads/2020/12/Oliver-Kumbi-GQ.com-by-Daniel-Jackson.jpg" height="300px" alt="Slider 1" /></div>
-                    <div className="image"><img src="https://www.essence.com/wp-content/uploads/2020/12/Luka-Sabbat-SID-Pre-Fall-2015-Ph-Yu-Cong.jpg" height="300px"alt="Slider 2" /></div>
-                    <div className="image"><img src="https://www.essence.com/wp-content/uploads/2020/12/Oliver-Kumbi-GQ.com-by-Daniel-Jackson.jpg" height="300px" alt="Slider 3" /></div>
-                    <div className="image"><img src="https://www.essence.com/wp-content/uploads/2020/12/Luka-Sabbat-SID-Pre-Fall-2015-Ph-Yu-Cong.jpg" height="300px" alt="Slider 4" /></div>
+                    <div className="image">
+                      <img src={login1} height="300px" alt="Slider 1" />
+                    </div>
+                    <div className="image">
+                      <img src={login2} height="300px"alt="Slider 2" />
+                    </div>
+                    <div className="image">
+                      <img src={login1} height="300px" alt="Slider 3" />
+                    </div>
+                    <div className="image">
+                      <img src={login2} height="300px" alt="Slider 4" />
+                    </div>
                   </figure>
                 </div>
           </Col>

@@ -254,7 +254,18 @@ class Navigation extends React.PureComponent {
                       )}
                     </Nav>
                   </li>
-                  <li><a href=""><img width="50" height="50" src="https://img.icons8.com/ios/50/like--v1.png" alt="like--v1"/></a></li>
+                  <li>
+                    {authenticated ? (
+                      <a href="/dashboard/wishlist">
+                        <img width="50" height="50" src="https://img.icons8.com/ios/50/like--v1.png" alt="like--v1"/>
+                      </a>
+                    ) : (
+                      <a href="/login">
+                        <img width="50" height="50" src="https://img.icons8.com/ios/50/like--v1.png" alt="like--v1"/>
+                      </a>
+                    )}
+                  </li>
+
                   <li>
                     <CartIcon
                       className='cart-icon-size'
@@ -284,7 +295,6 @@ class Navigation extends React.PureComponent {
                       <li key={index} className=''>
                         <a
                           href={`/shop/brand/${brand.slug}`}
-                          activeClassName='active-link'
                         >
                           {brand.name}
                         </a>
@@ -344,6 +354,7 @@ class Navigation extends React.PureComponent {
             <div className='header-links cart-icon-nav'>
               <CartIcon
                 className=''
+                style={{ marginTop: "30px" }}
                 cartItems={cartItems}
                 onClick={toggleCart}
               />
