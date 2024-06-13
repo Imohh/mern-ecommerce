@@ -33,7 +33,7 @@ class NavigationMenu extends React.PureComponent {
             ><img width="20" height="20" src="https://img.icons8.com/ios/20/delete-sign--v1.png" alt="delete-sign--v1"/></button>
           )}
         </div>
-        <div className='menu-body'>
+        <div className='menu-body' style={{ maxHeight: "calc(100vh - 100px)", overflowY: "auto" }}>
 
             <p className="menu-title">
               <a href="" style={{fontSize: "20px"}}>Search</a>

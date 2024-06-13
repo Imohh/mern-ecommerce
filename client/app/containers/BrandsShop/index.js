@@ -15,12 +15,14 @@ import NotFound from '../../components/Common/NotFound';
 import LoadingIndicator from '../../components/Common/LoadingIndicator';
 import SelectOption from '../../components/Common/SelectOption';
 
-import agbada from './images/agbada.png'
+// import agbada from './images/agbada.png'
 import kaftan from './images/kaftan.png'
 import eshiki from './images/eshiki.png'
 import suit from './images/suit.png'
 import senator from './images/senator.png'
 import asooke from './images/asooke.jpg'
+
+const agbada = 'raw.githubusercontent.com/imohh/mern-ecommerce/master/client/app/containers/BrandsShop/images/agbada.png'
 
 class BrandsShop extends React.PureComponent {
   componentDidMount() {
